@@ -17,7 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString *)filterUrl:(NSString *)originUrl withRequest:(YTKBaseRequest *)request;
 
-
 @end
 
 NS_ASSUME_NONNULL_END

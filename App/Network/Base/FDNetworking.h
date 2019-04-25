@@ -12,7 +12,7 @@
 #import "FDBaseApi.h"
 #import "FDUrlArgumentsFilter.h"
 
-#define FDBaseUrl @"http://api.fandong.me"
+#define FDBaseUrl @"https://www.lagou.com"
 #define FDBaseCdnUrl @"http://cdn.fandong.me"
 
 

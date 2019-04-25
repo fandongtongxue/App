@@ -26,7 +26,17 @@
 
 - (NSString *)filterUrl:(NSString *)originUrl withRequest:(YTKBaseRequest *)request {
     return @"";
-//    return [FDUrlArgumentsFilter urlStringWithOriginUrlString:originUrl appendParameters:_arguments];
+    return [FDUrlArgumentsFilter urlStringWithOriginUrlString:originUrl appendParameters:_arguments];
+}
+
++ (NSString *)urlStringWithOriginUrlString:(NSString *)originUrl appendParameters:(NSDictionary *)arguments{
+    NSMutableString *tempString = [NSMutableString string];
+    for (NSString *key in arguments.allKeys) {
+        for (NSString *value in arguments.allValues) {
+            [tempString setString:[tempString stringByAppendingString:[NSString stringWithFormat:@"%@=%@",key,value]]];
+        }
+    }
+    return tempString;
 }
 
 

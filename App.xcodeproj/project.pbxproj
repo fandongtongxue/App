@@ -10,6 +10,7 @@
 		4921A4527F9422A2FC869784 /* Pods_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28EDAE5573319FD1924CF5E8 /* Pods_App.framework */; };
 		CB3508EC22709B5800EDC557 /* FDBaseApi.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3508EB22709B5800EDC557 /* FDBaseApi.m */; };
 		CB3508F22270A12D00EDC557 /* FDUrlArgumentsFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3508F12270A12D00EDC557 /* FDUrlArgumentsFilter.m */; };
+		CB6CE2D52271E440006B3DFA /* TestApi.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6CE2D42271E440006B3DFA /* TestApi.m */; };
 		CB8C26EE226CBCA90058DAEE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8C26ED226CBCA90058DAEE /* AppDelegate.m */; };
 		CB8C26F1226CBCA90058DAEE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8C26F0226CBCA90058DAEE /* ViewController.m */; };
 		CB8C26F4226CBCA90058DAEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB8C26F2226CBCA90058DAEE /* Main.storyboard */; };
@@ -26,6 +27,8 @@
 		CB3508F02270A12D00EDC557 /* FDUrlArgumentsFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDUrlArgumentsFilter.h; sourceTree = "<group>"; };
 		CB3508F12270A12D00EDC557 /* FDUrlArgumentsFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDUrlArgumentsFilter.m; sourceTree = "<group>"; };
 		CB3508F32270A1A100EDC557 /* FDNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDNetworking.h; sourceTree = "<group>"; };
+		CB6CE2D32271E440006B3DFA /* TestApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestApi.h; sourceTree = "<group>"; };
+		CB6CE2D42271E440006B3DFA /* TestApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestApi.m; sourceTree = "<group>"; };
 		CB8C26E9226CBCA90058DAEE /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB8C26EC226CBCA90058DAEE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CB8C26ED226CBCA90058DAEE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -71,6 +74,7 @@
 		CB3508E822709B3E00EDC557 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				CB6CE2D22271E41C006B3DFA /* Test */,
 				CB3508E922709B4100EDC557 /* Base */,
 			);
 			path = Network;
@@ -86,6 +90,15 @@
 				CB3508F12270A12D00EDC557 /* FDUrlArgumentsFilter.m */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		CB6CE2D22271E41C006B3DFA /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				CB6CE2D32271E440006B3DFA /* TestApi.h */,
+				CB6CE2D42271E440006B3DFA /* TestApi.m */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 		CB8C26E0226CBCA90058DAEE = {
@@ -237,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB6CE2D52271E440006B3DFA /* TestApi.m in Sources */,
 				CB8C26F1226CBCA90058DAEE /* ViewController.m in Sources */,
 				CB3508EC22709B5800EDC557 /* FDBaseApi.m in Sources */,
 				CB3508F22270A12D00EDC557 /* FDUrlArgumentsFilter.m in Sources */,

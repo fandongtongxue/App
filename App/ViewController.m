@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "TestApi.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [[[TestApi alloc]initWithPageNo:0 pageSize:20] startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        NSLog(@"");
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        NSLog(@"");
+    }];
 }
 
 

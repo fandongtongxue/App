@@ -16,7 +16,10 @@
     if (self = [super init]) {
         YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
         config.baseUrl = FDBaseUrl;
-        config.cdnUrl = FDBaseCdnUrl;
+//        config.cdnUrl = FDBaseCdnUrl;
+//        NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+//        FDUrlArgumentsFilter *filter = [FDUrlArgumentsFilter filterWithArguments:@{@"appVersion":appVersion}];
+//        [config addUrlFilter:filter];
     }
     return self;
 }
