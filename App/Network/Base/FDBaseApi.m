@@ -16,17 +16,17 @@
     if (self = [super init]) {
         YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
         config.baseUrl = FDBaseUrl;
-//        config.cdnUrl = FDBaseCdnUrl;
-//        NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-//        FDUrlArgumentsFilter *filter = [FDUrlArgumentsFilter filterWithArguments:@{@"appVersion":appVersion}];
-//        [config addUrlFilter:filter];
+        config.cdnUrl = FDBaseCdnUrl;
+        NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+        FDUrlArgumentsFilter *filter = [FDUrlArgumentsFilter filterWithArguments:@{@"appVersion":appVersion}];
+        [config addUrlFilter:filter];
     }
     return self;
 }
 
 -(NSString *)requestUrl{
     NSLog(@"%s 需要子类实现",__func__);
-    return @"";
+    return nil;
 }
 
 - (YTKRequestMethod)requestMethod {
@@ -36,30 +36,31 @@
 
 - (id)requestArgument {
     NSLog(@"%s 需要子类实现",__func__);
-    return @{};
+    return nil;
 }
 
 - (id)jsonValidator{
-    NSLog(@"%s 需要子类实现",__func__);
-    return @{};
+    NSLog(@"%s 如果需要验证JSON合法性需要子类实现",__func__);
+    return nil;
 }
 
 - (BOOL)useCDN {
-    NSLog(@"%s 需要子类实现",__func__);
-    return YES;
+    NSLog(@"%s 如果需要使用CDN需要子类实现",__func__);
+    return NO;
 }
 
 - (NSString *)resumableDownloadPath {
-    NSLog(@"%s 需要子类实现",__func__);
-    NSString *libPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSString *cachePath = [libPath stringByAppendingPathComponent:@"Caches"];
-    NSString *filePath = [cachePath stringByAppendingPathComponent:@""];
-    return filePath;
+    NSLog(@"%s 如果需要使用缓存需要子类实现",__func__);
+    return nil;
+//    NSString *libPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+//    NSString *cachePath = [libPath stringByAppendingPathComponent:@"Caches"];
+//    NSString *filePath = [cachePath stringByAppendingPathComponent:@""];
+//    return filePath;
 }
 
 - (NSInteger)cacheTimeInSeconds {
-    NSLog(@"%s 需要子类实现",__func__);
-    return 60 * 3;
+    NSLog(@"%s 如果需要设置缓存时间需要子类实现",__func__);
+    return 0;
 }
 
 @end
