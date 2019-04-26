@@ -10,7 +10,6 @@
 #define FDNetworking_h
 
 #import "FDBaseApi.h"
-#import "FDUrlArgumentsFilter.h"
 
 #define FDBaseUrl @"https://www.lagou.com"
 #define FDBaseCdnUrl @"http://cdn.fandong.me"

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4921A4527F9422A2FC869784 /* Pods_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28EDAE5573319FD1924CF5E8 /* Pods_App.framework */; };
 		CB3508EC22709B5800EDC557 /* FDBaseApi.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3508EB22709B5800EDC557 /* FDBaseApi.m */; };
-		CB3508F22270A12D00EDC557 /* FDUrlArgumentsFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3508F12270A12D00EDC557 /* FDUrlArgumentsFilter.m */; };
 		CB6CE2D52271E440006B3DFA /* TestApi.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6CE2D42271E440006B3DFA /* TestApi.m */; };
 		CB8C26EE226CBCA90058DAEE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8C26ED226CBCA90058DAEE /* AppDelegate.m */; };
 		CB8C26F1226CBCA90058DAEE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8C26F0226CBCA90058DAEE /* ViewController.m */; };
@@ -17,6 +16,7 @@
 		CB8C26F6226CBCAA0058DAEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB8C26F5226CBCAA0058DAEE /* Assets.xcassets */; };
 		CB8C26F9226CBCAA0058DAEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB8C26F7226CBCAA0058DAEE /* LaunchScreen.storyboard */; };
 		CB8C26FC226CBCAA0058DAEE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8C26FB226CBCAA0058DAEE /* main.m */; };
+		CBC00E4622734B9000E0A471 /* YTKUrlArgumentsFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC00E4422734B9000E0A471 /* YTKUrlArgumentsFilter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +24,6 @@
 		28EDAE5573319FD1924CF5E8 /* Pods_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3508EA22709B5800EDC557 /* FDBaseApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDBaseApi.h; sourceTree = "<group>"; };
 		CB3508EB22709B5800EDC557 /* FDBaseApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDBaseApi.m; sourceTree = "<group>"; };
-		CB3508F02270A12D00EDC557 /* FDUrlArgumentsFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDUrlArgumentsFilter.h; sourceTree = "<group>"; };
-		CB3508F12270A12D00EDC557 /* FDUrlArgumentsFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDUrlArgumentsFilter.m; sourceTree = "<group>"; };
 		CB3508F32270A1A100EDC557 /* FDNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDNetworking.h; sourceTree = "<group>"; };
 		CB6CE2D32271E440006B3DFA /* TestApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestApi.h; sourceTree = "<group>"; };
 		CB6CE2D42271E440006B3DFA /* TestApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestApi.m; sourceTree = "<group>"; };
@@ -39,6 +37,8 @@
 		CB8C26F8226CBCAA0058DAEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB8C26FA226CBCAA0058DAEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB8C26FB226CBCAA0058DAEE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CBC00E4422734B9000E0A471 /* YTKUrlArgumentsFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTKUrlArgumentsFilter.m; sourceTree = "<group>"; };
+		CBC00E4522734B9000E0A471 /* YTKUrlArgumentsFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTKUrlArgumentsFilter.h; sourceTree = "<group>"; };
 		D8F4FE7B423BC276DC0C84C5 /* Pods-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.release.xcconfig"; path = "Target Support Files/Pods-App/Pods-App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,11 +83,11 @@
 		CB3508E922709B4100EDC557 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				CBC00E4522734B9000E0A471 /* YTKUrlArgumentsFilter.h */,
+				CBC00E4422734B9000E0A471 /* YTKUrlArgumentsFilter.m */,
 				CB3508F32270A1A100EDC557 /* FDNetworking.h */,
 				CB3508EA22709B5800EDC557 /* FDBaseApi.h */,
 				CB3508EB22709B5800EDC557 /* FDBaseApi.m */,
-				CB3508F02270A12D00EDC557 /* FDUrlArgumentsFilter.h */,
-				CB3508F12270A12D00EDC557 /* FDUrlArgumentsFilter.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -253,7 +253,7 @@
 				CB6CE2D52271E440006B3DFA /* TestApi.m in Sources */,
 				CB8C26F1226CBCA90058DAEE /* ViewController.m in Sources */,
 				CB3508EC22709B5800EDC557 /* FDBaseApi.m in Sources */,
-				CB3508F22270A12D00EDC557 /* FDUrlArgumentsFilter.m in Sources */,
+				CBC00E4622734B9000E0A471 /* YTKUrlArgumentsFilter.m in Sources */,
 				CB8C26FC226CBCAA0058DAEE /* main.m in Sources */,
 				CB8C26EE226CBCA90058DAEE /* AppDelegate.m in Sources */,
 			);

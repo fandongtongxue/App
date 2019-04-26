@@ -7,7 +7,7 @@
 //
 
 #import "FDBaseApi.h"
-#import "FDUrlArgumentsFilter.h"
+#import "YTKUrlArgumentsFilter.h"
 #import "FDNetworking.h"
 
 @implementation FDBaseApi
@@ -18,9 +18,9 @@
         config.baseUrl = FDBaseUrl;
         config.cdnUrl = FDBaseCdnUrl;
         config.debugLogEnabled = YES;
-//        NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-//        FDUrlArgumentsFilter *filter = [FDUrlArgumentsFilter filterWithArguments:@{@"appVersion":appVersion}];
-//        [config addUrlFilter:filter];
+        NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+        YTKUrlArgumentsFilter *urlFilter = [YTKUrlArgumentsFilter filterWithArguments:@{@"version": appVersion}];
+        [config addUrlFilter:urlFilter];
     }
     return self;
 }
@@ -52,9 +52,6 @@
 
 - (NSString *)resumableDownloadPath {
     NSLog(@"%s 如果需要使用缓存需要子类实现",__func__);
-//    NSString *libPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-//    NSString *cachePath = [libPath stringByAppendingPathComponent:@"Caches"];
-//    NSString *filePath = [cachePath stringByAppendingPathComponent:@""];
     return nil;
 }
 
@@ -74,6 +71,9 @@
         for (NSString *key in argument.allKeys) {
             NSObject *value = [argument objectForKey:key];
             [tempString setString:[tempString stringByAppendingString:[NSString stringWithFormat:@"%@=%@&",key,value]]];
+        }
+        if ([tempString hasSuffix:@"&"]) {
+            [tempString replaceCharactersInRange:NSMakeRange(tempString.length - 1, 1) withString:@""];
         }
         NSLog(@"请求Url:%@%@%@",FDBaseUrl,self.requestUrl,tempString);
     }
