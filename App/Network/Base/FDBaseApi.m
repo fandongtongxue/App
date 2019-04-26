@@ -17,6 +17,7 @@
         YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
         config.baseUrl = FDBaseUrl;
         config.cdnUrl = FDBaseCdnUrl;
+        config.debugLogEnabled = YES;
 //        NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
 //        FDUrlArgumentsFilter *filter = [FDUrlArgumentsFilter filterWithArguments:@{@"appVersion":appVersion}];
 //        [config addUrlFilter:filter];
@@ -70,12 +71,9 @@
     }else if (self.requestMethod == YTKRequestMethodGET){
         NSMutableString *tempString = [NSMutableString stringWithString:@"?"];
         NSDictionary *argument = self.requestArgument;
-        for (NSObject *key in argument.allKeys) {
+        for (NSString *key in argument.allKeys) {
             NSObject *value = [argument objectForKey:key];
             [tempString setString:[tempString stringByAppendingString:[NSString stringWithFormat:@"%@=%@&",key,value]]];
-        }
-        if ([tempString hasSuffix:@"&"]) {
-            [tempString replaceCharactersInRange:NSMakeRange(tempString.length - 1,1) withString:@""];
         }
         NSLog(@"请求Url:%@%@%@",FDBaseUrl,self.requestUrl,tempString);
     }

@@ -25,16 +25,17 @@
 }
 
 - (NSString *)filterUrl:(NSString *)originUrl withRequest:(YTKBaseRequest *)request {
-    return @"";
     return [FDUrlArgumentsFilter urlStringWithOriginUrlString:originUrl appendParameters:_arguments];
 }
 
 + (NSString *)urlStringWithOriginUrlString:(NSString *)originUrl appendParameters:(NSDictionary *)arguments{
     NSMutableString *tempString = [NSMutableString string];
     for (NSString *key in arguments.allKeys) {
-        for (NSString *value in arguments.allValues) {
-            [tempString setString:[tempString stringByAppendingString:[NSString stringWithFormat:@"%@=%@",key,value]]];
-        }
+        NSObject *value = [arguments valueForKey:key];
+        [tempString setString:[tempString stringByAppendingString:[NSString stringWithFormat:@"%@=%@&",key,value]]];
+    }
+    if ([tempString hasSuffix:@"&"]) {
+        [tempString replaceCharactersInRange:NSMakeRange(tempString.length - 1,1) withString:@""];
     }
     return tempString;
 }
