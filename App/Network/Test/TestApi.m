@@ -37,4 +37,12 @@
     return NO;
 }
 
+- (NSString *)resumableDownloadPath {
+    return nil;
+}
+
+- (NSInteger)cacheTimeInSeconds{
+    return 0;
+}
+
 @end
