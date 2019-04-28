@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4921A4527F9422A2FC869784 /* Pods_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28EDAE5573319FD1924CF5E8 /* Pods_App.framework */; };
+		6D74C528227575D500332AAC /* AppDelegate+ThirdPart.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D74C527227575D500332AAC /* AppDelegate+ThirdPart.m */; };
 		CB3508EC22709B5800EDC557 /* FDBaseApi.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3508EB22709B5800EDC557 /* FDBaseApi.m */; };
 		CB6CE2D52271E440006B3DFA /* TestApi.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6CE2D42271E440006B3DFA /* TestApi.m */; };
 		CB8C26EE226CBCA90058DAEE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8C26ED226CBCA90058DAEE /* AppDelegate.m */; };
@@ -22,6 +23,8 @@
 /* Begin PBXFileReference section */
 		2197BE47209DCADC95F1ACA7 /* Pods-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.debug.xcconfig"; path = "Target Support Files/Pods-App/Pods-App.debug.xcconfig"; sourceTree = "<group>"; };
 		28EDAE5573319FD1924CF5E8 /* Pods_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D74C526227575D500332AAC /* AppDelegate+ThirdPart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ThirdPart.h"; sourceTree = "<group>"; };
+		6D74C527227575D500332AAC /* AppDelegate+ThirdPart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ThirdPart.m"; sourceTree = "<group>"; };
 		CB3508EA22709B5800EDC557 /* FDBaseApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDBaseApi.h; sourceTree = "<group>"; };
 		CB3508EB22709B5800EDC557 /* FDBaseApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDBaseApi.m; sourceTree = "<group>"; };
 		CB3508F32270A1A100EDC557 /* FDNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDNetworking.h; sourceTree = "<group>"; };
@@ -60,6 +63,15 @@
 				28EDAE5573319FD1924CF5E8 /* Pods_App.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6D74C51C22755D9D00332AAC /* ThirdPart */ = {
+			isa = PBXGroup;
+			children = (
+				6D74C526227575D500332AAC /* AppDelegate+ThirdPart.h */,
+				6D74C527227575D500332AAC /* AppDelegate+ThirdPart.m */,
+			);
+			path = ThirdPart;
 			sourceTree = "<group>";
 		};
 		BEBD1D2AB71059642F79F3CB /* Pods */ = {
@@ -122,6 +134,7 @@
 		CB8C26EB226CBCA90058DAEE /* App */ = {
 			isa = PBXGroup;
 			children = (
+				6D74C51C22755D9D00332AAC /* ThirdPart */,
 				CB3508E822709B3E00EDC557 /* Network */,
 				CB8C26EC226CBCA90058DAEE /* AppDelegate.h */,
 				CB8C26ED226CBCA90058DAEE /* AppDelegate.m */,
@@ -148,6 +161,7 @@
 				CB8C26E6226CBCA90058DAEE /* Frameworks */,
 				CB8C26E7226CBCA90058DAEE /* Resources */,
 				E5C9628119440D6A7972B22E /* [CP] Embed Pods Frameworks */,
+				A761ED67EA1C4C3F37844162 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -204,6 +218,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		A761ED67EA1C4C3F37844162 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-App/Pods-App-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-App/Pods-App-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-App/Pods-App-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E5C9628119440D6A7972B22E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -254,6 +285,7 @@
 				CB8C26F1226CBCA90058DAEE /* ViewController.m in Sources */,
 				CB3508EC22709B5800EDC557 /* FDBaseApi.m in Sources */,
 				CBC00E4622734B9000E0A471 /* YTKUrlArgumentsFilter.m in Sources */,
+				6D74C528227575D500332AAC /* AppDelegate+ThirdPart.m in Sources */,
 				CB8C26FC226CBCAA0058DAEE /* main.m in Sources */,
 				CB8C26EE226CBCA90058DAEE /* AppDelegate.m in Sources */,
 			);
