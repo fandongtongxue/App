@@ -14,6 +14,8 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - AlipaySDK-iOS (15.5.9)
+  - Bugly (2.5.0)
   - FBRetainCycleDetector (0.1.4)
   - KLSwitch (1.5)
   - Masonry (1.1.0)
@@ -325,6 +327,8 @@ PODS:
     - AFNetworking (~> 3.0)
 
 DEPENDENCIES:
+  - AlipaySDK-iOS
+  - Bugly
   - KLSwitch
   - Masonry
   - MBProgressHUD
@@ -348,6 +352,8 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - AlipaySDK-iOS
+    - Bugly
     - FBRetainCycleDetector
     - KLSwitch
     - Masonry
@@ -368,6 +374,8 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  AlipaySDK-iOS: 1c5283b30977a24acecc0114662697f7dc78f618
+  Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   KLSwitch: ff8b9953b9e15e16cb53efec7370a44ae02f8a6c
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
@@ -386,6 +394,6 @@ SPEC CHECKSUMS:
   WechatOpenSDK: 9b721089507c895d05f997408c30bb6e6f5f9b60
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
 
-PODFILE CHECKSUM: fc9159ee0f263dec17ab889b615bcbb7368e166c
+PODFILE CHECKSUM: d86d9eaf65550670060f7531d471ba78385273f5
 
 COCOAPODS: 1.7.0.beta.3

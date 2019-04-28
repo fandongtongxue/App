@@ -46,5 +46,7 @@ target 'App' do
   pod 'WechatOpenSDK'
   # AliPay
   pod 'AlipaySDK-iOS'
+  # Crash
+  pod 'Bugly'
 
 end

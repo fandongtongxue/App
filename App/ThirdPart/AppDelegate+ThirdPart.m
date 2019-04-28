@@ -12,20 +12,22 @@
 #import <UMShare/UMShare.h>
 #import <UMAnalytics/MobClick.h>
 
+#import <Bugly/Bugly.h>
+
 @implementation AppDelegate (ThirdPart)
 
 - (void)registerApp{
     //友盟
     //开发者需要显式的调用此函数，日志系统才能工作
     [UMConfigure setLogEnabled:YES];
-    [UMConfigure initWithAppkey:@"59892ebcaed179694b000104" channel:@"App Store"];
+    [UMConfigure initWithAppkey:@"56e6b3e667e58e1b7700012b" channel:@"App Store"];
     
     //友盟分享
     /*
      设置微信的appKey和appSecret
      [微信平台从U-Share 4/5升级说明]http://dev.umeng.com/social/ios/%E8%BF%9B%E9%98%B6%E6%96%87%E6%A1%A3#1_1
      */
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxdc1e388c3822c80b" appSecret:@"3baf1193c85774b3fd9d18447d76cab0" redirectURL:nil];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxea9a2004da38e365" appSecret:@"43a5474e2a060a5c926358b33d999848" redirectURL:nil];
     /*
      * 移除相应平台的分享，如微信收藏
      */
@@ -36,14 +38,16 @@
      100424468.no permission of union id
      [QQ/QZone平台集成说明]http://dev.umeng.com/social/ios/%E8%BF%9B%E9%98%B6%E6%96%87%E6%A1%A3#1_3
      */
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1105821097"/*设置QQ平台的appID*/  appSecret:nil redirectURL:nil];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1105514912"/*设置QQ平台的appID*/  appSecret:nil redirectURL:nil];
     
     /*
      设置新浪的appKey和appSecret
      [新浪微博集成说明]http://dev.umeng.com/social/ios/%E8%BF%9B%E9%98%B6%E6%96%87%E6%A1%A3#1_2
      */
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:@"3921700954"  appSecret:@"04b48b094faeb16683c32669824ebdad" redirectURL:@"https://sns.whalecloud.com/sina2/callback"];
-    //友盟统计
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:@"2959688014"  appSecret:@"b6a3c705205ae877e5fa31d95fa15674" redirectURL:@"http://api.fandong.me"];
+    
+    //Bugly
+    [Bugly startWithAppId:@"9f73163e66"];
 }
 
 @end
