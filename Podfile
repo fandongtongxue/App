@@ -42,10 +42,6 @@ target 'App' do
   pod 'SDCycleScrollView'
   # Switch
   pod 'KLSwitch'
-  # WeChat Pay
-  pod 'WechatOpenSDK'
-  # AliPay
-  pod 'AlipaySDK-iOS'
   # Crash
   pod 'Bugly'
 

@@ -14,7 +14,6 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - AlipaySDK-iOS (15.5.9)
   - Bugly (2.5.0)
   - FBRetainCycleDetector (0.1.4)
   - KLSwitch (1.5)
@@ -322,12 +321,10 @@ PODS:
   - UMCShare/UI (6.9.5):
     - UMCCommon
     - UMCShare/Core
-  - WechatOpenSDK (1.8.4)
   - YTKNetwork (2.0.4):
     - AFNetworking (~> 3.0)
 
 DEPENDENCIES:
-  - AlipaySDK-iOS
   - Bugly
   - KLSwitch
   - Masonry
@@ -346,13 +343,11 @@ DEPENDENCIES:
   - UMCShare/Social/ReducedWeChat
   - UMCShare/Social/Sina
   - UMCShare/UI
-  - WechatOpenSDK
   - YTKNetwork
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
-    - AlipaySDK-iOS
     - Bugly
     - FBRetainCycleDetector
     - KLSwitch
@@ -369,12 +364,10 @@ SPEC REPOS:
     - UMCCommon
     - UMCSecurityPlugins
     - UMCShare
-    - WechatOpenSDK
     - YTKNetwork
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  AlipaySDK-iOS: 1c5283b30977a24acecc0114662697f7dc78f618
   Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   KLSwitch: ff8b9953b9e15e16cb53efec7370a44ae02f8a6c
@@ -391,9 +384,8 @@ SPEC CHECKSUMS:
   UMCCommon: 0263a057a2e1ae1da4c8308541e56904a493ce13
   UMCSecurityPlugins: 0831a08f3988f3cea9f1d3a7626cd9bee4fef150
   UMCShare: 552b29753f1b4da87b51d96545ed19e6263df397
-  WechatOpenSDK: 9b721089507c895d05f997408c30bb6e6f5f9b60
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
 
-PODFILE CHECKSUM: d86d9eaf65550670060f7531d471ba78385273f5
+PODFILE CHECKSUM: fbf4db74e83a35009b17c29cfedbf4f55dc8f532
 
 COCOAPODS: 1.7.0.beta.3
