@@ -18,12 +18,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [[[TestApi alloc]initWithPageNo:0 pageSize:20] startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-        NSLog(@"请求成功");
-    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-        NSLog(@"请求失败");
-    }];
 }
-
 
 @end

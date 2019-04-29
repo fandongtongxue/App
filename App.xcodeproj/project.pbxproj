@@ -8,12 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		4921A4527F9422A2FC869784 /* Pods_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28EDAE5573319FD1924CF5E8 /* Pods_App.framework */; };
+		6D4F0D14227695D6005A9B21 /* AppDelegate+HandleURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4F0D13227695D6005A9B21 /* AppDelegate+HandleURL.m */; };
 		6D74C528227575D500332AAC /* AppDelegate+ThirdPart.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D74C527227575D500332AAC /* AppDelegate+ThirdPart.m */; };
 		6DC591C222767C5900813DAB /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6DC591BA22767C5900813DAB /* AlipaySDK.bundle */; };
 		6DC591C322767C5900813DAB /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DC591BB22767C5900813DAB /* AlipaySDK.framework */; };
 		6DC591C422767C5900813DAB /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6DC591BF22767C5900813DAB /* README.txt */; };
 		6DC591C522767C5900813DAB /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DC591C122767C5900813DAB /* libWeChatSDK.a */; };
 		6DC591C722767CB600813DAB /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DC591C622767CB500813DAB /* CoreMotion.framework */; };
+		6DEC850B2276DB50000BCB3C /* 版权申明.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC84F62276DB50000BCB3C /* 版权申明.rtf */; };
+		6DEC850C2276DB50000BCB3C /* Alibaba-PuHuiTi-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC84F82276DB50000BCB3C /* Alibaba-PuHuiTi-Bold.otf */; };
+		6DEC850D2276DB50000BCB3C /* Alibaba-PuHuiTi-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC84F92276DB50000BCB3C /* Alibaba-PuHuiTi-Light.otf */; };
+		6DEC850E2276DB50000BCB3C /* Alibaba-PuHuiTi-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC84FA2276DB50000BCB3C /* Alibaba-PuHuiTi-Heavy.otf */; };
+		6DEC850F2276DB50000BCB3C /* Alibaba-PuHuiTi-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC84FB2276DB50000BCB3C /* Alibaba-PuHuiTi-Medium.otf */; };
+		6DEC85102276DB50000BCB3C /* Alibaba-PuHuiTi-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC84FC2276DB50000BCB3C /* Alibaba-PuHuiTi-Regular.otf */; };
+		6DEC85112276DB50000BCB3C /* AlibabaSans-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC84FF2276DB50000BCB3C /* AlibabaSans-Light.otf */; };
+		6DEC85122276DB50000BCB3C /* AlibabaSans-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC85002276DB50000BCB3C /* AlibabaSans-Bold.otf */; };
+		6DEC85132276DB50000BCB3C /* AlibabaSans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC85012276DB50000BCB3C /* AlibabaSans-Regular.otf */; };
+		6DEC85142276DB50000BCB3C /* AlibabaSans-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC85022276DB50000BCB3C /* AlibabaSans-Heavy.otf */; };
+		6DEC85152276DB50000BCB3C /* AlibabaSans-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC85032276DB50000BCB3C /* AlibabaSans-Medium.otf */; };
+		6DEC85162276DB50000BCB3C /* AlibabaSans-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC85042276DB50000BCB3C /* AlibabaSans-Black.otf */; };
+		6DEC85172276DB50000BCB3C /* AlibabaSans-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC85062276DB50000BCB3C /* AlibabaSans-Italic.otf */; };
+		6DEC85182276DB50000BCB3C /* AlibabaSans-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC85072276DB50000BCB3C /* AlibabaSans-BoldItalic.otf */; };
+		6DEC85192276DB50000BCB3C /* AlibabaSans-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC85082276DB50000BCB3C /* AlibabaSans-MediumItalic.otf */; };
+		6DEC851A2276DB50000BCB3C /* AlibabaSans-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC85092276DB50000BCB3C /* AlibabaSans-LightItalic.otf */; };
+		6DEC851B2276DB50000BCB3C /* AlibabaSans-HeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC850A2276DB50000BCB3C /* AlibabaSans-HeavyItalic.otf */; };
 		CB3508EC22709B5800EDC557 /* FDBaseApi.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3508EB22709B5800EDC557 /* FDBaseApi.m */; };
 		CB6CE2D52271E440006B3DFA /* TestApi.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6CE2D42271E440006B3DFA /* TestApi.m */; };
 		CB8C26EE226CBCA90058DAEE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8C26ED226CBCA90058DAEE /* AppDelegate.m */; };
@@ -28,6 +46,8 @@
 /* Begin PBXFileReference section */
 		2197BE47209DCADC95F1ACA7 /* Pods-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.debug.xcconfig"; path = "Target Support Files/Pods-App/Pods-App.debug.xcconfig"; sourceTree = "<group>"; };
 		28EDAE5573319FD1924CF5E8 /* Pods_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D4F0D12227695D6005A9B21 /* AppDelegate+HandleURL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+HandleURL.h"; sourceTree = "<group>"; };
+		6D4F0D13227695D6005A9B21 /* AppDelegate+HandleURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+HandleURL.m"; sourceTree = "<group>"; };
 		6D74C526227575D500332AAC /* AppDelegate+ThirdPart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ThirdPart.h"; sourceTree = "<group>"; };
 		6D74C527227575D500332AAC /* AppDelegate+ThirdPart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ThirdPart.m"; sourceTree = "<group>"; };
 		6DC591BA22767C5900813DAB /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
@@ -38,6 +58,23 @@
 		6DC591C022767C5900813DAB /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
 		6DC591C122767C5900813DAB /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		6DC591C622767CB500813DAB /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		6DEC84F62276DB50000BCB3C /* 版权申明.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "版权申明.rtf"; sourceTree = "<group>"; };
+		6DEC84F82276DB50000BCB3C /* Alibaba-PuHuiTi-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alibaba-PuHuiTi-Bold.otf"; sourceTree = "<group>"; };
+		6DEC84F92276DB50000BCB3C /* Alibaba-PuHuiTi-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alibaba-PuHuiTi-Light.otf"; sourceTree = "<group>"; };
+		6DEC84FA2276DB50000BCB3C /* Alibaba-PuHuiTi-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alibaba-PuHuiTi-Heavy.otf"; sourceTree = "<group>"; };
+		6DEC84FB2276DB50000BCB3C /* Alibaba-PuHuiTi-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alibaba-PuHuiTi-Medium.otf"; sourceTree = "<group>"; };
+		6DEC84FC2276DB50000BCB3C /* Alibaba-PuHuiTi-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alibaba-PuHuiTi-Regular.otf"; sourceTree = "<group>"; };
+		6DEC84FF2276DB50000BCB3C /* AlibabaSans-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AlibabaSans-Light.otf"; sourceTree = "<group>"; };
+		6DEC85002276DB50000BCB3C /* AlibabaSans-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AlibabaSans-Bold.otf"; sourceTree = "<group>"; };
+		6DEC85012276DB50000BCB3C /* AlibabaSans-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AlibabaSans-Regular.otf"; sourceTree = "<group>"; };
+		6DEC85022276DB50000BCB3C /* AlibabaSans-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AlibabaSans-Heavy.otf"; sourceTree = "<group>"; };
+		6DEC85032276DB50000BCB3C /* AlibabaSans-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AlibabaSans-Medium.otf"; sourceTree = "<group>"; };
+		6DEC85042276DB50000BCB3C /* AlibabaSans-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AlibabaSans-Black.otf"; sourceTree = "<group>"; };
+		6DEC85062276DB50000BCB3C /* AlibabaSans-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AlibabaSans-Italic.otf"; sourceTree = "<group>"; };
+		6DEC85072276DB50000BCB3C /* AlibabaSans-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AlibabaSans-BoldItalic.otf"; sourceTree = "<group>"; };
+		6DEC85082276DB50000BCB3C /* AlibabaSans-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AlibabaSans-MediumItalic.otf"; sourceTree = "<group>"; };
+		6DEC85092276DB50000BCB3C /* AlibabaSans-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AlibabaSans-LightItalic.otf"; sourceTree = "<group>"; };
+		6DEC850A2276DB50000BCB3C /* AlibabaSans-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AlibabaSans-HeavyItalic.otf"; sourceTree = "<group>"; };
 		CB3508EA22709B5800EDC557 /* FDBaseApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDBaseApi.h; sourceTree = "<group>"; };
 		CB3508EB22709B5800EDC557 /* FDBaseApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDBaseApi.m; sourceTree = "<group>"; };
 		CB3508F32270A1A100EDC557 /* FDNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDNetworking.h; sourceTree = "<group>"; };
@@ -88,6 +125,8 @@
 				6DC591B822767C5900813DAB /* Pay */,
 				6D74C526227575D500332AAC /* AppDelegate+ThirdPart.h */,
 				6D74C527227575D500332AAC /* AppDelegate+ThirdPart.m */,
+				6D4F0D12227695D6005A9B21 /* AppDelegate+HandleURL.h */,
+				6D4F0D13227695D6005A9B21 /* AppDelegate+HandleURL.m */,
 			);
 			path = ThirdPart;
 			sourceTree = "<group>";
@@ -120,6 +159,70 @@
 				6DC591C122767C5900813DAB /* libWeChatSDK.a */,
 			);
 			path = WeChatPay;
+			sourceTree = "<group>";
+		};
+		6DEC84F42276DB50000BCB3C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6DEC84F52276DB50000BCB3C /* Font */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6DEC84F52276DB50000BCB3C /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				6DEC84F62276DB50000BCB3C /* 版权申明.rtf */,
+				6DEC84F72276DB50000BCB3C /* 阿里巴巴普惠体 */,
+				6DEC84FD2276DB50000BCB3C /* AlibabaSans */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		6DEC84F72276DB50000BCB3C /* 阿里巴巴普惠体 */ = {
+			isa = PBXGroup;
+			children = (
+				6DEC84F82276DB50000BCB3C /* Alibaba-PuHuiTi-Bold.otf */,
+				6DEC84F92276DB50000BCB3C /* Alibaba-PuHuiTi-Light.otf */,
+				6DEC84FA2276DB50000BCB3C /* Alibaba-PuHuiTi-Heavy.otf */,
+				6DEC84FB2276DB50000BCB3C /* Alibaba-PuHuiTi-Medium.otf */,
+				6DEC84FC2276DB50000BCB3C /* Alibaba-PuHuiTi-Regular.otf */,
+			);
+			path = "阿里巴巴普惠体";
+			sourceTree = "<group>";
+		};
+		6DEC84FD2276DB50000BCB3C /* AlibabaSans */ = {
+			isa = PBXGroup;
+			children = (
+				6DEC84FE2276DB50000BCB3C /* AlibabaSans Normal */,
+				6DEC85052276DB50000BCB3C /* AlibabaSans ltalics */,
+			);
+			path = AlibabaSans;
+			sourceTree = "<group>";
+		};
+		6DEC84FE2276DB50000BCB3C /* AlibabaSans Normal */ = {
+			isa = PBXGroup;
+			children = (
+				6DEC84FF2276DB50000BCB3C /* AlibabaSans-Light.otf */,
+				6DEC85002276DB50000BCB3C /* AlibabaSans-Bold.otf */,
+				6DEC85012276DB50000BCB3C /* AlibabaSans-Regular.otf */,
+				6DEC85022276DB50000BCB3C /* AlibabaSans-Heavy.otf */,
+				6DEC85032276DB50000BCB3C /* AlibabaSans-Medium.otf */,
+				6DEC85042276DB50000BCB3C /* AlibabaSans-Black.otf */,
+			);
+			path = "AlibabaSans Normal";
+			sourceTree = "<group>";
+		};
+		6DEC85052276DB50000BCB3C /* AlibabaSans ltalics */ = {
+			isa = PBXGroup;
+			children = (
+				6DEC85062276DB50000BCB3C /* AlibabaSans-Italic.otf */,
+				6DEC85072276DB50000BCB3C /* AlibabaSans-BoldItalic.otf */,
+				6DEC85082276DB50000BCB3C /* AlibabaSans-MediumItalic.otf */,
+				6DEC85092276DB50000BCB3C /* AlibabaSans-LightItalic.otf */,
+				6DEC850A2276DB50000BCB3C /* AlibabaSans-HeavyItalic.otf */,
+			);
+			path = "AlibabaSans ltalics";
 			sourceTree = "<group>";
 		};
 		BEBD1D2AB71059642F79F3CB /* Pods */ = {
@@ -182,6 +285,7 @@
 		CB8C26EB226CBCA90058DAEE /* App */ = {
 			isa = PBXGroup;
 			children = (
+				6DEC84F42276DB50000BCB3C /* Resources */,
 				6D74C51C22755D9D00332AAC /* ThirdPart */,
 				CB3508E822709B3E00EDC557 /* Network */,
 				CB8C26EC226CBCA90058DAEE /* AppDelegate.h */,
@@ -257,11 +361,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DEC85192276DB50000BCB3C /* AlibabaSans-MediumItalic.otf in Resources */,
 				CB8C26F9226CBCAA0058DAEE /* LaunchScreen.storyboard in Resources */,
 				CB8C26F6226CBCAA0058DAEE /* Assets.xcassets in Resources */,
+				6DEC85132276DB50000BCB3C /* AlibabaSans-Regular.otf in Resources */,
+				6DEC850B2276DB50000BCB3C /* 版权申明.rtf in Resources */,
+				6DEC850C2276DB50000BCB3C /* Alibaba-PuHuiTi-Bold.otf in Resources */,
+				6DEC85172276DB50000BCB3C /* AlibabaSans-Italic.otf in Resources */,
+				6DEC850F2276DB50000BCB3C /* Alibaba-PuHuiTi-Medium.otf in Resources */,
+				6DEC85182276DB50000BCB3C /* AlibabaSans-BoldItalic.otf in Resources */,
+				6DEC85122276DB50000BCB3C /* AlibabaSans-Bold.otf in Resources */,
 				6DC591C222767C5900813DAB /* AlipaySDK.bundle in Resources */,
+				6DEC851B2276DB50000BCB3C /* AlibabaSans-HeavyItalic.otf in Resources */,
+				6DEC85112276DB50000BCB3C /* AlibabaSans-Light.otf in Resources */,
+				6DEC850E2276DB50000BCB3C /* Alibaba-PuHuiTi-Heavy.otf in Resources */,
+				6DEC851A2276DB50000BCB3C /* AlibabaSans-LightItalic.otf in Resources */,
 				CB8C26F4226CBCA90058DAEE /* Main.storyboard in Resources */,
+				6DEC850D2276DB50000BCB3C /* Alibaba-PuHuiTi-Light.otf in Resources */,
+				6DEC85162276DB50000BCB3C /* AlibabaSans-Black.otf in Resources */,
+				6DEC85152276DB50000BCB3C /* AlibabaSans-Medium.otf in Resources */,
+				6DEC85102276DB50000BCB3C /* Alibaba-PuHuiTi-Regular.otf in Resources */,
 				6DC591C422767C5900813DAB /* README.txt in Resources */,
+				6DEC85142276DB50000BCB3C /* AlibabaSans-Heavy.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +452,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D4F0D14227695D6005A9B21 /* AppDelegate+HandleURL.m in Sources */,
 				CB6CE2D52271E440006B3DFA /* TestApi.m in Sources */,
 				CB8C26F1226CBCA90058DAEE /* ViewController.m in Sources */,
 				CB3508EC22709B5800EDC557 /* FDBaseApi.m in Sources */,
@@ -487,6 +609,7 @@
 					"$(PROJECT_DIR)/App/ThirdPart/Pay/Alipay",
 				);
 				INFOPLIST_FILE = App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -513,6 +636,7 @@
 					"$(PROJECT_DIR)/App/ThirdPart/Pay/Alipay",
 				);
 				INFOPLIST_FILE = App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
