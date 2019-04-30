@@ -137,7 +137,7 @@
 		6D74C51C22755D9D00332AAC /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
-				6D9DF5AA2277CE7700FB9CFC /* LoginAndShare */,
+				6D9DF5AA2277CE7700FB9CFC /* Social */,
 				6D9DF5A42277CE0900FB9CFC /* Test */,
 				6DC591B822767C5900813DAB /* Pay */,
 				6D74C526227575D500332AAC /* AppDelegate+Launch.h */,
@@ -158,7 +158,7 @@
 			path = Test;
 			sourceTree = "<group>";
 		};
-		6D9DF5AA2277CE7700FB9CFC /* LoginAndShare */ = {
+		6D9DF5AA2277CE7700FB9CFC /* Social */ = {
 			isa = PBXGroup;
 			children = (
 				6D9DF5AB2277CE9400FB9CFC /* FDSocialManager.h */,
@@ -166,7 +166,7 @@
 				6D9DF5B32277EC1D00FB9CFC /* FDSocialModel.h */,
 				6D9DF5B42277EC1D00FB9CFC /* FDSocialModel.m */,
 			);
-			path = LoginAndShare;
+			path = Social;
 			sourceTree = "<group>";
 		};
 		6D9DF5AE2277D79B00FB9CFC /* Category */ = {
