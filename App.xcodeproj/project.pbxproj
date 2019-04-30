@@ -10,6 +10,11 @@
 		4921A4527F9422A2FC869784 /* Pods_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28EDAE5573319FD1924CF5E8 /* Pods_App.framework */; };
 		6D4F0D14227695D6005A9B21 /* AppDelegate+HandleURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4F0D13227695D6005A9B21 /* AppDelegate+HandleURL.m */; };
 		6D74C528227575D500332AAC /* AppDelegate+ThirdPart.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D74C527227575D500332AAC /* AppDelegate+ThirdPart.m */; };
+		6D9DF5A82277CE3C00FB9CFC /* TestLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DF5A62277CE3C00FB9CFC /* TestLoginViewController.m */; };
+		6D9DF5A92277CE3C00FB9CFC /* TestLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D9DF5A72277CE3C00FB9CFC /* TestLoginViewController.xib */; };
+		6D9DF5AD2277CE9400FB9CFC /* FDSocialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DF5AC2277CE9400FB9CFC /* FDSocialManager.m */; };
+		6D9DF5B12277D79B00FB9CFC /* UIViewController+FD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DF5B02277D79B00FB9CFC /* UIViewController+FD.m */; };
+		6D9DF5B52277EC1D00FB9CFC /* FDSocialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DF5B42277EC1D00FB9CFC /* FDSocialModel.m */; };
 		6DC591C222767C5900813DAB /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6DC591BA22767C5900813DAB /* AlipaySDK.bundle */; };
 		6DC591C322767C5900813DAB /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DC591BB22767C5900813DAB /* AlipaySDK.framework */; };
 		6DC591C422767C5900813DAB /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6DC591BF22767C5900813DAB /* README.txt */; };
@@ -50,6 +55,16 @@
 		6D4F0D13227695D6005A9B21 /* AppDelegate+HandleURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+HandleURL.m"; sourceTree = "<group>"; };
 		6D74C526227575D500332AAC /* AppDelegate+ThirdPart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ThirdPart.h"; sourceTree = "<group>"; };
 		6D74C527227575D500332AAC /* AppDelegate+ThirdPart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ThirdPart.m"; sourceTree = "<group>"; };
+		6D9DF5A52277CE3C00FB9CFC /* TestLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestLoginViewController.h; sourceTree = "<group>"; };
+		6D9DF5A62277CE3C00FB9CFC /* TestLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestLoginViewController.m; sourceTree = "<group>"; };
+		6D9DF5A72277CE3C00FB9CFC /* TestLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestLoginViewController.xib; sourceTree = "<group>"; };
+		6D9DF5AB2277CE9400FB9CFC /* FDSocialManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDSocialManager.h; sourceTree = "<group>"; };
+		6D9DF5AC2277CE9400FB9CFC /* FDSocialManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDSocialManager.m; sourceTree = "<group>"; };
+		6D9DF5AF2277D79B00FB9CFC /* UIViewController+FD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FD.h"; sourceTree = "<group>"; };
+		6D9DF5B02277D79B00FB9CFC /* UIViewController+FD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FD.m"; sourceTree = "<group>"; };
+		6D9DF5B22277D7CC00FB9CFC /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		6D9DF5B32277EC1D00FB9CFC /* FDSocialModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDSocialModel.h; sourceTree = "<group>"; };
+		6D9DF5B42277EC1D00FB9CFC /* FDSocialModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDSocialModel.m; sourceTree = "<group>"; };
 		6DC591BA22767C5900813DAB /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
 		6DC591BB22767C5900813DAB /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		6DC591BD22767C5900813DAB /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
@@ -122,6 +137,8 @@
 		6D74C51C22755D9D00332AAC /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				6D9DF5AA2277CE7700FB9CFC /* LoginAndShare */,
+				6D9DF5A42277CE0900FB9CFC /* Test */,
 				6DC591B822767C5900813DAB /* Pay */,
 				6D74C526227575D500332AAC /* AppDelegate+ThirdPart.h */,
 				6D74C527227575D500332AAC /* AppDelegate+ThirdPart.m */,
@@ -129,6 +146,36 @@
 				6D4F0D13227695D6005A9B21 /* AppDelegate+HandleURL.m */,
 			);
 			path = ThirdPart;
+			sourceTree = "<group>";
+		};
+		6D9DF5A42277CE0900FB9CFC /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				6D9DF5A52277CE3C00FB9CFC /* TestLoginViewController.h */,
+				6D9DF5A62277CE3C00FB9CFC /* TestLoginViewController.m */,
+				6D9DF5A72277CE3C00FB9CFC /* TestLoginViewController.xib */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		6D9DF5AA2277CE7700FB9CFC /* LoginAndShare */ = {
+			isa = PBXGroup;
+			children = (
+				6D9DF5AB2277CE9400FB9CFC /* FDSocialManager.h */,
+				6D9DF5AC2277CE9400FB9CFC /* FDSocialManager.m */,
+				6D9DF5B32277EC1D00FB9CFC /* FDSocialModel.h */,
+				6D9DF5B42277EC1D00FB9CFC /* FDSocialModel.m */,
+			);
+			path = LoginAndShare;
+			sourceTree = "<group>";
+		};
+		6D9DF5AE2277D79B00FB9CFC /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				6D9DF5AF2277D79B00FB9CFC /* UIViewController+FD.h */,
+				6D9DF5B02277D79B00FB9CFC /* UIViewController+FD.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		6DC591B822767C5900813DAB /* Pay */ = {
@@ -285,6 +332,7 @@
 		CB8C26EB226CBCA90058DAEE /* App */ = {
 			isa = PBXGroup;
 			children = (
+				6D9DF5AE2277D79B00FB9CFC /* Category */,
 				6DEC84F42276DB50000BCB3C /* Resources */,
 				6D74C51C22755D9D00332AAC /* ThirdPart */,
 				CB3508E822709B3E00EDC557 /* Network */,
@@ -297,6 +345,7 @@
 				CB8C26F7226CBCAA0058DAEE /* LaunchScreen.storyboard */,
 				CB8C26FA226CBCAA0058DAEE /* Info.plist */,
 				CB8C26FB226CBCAA0058DAEE /* main.m */,
+				6D9DF5B22277D7CC00FB9CFC /* PrefixHeader.pch */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -363,6 +412,7 @@
 			files = (
 				6DEC85192276DB50000BCB3C /* AlibabaSans-MediumItalic.otf in Resources */,
 				CB8C26F9226CBCAA0058DAEE /* LaunchScreen.storyboard in Resources */,
+				6D9DF5A92277CE3C00FB9CFC /* TestLoginViewController.xib in Resources */,
 				CB8C26F6226CBCAA0058DAEE /* Assets.xcassets in Resources */,
 				6DEC85132276DB50000BCB3C /* AlibabaSans-Regular.otf in Resources */,
 				6DEC850B2276DB50000BCB3C /* 版权申明.rtf in Resources */,
@@ -454,10 +504,14 @@
 			files = (
 				6D4F0D14227695D6005A9B21 /* AppDelegate+HandleURL.m in Sources */,
 				CB6CE2D52271E440006B3DFA /* TestApi.m in Sources */,
+				6D9DF5AD2277CE9400FB9CFC /* FDSocialManager.m in Sources */,
 				CB8C26F1226CBCA90058DAEE /* ViewController.m in Sources */,
+				6D9DF5B52277EC1D00FB9CFC /* FDSocialModel.m in Sources */,
 				CB3508EC22709B5800EDC557 /* FDBaseApi.m in Sources */,
 				CBC00E4622734B9000E0A471 /* YTKUrlArgumentsFilter.m in Sources */,
+				6D9DF5B12277D79B00FB9CFC /* UIViewController+FD.m in Sources */,
 				6D74C528227575D500332AAC /* AppDelegate+ThirdPart.m in Sources */,
+				6D9DF5A82277CE3C00FB9CFC /* TestLoginViewController.m in Sources */,
 				CB8C26FC226CBCAA0058DAEE /* main.m in Sources */,
 				CB8C26EE226CBCA90058DAEE /* AppDelegate.m in Sources */,
 			);
@@ -608,6 +662,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/App/ThirdPart/Pay/Alipay",
 				);
+				GCC_PREFIX_HEADER = $SRCROOT/App/PrefixHeader.pch;
 				INFOPLIST_FILE = App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -635,6 +690,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/App/ThirdPart/Pay/Alipay",
 				);
+				GCC_PREFIX_HEADER = $SRCROOT/App/PrefixHeader.pch;
 				INFOPLIST_FILE = App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (

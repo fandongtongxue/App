@@ -16,10 +16,15 @@
 
 @implementation AppDelegate (ThirdPart)
 
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
+    [self registerApp];
+    return YES;
+}
+
 - (void)registerApp{
     //友盟
     //开发者需要显式的调用此函数，日志系统才能工作
-    [UMConfigure setLogEnabled:YES];
+//    [UMConfigure setLogEnabled:YES];
     [UMConfigure initWithAppkey:@"56e6b3e667e58e1b7700012b" channel:@"App Store"];
     /*
      设置微信的appKey和appSecret

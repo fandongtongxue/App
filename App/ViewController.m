@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "TestApi.h"
+#import "TestLoginViewController.h"
 
 @interface ViewController ()
 
@@ -18,6 +19,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self performSelector:@selector(testLogin) withObject:nil afterDelay:3];
+}
+
+- (void)testLogin{
+    TestLoginViewController *testVC = [[TestLoginViewController alloc]initWithNibName:NSStringFromClass([TestLoginViewController class]) bundle:[NSBundle mainBundle]];
+    [self presentViewController:testVC animated:YES completion:nil];
 }
 
 @end
