@@ -34,6 +34,15 @@
         NSLog(@"");
     }];
 }
+- (IBAction)weiboShareBtnAction:(id)sender {
+    
+}
+- (IBAction)qqShareBtnAction:(id)sender {
+    
+}
+- (IBAction)wechatShareBtnAction:(id)sender {
+    
+}
 
 /*
 #pragma mark - Navigation

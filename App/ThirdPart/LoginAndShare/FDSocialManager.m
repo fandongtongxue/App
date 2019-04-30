@@ -52,4 +52,23 @@
     }];
 }
 
+- (void)share:(FDSocialManagerLoginType)type object:(FDSocialShareModel *)model currentViewController:(UIViewController *)viewController completion:(FDSocialManagerCompletionHandler)completion{
+    UMSocialMessageObject *object = [[UMSocialMessageObject alloc]init];
+    [[UMSocialManager defaultManager] shareToPlatform:type messageObject:object currentViewController:viewController completion:^(id result, NSError *error) {
+        NSString *message = nil;
+        if (error) {
+            message = [NSString stringWithFormat:@"分享失败:%@",error];
+        }else{
+            if ([result isKindOfClass:[UMSocialShareResponse class]]) {
+                UMSocialShareResponse *resp = result;
+                if (completion) {
+                    completion()
+                }
+            }else{
+                UMSocialLogInfo(@"response data is %@",data);
+            }
+        }
+    }];
+}
+
 @end

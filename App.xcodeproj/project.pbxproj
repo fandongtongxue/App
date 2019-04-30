@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4921A4527F9422A2FC869784 /* Pods_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28EDAE5573319FD1924CF5E8 /* Pods_App.framework */; };
 		6D4F0D14227695D6005A9B21 /* AppDelegate+HandleURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4F0D13227695D6005A9B21 /* AppDelegate+HandleURL.m */; };
-		6D74C528227575D500332AAC /* AppDelegate+ThirdPart.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D74C527227575D500332AAC /* AppDelegate+ThirdPart.m */; };
+		6D74C528227575D500332AAC /* AppDelegate+Launch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D74C527227575D500332AAC /* AppDelegate+Launch.m */; };
 		6D9DF5A82277CE3C00FB9CFC /* TestLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DF5A62277CE3C00FB9CFC /* TestLoginViewController.m */; };
 		6D9DF5A92277CE3C00FB9CFC /* TestLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D9DF5A72277CE3C00FB9CFC /* TestLoginViewController.xib */; };
 		6D9DF5AD2277CE9400FB9CFC /* FDSocialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DF5AC2277CE9400FB9CFC /* FDSocialManager.m */; };
@@ -53,8 +53,8 @@
 		28EDAE5573319FD1924CF5E8 /* Pods_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D4F0D12227695D6005A9B21 /* AppDelegate+HandleURL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+HandleURL.h"; sourceTree = "<group>"; };
 		6D4F0D13227695D6005A9B21 /* AppDelegate+HandleURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+HandleURL.m"; sourceTree = "<group>"; };
-		6D74C526227575D500332AAC /* AppDelegate+ThirdPart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ThirdPart.h"; sourceTree = "<group>"; };
-		6D74C527227575D500332AAC /* AppDelegate+ThirdPart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ThirdPart.m"; sourceTree = "<group>"; };
+		6D74C526227575D500332AAC /* AppDelegate+Launch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Launch.h"; sourceTree = "<group>"; };
+		6D74C527227575D500332AAC /* AppDelegate+Launch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Launch.m"; sourceTree = "<group>"; };
 		6D9DF5A52277CE3C00FB9CFC /* TestLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestLoginViewController.h; sourceTree = "<group>"; };
 		6D9DF5A62277CE3C00FB9CFC /* TestLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestLoginViewController.m; sourceTree = "<group>"; };
 		6D9DF5A72277CE3C00FB9CFC /* TestLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestLoginViewController.xib; sourceTree = "<group>"; };
@@ -140,8 +140,8 @@
 				6D9DF5AA2277CE7700FB9CFC /* LoginAndShare */,
 				6D9DF5A42277CE0900FB9CFC /* Test */,
 				6DC591B822767C5900813DAB /* Pay */,
-				6D74C526227575D500332AAC /* AppDelegate+ThirdPart.h */,
-				6D74C527227575D500332AAC /* AppDelegate+ThirdPart.m */,
+				6D74C526227575D500332AAC /* AppDelegate+Launch.h */,
+				6D74C527227575D500332AAC /* AppDelegate+Launch.m */,
 				6D4F0D12227695D6005A9B21 /* AppDelegate+HandleURL.h */,
 				6D4F0D13227695D6005A9B21 /* AppDelegate+HandleURL.m */,
 			);
@@ -510,7 +510,7 @@
 				CB3508EC22709B5800EDC557 /* FDBaseApi.m in Sources */,
 				CBC00E4622734B9000E0A471 /* YTKUrlArgumentsFilter.m in Sources */,
 				6D9DF5B12277D79B00FB9CFC /* UIViewController+FD.m in Sources */,
-				6D74C528227575D500332AAC /* AppDelegate+ThirdPart.m in Sources */,
+				6D74C528227575D500332AAC /* AppDelegate+Launch.m in Sources */,
 				6D9DF5A82277CE3C00FB9CFC /* TestLoginViewController.m in Sources */,
 				CB8C26FC226CBCAA0058DAEE /* main.m in Sources */,
 				CB8C26EE226CBCA90058DAEE /* AppDelegate.m in Sources */,

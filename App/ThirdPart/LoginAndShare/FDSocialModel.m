@@ -15,3 +15,7 @@
 @implementation FDSocialAuthModel
 
 @end
+
+@implementation FDSocialShareModel
+
+@end

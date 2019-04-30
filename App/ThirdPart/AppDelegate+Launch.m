@@ -6,7 +6,7 @@
 //  Copyright © 2019年 范东. All rights reserved.
 //
 
-#import "AppDelegate+ThirdPart.h"
+#import "AppDelegate+Launch.h"
 
 #import <UMCommon/UMCommon.h>
 #import <UMShare/UMShare.h>

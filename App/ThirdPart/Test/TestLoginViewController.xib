@@ -44,6 +44,33 @@
                         <action selector="wechatLoginBtnAction:" destination="-1" eventType="touchUpInside" id="dr6-Hy-BhC"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWm-0u-uRw">
+                    <rect key="frame" x="141" y="280" width="92" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="新浪微博分享"/>
+                    <connections>
+                        <action selector="wechatLoginBtnAction:" destination="-1" eventType="touchUpInside" id="KoA-jN-e6W"/>
+                        <action selector="weiboShareBtnAction:" destination="-1" eventType="touchUpInside" id="9hL-SJ-TOy"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9K-RS-5qe">
+                    <rect key="frame" x="160" y="318" width="54" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="QQ分享"/>
+                    <connections>
+                        <action selector="qqShareBtnAction:" destination="-1" eventType="touchUpInside" id="kbX-hX-SK6"/>
+                        <action selector="wechatLoginBtnAction:" destination="-1" eventType="touchUpInside" id="u68-JC-hfx"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gB-F1-mYP">
+                    <rect key="frame" x="156" y="356" width="62" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="微信分享"/>
+                    <connections>
+                        <action selector="wechatLoginBtnAction:" destination="-1" eventType="touchUpInside" id="2cQ-Yi-t2Y"/>
+                        <action selector="wechatShareBtnAction:" destination="-1" eventType="touchUpInside" id="vR4-O0-qeW"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
