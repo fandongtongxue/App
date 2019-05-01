@@ -14,11 +14,46 @@
 
 #import <Bugly/Bugly.h>
 
+#import "FDTabBarController.h"
+#import "FDNavigationController.h"
+#import "HomeViewController.h"
+
 @implementation AppDelegate (ThirdPart)
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
+    
+    // QMUIConsole 默认只在 DEBUG 下会显示，作为 Demo，改为不管什么环境都允许显示
+    [QMUIConsole sharedInstance].canShow = YES;
+    
+    // QD自定义的全局样式渲染
+    [QDCommonUI renderGlobalAppearances];
+    
+    // 预加载 QQ 表情，避免第一次使用时卡顿
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [QDUIHelper qmuiEmotions];
+    });
+    
+    // 界面
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self createTabBarController];
+    
+    // 启动动画
+    [self startLaunchingAnimation];
+    
     [self registerApp];
     return YES;
+}
+
+- (void)createTabBarController{
+    FDTabBarController *tabBarVC = [[FDTabBarController alloc]init];
+    
+    HomeViewController *homeVC = [[HomeViewController alloc]init];
+    FDNavigationController *homeNav = [[FDNavigationController alloc]initWithRootViewController:homeVC];
+    homeNav.tabBarItem = [QDUIHelper tabBarItemWithTitle:NSLocalizedString(@"Home.Title",@"主页") image:[UIImageMake(@"tab_home_normal") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"tab_home_selected") tag:0];
+    AddAccessibilityHint(homeNav.tabBarItem, @"Home.Title");
+    tabBarVC.viewControllers = @[homeNav];
+    
+    self.window.rootViewController = tabBarVC;
 }
 
 - (void)registerApp{
@@ -51,6 +86,46 @@
     
     //Bugly
     [Bugly startWithAppId:@"9f73163e66"];
+}
+
+- (void)startLaunchingAnimation {
+    UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
+    UIView *launchScreenView = [[NSBundle mainBundle] loadNibNamed:@"LaunchScreen" owner:self options:nil].firstObject;
+    launchScreenView.frame = window.bounds;
+    [window addSubview:launchScreenView];
+    
+    UIImageView *backgroundImageView = launchScreenView.subviews[0];
+    backgroundImageView.clipsToBounds = YES;
+    
+    UIImageView *logoImageView = launchScreenView.subviews[1];
+    UILabel *copyrightLabel = launchScreenView.subviews.lastObject;
+    
+    UIView *maskView = [[UIView alloc] initWithFrame:launchScreenView.bounds];
+    maskView.backgroundColor = UIColorWhite;
+    [launchScreenView insertSubview:maskView belowSubview:backgroundImageView];
+    
+    [launchScreenView layoutIfNeeded];
+    
+    
+    [launchScreenView.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj.identifier isEqualToString:@"bottomAlign"]) {
+            obj.active = NO;
+            [NSLayoutConstraint constraintWithItem:backgroundImageView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:launchScreenView attribute:NSLayoutAttributeTop multiplier:1 constant:NavigationContentTop].active = YES;
+            *stop = YES;
+        }
+    }];
+    
+    [UIView animateWithDuration:.15 delay:0.9 options:QMUIViewAnimationOptionsCurveOut animations:^{
+        [launchScreenView layoutIfNeeded];
+        logoImageView.alpha = 0.0;
+        copyrightLabel.alpha = 0;
+    } completion:nil];
+    [UIView animateWithDuration:1.2 delay:0.9 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        maskView.alpha = 0;
+        backgroundImageView.alpha = 0;
+    } completion:^(BOOL finished) {
+        [launchScreenView removeFromSuperview];
+    }];
 }
 
 @end

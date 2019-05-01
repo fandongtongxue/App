@@ -1,25 +1,27 @@
 //
-//  TabBarController.m
+//  BaseViewController.m
 //  App
 //
 //  Created by 范东 on 2019/5/1.
 //  Copyright © 2019 范东. All rights reserved.
 //
 
-#import "FDTabBarController.h"
+#import "FDViewController.h"
 
-@interface FDTabBarController ()
+@interface FDViewController ()
 
 @end
 
-@implementation FDTabBarController
+@implementation FDViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 
-
+- (void)dealloc{
+    NSLog(@"%s",__func__);
+}
 
 /*
 #pragma mark - Navigation
