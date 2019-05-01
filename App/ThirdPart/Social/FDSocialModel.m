@@ -19,3 +19,7 @@
 @implementation FDSocialShareModel
 
 @end
+
+@implementation FDSocialShareResponseModel
+
+@end

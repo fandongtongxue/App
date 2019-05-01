@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@class FDSocialAuthModel;
+@class FDSocialModel;
+@class FDSocialShareModel;
 
-typedef void (^FDSocialManagerCompletionHandler)(FDSocialAuthModel *model, NSString *errorMsg);
+typedef void (^FDSocialManagerCompletionHandler)(FDSocialModel *model, NSString *errorMsg);
 
 typedef NS_ENUM(NSInteger, FDSocialManagerLoginType) {
     FDSocialManagerLoginTypeWeibo      = 0,
@@ -25,6 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (FDSocialManager *)defaultManager;
 
 - (void)login:(FDSocialManagerLoginType)type currentViewController:(UIViewController *)viewController completion:(FDSocialManagerCompletionHandler)completion;
+
+- (void)share:(FDSocialManagerLoginType)type object:(FDSocialShareModel *)model currentViewController:(UIViewController *)viewController completion:(FDSocialManagerCompletionHandler)completion;
 
 @end
 

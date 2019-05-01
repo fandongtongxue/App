@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "TestApi.h"
-#import "TestLoginViewController.h"
+#import "TestSocialViewController.h"
 
 @interface ViewController ()
 
@@ -23,7 +23,7 @@
 }
 
 - (void)testLogin{
-    TestLoginViewController *testVC = [[TestLoginViewController alloc]initWithNibName:NSStringFromClass([TestLoginViewController class]) bundle:[NSBundle mainBundle]];
+    TestSocialViewController *testVC = [[TestSocialViewController alloc]initWithNibName:NSStringFromClass([TestSocialViewController class]) bundle:[NSBundle mainBundle]];
     [self presentViewController:testVC animated:YES completion:nil];
 }
 

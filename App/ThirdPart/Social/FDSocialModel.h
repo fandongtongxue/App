@@ -35,6 +35,34 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FDSocialShareModel : NSObject
 
+/**
+ * 标题
+ * @note 标题的长度依各个平台的要求而定
+ */
+@property (nonatomic, copy) NSString *title;
+
+/**
+ * 描述
+ * @note 描述内容的长度依各个平台的要求而定
+ */
+@property (nonatomic, copy) NSString *descr;
+
+/**
+ * 缩略图 UIImage或者NSData类型或者NSString类型（图片url）
+ */
+@property (nonatomic, strong) id thumbImage;
+
+/** 网页的url地址
+ * @note 不能为空且长度不能超过10K
+ */
+@property (nonatomic, retain) NSString *webpageUrl;
+
+@end
+
+@interface FDSocialShareResponseModel : FDSocialModel
+
+@property (nonatomic, copy) NSString  *message;
+
 @end
 
 NS_ASSUME_NONNULL_END
