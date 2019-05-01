@@ -39,8 +39,9 @@
 		6DEC851B2276DB50000BCB3C /* AlibabaSans-HeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC850A2276DB50000BCB3C /* AlibabaSans-HeavyItalic.otf */; };
 		CB3508EC22709B5800EDC557 /* FDBaseApi.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3508EB22709B5800EDC557 /* FDBaseApi.m */; };
 		CB6CE2D52271E440006B3DFA /* TestApi.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6CE2D42271E440006B3DFA /* TestApi.m */; };
+		CB6E67762279AA0C00D3788E /* FDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6E67752279AA0C00D3788E /* FDTabBarController.m */; };
+		CB6E677A2279AAEB00D3788E /* FDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6E67792279AAEB00D3788E /* FDNavigationController.m */; };
 		CB8C26EE226CBCA90058DAEE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8C26ED226CBCA90058DAEE /* AppDelegate.m */; };
-		CB8C26F1226CBCA90058DAEE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8C26F0226CBCA90058DAEE /* ViewController.m */; };
 		CB8C26F4226CBCA90058DAEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB8C26F2226CBCA90058DAEE /* Main.storyboard */; };
 		CB8C26F6226CBCAA0058DAEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB8C26F5226CBCAA0058DAEE /* Assets.xcassets */; };
 		CB8C26F9226CBCAA0058DAEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB8C26F7226CBCAA0058DAEE /* LaunchScreen.storyboard */; };
@@ -95,11 +96,13 @@
 		CB3508F32270A1A100EDC557 /* FDNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDNetworking.h; sourceTree = "<group>"; };
 		CB6CE2D32271E440006B3DFA /* TestApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestApi.h; sourceTree = "<group>"; };
 		CB6CE2D42271E440006B3DFA /* TestApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestApi.m; sourceTree = "<group>"; };
+		CB6E67742279AA0C00D3788E /* FDTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDTabBarController.h; sourceTree = "<group>"; };
+		CB6E67752279AA0C00D3788E /* FDTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDTabBarController.m; sourceTree = "<group>"; };
+		CB6E67782279AAEB00D3788E /* FDNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDNavigationController.h; sourceTree = "<group>"; };
+		CB6E67792279AAEB00D3788E /* FDNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDNavigationController.m; sourceTree = "<group>"; };
 		CB8C26E9226CBCA90058DAEE /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB8C26EC226CBCA90058DAEE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CB8C26ED226CBCA90058DAEE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CB8C26EF226CBCA90058DAEE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CB8C26F0226CBCA90058DAEE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CB8C26F3226CBCA90058DAEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CB8C26F5226CBCAA0058DAEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB8C26F8226CBCAA0058DAEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -311,6 +314,33 @@
 			path = Test;
 			sourceTree = "<group>";
 		};
+		CB6E67712279A9BD00D3788E /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				CB6E67772279AAC300D3788E /* Nav */,
+				CB6E67732279A9F500D3788E /* Tab */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		CB6E67732279A9F500D3788E /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				CB6E67742279AA0C00D3788E /* FDTabBarController.h */,
+				CB6E67752279AA0C00D3788E /* FDTabBarController.m */,
+			);
+			path = Tab;
+			sourceTree = "<group>";
+		};
+		CB6E67772279AAC300D3788E /* Nav */ = {
+			isa = PBXGroup;
+			children = (
+				CB6E67782279AAEB00D3788E /* FDNavigationController.h */,
+				CB6E67792279AAEB00D3788E /* FDNavigationController.m */,
+			);
+			path = Nav;
+			sourceTree = "<group>";
+		};
 		CB8C26E0226CBCA90058DAEE = {
 			isa = PBXGroup;
 			children = (
@@ -332,14 +362,13 @@
 		CB8C26EB226CBCA90058DAEE /* App */ = {
 			isa = PBXGroup;
 			children = (
+				CB6E67712279A9BD00D3788E /* Modules */,
 				6D9DF5AE2277D79B00FB9CFC /* Category */,
 				6DEC84F42276DB50000BCB3C /* Resources */,
 				6D74C51C22755D9D00332AAC /* ThirdPart */,
 				CB3508E822709B3E00EDC557 /* Network */,
 				CB8C26EC226CBCA90058DAEE /* AppDelegate.h */,
 				CB8C26ED226CBCA90058DAEE /* AppDelegate.m */,
-				CB8C26EF226CBCA90058DAEE /* ViewController.h */,
-				CB8C26F0226CBCA90058DAEE /* ViewController.m */,
 				CB8C26F2226CBCA90058DAEE /* Main.storyboard */,
 				CB8C26F5226CBCAA0058DAEE /* Assets.xcassets */,
 				CB8C26F7226CBCAA0058DAEE /* LaunchScreen.storyboard */,
@@ -504,10 +533,11 @@
 			files = (
 				6D4F0D14227695D6005A9B21 /* AppDelegate+HandleURL.m in Sources */,
 				CB6CE2D52271E440006B3DFA /* TestApi.m in Sources */,
+				CB6E67762279AA0C00D3788E /* FDTabBarController.m in Sources */,
 				6D9DF5AD2277CE9400FB9CFC /* FDSocialManager.m in Sources */,
-				CB8C26F1226CBCA90058DAEE /* ViewController.m in Sources */,
 				6D9DF5B52277EC1D00FB9CFC /* FDSocialModel.m in Sources */,
 				CB3508EC22709B5800EDC557 /* FDBaseApi.m in Sources */,
+				CB6E677A2279AAEB00D3788E /* FDNavigationController.m in Sources */,
 				CBC00E4622734B9000E0A471 /* YTKUrlArgumentsFilter.m in Sources */,
 				6D9DF5B12277D79B00FB9CFC /* UIViewController+FD.m in Sources */,
 				6D74C528227575D500332AAC /* AppDelegate+Launch.m in Sources */,
