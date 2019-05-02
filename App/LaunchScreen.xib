@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_img_background" translatesAutoresizingMaskIntoConstraints="NO" id="OLP-C5-SqN">
-                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_img_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Lc1-8a-wo5">
                     <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
@@ -31,9 +31,9 @@
             <constraints>
                 <constraint firstItem="OLP-C5-SqN" firstAttribute="leading" secondItem="2Ip-KZ-WYH" secondAttribute="leading" id="aZJ-WT-N8i"/>
                 <constraint firstItem="Lc1-8a-wo5" firstAttribute="centerX" secondItem="zg8-Aq-cRf" secondAttribute="centerX" id="c3v-mU-z7K"/>
-                <constraint firstItem="2Ip-KZ-WYH" firstAttribute="bottom" secondItem="OLP-C5-SqN" secondAttribute="bottom" id="gUv-xr-tGK"/>
+                <constraint firstAttribute="bottom" secondItem="OLP-C5-SqN" secondAttribute="bottom" id="gUv-xr-tGK"/>
                 <constraint firstItem="Lc1-8a-wo5" firstAttribute="centerY" secondItem="zg8-Aq-cRf" secondAttribute="centerY" id="iUM-fe-08m"/>
-                <constraint firstItem="OLP-C5-SqN" firstAttribute="top" secondItem="2Ip-KZ-WYH" secondAttribute="top" id="j1g-mA-rCS"/>
+                <constraint firstItem="OLP-C5-SqN" firstAttribute="top" secondItem="zg8-Aq-cRf" secondAttribute="top" id="j1g-mA-rCS"/>
                 <constraint firstItem="2Ip-KZ-WYH" firstAttribute="trailing" secondItem="OLP-C5-SqN" secondAttribute="trailing" id="yV4-b1-5gU"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="2Ip-KZ-WYH"/>
@@ -42,6 +42,6 @@
     </objects>
     <resources>
         <image name="launch_img_background" width="375" height="667"/>
-        <image name="launch_img_logo" width="512" height="512"/>
+        <image name="launch_img_logo" width="1024" height="1024"/>
     </resources>
 </document>
