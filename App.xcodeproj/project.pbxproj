@@ -65,6 +65,7 @@
 		CB8C26F6226CBCAA0058DAEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB8C26F5226CBCAA0058DAEE /* Assets.xcassets */; };
 		CB8C26FC226CBCAA0058DAEE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8C26FB226CBCAA0058DAEE /* main.m */; };
 		CB8EA0DD227AE453004177D4 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8EA0DC227AE453004177D4 /* SearchViewController.m */; };
+		CB8EA0E1227B1A2B004177D4 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8EA0E0227B1A2B004177D4 /* MineViewController.m */; };
 		CBC00E4622734B9000E0A471 /* YTKUrlArgumentsFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC00E4422734B9000E0A471 /* YTKUrlArgumentsFilter.m */; };
 /* End PBXBuildFile section */
 
@@ -166,6 +167,8 @@
 		CB8C26FB226CBCAA0058DAEE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CB8EA0DB227AE453004177D4 /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		CB8EA0DC227AE453004177D4 /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		CB8EA0DF227B1A2B004177D4 /* MineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		CB8EA0E0227B1A2B004177D4 /* MineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		CBC00E4422734B9000E0A471 /* YTKUrlArgumentsFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTKUrlArgumentsFilter.m; sourceTree = "<group>"; };
 		CBC00E4522734B9000E0A471 /* YTKUrlArgumentsFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTKUrlArgumentsFilter.h; sourceTree = "<group>"; };
 		D8F4FE7B423BC276DC0C84C5 /* Pods-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.release.xcconfig"; path = "Target Support Files/Pods-App/Pods-App.release.xcconfig"; sourceTree = "<group>"; };
@@ -375,6 +378,7 @@
 		CB6E67712279A9BD00D3788E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CB8EA0DE227B1A02004177D4 /* Mine */,
 				CB6E67BE2279D86F00D3788E /* Home */,
 				CB6E677C2279CAF900D3788E /* Base */,
 				CB6E67772279AAC300D3788E /* Nav */,
@@ -521,6 +525,15 @@
 				CB6E67C82279EECC00D3788E /* Localizable.strings */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		CB8EA0DE227B1A02004177D4 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				CB8EA0DF227B1A2B004177D4 /* MineViewController.h */,
+				CB8EA0E0227B1A2B004177D4 /* MineViewController.m */,
+			);
+			path = Mine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -700,6 +713,7 @@
 				CB6E67B22279CF7B00D3788E /* QDUIHelper.m in Sources */,
 				6D9DF5B12277D79B00FB9CFC /* UIViewController+FD.m in Sources */,
 				CB6E67B72279CF7B00D3788E /* QDCommonGridViewController.m in Sources */,
+				CB8EA0E1227B1A2B004177D4 /* MineViewController.m in Sources */,
 				CB6E67B52279CF7B00D3788E /* QDCommonGroupListViewController.m in Sources */,
 				CB6E67C12279D8D900D3788E /* HomeViewController.m in Sources */,
 				6D74C528227575D500332AAC /* AppDelegate+Launch.m in Sources */,

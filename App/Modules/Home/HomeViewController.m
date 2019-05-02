@@ -24,13 +24,12 @@
 - (void)setupNavigationItems{
     [super setupNavigationItems];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(searchItemAction:)];
-    AddAccessibilityLabel(self.navigationItem.leftBarButtonItem, NSLocalizedString(@"Home.Title", @"首页"));
+    AddAccessibilityLabel(self.navigationItem.leftBarButtonItem, NSLocalizedString(@"Search.Title", @"搜索"));
 }
 
 - (void)searchItemAction:(UIBarButtonItem *)item{
     SearchViewController *searchVC = [[SearchViewController alloc]init];
-    searchVC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController qmui_pushViewController:searchVC animated:YES completion:nil];
+    [self.navigationController pushViewController:searchVC animated:YES];
 }
 
 /*

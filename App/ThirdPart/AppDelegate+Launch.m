@@ -17,6 +17,7 @@
 #import "FDTabBarController.h"
 #import "FDNavigationController.h"
 #import "HomeViewController.h"
+#import "MineViewController.h"
 
 @implementation AppDelegate (ThirdPart)
 
@@ -48,10 +49,17 @@
     FDTabBarController *tabBarVC = [[FDTabBarController alloc]init];
     
     HomeViewController *homeVC = [[HomeViewController alloc]init];
+    homeVC.hidesBottomBarWhenPushed = NO;
     FDNavigationController *homeNav = [[FDNavigationController alloc]initWithRootViewController:homeVC];
     homeNav.tabBarItem = [QDUIHelper tabBarItemWithTitle:NSLocalizedString(@"Home.Title",@"主页") image:[UIImageMake(@"tab_home_normal") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"tab_home_selected") tag:0];
     AddAccessibilityHint(homeNav.tabBarItem, @"Home.Title");
-    tabBarVC.viewControllers = @[homeNav];
+    
+    MineViewController *mineVC = [[MineViewController alloc]init];
+    mineVC.hidesBottomBarWhenPushed = NO;
+    FDNavigationController *mineNav = [[FDNavigationController alloc]initWithRootViewController:mineVC];
+    mineNav.tabBarItem = [QDUIHelper tabBarItemWithTitle:NSLocalizedString(@"Mine.Title",@"我的") image:[UIImageMake(@"tab_mine_normal") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"tab_mine_selected") tag:0];
+    AddAccessibilityHint(mineNav.tabBarItem, @"Mine.Title");
+    tabBarVC.viewControllers = @[homeNav,mineNav];
     
     self.window.rootViewController = tabBarVC;
 }
