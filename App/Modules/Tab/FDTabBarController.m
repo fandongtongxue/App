@@ -7,8 +7,9 @@
 //
 
 #import "FDTabBarController.h"
+#import "LoginViewController.h"
 
-@interface FDTabBarController ()
+@interface FDTabBarController ()<UITabBarControllerDelegate>
 
 @end
 
@@ -17,6 +18,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.delegate = self;
+}
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
+    NSInteger index = [self.viewControllers indexOfObject:viewController];
+    if (index != 0) {
+        LoginViewController *loginVC = [[LoginViewController alloc]init];
+        [self presentViewController:loginVC animated:YES completion:nil];
+        return NO;
+    }
+    return YES;
 }
 
 

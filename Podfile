@@ -44,5 +44,8 @@ target 'App' do
   pod 'KLSwitch'
   # Crash
   pod 'Bugly'
-
+  # Player
+  pod 'ZFPlayer'
+  pod 'ZFPlayer/ControlView'
+  pod 'ZFPlayer/AVPlayer'
 end

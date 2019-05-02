@@ -66,6 +66,7 @@
 		CB8C26FC226CBCAA0058DAEE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8C26FB226CBCAA0058DAEE /* main.m */; };
 		CB8EA0DD227AE453004177D4 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8EA0DC227AE453004177D4 /* SearchViewController.m */; };
 		CB8EA0E1227B1A2B004177D4 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8EA0E0227B1A2B004177D4 /* MineViewController.m */; };
+		CB8EA0E4227B2460004177D4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8EA0E3227B2460004177D4 /* LoginViewController.m */; };
 		CBC00E4622734B9000E0A471 /* YTKUrlArgumentsFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC00E4422734B9000E0A471 /* YTKUrlArgumentsFilter.m */; };
 /* End PBXBuildFile section */
 
@@ -169,6 +170,8 @@
 		CB8EA0DC227AE453004177D4 /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		CB8EA0DF227B1A2B004177D4 /* MineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		CB8EA0E0227B1A2B004177D4 /* MineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		CB8EA0E2227B2460004177D4 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		CB8EA0E3227B2460004177D4 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		CBC00E4422734B9000E0A471 /* YTKUrlArgumentsFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTKUrlArgumentsFilter.m; sourceTree = "<group>"; };
 		CBC00E4522734B9000E0A471 /* YTKUrlArgumentsFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTKUrlArgumentsFilter.h; sourceTree = "<group>"; };
 		D8F4FE7B423BC276DC0C84C5 /* Pods-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.release.xcconfig"; path = "Target Support Files/Pods-App/Pods-App.release.xcconfig"; sourceTree = "<group>"; };
@@ -532,6 +535,8 @@
 			children = (
 				CB8EA0DF227B1A2B004177D4 /* MineViewController.h */,
 				CB8EA0E0227B1A2B004177D4 /* MineViewController.m */,
+				CB8EA0E2227B2460004177D4 /* LoginViewController.h */,
+				CB8EA0E3227B2460004177D4 /* LoginViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -710,6 +715,7 @@
 				CB6E67B02279CF7B00D3788E /* QMUIConfigurationTemplateGrapefruit.m in Sources */,
 				CB6E67B42279CF7B00D3788E /* QDCommonUI.m in Sources */,
 				CBC00E4622734B9000E0A471 /* YTKUrlArgumentsFilter.m in Sources */,
+				CB8EA0E4227B2460004177D4 /* LoginViewController.m in Sources */,
 				CB6E67B22279CF7B00D3788E /* QDUIHelper.m in Sources */,
 				6D9DF5B12277D79B00FB9CFC /* UIViewController+FD.m in Sources */,
 				CB6E67B72279CF7B00D3788E /* QDCommonGridViewController.m in Sources */,

@@ -18,6 +18,7 @@
 #import "FDNavigationController.h"
 #import "HomeViewController.h"
 #import "MineViewController.h"
+#import "LoginViewController.h"
 
 @implementation AppDelegate (ThirdPart)
 
@@ -60,7 +61,7 @@
     mineNav.tabBarItem = [QDUIHelper tabBarItemWithTitle:NSLocalizedString(@"Mine.Title",@"我的") image:[UIImageMake(@"tab_mine_normal") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"tab_mine_selected") tag:0];
     AddAccessibilityHint(mineNav.tabBarItem, @"Mine.Title");
     tabBarVC.viewControllers = @[homeNav,mineNav];
-    
+        
     self.window.rootViewController = tabBarVC;
 }
 
