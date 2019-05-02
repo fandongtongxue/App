@@ -64,6 +64,7 @@
 		CB8C26EE226CBCA90058DAEE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8C26ED226CBCA90058DAEE /* AppDelegate.m */; };
 		CB8C26F6226CBCAA0058DAEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB8C26F5226CBCAA0058DAEE /* Assets.xcassets */; };
 		CB8C26FC226CBCAA0058DAEE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8C26FB226CBCAA0058DAEE /* main.m */; };
+		CB8EA0DD227AE453004177D4 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8EA0DC227AE453004177D4 /* SearchViewController.m */; };
 		CBC00E4622734B9000E0A471 /* YTKUrlArgumentsFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC00E4422734B9000E0A471 /* YTKUrlArgumentsFilter.m */; };
 /* End PBXBuildFile section */
 
@@ -163,6 +164,8 @@
 		CB8C26F5226CBCAA0058DAEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB8C26FA226CBCAA0058DAEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB8C26FB226CBCAA0058DAEE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CB8EA0DB227AE453004177D4 /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		CB8EA0DC227AE453004177D4 /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		CBC00E4422734B9000E0A471 /* YTKUrlArgumentsFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTKUrlArgumentsFilter.m; sourceTree = "<group>"; };
 		CBC00E4522734B9000E0A471 /* YTKUrlArgumentsFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTKUrlArgumentsFilter.h; sourceTree = "<group>"; };
 		D8F4FE7B423BC276DC0C84C5 /* Pods-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.release.xcconfig"; path = "Target Support Files/Pods-App/Pods-App.release.xcconfig"; sourceTree = "<group>"; };
@@ -474,6 +477,8 @@
 			children = (
 				CB6E67BF2279D8D900D3788E /* HomeViewController.h */,
 				CB6E67C02279D8D900D3788E /* HomeViewController.m */,
+				CB8EA0DB227AE453004177D4 /* SearchViewController.h */,
+				CB8EA0DC227AE453004177D4 /* SearchViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -683,6 +688,7 @@
 				6D9DF5AD2277CE9400FB9CFC /* FDSocialManager.m in Sources */,
 				6D9DF5B52277EC1D00FB9CFC /* FDSocialModel.m in Sources */,
 				CB6E67822279CC6D00D3788E /* FDViewController.m in Sources */,
+				CB8EA0DD227AE453004177D4 /* SearchViewController.m in Sources */,
 				CB6E67AF2279CF7B00D3788E /* QMUIConfigurationTemplateGrass.m in Sources */,
 				CB3508EC22709B5800EDC557 /* FDBaseApi.m in Sources */,
 				CB6E67BB2279CF7B00D3788E /* QDCommonTableViewController.m in Sources */,

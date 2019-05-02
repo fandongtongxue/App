@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "SearchViewController.h"
 
 @interface HomeViewController ()
 
@@ -27,7 +28,9 @@
 }
 
 - (void)searchItemAction:(UIBarButtonItem *)item{
-    
+    SearchViewController *searchVC = [[SearchViewController alloc]init];
+    searchVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController qmui_pushViewController:searchVC animated:YES completion:nil];
 }
 
 /*
