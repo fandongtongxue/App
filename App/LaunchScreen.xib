@@ -31,7 +31,7 @@
             <constraints>
                 <constraint firstItem="OLP-C5-SqN" firstAttribute="leading" secondItem="2Ip-KZ-WYH" secondAttribute="leading" id="aZJ-WT-N8i"/>
                 <constraint firstItem="Lc1-8a-wo5" firstAttribute="centerX" secondItem="zg8-Aq-cRf" secondAttribute="centerX" id="c3v-mU-z7K"/>
-                <constraint firstAttribute="bottom" secondItem="OLP-C5-SqN" secondAttribute="bottom" id="gUv-xr-tGK"/>
+                <constraint firstAttribute="bottom" secondItem="OLP-C5-SqN" secondAttribute="bottom" identifier="bottomAlign" id="gUv-xr-tGK"/>
                 <constraint firstItem="Lc1-8a-wo5" firstAttribute="centerY" secondItem="zg8-Aq-cRf" secondAttribute="centerY" id="iUM-fe-08m"/>
                 <constraint firstItem="OLP-C5-SqN" firstAttribute="top" secondItem="zg8-Aq-cRf" secondAttribute="top" id="j1g-mA-rCS"/>
                 <constraint firstItem="2Ip-KZ-WYH" firstAttribute="trailing" secondItem="OLP-C5-SqN" secondAttribute="trailing" id="yV4-b1-5gU"/>
@@ -41,7 +41,7 @@
         </view>
     </objects>
     <resources>
-        <image name="launch_img_background" width="375" height="667"/>
-        <image name="launch_img_logo" width="1024" height="1024"/>
+        <image name="launch_img_background" width="1080" height="1920"/>
+        <image name="launch_img_logo" width="512" height="512"/>
     </resources>
 </document>
