@@ -7,9 +7,13 @@
 //
 
 #import "LoginViewController.h"
+
 #import <ZFPlayer/ZFPlayer.h>
 #import <ZFPlayer/ZFAVPlayerManager.h>
 #import <ZFPlayerControlView.h>
+
+#import "FDSocialManager.h"
+#import "FDSocialModel.h"
 
 @interface LoginViewController ()<ZFPlayerMediaPlayback>
 
@@ -20,6 +24,7 @@
 
 @implementation LoginViewController
 
+#pragma mark - Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -30,21 +35,27 @@
     /// 播放器相关
     self.player = [[ZFPlayerController alloc] initWithPlayerManager:playerManager containerView:self.view];
     playerManager.assetURL = [NSURL URLWithString:@"http://temp.fandong.me/register_guide_video.mp4"];
-    [self.player enterPortraitFullScreen:YES animated:YES];
+//    [self.player enterPortraitFullScreen:YES animated:YES];
     
-    QMUIButton *closeBtn = [[QMUIButton alloc]initWithFrame:CGRectMake(20, StatusBarHeight + 20, 44, 44)];
+    QMUIButton *closeBtn = [[QMUIButton alloc]initWithFrame:CGRectMake(10, StatusBarHeight + 10, 44, 44)];
     [closeBtn setImage:[UIImage imageNamed:@"common_btn_close"] forState:UIControlStateNormal];
     [closeBtn addTarget:self action:@selector(closeBtnAction) forControlEvents:UIControlEventTouchUpInside];
     
-}
-
-- (void)closeBtnAction{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)setupNavigationItems{
-    [super setupNavigationItems];
+    [self.view addSubview:closeBtn];
     
+    CGFloat buttonW = 44;
+    CGFloat buttonH = 44;
+    
+    CGFloat buttonX = (SCREEN_WIDTH - 3 * 44 - 2 * 40) / 2;
+    
+    NSArray *imageArray = @[@"login_btn_wechat",@"login_btn_qq",@"login_btn_weibo"];
+    for (NSInteger i = 0 ; i < 3; i++) {
+        QMUIButton *button = [[QMUIButton alloc]initWithFrame:CGRectMake(buttonX + i * (44 + 40), SCREEN_HEIGHT / 2, buttonW, buttonH)];
+        [button setImage:[UIImage imageNamed:imageArray[i]] forState:UIControlStateNormal];
+        button.tag = 10+i;
+        [button addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -55,6 +66,40 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     self.player.viewControllerDisappear = YES;
+}
+
+
+#pragma mark - Action
+- (void)onClick:(UIButton *)sender{
+    switch (sender.tag - 10) {
+        case 0:
+            [[FDSocialManager defaultManager] login:FDSocialManagerLoginTypeWeChat currentViewController:self completion:^(FDSocialModel *model, NSString *errorMsg) {
+                NSLog(@"%@",model.mj_keyValues);
+            }];
+            break;
+        case 1:
+            [[FDSocialManager defaultManager] login:FDSocialManagerLoginTypeQQ currentViewController:self completion:^(FDSocialModel *model, NSString *errorMsg) {
+                NSLog(@"%@",model.mj_keyValues);
+            }];
+            break;
+        case 2:
+            [[FDSocialManager defaultManager] login:FDSocialManagerLoginTypeWeibo currentViewController:self completion:^(FDSocialModel *model, NSString *errorMsg) {
+                NSLog(@"%@",model.mj_keyValues);
+            }];
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)closeBtnAction{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - Navigation
+- (void)setupNavigationItems{
+    [super setupNavigationItems];
+    
 }
 
 @end

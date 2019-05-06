@@ -20,4 +20,6 @@
 
 #import <Masonry/Masonry.h>
 
+#import <MJExtension/MJExtension.h>
+
 #endif /* PrefixHeader_pch */
