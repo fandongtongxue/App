@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -29,14 +28,13 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="OLP-C5-SqN" firstAttribute="leading" secondItem="2Ip-KZ-WYH" secondAttribute="leading" id="aZJ-WT-N8i"/>
+                <constraint firstItem="OLP-C5-SqN" firstAttribute="leading" secondItem="zg8-Aq-cRf" secondAttribute="leading" id="aZJ-WT-N8i"/>
                 <constraint firstItem="Lc1-8a-wo5" firstAttribute="centerX" secondItem="zg8-Aq-cRf" secondAttribute="centerX" id="c3v-mU-z7K"/>
                 <constraint firstAttribute="bottom" secondItem="OLP-C5-SqN" secondAttribute="bottom" identifier="bottomAlign" id="gUv-xr-tGK"/>
                 <constraint firstItem="Lc1-8a-wo5" firstAttribute="centerY" secondItem="zg8-Aq-cRf" secondAttribute="centerY" id="iUM-fe-08m"/>
                 <constraint firstItem="OLP-C5-SqN" firstAttribute="top" secondItem="zg8-Aq-cRf" secondAttribute="top" id="j1g-mA-rCS"/>
-                <constraint firstItem="2Ip-KZ-WYH" firstAttribute="trailing" secondItem="OLP-C5-SqN" secondAttribute="trailing" id="yV4-b1-5gU"/>
+                <constraint firstAttribute="trailing" secondItem="OLP-C5-SqN" secondAttribute="trailing" id="yV4-b1-5gU"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="2Ip-KZ-WYH"/>
             <point key="canvasLocation" x="56.799999999999997" y="311.69415292353824"/>
         </view>
     </objects>

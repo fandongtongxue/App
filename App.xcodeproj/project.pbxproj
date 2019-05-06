@@ -513,12 +513,6 @@
 		CB8C26EB226CBCA90058DAEE /* App */ = {
 			isa = PBXGroup;
 			children = (
-				CB6E678A2279CF7B00D3788E /* Common */,
-				CB6E67712279A9BD00D3788E /* Modules */,
-				6D9DF5AE2277D79B00FB9CFC /* Category */,
-				6DEC84F42276DB50000BCB3C /* Resources */,
-				6D74C51C22755D9D00332AAC /* ThirdPart */,
-				CB3508E822709B3E00EDC557 /* Network */,
 				CB8C26EC226CBCA90058DAEE /* AppDelegate.h */,
 				CB8C26ED226CBCA90058DAEE /* AppDelegate.m */,
 				CB8C26F5226CBCAA0058DAEE /* Assets.xcassets */,
@@ -529,6 +523,12 @@
 				CB6E67C22279EAEC00D3788E /* LaunchScreen.xib */,
 				CB98FE4E227F1C1400EA3834 /* LaunchScreen_QMUI.xib */,
 				CB6E67C82279EECC00D3788E /* Localizable.strings */,
+				CB6E678A2279CF7B00D3788E /* Common */,
+				CB6E67712279A9BD00D3788E /* Modules */,
+				6D9DF5AE2277D79B00FB9CFC /* Category */,
+				6DEC84F42276DB50000BCB3C /* Resources */,
+				6D74C51C22755D9D00332AAC /* ThirdPart */,
+				CB3508E822709B3E00EDC557 /* Network */,
 			);
 			path = App;
 			sourceTree = "<group>";

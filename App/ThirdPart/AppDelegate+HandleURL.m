@@ -11,6 +11,13 @@
 #import <UMCommon/UMCommon.h>
 #import <UMShare/UMShare.h>
 
+#import <AlipaySDK/AlipaySDK.h>
+#import "WXApi.h"
+
+@interface AppDelegate()<WXApiDelegate>
+
+@end
+
 @implementation AppDelegate (HandleURL)
 
 //#define __IPHONE_10_0    100000
@@ -21,6 +28,19 @@
     BOOL result = [[UMSocialManager defaultManager]  handleOpenURL:url options:options];
     if (!result) {
         // 其他如支付等SDK的回调
+        if ([url.host isEqualToString:@"safepay"])
+        {
+            //跳转支付宝钱包进行支付，处理支付结果
+            [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+                NSLog(@"result = %@",resultDic);
+            }];
+            return YES;
+        }
+        else if([url.absoluteString rangeOfString:@"wxea9a2004da38e365"].location != NSNotFound)
+        {
+            // 微信支付
+            return  [WXApi handleOpenURL:url delegate:self];
+        }
     }
     return result;
 }
@@ -32,6 +52,19 @@
     BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
     if (!result) {
         // 其他如支付等SDK的回调
+        if ([url.host isEqualToString:@"safepay"])
+        {
+            //跳转支付宝钱包进行支付，处理支付结果
+            [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+                NSLog(@"result = %@",resultDic);
+            }];
+            return YES;
+        }
+        else if([url.absoluteString rangeOfString:@"wxea9a2004da38e365"].location != NSNotFound)
+        {
+            // 微信支付
+            return  [WXApi handleOpenURL:url delegate:self];
+        }
     }
     return result;
 }
@@ -41,9 +74,30 @@
     BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url];
     if (!result) {
         // 其他如支付等SDK的回调
+        if ([url.host isEqualToString:@"safepay"])
+        {
+            //跳转支付宝钱包进行支付，处理支付结果
+            [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+                NSLog(@"result = %@",resultDic);
+            }];
+            return YES;
+        }
+        else if([url.absoluteString rangeOfString:@"wxea9a2004da38e365"].location != NSNotFound)
+        {
+            // 微信支付
+            return  [WXApi handleOpenURL:url delegate:self];
+        }
     }
     return result;
 }
 
+#pragma mark - WXApiDelegate
+- (void)onReq:(BaseReq *)req{
+    
+}
+
+- (void)onResp:(BaseResp *)resp{
+    
+}
 
 @end
