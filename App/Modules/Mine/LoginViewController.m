@@ -32,8 +32,14 @@
     playerManager.assetURL = [NSURL URLWithString:@"http://temp.fandong.me/register_guide_video.mp4"];
     [self.player enterPortraitFullScreen:YES animated:YES];
     
-//    QMUIButton *closeBtn = [QMUIButton alloc]initWithFrame:CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)
+    QMUIButton *closeBtn = [[QMUIButton alloc]initWithFrame:CGRectMake(20, StatusBarHeight + 20, 44, 44)];
+    [closeBtn setImage:[UIImage imageNamed:@"common_btn_close"] forState:UIControlStateNormal];
+    [closeBtn addTarget:self action:@selector(closeBtnAction) forControlEvents:UIControlEventTouchUpInside];
     
+}
+
+- (void)closeBtnAction{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)setupNavigationItems{
