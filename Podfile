@@ -48,4 +48,6 @@ target 'App' do
   pod 'ZFPlayer'
   pod 'ZFPlayer/ControlView'
   pod 'ZFPlayer/AVPlayer'
+  # 日志
+  pod 'CocoaLumberjack'
 end

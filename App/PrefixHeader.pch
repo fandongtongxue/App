@@ -28,4 +28,16 @@
 #import "GlobalModel.h"
 #import "GlobalManager.h"
 
+#import "UIAlertController+supportedInterfaceOrientations.h"
+
+/** 打印日志 */
+#define LOG_LEVEL_DEF ddLogLevel
+#import <CocoaLumberjack/CocoaLumberjack.h>
+
+#ifdef DEBUG
+static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
+#else
+static const DDLogLevel ddLogLevel = DDLogLevelWarning;
+#endif  /* DEBUG */
+
 #endif /* PrefixHeader_pch */

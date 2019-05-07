@@ -9,11 +9,13 @@
 		<key>isMustLogin</key>
 		<integer>0</integer>
 		<key>isForceUpdate</key>
-		<integer>1</integer>
+		<integer>0</integer>
 		<key>updateVersion</key>
 		<string>2019050702</string>
 		<key>updateUrl</key>
-		<string>http://anyapp.fandong.me/index.html</string>
+		<string>http://app.fandong.me/index.html</string>
+		<key>isLogin</key>
+		<false/>
 	</dict>
 	<key>msg</key>
 	<string></string>

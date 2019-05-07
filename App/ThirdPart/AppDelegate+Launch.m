@@ -42,11 +42,51 @@
     // 启动动画
     [self startLaunchingAnimation];
     
+    //加载初始化数据
+    [[GlobalManager manager] loadData];
+    
+    //注册第三方
     [self registerApp];
     
-    [[GlobalManager manager] loadData];
+    //RootViewController
+    [self createTabBarController];
+    
     [self.window makeKeyAndVisible];
-    [self performSelector:@selector(enterMainUI) withObject:nil afterDelay:1];
+    
+    //必须登录
+    if ([GlobalManager manager].globalModel.isMustLogin) {
+        LoginViewController *loginVC = [[LoginViewController alloc]init];
+        [self.window.rootViewController presentViewController:loginVC animated:YES completion:nil];
+    }
+    
+    //处理更新
+    [self operateUpdate];
+    
+    //日志系统
+    if (@available(iOS 10, *)) {
+        [DDLog addLogger:[DDOSLogger sharedInstance]];
+    } else {
+        //do nothing
+    }
+    // DDTTYLogger，你的日志语句将被发送到Xcode控制台
+//    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    
+    // DDASLLogger，你的日志语句将被发送到苹果文件系统、你的日志状态会被发送到 Console.app
+//    [DDLog addLogger:[DDASLLogger sharedInstance]];
+    
+    // DDFileLogger，你的日志语句将写入到一个文件中，默认路径在沙盒的Library/Caches/Logs/目录下，文件名为bundleid+空格+日期.log。
+    DDFileLogger *fileLogger = [[DDFileLogger alloc] init];
+    fileLogger.rollingFrequency = 60 * 60 * 24; // 刷新频率为24小时
+    fileLogger.logFileManager.maximumNumberOfLogFiles = 7; // 保存一周的日志，即7天
+    [DDLog addLogger:fileLogger];
+    
+    // 产生Log
+//    DDLogVerbose(@"Verbose");   // 详细日志
+//    DDLogDebug(@"Debug");       // 调试日志
+//    DDLogInfo(@"Info");         // 信息日志
+//    DDLogWarn(@"Warn");         // 警告日志
+//    DDLogError(@"Error");       // 错误日志
+    
     return YES;
 }
 
@@ -67,6 +107,14 @@
     tabBarVC.viewControllers = @[homeNav,mineNav];
         
     self.window.rootViewController = tabBarVC;
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    //如果是强制更新,回到前台再次显示
+    if ([GlobalManager manager].globalModel.isForceUpdate) {
+        [self operateUpdate];
+    }
 }
 
 - (void)registerApp{
@@ -157,16 +205,6 @@
         }
         [self.window.rootViewController presentViewController:alertVC animated:YES completion:nil];
     }
-}
-
-- (void)enterMainUI{
-    if ([GlobalManager manager].globalModel.isMustLogin) {
-        LoginViewController *loginVC = [[LoginViewController alloc]init];
-        self.window.rootViewController = loginVC;
-    }else{
-        [self createTabBarController];
-    }
-    [self operateUpdate];
 }
 
 @end

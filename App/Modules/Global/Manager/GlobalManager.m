@@ -20,7 +20,7 @@
 }
 
 - (void)loadData{
-    NSDictionary *dict  = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"globalModel" ofType:@"plist"]];
+    NSDictionary *dict  = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"GlobalModel" ofType:@"plist"]];
     [GlobalManager manager].globalModel = [GlobalModel mj_objectWithKeyValues:dict[@"data"]];
 }
 

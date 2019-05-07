@@ -10,7 +10,6 @@
 		4921A4527F9422A2FC869784 /* Pods_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28EDAE5573319FD1924CF5E8 /* Pods_App.framework */; };
 		6D36CA8F228117E10046FA8C /* GlobalManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D36CA8B228117E10046FA8C /* GlobalManager.m */; };
 		6D36CA90228117E10046FA8C /* GlobalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D36CA8E228117E10046FA8C /* GlobalModel.m */; };
-		6D36CA9322811ED50046FA8C /* globalModel.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D36CA9222811ED50046FA8C /* globalModel.plist */; };
 		6D4F0D14227695D6005A9B21 /* AppDelegate+HandleURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4F0D13227695D6005A9B21 /* AppDelegate+HandleURL.m */; };
 		6D74C528227575D500332AAC /* AppDelegate+Launch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D74C527227575D500332AAC /* AppDelegate+Launch.m */; };
 		6D9DF5A82277CE3C00FB9CFC /* TestSocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DF5A62277CE3C00FB9CFC /* TestSocialViewController.m */; };
@@ -72,6 +71,9 @@
 		CB8EA0E4227B2460004177D4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8EA0E3227B2460004177D4 /* LoginViewController.m */; };
 		CB98FE4F227F1C1500EA3834 /* LaunchScreen_QMUI.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB98FE4E227F1C1400EA3834 /* LaunchScreen_QMUI.xib */; };
 		CBC00E4622734B9000E0A471 /* YTKUrlArgumentsFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC00E4422734B9000E0A471 /* YTKUrlArgumentsFilter.m */; };
+		CBCFB1DE2281BD4600ADE61E /* GlobalModel.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBCFB1DD2281BD4600ADE61E /* GlobalModel.plist */; };
+		CBCFB1E12281C5CB00ADE61E /* UIAlertController+supportedInterfaceOrientations.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCFB1E02281C5CB00ADE61E /* UIAlertController+supportedInterfaceOrientations.m */; };
+		CBDB826D2281BA6300E27741 /* UserInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBDB826C2281BA6300E27741 /* UserInfo.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,7 +84,6 @@
 		6D36CA8D228117E10046FA8C /* GlobalModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalModel.h; sourceTree = "<group>"; };
 		6D36CA8E228117E10046FA8C /* GlobalModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalModel.m; sourceTree = "<group>"; };
 		6D36CA9122811E460046FA8C /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
-		6D36CA9222811ED50046FA8C /* globalModel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = globalModel.plist; sourceTree = "<group>"; };
 		6D4F0D12227695D6005A9B21 /* AppDelegate+HandleURL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+HandleURL.h"; sourceTree = "<group>"; };
 		6D4F0D13227695D6005A9B21 /* AppDelegate+HandleURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+HandleURL.m"; sourceTree = "<group>"; };
 		6D74C526227575D500332AAC /* AppDelegate+Launch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Launch.h"; sourceTree = "<group>"; };
@@ -185,6 +186,10 @@
 		CB98FE4E227F1C1400EA3834 /* LaunchScreen_QMUI.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen_QMUI.xib; sourceTree = "<group>"; };
 		CBC00E4422734B9000E0A471 /* YTKUrlArgumentsFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTKUrlArgumentsFilter.m; sourceTree = "<group>"; };
 		CBC00E4522734B9000E0A471 /* YTKUrlArgumentsFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTKUrlArgumentsFilter.h; sourceTree = "<group>"; };
+		CBCFB1DD2281BD4600ADE61E /* GlobalModel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GlobalModel.plist; sourceTree = "<group>"; };
+		CBCFB1DF2281C5CB00ADE61E /* UIAlertController+supportedInterfaceOrientations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+supportedInterfaceOrientations.h"; sourceTree = "<group>"; };
+		CBCFB1E02281C5CB00ADE61E /* UIAlertController+supportedInterfaceOrientations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+supportedInterfaceOrientations.m"; sourceTree = "<group>"; };
+		CBDB826C2281BA6300E27741 /* UserInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = UserInfo.plist; sourceTree = "<group>"; };
 		D8F4FE7B423BC276DC0C84C5 /* Pods-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.release.xcconfig"; path = "Target Support Files/Pods-App/Pods-App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -279,6 +284,8 @@
 			children = (
 				6D9DF5AF2277D79B00FB9CFC /* UIViewController+FD.h */,
 				6D9DF5B02277D79B00FB9CFC /* UIViewController+FD.m */,
+				CBCFB1DF2281C5CB00ADE61E /* UIAlertController+supportedInterfaceOrientations.h */,
+				CBCFB1E02281C5CB00ADE61E /* UIAlertController+supportedInterfaceOrientations.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -316,8 +323,9 @@
 		6DEC84F42276DB50000BCB3C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6D36CA9222811ED50046FA8C /* globalModel.plist */,
+				CBCFB1DD2281BD4600ADE61E /* GlobalModel.plist */,
 				6DEC84F52276DB50000BCB3C /* Font */,
+				CBDB826C2281BA6300E27741 /* UserInfo.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -645,7 +653,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DEC85192276DB50000BCB3C /* AlibabaSans-MediumItalic.otf in Resources */,
-				6D36CA9322811ED50046FA8C /* globalModel.plist in Resources */,
 				6D9DF5A92277CE3C00FB9CFC /* TestSocialViewController.xib in Resources */,
 				CB8C26F6226CBCAA0058DAEE /* Assets.xcassets in Resources */,
 				6DEC85132276DB50000BCB3C /* AlibabaSans-Regular.otf in Resources */,
@@ -656,11 +663,13 @@
 				6DEC85182276DB50000BCB3C /* AlibabaSans-BoldItalic.otf in Resources */,
 				6DEC85122276DB50000BCB3C /* AlibabaSans-Bold.otf in Resources */,
 				6DC591C222767C5900813DAB /* AlipaySDK.bundle in Resources */,
+				CBDB826D2281BA6300E27741 /* UserInfo.plist in Resources */,
 				CB6E67BD2279D62A00D3788E /* Main.storyboard in Resources */,
 				6DEC851B2276DB50000BCB3C /* AlibabaSans-HeavyItalic.otf in Resources */,
 				CB6E67C62279EECC00D3788E /* Localizable.strings in Resources */,
 				6DEC85112276DB50000BCB3C /* AlibabaSans-Light.otf in Resources */,
 				6DEC850E2276DB50000BCB3C /* Alibaba-PuHuiTi-Heavy.otf in Resources */,
+				CBCFB1DE2281BD4600ADE61E /* GlobalModel.plist in Resources */,
 				CB6E67C32279EAEC00D3788E /* LaunchScreen.xib in Resources */,
 				6DEC851A2276DB50000BCB3C /* AlibabaSans-LightItalic.otf in Resources */,
 				6DEC850D2276DB50000BCB3C /* Alibaba-PuHuiTi-Light.otf in Resources */,
@@ -771,6 +780,7 @@
 				6D74C528227575D500332AAC /* AppDelegate+Launch.m in Sources */,
 				CB6E67B32279CF7B00D3788E /* UIImageEffects.m in Sources */,
 				6D9DF5A82277CE3C00FB9CFC /* TestSocialViewController.m in Sources */,
+				CBCFB1E12281C5CB00ADE61E /* UIAlertController+supportedInterfaceOrientations.m in Sources */,
 				CB8C26FC226CBCAA0058DAEE /* main.m in Sources */,
 				CB8C26EE226CBCA90058DAEE /* AppDelegate.m in Sources */,
 				CB6E67B82279CF7B00D3788E /* QDTabBarViewController.m in Sources */,
@@ -928,7 +938,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/App/ThirdPart/Pay/WeChatPay",
 				);
-				OTHER_CFLAGS = "-DDEBUG";
+				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = me.fandong.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -957,7 +967,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/App/ThirdPart/Pay/WeChatPay",
 				);
-				OTHER_CFLAGS = "-DDEBUG";
+				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = me.fandong.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

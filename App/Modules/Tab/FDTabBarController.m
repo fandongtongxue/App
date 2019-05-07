@@ -24,9 +24,12 @@
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
     NSInteger index = [self.viewControllers indexOfObject:viewController];
     if (index != 0) {
-        LoginViewController *loginVC = [[LoginViewController alloc]init];
-        [self presentViewController:loginVC animated:YES completion:nil];
-        return NO;
+        if (![GlobalManager manager].globalModel.isLogin) {
+            LoginViewController *loginVC = [[LoginViewController alloc]init];
+            [self presentViewController:loginVC animated:YES completion:nil];
+            return NO;
+        }
+        return YES;
     }
     return YES;
 }

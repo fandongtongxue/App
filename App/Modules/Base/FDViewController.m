@@ -20,7 +20,7 @@
 }
 
 - (void)dealloc{
-    NSLog(@"%s",__func__);
+    DDLogDebug(@"%@ dealloc",NSStringFromClass([self class]));
 }
 
 /*

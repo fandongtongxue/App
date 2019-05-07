@@ -28,6 +28,10 @@ NS_ASSUME_NONNULL_BEGIN
  服务端新版本下载地址
  */
 @property (nonatomic, copy) NSString *updateUrl;
+/**
+ 是否登陆
+ */
+@property (nonatomic, assign) BOOL isLogin;
 
 @end
 
