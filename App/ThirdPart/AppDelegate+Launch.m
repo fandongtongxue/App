@@ -43,6 +43,10 @@
     [self startLaunchingAnimation];
     
     [self registerApp];
+    
+    [[GlobalManager manager] loadData];
+    [self.window makeKeyAndVisible];
+    [self performSelector:@selector(enterMainUI) withObject:nil afterDelay:1];
     return YES;
 }
 
@@ -135,6 +139,34 @@
     } completion:^(BOOL finished) {
         [launchScreenView removeFromSuperview];
     }];
+}
+
+- (void)operateUpdate{
+    //是否需要更新
+    NSString *buildVersion = [[[NSBundle mainBundle] infoDictionary] valueForKey:(NSString *)kCFBundleVersionKey];
+    NSString *updateVersion = [GlobalManager manager].globalModel.updateVersion;
+    if (buildVersion.integerValue < updateVersion.integerValue) {
+        UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:Localized(@"Update.Alert.Title") message:Localized(@"Update.Alert.Message") preferredStyle:UIAlertControllerStyleAlert];
+        [alertVC addAction:[UIAlertAction actionWithTitle:Localized(@"Common.OK") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:[GlobalManager manager].globalModel.updateUrl]]) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[GlobalManager manager].globalModel.updateUrl]];
+            }
+        }]];
+        if (![GlobalManager manager].globalModel.isForceUpdate) {
+            [alertVC addAction:[UIAlertAction actionWithTitle:Localized(@"Common.Cancel") style:UIAlertActionStyleCancel handler:nil]];
+        }
+        [self.window.rootViewController presentViewController:alertVC animated:YES completion:nil];
+    }
+}
+
+- (void)enterMainUI{
+    if ([GlobalManager manager].globalModel.isMustLogin) {
+        LoginViewController *loginVC = [[LoginViewController alloc]init];
+        self.window.rootViewController = loginVC;
+    }else{
+        [self createTabBarController];
+    }
+    [self operateUpdate];
 }
 
 @end

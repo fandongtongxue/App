@@ -9,3 +9,9 @@
 "Home.Title"="首页";
 "Search.Title"="搜索";
 "Mine.Title"="我的";
+
+"Common.OK" = "确定";
+"Common.Cancel" = "取消";
+
+"Update.Alert.Title" = "升级提示";
+"Update.Alert.Message" = "有新的版本是否需要更新";

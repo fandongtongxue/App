@@ -37,7 +37,7 @@
     playerManager.assetURL = [NSURL URLWithString:@"http://temp.fandong.me/register_guide_video.mp4"];
 //    [self.player enterPortraitFullScreen:YES animated:YES];
     
-    QMUIButton *closeBtn = [[QMUIButton alloc]initWithFrame:CGRectMake(10, StatusBarHeight + 10, 44, 44)];
+    QMUIButton *closeBtn = [[QMUIButton alloc]initWithFrame:CGRectMake(20, StatusBarHeight + 10, 30, 30)];
     [closeBtn setImage:[UIImage imageNamed:@"common_btn_close"] forState:UIControlStateNormal];
     [closeBtn addTarget:self action:@selector(closeBtnAction) forControlEvents:UIControlEventTouchUpInside];
     

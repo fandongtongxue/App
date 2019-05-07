@@ -9,3 +9,9 @@
 "Home.Title"="Home";
 "Search.Title"="Search";
 "Mine.Title"="Mine";
+
+"Common.OK" = "OK";
+"Common.Cancel" = "Cancel";
+
+"Update.Alert.Title" = "Upgrade Tip";
+"Update.Alert.Message" = "Do you wan't to update to new version?";

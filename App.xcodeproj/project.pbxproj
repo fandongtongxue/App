@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4921A4527F9422A2FC869784 /* Pods_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28EDAE5573319FD1924CF5E8 /* Pods_App.framework */; };
+		6D36CA8F228117E10046FA8C /* GlobalManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D36CA8B228117E10046FA8C /* GlobalManager.m */; };
+		6D36CA90228117E10046FA8C /* GlobalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D36CA8E228117E10046FA8C /* GlobalModel.m */; };
+		6D36CA9322811ED50046FA8C /* globalModel.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D36CA9222811ED50046FA8C /* globalModel.plist */; };
 		6D4F0D14227695D6005A9B21 /* AppDelegate+HandleURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4F0D13227695D6005A9B21 /* AppDelegate+HandleURL.m */; };
 		6D74C528227575D500332AAC /* AppDelegate+Launch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D74C527227575D500332AAC /* AppDelegate+Launch.m */; };
 		6D9DF5A82277CE3C00FB9CFC /* TestSocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DF5A62277CE3C00FB9CFC /* TestSocialViewController.m */; };
@@ -74,6 +77,12 @@
 /* Begin PBXFileReference section */
 		2197BE47209DCADC95F1ACA7 /* Pods-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.debug.xcconfig"; path = "Target Support Files/Pods-App/Pods-App.debug.xcconfig"; sourceTree = "<group>"; };
 		28EDAE5573319FD1924CF5E8 /* Pods_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D36CA8A228117E10046FA8C /* GlobalManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalManager.h; sourceTree = "<group>"; };
+		6D36CA8B228117E10046FA8C /* GlobalManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalManager.m; sourceTree = "<group>"; };
+		6D36CA8D228117E10046FA8C /* GlobalModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalModel.h; sourceTree = "<group>"; };
+		6D36CA8E228117E10046FA8C /* GlobalModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalModel.m; sourceTree = "<group>"; };
+		6D36CA9122811E460046FA8C /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		6D36CA9222811ED50046FA8C /* globalModel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = globalModel.plist; sourceTree = "<group>"; };
 		6D4F0D12227695D6005A9B21 /* AppDelegate+HandleURL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+HandleURL.h"; sourceTree = "<group>"; };
 		6D4F0D13227695D6005A9B21 /* AppDelegate+HandleURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+HandleURL.m"; sourceTree = "<group>"; };
 		6D74C526227575D500332AAC /* AppDelegate+Launch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Launch.h"; sourceTree = "<group>"; };
@@ -203,6 +212,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6D36CA88228117E10046FA8C /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				6D36CA89228117E10046FA8C /* Manager */,
+				6D36CA8C228117E10046FA8C /* Model */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		6D36CA89228117E10046FA8C /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				6D36CA8A228117E10046FA8C /* GlobalManager.h */,
+				6D36CA8B228117E10046FA8C /* GlobalManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		6D36CA8C228117E10046FA8C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6D36CA8D228117E10046FA8C /* GlobalModel.h */,
+				6D36CA8E228117E10046FA8C /* GlobalModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		6D74C51C22755D9D00332AAC /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +316,7 @@
 		6DEC84F42276DB50000BCB3C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6D36CA9222811ED50046FA8C /* globalModel.plist */,
 				6DEC84F52276DB50000BCB3C /* Font */,
 			);
 			path = Resources;
@@ -383,6 +420,7 @@
 		CB6E67712279A9BD00D3788E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				6D36CA88228117E10046FA8C /* Global */,
 				CB8EA0DE227B1A02004177D4 /* Mine */,
 				CB6E67BE2279D86F00D3788E /* Home */,
 				CB6E677C2279CAF900D3788E /* Base */,
@@ -520,6 +558,7 @@
 				CB8C26FB226CBCAA0058DAEE /* main.m */,
 				CB6E67BC2279D62A00D3788E /* Main.storyboard */,
 				6D9DF5B22277D7CC00FB9CFC /* PrefixHeader.pch */,
+				6D36CA9122811E460046FA8C /* Define.h */,
 				CB6E67C22279EAEC00D3788E /* LaunchScreen.xib */,
 				CB98FE4E227F1C1400EA3834 /* LaunchScreen_QMUI.xib */,
 				CB6E67C82279EECC00D3788E /* Localizable.strings */,
@@ -606,6 +645,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DEC85192276DB50000BCB3C /* AlibabaSans-MediumItalic.otf in Resources */,
+				6D36CA9322811ED50046FA8C /* globalModel.plist in Resources */,
 				6D9DF5A92277CE3C00FB9CFC /* TestSocialViewController.xib in Resources */,
 				CB8C26F6226CBCAA0058DAEE /* Assets.xcassets in Resources */,
 				6DEC85132276DB50000BCB3C /* AlibabaSans-Regular.otf in Resources */,
@@ -703,6 +743,7 @@
 				CB6E67AD2279CF7B00D3788E /* QDThemeManager.m in Sources */,
 				CB6E67AE2279CF7B00D3788E /* QMUIConfigurationTemplatePinkRose.m in Sources */,
 				CB6E67B92279CF7B00D3788E /* QDCommonListViewController.m in Sources */,
+				6D36CA8F228117E10046FA8C /* GlobalManager.m in Sources */,
 				CB6E67BA2279CF7B00D3788E /* QDNavigationController.m in Sources */,
 				6D4F0D14227695D6005A9B21 /* AppDelegate+HandleURL.m in Sources */,
 				CB6CE2D52271E440006B3DFA /* TestApi.m in Sources */,
@@ -724,6 +765,7 @@
 				6D9DF5B12277D79B00FB9CFC /* UIViewController+FD.m in Sources */,
 				CB6E67B72279CF7B00D3788E /* QDCommonGridViewController.m in Sources */,
 				CB8EA0E1227B1A2B004177D4 /* MineViewController.m in Sources */,
+				6D36CA90228117E10046FA8C /* GlobalModel.m in Sources */,
 				CB6E67B52279CF7B00D3788E /* QDCommonGroupListViewController.m in Sources */,
 				CB6E67C12279D8D900D3788E /* HomeViewController.m in Sources */,
 				6D74C528227575D500332AAC /* AppDelegate+Launch.m in Sources */,
@@ -886,6 +928,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/App/ThirdPart/Pay/WeChatPay",
 				);
+				OTHER_CFLAGS = "-DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = me.fandong.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -914,6 +957,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/App/ThirdPart/Pay/WeChatPay",
 				);
+				OTHER_CFLAGS = "-DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = me.fandong.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
