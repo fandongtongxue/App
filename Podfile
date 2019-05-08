@@ -50,4 +50,6 @@ target 'App' do
   pod 'ZFPlayer/AVPlayer'
   # 日志
   pod 'CocoaLumberjack'
+  # 声网
+  pod 'AgoraRtcEngine_iOS'
 end

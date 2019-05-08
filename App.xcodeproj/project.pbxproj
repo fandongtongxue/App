@@ -11,6 +11,7 @@
 		6D36CA8F228117E10046FA8C /* GlobalManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D36CA8B228117E10046FA8C /* GlobalManager.m */; };
 		6D36CA90228117E10046FA8C /* GlobalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D36CA8E228117E10046FA8C /* GlobalModel.m */; };
 		6D4F0D14227695D6005A9B21 /* AppDelegate+HandleURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4F0D13227695D6005A9B21 /* AppDelegate+HandleURL.m */; };
+		6D72A0C72282660200F7DAD5 /* AgoraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D72A0C62282660200F7DAD5 /* AgoraViewController.m */; };
 		6D74C528227575D500332AAC /* AppDelegate+Launch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D74C527227575D500332AAC /* AppDelegate+Launch.m */; };
 		6D9DF5A82277CE3C00FB9CFC /* TestSocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DF5A62277CE3C00FB9CFC /* TestSocialViewController.m */; };
 		6D9DF5A92277CE3C00FB9CFC /* TestSocialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D9DF5A72277CE3C00FB9CFC /* TestSocialViewController.xib */; };
@@ -86,6 +87,8 @@
 		6D36CA9122811E460046FA8C /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
 		6D4F0D12227695D6005A9B21 /* AppDelegate+HandleURL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+HandleURL.h"; sourceTree = "<group>"; };
 		6D4F0D13227695D6005A9B21 /* AppDelegate+HandleURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+HandleURL.m"; sourceTree = "<group>"; };
+		6D72A0C52282660200F7DAD5 /* AgoraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AgoraViewController.h; sourceTree = "<group>"; };
+		6D72A0C62282660200F7DAD5 /* AgoraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AgoraViewController.m; sourceTree = "<group>"; };
 		6D74C526227575D500332AAC /* AppDelegate+Launch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Launch.h"; sourceTree = "<group>"; };
 		6D74C527227575D500332AAC /* AppDelegate+Launch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Launch.m"; sourceTree = "<group>"; };
 		6D9DF5A52277CE3C00FB9CFC /* TestSocialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestSocialViewController.h; sourceTree = "<group>"; };
@@ -242,6 +245,15 @@
 				6D36CA8E228117E10046FA8C /* GlobalModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		6D72A0C4228265EC00F7DAD5 /* Agora */ = {
+			isa = PBXGroup;
+			children = (
+				6D72A0C52282660200F7DAD5 /* AgoraViewController.h */,
+				6D72A0C62282660200F7DAD5 /* AgoraViewController.m */,
+			);
+			path = Agora;
 			sourceTree = "<group>";
 		};
 		6D74C51C22755D9D00332AAC /* ThirdPart */ = {
@@ -428,6 +440,7 @@
 		CB6E67712279A9BD00D3788E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				6D72A0C4228265EC00F7DAD5 /* Agora */,
 				6D36CA88228117E10046FA8C /* Global */,
 				CB8EA0DE227B1A02004177D4 /* Mine */,
 				CB6E67BE2279D86F00D3788E /* Home */,
@@ -765,6 +778,7 @@
 				CB3508EC22709B5800EDC557 /* FDBaseApi.m in Sources */,
 				CB6E67BB2279CF7B00D3788E /* QDCommonTableViewController.m in Sources */,
 				CB6E677A2279AAEB00D3788E /* FDNavigationController.m in Sources */,
+				6D72A0C72282660200F7DAD5 /* AgoraViewController.m in Sources */,
 				CB6E67B12279CF7B00D3788E /* QMUIConfigurationTemplate.m in Sources */,
 				CB6E67B02279CF7B00D3788E /* QMUIConfigurationTemplateGrapefruit.m in Sources */,
 				CB6E67B42279CF7B00D3788E /* QDCommonUI.m in Sources */,

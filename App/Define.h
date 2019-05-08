@@ -11,4 +11,6 @@
 
 #define Localized(key)  NSLocalizedString(key, nil)
 
+#define Font(size)        [UIFont fontWithName:@"AlibabaPuHuiTiL" size:size]
+
 #endif /* Define_h */

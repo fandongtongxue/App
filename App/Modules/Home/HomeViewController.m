@@ -18,13 +18,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = NSLocalizedString(@"Home.Title", @"首页");
+    self.title = Localized(@"Home.Title");
 }
 
 - (void)setupNavigationItems{
     [super setupNavigationItems];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(searchItemAction:)];
-    AddAccessibilityLabel(self.navigationItem.leftBarButtonItem, NSLocalizedString(@"Search.Title", @"搜索"));
+    AddAccessibilityLabel(self.navigationItem.leftBarButtonItem, Localized(@"Search.Title"));
 }
 
 - (void)searchItemAction:(UIBarButtonItem *)item{

@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - AgoraRtcEngine_iOS (2.4.0.1)
   - Bugly (2.5.0)
   - CocoaLumberjack (3.5.3):
     - CocoaLumberjack/Core (= 3.5.3)
@@ -335,6 +336,7 @@ PODS:
   - ZFPlayer/Core (3.2.10)
 
 DEPENDENCIES:
+  - AgoraRtcEngine_iOS
   - Bugly
   - CocoaLumberjack
   - KLSwitch
@@ -362,6 +364,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - AgoraRtcEngine_iOS
     - Bugly
     - CocoaLumberjack
     - FBRetainCycleDetector
@@ -384,6 +387,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  AgoraRtcEngine_iOS: be7eee187e0cf9bc67d67645cd0b75cd60b9503a
   Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
   CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
@@ -404,6 +408,6 @@ SPEC CHECKSUMS:
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
   ZFPlayer: a51c6ffebaf06b91d373091bb4a62ee188cfc7de
 
-PODFILE CHECKSUM: 64c1b64d967ce8e83a2eaeb4a5ff71a5b35fe634
+PODFILE CHECKSUM: 508f8663f7cb365b4c5796a5d29a8b33e738da3a
 
 COCOAPODS: 1.7.0.beta.3

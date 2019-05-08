@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = NSLocalizedString(@"Mine.Title", @"我的");
+    self.title = Localized(@"Mine.Title");
 }
 
 /*

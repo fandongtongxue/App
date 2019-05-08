@@ -87,23 +87,41 @@
 //    DDLogWarn(@"Warn");         // 警告日志
 //    DDLogError(@"Error");       // 错误日志
     
+//    //字体
+//    for (NSString *fontfamilyname in [UIFont familyNames])
+//    {
+//        DDLogDebug(@"family:'%@'",fontfamilyname);
+//        for(NSString *fontName in [UIFont fontNamesForFamilyName:fontfamilyname])
+//        {
+//            DDLogDebug(@"\tfont:'%@'",fontName);
+//        }
+//        DDLogDebug(@"-------------");
+//    }
+    
     return YES;
 }
 
 - (void)createTabBarController{
     FDTabBarController *tabBarVC = [[FDTabBarController alloc]init];
     
+    NSMutableDictionary *attrDict = [NSMutableDictionary dictionary];
+    attrDict[NSFontAttributeName] = Font(12);
+    
     HomeViewController *homeVC = [[HomeViewController alloc]init];
     homeVC.hidesBottomBarWhenPushed = NO;
     FDNavigationController *homeNav = [[FDNavigationController alloc]initWithRootViewController:homeVC];
-    homeNav.tabBarItem = [QDUIHelper tabBarItemWithTitle:NSLocalizedString(@"Home.Title",@"主页") image:[UIImageMake(@"tab_home_normal") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"tab_home_selected") tag:0];
-    AddAccessibilityHint(homeNav.tabBarItem, @"Home.Title");
+    homeNav.tabBarItem = [QDUIHelper tabBarItemWithTitle:Localized(@"Home.Title") image:[UIImageMake(@"tab_home_normal") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"tab_home_selected") tag:0];
+    [homeNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateNormal];
+    [homeNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateSelected];
+    AddAccessibilityHint(homeNav.tabBarItem, Localized(@"Home.Title"));
     
     MineViewController *mineVC = [[MineViewController alloc]init];
     mineVC.hidesBottomBarWhenPushed = NO;
     FDNavigationController *mineNav = [[FDNavigationController alloc]initWithRootViewController:mineVC];
-    mineNav.tabBarItem = [QDUIHelper tabBarItemWithTitle:NSLocalizedString(@"Mine.Title",@"我的") image:[UIImageMake(@"tab_mine_normal") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"tab_mine_selected") tag:0];
-    AddAccessibilityHint(mineNav.tabBarItem, @"Mine.Title");
+    mineNav.tabBarItem = [QDUIHelper tabBarItemWithTitle:Localized(@"Mine.Title") image:[UIImageMake(@"tab_mine_normal") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"tab_mine_selected") tag:0];
+    [mineNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateNormal];
+    [mineNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateSelected];
+    AddAccessibilityHint(mineNav.tabBarItem, Localized(@"Mine.Title"));
     tabBarVC.viewControllers = @[homeNav,mineNav];
         
     self.window.rootViewController = tabBarVC;
