@@ -15,3 +15,5 @@
 
 "Update.Alert.Title" = "Upgrade Tip";
 "Update.Alert.Message" = "Do you wan't to update to new version?";
+
+"Login.PhoneLogin.Title" = "Phone Login";

@@ -56,7 +56,8 @@
     //必须登录
     if ([GlobalManager manager].globalModel.isMustLogin) {
         LoginViewController *loginVC = [[LoginViewController alloc]init];
-        [self.window.rootViewController presentViewController:loginVC animated:YES completion:nil];
+        FDNavigationController *loginNav = [[FDNavigationController alloc]initWithRootViewController:loginVC];
+        [self.window.rootViewController presentViewController:loginNav animated:YES completion:nil];
     }
     
     //处理更新
@@ -105,7 +106,7 @@
     FDTabBarController *tabBarVC = [[FDTabBarController alloc]init];
     
     NSMutableDictionary *attrDict = [NSMutableDictionary dictionary];
-    attrDict[NSFontAttributeName] = Font(12);
+    attrDict[NSFontAttributeName] = [UIFont fontWithName:@"AlibabaPuHuiTiL" size:12];
     
     HomeViewController *homeVC = [[HomeViewController alloc]init];
     homeVC.hidesBottomBarWhenPushed = NO;

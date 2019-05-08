@@ -74,6 +74,7 @@
 		CBC00E4622734B9000E0A471 /* YTKUrlArgumentsFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC00E4422734B9000E0A471 /* YTKUrlArgumentsFilter.m */; };
 		CBCFB1DE2281BD4600ADE61E /* GlobalModel.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBCFB1DD2281BD4600ADE61E /* GlobalModel.plist */; };
 		CBCFB1E12281C5CB00ADE61E /* UIAlertController+supportedInterfaceOrientations.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCFB1E02281C5CB00ADE61E /* UIAlertController+supportedInterfaceOrientations.m */; };
+		CBD8F54822830AE90069510C /* PhoneLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD8F54722830AE90069510C /* PhoneLoginViewController.m */; };
 		CBDB826D2281BA6300E27741 /* UserInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBDB826C2281BA6300E27741 /* UserInfo.plist */; };
 /* End PBXBuildFile section */
 
@@ -192,6 +193,8 @@
 		CBCFB1DD2281BD4600ADE61E /* GlobalModel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GlobalModel.plist; sourceTree = "<group>"; };
 		CBCFB1DF2281C5CB00ADE61E /* UIAlertController+supportedInterfaceOrientations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+supportedInterfaceOrientations.h"; sourceTree = "<group>"; };
 		CBCFB1E02281C5CB00ADE61E /* UIAlertController+supportedInterfaceOrientations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+supportedInterfaceOrientations.m"; sourceTree = "<group>"; };
+		CBD8F54622830AE90069510C /* PhoneLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhoneLoginViewController.h; sourceTree = "<group>"; };
+		CBD8F54722830AE90069510C /* PhoneLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhoneLoginViewController.m; sourceTree = "<group>"; };
 		CBDB826C2281BA6300E27741 /* UserInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = UserInfo.plist; sourceTree = "<group>"; };
 		D8F4FE7B423BC276DC0C84C5 /* Pods-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.release.xcconfig"; path = "Target Support Files/Pods-App/Pods-App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -600,6 +603,8 @@
 				CB8EA0E0227B1A2B004177D4 /* MineViewController.m */,
 				CB8EA0E2227B2460004177D4 /* LoginViewController.h */,
 				CB8EA0E3227B2460004177D4 /* LoginViewController.m */,
+				CBD8F54622830AE90069510C /* PhoneLoginViewController.h */,
+				CBD8F54722830AE90069510C /* PhoneLoginViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -790,6 +795,7 @@
 				CB8EA0E1227B1A2B004177D4 /* MineViewController.m in Sources */,
 				6D36CA90228117E10046FA8C /* GlobalModel.m in Sources */,
 				CB6E67B52279CF7B00D3788E /* QDCommonGroupListViewController.m in Sources */,
+				CBD8F54822830AE90069510C /* PhoneLoginViewController.m in Sources */,
 				CB6E67C12279D8D900D3788E /* HomeViewController.m in Sources */,
 				6D74C528227575D500332AAC /* AppDelegate+Launch.m in Sources */,
 				CB6E67B32279CF7B00D3788E /* UIImageEffects.m in Sources */,

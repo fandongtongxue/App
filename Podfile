@@ -52,4 +52,6 @@ target 'App' do
   pod 'CocoaLumberjack'
   # 声网
   pod 'AgoraRtcEngine_iOS'
+  # ShareSDK 短信
+  pod 'mob_smssdk'
 end

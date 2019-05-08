@@ -15,3 +15,5 @@
 
 "Update.Alert.Title" = "升级提示";
 "Update.Alert.Message" = "有新的版本是否需要更新";
+
+"Login.PhoneLogin.Title" = "手机登录";

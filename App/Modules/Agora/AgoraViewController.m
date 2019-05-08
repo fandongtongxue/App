@@ -52,7 +52,7 @@
     AgoraRtcVideoCanvas *videoCanvas = [[AgoraRtcVideoCanvas alloc] init];
     videoCanvas.uid = 0;
     
-    videoCanvas.view = self.localVideo;
+//    videoCanvas.view = self.localVideo;
     videoCanvas.renderMode = AgoraVideoRenderModeHidden;
     [self.agoraKit setupLocalVideo:videoCanvas];
     // Bind local video stream to view
@@ -60,9 +60,9 @@
 
 - (void)setupRemoteVideo {
     AgoraRtcVideoCanvas *videoCanvas = [[AgoraRtcVideoCanvas alloc] init];
-    videoCanvas.uid = uid;
+//    videoCanvas.uid = uid;
     
-    videoCanvas.view = self.remoteVideo;
+//    videoCanvas.view = self.remoteVideo;
     videoCanvas.renderMode = AgoraVideoRenderModeFit;
     [self.agoraKit setupRemoteVideo:videoCanvas];
     // Bind remote video stream to view

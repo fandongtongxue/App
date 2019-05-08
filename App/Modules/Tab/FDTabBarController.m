@@ -7,6 +7,7 @@
 //
 
 #import "FDTabBarController.h"
+#import "FDNavigationController.h"
 #import "LoginViewController.h"
 
 @interface FDTabBarController ()<UITabBarControllerDelegate>
@@ -26,7 +27,8 @@
     if (index != 0) {
         if (![GlobalManager manager].globalModel.isLogin) {
             LoginViewController *loginVC = [[LoginViewController alloc]init];
-            [self presentViewController:loginVC animated:YES completion:nil];
+            FDNavigationController *loginNav = [[FDNavigationController alloc]initWithRootViewController:loginVC];
+            [self presentViewController:loginNav animated:YES completion:nil];
             return NO;
         }
         return YES;

@@ -15,6 +15,8 @@
 #import "FDSocialManager.h"
 #import "FDSocialModel.h"
 
+#import "PhoneLoginViewController.h"
+
 @interface LoginViewController ()<ZFPlayerMediaPlayback>
 
 @property (nonatomic, strong) ZFPlayerController *player;
@@ -53,10 +55,10 @@
     CGFloat buttonW = 44;
     CGFloat buttonH = 44;
     
-    CGFloat buttonX = (SCREEN_WIDTH - 3 * 44 - 2 * 40) / 2;
+    CGFloat buttonX = (SCREEN_WIDTH - 4 * 44 - 3 * 40) / 2;
     
-    NSArray *imageArray = @[@"login_btn_wechat",@"login_btn_qq",@"login_btn_weibo"];
-    for (NSInteger i = 0 ; i < 3; i++) {
+    NSArray *imageArray = @[@"login_btn_mobile",@"login_btn_wechat",@"login_btn_qq",@"login_btn_weibo"];
+    for (NSInteger i = 0 ; i < imageArray.count; i++) {
         QMUIButton *button = [[QMUIButton alloc]initWithFrame:CGRectMake(buttonX + i * (44 + 40), SCREEN_HEIGHT / 2, buttonW, buttonH)];
         [button setImage:[UIImage imageNamed:imageArray[i]] forState:UIControlStateNormal];
         button.tag = 10+i;
@@ -67,6 +69,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
     self.player.viewControllerDisappear = NO;
 }
 
@@ -82,6 +85,12 @@
     switch (sender.tag - 10) {
         case 0:
         {
+            PhoneLoginViewController *phoneLoginVC = [[PhoneLoginViewController alloc]init];
+            [self.navigationController pushViewController:phoneLoginVC animated:YES];
+        }
+        break;
+        case 1:
+        {
             [[FDSocialManager defaultManager] login:FDSocialManagerLoginTypeWeChat currentViewController:self completion:^(FDSocialModel *model, NSString *errorMsg) {
                 @strongify(self);
                 DDLogDebug(@"%@",model.mj_keyValues);
@@ -92,7 +101,7 @@
             }];
         }
             break;
-        case 1:
+        case 2:
         {
             [[FDSocialManager defaultManager] login:FDSocialManagerLoginTypeQQ currentViewController:self completion:^(FDSocialModel *model, NSString *errorMsg) {
                 @strongify(self);
@@ -104,7 +113,7 @@
             }];
         }
             break;
-        case 2:
+        case 3:
         {
             [[FDSocialManager defaultManager] login:FDSocialManagerLoginTypeWeibo currentViewController:self completion:^(FDSocialModel *model, NSString *errorMsg) {
                 @strongify(self);
