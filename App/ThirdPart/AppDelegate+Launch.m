@@ -106,7 +106,7 @@
     FDTabBarController *tabBarVC = [[FDTabBarController alloc]init];
     
     NSMutableDictionary *attrDict = [NSMutableDictionary dictionary];
-    attrDict[NSFontAttributeName] = [UIFont fontWithName:@"AlibabaPuHuiTiL" size:12];
+    attrDict[NSFontAttributeName] = Font(12);
     
     HomeViewController *homeVC = [[HomeViewController alloc]init];
     homeVC.hidesBottomBarWhenPushed = NO;

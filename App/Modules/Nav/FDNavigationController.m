@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSDictionary *titleAttrDict = [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"AlibabaPuHuiTiL" size:17], NSFontAttributeName, nil];
+    NSDictionary *titleAttrDict = [NSDictionary dictionaryWithObjectsAndKeys: Font(17), NSFontAttributeName, nil];
     [self.navigationController.navigationBar setTitleTextAttributes:titleAttrDict];
 }
 
