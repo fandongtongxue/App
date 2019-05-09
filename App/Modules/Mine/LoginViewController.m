@@ -36,7 +36,8 @@
     playerManager.scalingMode = ZFPlayerScalingModeAspectFill;
     /// 播放器相关
     self.player = [[ZFPlayerController alloc] initWithPlayerManager:playerManager containerView:self.view];
-    playerManager.assetURL = [NSURL URLWithString:@"http://temp.fandong.me/register_guide_video.mp4"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"register_guide_video" ofType:@"mp4"];
+    playerManager.assetURL = [NSURL fileURLWithPath:path];
     @weakify(playerManager);
     [self.player setPlayerDidToEnd:^(id<ZFPlayerMediaPlayback>  _Nonnull asset) {
         @strongify(playerManager);

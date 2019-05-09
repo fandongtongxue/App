@@ -72,6 +72,7 @@
 		CB8EA0E4227B2460004177D4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8EA0E3227B2460004177D4 /* LoginViewController.m */; };
 		CB98FE4F227F1C1500EA3834 /* LaunchScreen_QMUI.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB98FE4E227F1C1400EA3834 /* LaunchScreen_QMUI.xib */; };
 		CBC00E4622734B9000E0A471 /* YTKUrlArgumentsFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC00E4422734B9000E0A471 /* YTKUrlArgumentsFilter.m */; };
+		CBC6FB1D22844CED00EAF915 /* register_guide_video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CBC6FB1C22844C9900EAF915 /* register_guide_video.mp4 */; };
 		CBCFB1DE2281BD4600ADE61E /* GlobalModel.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBCFB1DD2281BD4600ADE61E /* GlobalModel.plist */; };
 		CBCFB1E12281C5CB00ADE61E /* UIAlertController+supportedInterfaceOrientations.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCFB1E02281C5CB00ADE61E /* UIAlertController+supportedInterfaceOrientations.m */; };
 		CBD8F54822830AE90069510C /* PhoneLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD8F54722830AE90069510C /* PhoneLoginViewController.m */; };
@@ -190,6 +191,7 @@
 		CB98FE4E227F1C1400EA3834 /* LaunchScreen_QMUI.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen_QMUI.xib; sourceTree = "<group>"; };
 		CBC00E4422734B9000E0A471 /* YTKUrlArgumentsFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTKUrlArgumentsFilter.m; sourceTree = "<group>"; };
 		CBC00E4522734B9000E0A471 /* YTKUrlArgumentsFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTKUrlArgumentsFilter.h; sourceTree = "<group>"; };
+		CBC6FB1C22844C9900EAF915 /* register_guide_video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = register_guide_video.mp4; sourceTree = "<group>"; };
 		CBCFB1DD2281BD4600ADE61E /* GlobalModel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GlobalModel.plist; sourceTree = "<group>"; };
 		CBCFB1DF2281C5CB00ADE61E /* UIAlertController+supportedInterfaceOrientations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+supportedInterfaceOrientations.h"; sourceTree = "<group>"; };
 		CBCFB1E02281C5CB00ADE61E /* UIAlertController+supportedInterfaceOrientations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+supportedInterfaceOrientations.m"; sourceTree = "<group>"; };
@@ -338,6 +340,7 @@
 		6DEC84F42276DB50000BCB3C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CBC6FB1C22844C9900EAF915 /* register_guide_video.mp4 */,
 				CBCFB1DD2281BD4600ADE61E /* GlobalModel.plist */,
 				6DEC84F52276DB50000BCB3C /* Font */,
 				CBDB826C2281BA6300E27741 /* UserInfo.plist */,
@@ -677,6 +680,7 @@
 				6DEC850B2276DB50000BCB3C /* 版权申明.rtf in Resources */,
 				6DEC850C2276DB50000BCB3C /* Alibaba-PuHuiTi-Bold.otf in Resources */,
 				6DEC85172276DB50000BCB3C /* AlibabaSans-Italic.otf in Resources */,
+				CBC6FB1D22844CED00EAF915 /* register_guide_video.mp4 in Resources */,
 				6DEC850F2276DB50000BCB3C /* Alibaba-PuHuiTi-Medium.otf in Resources */,
 				6DEC85182276DB50000BCB3C /* AlibabaSans-BoldItalic.otf in Resources */,
 				6DEC85122276DB50000BCB3C /* AlibabaSans-Bold.otf in Resources */,

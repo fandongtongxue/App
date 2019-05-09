@@ -54,4 +54,8 @@ target 'App' do
   pod 'AgoraRtcEngine_iOS'
   # ShareSDK 短信
   pod 'mob_smssdk'
+  # 手机号码输入框
+  pod 'QuickMobileTextField'
+  # 验证码
+  pod 'QuickSecurityCode'
 end

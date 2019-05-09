@@ -10,7 +10,13 @@
 
 #import <SMS_SDK/SMSSDK.h>
 
-@interface PhoneLoginViewController ()
+#import <QuickSecurityCode/QuickSecurityCode.h>
+#import <QuickMobileTextField/QuickMobileTextField.h>
+
+@interface PhoneLoginViewController ()<QuickMobileTextFieldDelegate>
+
+@property(nonatomic, strong) QuickMobileTextField *phoneTextField;
+@property(nonatomic, strong) QuickSecurityCode *codeTextField;
 
 @end
 
@@ -24,6 +30,11 @@
 - (void)initSubviews {
     [super initSubviews];
     // 对 subviews 的初始化写在这里
+//    [[UIApplication sharedApplication].keyWindow addSubview:self.codeTextField];
+//    self.codeTextField.center = [UIApplication sharedApplication].keyWindow.center;
+    
+    [self.view addSubview:self.phoneTextField];
+    self.phoneTextField.center = self.view.center;
 }
 
 - (void)viewDidLoad {
@@ -50,6 +61,32 @@
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    return YES;
+}
+
+- (QuickSecurityCode *)codeTextField{
+    if (!_codeTextField) {
+        _codeTextField = [[QuickSecurityCode alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 100)];
+//        __weak __typeof(self)weakSelf = self;
+        [_codeTextField setComplete:^(NSString *code) {
+//            __strong __typeof(weakSelf)strongSelf = weakSelf;
+            
+        }];
+    }
+    return _codeTextField;
+}
+
+- (QuickMobileTextField *)phoneTextField{
+    if (!_phoneTextField) {
+        _phoneTextField = [[QuickMobileTextField alloc]initWithFrame:CGRectMake(20, 0, SCREEN_WIDTH - 40, 44)];
+        _phoneTextField.nextdelegate = self;
+        _phoneTextField.placeholderColor = UIColorGray;
+        _phoneTextField.placeholder = @"请输入手机号码";
+    }
+    return _phoneTextField;
 }
 
 - (void)setupNavigationItems {

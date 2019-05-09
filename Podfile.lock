@@ -296,6 +296,8 @@ PODS:
     - QMUIKit/QMUILog
   - QMUIKit/QMUIResources (3.1.7)
   - QMUIKit/QMUIWeakObjectContainer (3.1.7)
+  - QuickMobileTextField (1.0.7)
+  - QuickSecurityCode (1.0.3)
   - Reachability (3.2)
   - SDCycleScrollView (1.80):
     - SDWebImage (>= 5.0.0)
@@ -350,6 +352,8 @@ DEPENDENCIES:
   - MLeaksFinder
   - mob_smssdk
   - QMUIKit
+  - QuickMobileTextField
+  - QuickSecurityCode
   - Reachability
   - SDCycleScrollView
   - SDWebImage
@@ -381,6 +385,8 @@ SPEC REPOS:
     - mob_smssdk
     - MOBFoundation
     - QMUIKit
+    - QuickMobileTextField
+    - QuickSecurityCode
     - Reachability
     - SDCycleScrollView
     - SDWebImage
@@ -406,6 +412,8 @@ SPEC CHECKSUMS:
   mob_smssdk: cdb6a31d4fd4667ed928e2eca03f21ad89ebc05c
   MOBFoundation: b5ff4038ddb9a0f06b685b86408f905a10aa147c
   QMUIKit: de5dce4852e6856f8d87b3553505b693c003265f
+  QuickMobileTextField: 61e4b90df95c3b63637a7398c37572cd5945d641
+  QuickSecurityCode: 44b25518b6a69e0dc34a7e5faa78a03a88528dc9
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
   SDWebImage: 6764b5fa0f73c203728052955dbefa2bf1f33282
@@ -416,6 +424,6 @@ SPEC CHECKSUMS:
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
   ZFPlayer: a51c6ffebaf06b91d373091bb4a62ee188cfc7de
 
-PODFILE CHECKSUM: 73a137be0ce2595482881a9619d93e2941eb2a2b
+PODFILE CHECKSUM: 7dec5c6889dad43e3a2cd9f2f76aaeea0496e224
 
 COCOAPODS: 1.7.0.beta.3
