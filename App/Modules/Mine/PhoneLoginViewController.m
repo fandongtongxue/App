@@ -38,8 +38,9 @@
     [self.view addSubview:self.phoneTextField];
     self.phoneTextField.center = self.view.center;
     
-    CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(0, 200, 200, 50)];
+    CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
     boxInputView.codeLength = 4;
+    boxInputView.center = self.view.center;
     [boxInputView loadAndPrepareViewWithBeginEdit:YES]; // BeginEdit:是否自动启用编辑模式
     [self.view addSubview:boxInputView];
     
@@ -53,6 +54,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // 对 self.view 的操作写在这里
+    self.view.backgroundColor = UIColorGray;
+    
+    [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:@"17661297963" zone:@"86" template:nil result:^(NSError *error) {
+        if (error) {
+            NSLog(@"%@",error);
+        }
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
