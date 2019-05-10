@@ -56,6 +56,7 @@ target 'App' do
   pod 'mob_smssdk'
   # 手机号码输入框
   pod 'QuickMobileTextField'
-  # 验证码
-  pod 'QuickSecurityCode'
+#  # 验证码
+#  pod 'QuickSecurityCode'
+  pod 'CRBoxInputView'
 end

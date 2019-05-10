@@ -10,13 +10,15 @@
 
 #import <SMS_SDK/SMSSDK.h>
 
-#import <QuickSecurityCode/QuickSecurityCode.h>
+//#import <QuickSecurityCode/QuickSecurityCode.h>
 #import <QuickMobileTextField/QuickMobileTextField.h>
+
+#import <CRBoxInputView/CRBoxInputView.h>
 
 @interface PhoneLoginViewController ()<QuickMobileTextFieldDelegate>
 
 @property(nonatomic, strong) QuickMobileTextField *phoneTextField;
-@property(nonatomic, strong) QuickSecurityCode *codeTextField;
+//@property(nonatomic, strong) QuickSecurityCode *codeTextField;
 
 @end
 
@@ -35,6 +37,17 @@
     
     [self.view addSubview:self.phoneTextField];
     self.phoneTextField.center = self.view.center;
+    
+    CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(0, 200, 200, 50)];
+    boxInputView.codeLength = 4;
+    [boxInputView loadAndPrepareViewWithBeginEdit:YES]; // BeginEdit:是否自动启用编辑模式
+    [self.view addSubview:boxInputView];
+    
+    // 获取值
+    // 方法1, 当输入文字变化时触发回调block
+    boxInputView.textDidChangeblock = ^(NSString *text, BOOL isFinished) {
+        NSLog(@"text:%@", text);
+    };
 }
 
 - (void)viewDidLoad {
@@ -67,18 +80,18 @@
     return YES;
 }
 
-- (QuickSecurityCode *)codeTextField{
-    if (!_codeTextField) {
-        _codeTextField = [[QuickSecurityCode alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 100)];
-//        __weak __typeof(self)weakSelf = self;
-        [_codeTextField setComplete:^(NSString *code) {
-//            __strong __typeof(weakSelf)strongSelf = weakSelf;
-            
-        }];
-    }
-    return _codeTextField;
-}
-
+//- (QuickSecurityCode *)codeTextField{
+//    if (!_codeTextField) {
+//        _codeTextField = [[QuickSecurityCode alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 100)];
+////        __weak __typeof(self)weakSelf = self;
+//        [_codeTextField setComplete:^(NSString *code) {
+////            __strong __typeof(weakSelf)strongSelf = weakSelf;
+//
+//        }];
+//    }
+//    return _codeTextField;
+//}
+//
 - (QuickMobileTextField *)phoneTextField{
     if (!_phoneTextField) {
         _phoneTextField = [[QuickMobileTextField alloc]initWithFrame:CGRectMake(20, 0, SCREEN_WIDTH - 40, 44)];
