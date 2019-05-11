@@ -19,8 +19,6 @@ PODS:
   - CocoaLumberjack (3.5.3):
     - CocoaLumberjack/Core (= 3.5.3)
   - CocoaLumberjack/Core (3.5.3)
-  - CRBoxInputView (0.1.9):
-    - Masonry
   - FBRetainCycleDetector (0.1.4)
   - KLSwitch (1.5)
   - Masonry (1.1.0)
@@ -299,6 +297,7 @@ PODS:
   - QMUIKit/QMUIResources (3.1.7)
   - QMUIKit/QMUIWeakObjectContainer (3.1.7)
   - QuickMobileTextField (1.0.7)
+  - QuickSecurityCode (1.0.3)
   - Reachability (3.2)
   - SDCycleScrollView (1.80):
     - SDWebImage (>= 5.0.0)
@@ -345,7 +344,6 @@ DEPENDENCIES:
   - AgoraRtcEngine_iOS
   - Bugly
   - CocoaLumberjack
-  - CRBoxInputView
   - KLSwitch
   - Masonry
   - MBProgressHUD
@@ -355,6 +353,7 @@ DEPENDENCIES:
   - mob_smssdk
   - QMUIKit
   - QuickMobileTextField
+  - QuickSecurityCode
   - Reachability
   - SDCycleScrollView
   - SDWebImage
@@ -376,7 +375,6 @@ SPEC REPOS:
     - AgoraRtcEngine_iOS
     - Bugly
     - CocoaLumberjack
-    - CRBoxInputView
     - FBRetainCycleDetector
     - KLSwitch
     - Masonry
@@ -388,6 +386,7 @@ SPEC REPOS:
     - MOBFoundation
     - QMUIKit
     - QuickMobileTextField
+    - QuickSecurityCode
     - Reachability
     - SDCycleScrollView
     - SDWebImage
@@ -403,7 +402,6 @@ SPEC CHECKSUMS:
   AgoraRtcEngine_iOS: be7eee187e0cf9bc67d67645cd0b75cd60b9503a
   Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
   CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
-  CRBoxInputView: ef114f55902b80ad00ae32b63d947afa51181b31
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   KLSwitch: ff8b9953b9e15e16cb53efec7370a44ae02f8a6c
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
@@ -415,6 +413,7 @@ SPEC CHECKSUMS:
   MOBFoundation: b5ff4038ddb9a0f06b685b86408f905a10aa147c
   QMUIKit: de5dce4852e6856f8d87b3553505b693c003265f
   QuickMobileTextField: 61e4b90df95c3b63637a7398c37572cd5945d641
+  QuickSecurityCode: 44b25518b6a69e0dc34a7e5faa78a03a88528dc9
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
   SDWebImage: 6764b5fa0f73c203728052955dbefa2bf1f33282
@@ -425,6 +424,6 @@ SPEC CHECKSUMS:
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
   ZFPlayer: a51c6ffebaf06b91d373091bb4a62ee188cfc7de
 
-PODFILE CHECKSUM: 60efbe0b1636ce1ddc7fab7990e315f4929fd089
+PODFILE CHECKSUM: 4a6ee949d76df9b09fa43ce910a0365c913de512
 
-COCOAPODS: 1.7.0.beta.3
+COCOAPODS: 1.7.0.rc.1

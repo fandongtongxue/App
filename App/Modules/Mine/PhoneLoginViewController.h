@@ -8,6 +8,12 @@
 
 #import "FDViewController.h"
 
+typedef void(^finishPhoneLoginCallBack)();
+
 @interface PhoneLoginViewController : FDViewController
+
+@property(nonatomic, copy) finishPhoneLoginCallBack finishPhoneLoginCallBack;
+
+- (instancetype)initWithCallBack:(finishPhoneLoginCallBack)finishPhoneLoginCallBack;
 
 @end

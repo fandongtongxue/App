@@ -10,57 +10,29 @@
 
 #import <SMS_SDK/SMSSDK.h>
 
-//#import <QuickSecurityCode/QuickSecurityCode.h>
-#import <QuickMobileTextField/QuickMobileTextField.h>
+#import <QuickSecurityCode/QuickSecurityCode.h>
+#import <QuickMobileTextField/QuickMaterialMobileTextField.h>
 
-#import <CRBoxInputView/CRBoxInputView.h>
+@interface PhoneLoginViewController ()
 
-@interface PhoneLoginViewController ()<QuickMobileTextFieldDelegate>
-
-@property(nonatomic, strong) QuickMobileTextField *phoneTextField;
-//@property(nonatomic, strong) QuickSecurityCode *codeTextField;
+@property(nonatomic, strong) QuickMaterialMobileTextField *phoneTextField;
+@property(nonatomic, strong) QuickSecurityCode *codeTextField;
 
 @end
 
 @implementation PhoneLoginViewController
 
-- (void)didInitialize {
-    [super didInitialize];
-    // init 时做的事情请写在这里
-}
-
-- (void)initSubviews {
-    [super initSubviews];
-    // 对 subviews 的初始化写在这里
-//    [[UIApplication sharedApplication].keyWindow addSubview:self.codeTextField];
-//    self.codeTextField.center = [UIApplication sharedApplication].keyWindow.center;
-    
-    [self.view addSubview:self.phoneTextField];
-    self.phoneTextField.center = self.view.center;
-    
-    CRBoxInputView *boxInputView = [[CRBoxInputView alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
-    boxInputView.codeLength = 4;
-    boxInputView.center = self.view.center;
-    [boxInputView loadAndPrepareViewWithBeginEdit:YES]; // BeginEdit:是否自动启用编辑模式
-    [self.view addSubview:boxInputView];
-    
-    // 获取值
-    // 方法1, 当输入文字变化时触发回调block
-    boxInputView.textDidChangeblock = ^(NSString *text, BOOL isFinished) {
-        NSLog(@"text:%@", text);
-    };
+- (instancetype)initWithCallBack:(finishPhoneLoginCallBack)finishPhoneLoginCallBack{
+    if (self = [super init]) {
+        self.finishPhoneLoginCallBack = finishPhoneLoginCallBack;
+    }
+    return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // 对 self.view 的操作写在这里
-    self.view.backgroundColor = UIColorGray;
-    
-    [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:@"17661297963" zone:@"86" template:nil result:^(NSError *error) {
-        if (error) {
-            NSLog(@"%@",error);
-        }
-    }];
+    [self.view addSubview:self.phoneTextField];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -68,44 +40,48 @@
     [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+- (void)textFieldDidChange:(UITextField *)textField{
+    if (textField.text.length == 11 + 2) {
+        self.phoneTextField.hidden = YES;
+        [self.view addSubview:self.codeTextField];
+        [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:textField.text zone:@"86" template:nil result:^(NSError *error) {
+            if (error) {
+                DDLogDebug(@"验证码获取失败:%@",error);
+            }else{
+                DDLogDebug(@"验证码获取成功");
+            }
+        }];
+    }
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
+- (QuickSecurityCode *)codeTextField{
+    if (!_codeTextField) {
+        _codeTextField = [[QuickSecurityCode alloc]initWithFrame:_phoneTextField.frame];
+        __weak __typeof(self)weakSelf = self;
+        [_codeTextField setComplete:^(NSString *code) {
+            __strong __typeof(weakSelf)strongSelf = weakSelf;
+            [SMSSDK commitVerificationCode:code phoneNumber:strongSelf.phoneTextField.text zone:@"86" result:^(NSError *error) {
+                if (error) {
+                    DDLogDebug(@"验证码验证失败:%@",error);
+                }else{
+                    DDLogDebug(@"验证码验证成功");
+                    if (strongSelf->_finishPhoneLoginCallBack) {
+                        strongSelf->_finishPhoneLoginCallBack();
+                    }
+                }
+            }];
+        }];
+    }
+    return _codeTextField;
 }
 
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-}
-
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-}
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    return YES;
-}
-
-//- (QuickSecurityCode *)codeTextField{
-//    if (!_codeTextField) {
-//        _codeTextField = [[QuickSecurityCode alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 100)];
-////        __weak __typeof(self)weakSelf = self;
-//        [_codeTextField setComplete:^(NSString *code) {
-////            __strong __typeof(weakSelf)strongSelf = weakSelf;
-//
-//        }];
-//    }
-//    return _codeTextField;
-//}
-//
-- (QuickMobileTextField *)phoneTextField{
+- (QuickMaterialMobileTextField *)phoneTextField{
     if (!_phoneTextField) {
-        _phoneTextField = [[QuickMobileTextField alloc]initWithFrame:CGRectMake(20, 0, SCREEN_WIDTH - 40, 44)];
+        _phoneTextField = [[QuickMaterialMobileTextField alloc]initWithFrame:CGRectMake(20, StatusBarHeight + NavigationBarHeight + 20, SCREEN_WIDTH - 40, 44)];
         _phoneTextField.nextdelegate = self;
         _phoneTextField.placeholderColor = UIColorGray;
         _phoneTextField.placeholder = @"请输入手机号码";
+        [_phoneTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     }
     return _phoneTextField;
 }

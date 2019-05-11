@@ -86,7 +86,11 @@
     switch (sender.tag - 10) {
         case 0:
         {
-            PhoneLoginViewController *phoneLoginVC = [[PhoneLoginViewController alloc]init];
+            PhoneLoginViewController *phoneLoginVC = [[PhoneLoginViewController alloc]initWithCallBack:^{
+                @strongify(self);
+                [GlobalManager manager].globalModel.isLogin = YES;
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }];
             [self.navigationController pushViewController:phoneLoginVC animated:YES];
         }
         break;
