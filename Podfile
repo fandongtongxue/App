@@ -58,5 +58,4 @@ target 'App' do
   pod 'QuickMobileTextField'
   # 验证码
   pod 'QuickSecurityCode'
-#  pod 'CRBoxInputView'
 end

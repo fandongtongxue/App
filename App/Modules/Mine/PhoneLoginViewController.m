@@ -42,13 +42,15 @@
 
 - (void)textFieldDidChange:(UITextField *)textField{
     if (textField.text.length == 11 + 2) {
-        self.phoneTextField.hidden = YES;
-        [self.view addSubview:self.codeTextField];
+        __weak __typeof(self)weakSelf = self;
         [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:textField.text zone:@"86" template:nil result:^(NSError *error) {
+            __strong __typeof(weakSelf)strongSelf = weakSelf;
             if (error) {
                 DDLogDebug(@"验证码获取失败:%@",error);
             }else{
                 DDLogDebug(@"验证码获取成功");
+                strongSelf.phoneTextField.hidden = YES;
+                [strongSelf.view addSubview:strongSelf.codeTextField];
             }
         }];
     }
@@ -77,8 +79,8 @@
 
 - (QuickMaterialMobileTextField *)phoneTextField{
     if (!_phoneTextField) {
-        _phoneTextField = [[QuickMaterialMobileTextField alloc]initWithFrame:CGRectMake(20, StatusBarHeight + NavigationBarHeight + 20, SCREEN_WIDTH - 40, 44)];
-        _phoneTextField.nextdelegate = self;
+        _phoneTextField = [[QuickMaterialMobileTextField alloc]initWithFrame:CGRectMake(20, StatusBarHeight + NavigationBarHeight + 20, SCREEN_WIDTH - 40, 100)];
+        _phoneTextField.textInsets = UIEdgeInsetsMake(15, 15, 15, 15);
         _phoneTextField.placeholderColor = UIColorGray;
         _phoneTextField.placeholder = @"请输入手机号码";
         [_phoneTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
