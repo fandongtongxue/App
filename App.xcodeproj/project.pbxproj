@@ -70,7 +70,6 @@
 		CB8EA0DD227AE453004177D4 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8EA0DC227AE453004177D4 /* SearchViewController.m */; };
 		CB8EA0E1227B1A2B004177D4 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8EA0E0227B1A2B004177D4 /* MineViewController.m */; };
 		CB8EA0E4227B2460004177D4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8EA0E3227B2460004177D4 /* LoginViewController.m */; };
-		CB98FE4F227F1C1500EA3834 /* LaunchScreen_QMUI.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB98FE4E227F1C1400EA3834 /* LaunchScreen_QMUI.xib */; };
 		CBC00E4622734B9000E0A471 /* YTKUrlArgumentsFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC00E4422734B9000E0A471 /* YTKUrlArgumentsFilter.m */; };
 		CBC6FB1D22844CED00EAF915 /* register_guide_video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CBC6FB1C22844C9900EAF915 /* register_guide_video.mp4 */; };
 		CBCFB1DE2281BD4600ADE61E /* GlobalModel.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBCFB1DD2281BD4600ADE61E /* GlobalModel.plist */; };
@@ -188,7 +187,6 @@
 		CB8EA0E0227B1A2B004177D4 /* MineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		CB8EA0E2227B2460004177D4 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		CB8EA0E3227B2460004177D4 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		CB98FE4E227F1C1400EA3834 /* LaunchScreen_QMUI.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen_QMUI.xib; sourceTree = "<group>"; };
 		CBC00E4422734B9000E0A471 /* YTKUrlArgumentsFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTKUrlArgumentsFilter.m; sourceTree = "<group>"; };
 		CBC00E4522734B9000E0A471 /* YTKUrlArgumentsFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTKUrlArgumentsFilter.h; sourceTree = "<group>"; };
 		CBC6FB1C22844C9900EAF915 /* register_guide_video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = register_guide_video.mp4; sourceTree = "<group>"; };
@@ -587,7 +585,6 @@
 				6D9DF5B22277D7CC00FB9CFC /* PrefixHeader.pch */,
 				6D36CA9122811E460046FA8C /* Define.h */,
 				CB6E67C22279EAEC00D3788E /* LaunchScreen.xib */,
-				CB98FE4E227F1C1400EA3834 /* LaunchScreen_QMUI.xib */,
 				CB6E67C82279EECC00D3788E /* Localizable.strings */,
 				CB6E678A2279CF7B00D3788E /* Common */,
 				CB6E67712279A9BD00D3788E /* Modules */,
@@ -697,7 +694,6 @@
 				6DEC850D2276DB50000BCB3C /* Alibaba-PuHuiTi-Light.otf in Resources */,
 				6DEC85162276DB50000BCB3C /* AlibabaSans-Black.otf in Resources */,
 				6DEC85152276DB50000BCB3C /* AlibabaSans-Medium.otf in Resources */,
-				CB98FE4F227F1C1500EA3834 /* LaunchScreen_QMUI.xib in Resources */,
 				6DEC85102276DB50000BCB3C /* Alibaba-PuHuiTi-Regular.otf in Resources */,
 				6DC591C422767C5900813DAB /* README.txt in Resources */,
 				6DEC85142276DB50000BCB3C /* AlibabaSans-Heavy.otf in Resources */,

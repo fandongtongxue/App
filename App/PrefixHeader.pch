@@ -14,6 +14,8 @@
 
 #import "Define.h"
 
+#import <SVProgressHUD/SVProgressHUD.h>
+
 #import "UIViewController+FD.h"
 
 #import <QMUIKit/QMUIKit.h>

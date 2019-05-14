@@ -17,3 +17,9 @@
 "Update.Alert.Message" = "有新的版本是否需要更新";
 
 "Login.PhoneLogin.Title" = "手机登录";
+"Login.PhoneLogin.SendCode"="发送验证码...";
+"Login.PhoneLogin.SendCodeSuccess"="发送验证码成功";
+"Login.PhoneLogin.SendCodeFailure"="发送验证码失败";
+"Login.PhoneLogin.VerifyCode"="验证验证码...";
+"Login.PhoneLogin.VerifyCodeSuccesss"="验证成功";
+"Login.PhoneLogin.VerifyCodeFailure"="验证失败";

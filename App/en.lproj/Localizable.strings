@@ -17,3 +17,9 @@
 "Update.Alert.Message" = "Do you wan't to update to new version?";
 
 "Login.PhoneLogin.Title" = "Phone Login";
+"Login.PhoneLogin.SendCode"="Send Code...";
+"Login.PhoneLogin.SendCodeSuccess"="Send Code Success";
+"Login.PhoneLogin.SendCodeFailure"="Send Code Failure";
+"Login.PhoneLogin.VerifyCode"="Verify Code...";
+"Login.PhoneLogin.VerifyCodeSuccesss"="Verify Code Success";
+"Login.PhoneLogin.VerifyCodeFailure"="Verify Code Failure";

@@ -22,7 +22,6 @@ PODS:
   - FBRetainCycleDetector (0.1.4)
   - KLSwitch (1.5)
   - Masonry (1.1.0)
-  - MBProgressHUD (1.1.0)
   - MJExtension (3.0.16)
   - MJRefresh (3.1.16)
   - MLeaksFinder (1.0.0):
@@ -304,16 +303,13 @@ PODS:
   - SDWebImage (5.0.2):
     - SDWebImage/Core (= 5.0.2)
   - SDWebImage/Core (5.0.2)
+  - SVProgressHUD (2.2.5)
   - UMCAnalytics (6.0.3):
     - UMCCommon
   - UMCCommon (2.0.1)
   - UMCSecurityPlugins (1.0.6)
   - UMCShare/Core (6.9.5):
     - UMCCommon
-  - UMCShare/Social/QQ (6.9.5):
-    - UMCCommon
-    - UMCShare/Core
-    - UMCShare/Social/ReducedQQ
   - UMCShare/Social/ReducedQQ (6.9.5):
     - UMCCommon
     - UMCShare/Core
@@ -323,10 +319,6 @@ PODS:
   - UMCShare/Social/ReducedWeChat (6.9.5):
     - UMCCommon
     - UMCShare/Core
-  - UMCShare/Social/Sina (6.9.5):
-    - UMCCommon
-    - UMCShare/Core
-    - UMCShare/Social/ReducedSina
   - UMCShare/UI (6.9.5):
     - UMCCommon
     - UMCShare/Core
@@ -346,7 +338,6 @@ DEPENDENCIES:
   - CocoaLumberjack
   - KLSwitch
   - Masonry
-  - MBProgressHUD
   - MJExtension
   - MJRefresh
   - MLeaksFinder
@@ -357,12 +348,13 @@ DEPENDENCIES:
   - Reachability
   - SDCycleScrollView
   - SDWebImage
+  - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
   - UMCAnalytics
   - UMCCommon
   - UMCSecurityPlugins
-  - UMCShare/Social/QQ
+  - UMCShare/Social/ReducedQQ
+  - UMCShare/Social/ReducedSina
   - UMCShare/Social/ReducedWeChat
-  - UMCShare/Social/Sina
   - UMCShare/UI
   - YTKNetwork
   - ZFPlayer
@@ -378,7 +370,6 @@ SPEC REPOS:
     - FBRetainCycleDetector
     - KLSwitch
     - Masonry
-    - MBProgressHUD
     - MJExtension
     - MJRefresh
     - MLeaksFinder
@@ -397,6 +388,15 @@ SPEC REPOS:
     - YTKNetwork
     - ZFPlayer
 
+EXTERNAL SOURCES:
+  SVProgressHUD:
+    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
+
+CHECKOUT OPTIONS:
+  SVProgressHUD:
+    :commit: e2a6aaa12321962cbe9fbecc370475f369c6566c
+    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
+
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   AgoraRtcEngine_iOS: be7eee187e0cf9bc67d67645cd0b75cd60b9503a
@@ -405,7 +405,6 @@ SPEC CHECKSUMS:
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   KLSwitch: ff8b9953b9e15e16cb53efec7370a44ae02f8a6c
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJExtension: 54dbbf6ee728f1a88e9aad904353d007831c7847
   MJRefresh: 7798e16e53a5ef7f332dd05b27664db4e29530fd
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
@@ -417,6 +416,7 @@ SPEC CHECKSUMS:
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
   SDWebImage: 6764b5fa0f73c203728052955dbefa2bf1f33282
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   UMCAnalytics: ff58714ada407682c4a07548156f94bcec92f055
   UMCCommon: 0263a057a2e1ae1da4c8308541e56904a493ce13
   UMCSecurityPlugins: 0831a08f3988f3cea9f1d3a7626cd9bee4fef150
@@ -424,6 +424,6 @@ SPEC CHECKSUMS:
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
   ZFPlayer: a51c6ffebaf06b91d373091bb4a62ee188cfc7de
 
-PODFILE CHECKSUM: 4a6ee949d76df9b09fa43ce910a0365c913de512
+PODFILE CHECKSUM: b59950b69f11e8b21784817b5ccf2b99a5ff101b
 
 COCOAPODS: 1.7.0.rc.1

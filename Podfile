@@ -21,13 +21,13 @@ target 'App' do
   # 集成微信(完整版14.4M)
   pod 'UMCShare/Social/ReducedWeChat'
   # 集成QQ/QZone/TIM(完整版7.6M)
-  pod 'UMCShare/Social/QQ'
+  pod 'UMCShare/Social/ReducedQQ'
   # 集成新浪微博(完整版25.3M)
-  pod 'UMCShare/Social/Sina'
+  pod 'UMCShare/Social/ReducedSina'
   # 友盟统计
   pod 'UMCAnalytics'
   # HUD
-  pod 'MBProgressHUD'
+  pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
   # layout
   pod 'Masonry'
   # Image
