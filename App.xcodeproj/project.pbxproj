@@ -18,6 +18,24 @@
 		6D9DF5AD2277CE9400FB9CFC /* FDSocialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DF5AC2277CE9400FB9CFC /* FDSocialManager.m */; };
 		6D9DF5B12277D79B00FB9CFC /* UIViewController+FD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DF5B02277D79B00FB9CFC /* UIViewController+FD.m */; };
 		6D9DF5B52277EC1D00FB9CFC /* FDSocialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DF5B42277EC1D00FB9CFC /* FDSocialModel.m */; };
+		6DADC10C228C095600FBFA94 /* pcas.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC0FA228C095600FBFA94 /* pcas.json */; };
+		6DADC10D228C095600FBFA94 /* villages.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC0FB228C095600FBFA94 /* villages.json */; };
+		6DADC10E228C095600FBFA94 /* villages.csv in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC0FC228C095600FBFA94 /* villages.csv */; };
+		6DADC10F228C095600FBFA94 /* streets.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC0FD228C095600FBFA94 /* streets.json */; };
+		6DADC110228C095600FBFA94 /* cities.csv in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC0FE228C095600FBFA94 /* cities.csv */; };
+		6DADC111228C095600FBFA94 /* pca-code.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC0FF228C095600FBFA94 /* pca-code.json */; };
+		6DADC112228C095600FBFA94 /* streets.csv in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC100228C095600FBFA94 /* streets.csv */; };
+		6DADC113228C095600FBFA94 /* pca.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC101228C095600FBFA94 /* pca.json */; };
+		6DADC114228C095600FBFA94 /* areas.csv in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC102228C095600FBFA94 /* areas.csv */; };
+		6DADC115228C095600FBFA94 /* pc.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC103228C095600FBFA94 /* pc.json */; };
+		6DADC116228C095600FBFA94 /* pc-code.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC104228C095600FBFA94 /* pc-code.json */; };
+		6DADC117228C095600FBFA94 /* provinces.csv in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC105228C095600FBFA94 /* provinces.csv */; };
+		6DADC118228C095600FBFA94 /* areas.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC106228C095600FBFA94 /* areas.json */; };
+		6DADC119228C095600FBFA94 /* provinces.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC107228C095600FBFA94 /* provinces.json */; };
+		6DADC11A228C095600FBFA94 /* pcas-code.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC108228C095600FBFA94 /* pcas-code.json */; };
+		6DADC11B228C095600FBFA94 /* HK-MO-TW.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC109228C095600FBFA94 /* HK-MO-TW.json */; };
+		6DADC11C228C095600FBFA94 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC10A228C095600FBFA94 /* cities.json */; };
+		6DADC11D228C095600FBFA94 /* data.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC10B228C095600FBFA94 /* data.sqlite */; };
 		6DC591C222767C5900813DAB /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6DC591BA22767C5900813DAB /* AlipaySDK.bundle */; };
 		6DC591C322767C5900813DAB /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DC591BB22767C5900813DAB /* AlipaySDK.framework */; };
 		6DC591C422767C5900813DAB /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6DC591BF22767C5900813DAB /* README.txt */; };
@@ -102,6 +120,24 @@
 		6D9DF5B22277D7CC00FB9CFC /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		6D9DF5B32277EC1D00FB9CFC /* FDSocialModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDSocialModel.h; sourceTree = "<group>"; };
 		6D9DF5B42277EC1D00FB9CFC /* FDSocialModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDSocialModel.m; sourceTree = "<group>"; };
+		6DADC0FA228C095600FBFA94 /* pcas.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pcas.json; sourceTree = "<group>"; };
+		6DADC0FB228C095600FBFA94 /* villages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = villages.json; sourceTree = "<group>"; };
+		6DADC0FC228C095600FBFA94 /* villages.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = villages.csv; sourceTree = "<group>"; };
+		6DADC0FD228C095600FBFA94 /* streets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = streets.json; sourceTree = "<group>"; };
+		6DADC0FE228C095600FBFA94 /* cities.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cities.csv; sourceTree = "<group>"; };
+		6DADC0FF228C095600FBFA94 /* pca-code.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "pca-code.json"; sourceTree = "<group>"; };
+		6DADC100228C095600FBFA94 /* streets.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = streets.csv; sourceTree = "<group>"; };
+		6DADC101228C095600FBFA94 /* pca.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pca.json; sourceTree = "<group>"; };
+		6DADC102228C095600FBFA94 /* areas.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = areas.csv; sourceTree = "<group>"; };
+		6DADC103228C095600FBFA94 /* pc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pc.json; sourceTree = "<group>"; };
+		6DADC104228C095600FBFA94 /* pc-code.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "pc-code.json"; sourceTree = "<group>"; };
+		6DADC105228C095600FBFA94 /* provinces.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = provinces.csv; sourceTree = "<group>"; };
+		6DADC106228C095600FBFA94 /* areas.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = areas.json; sourceTree = "<group>"; };
+		6DADC107228C095600FBFA94 /* provinces.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = provinces.json; sourceTree = "<group>"; };
+		6DADC108228C095600FBFA94 /* pcas-code.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "pcas-code.json"; sourceTree = "<group>"; };
+		6DADC109228C095600FBFA94 /* HK-MO-TW.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "HK-MO-TW.json"; sourceTree = "<group>"; };
+		6DADC10A228C095600FBFA94 /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
+		6DADC10B228C095600FBFA94 /* data.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = data.sqlite; sourceTree = "<group>"; };
 		6DC591BA22767C5900813DAB /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
 		6DC591BB22767C5900813DAB /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		6DC591BD22767C5900813DAB /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
@@ -305,6 +341,39 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		6DADC0F8228C093100FBFA94 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				6DADC0F9228C095600FBFA94 /* dist */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		6DADC0F9228C095600FBFA94 /* dist */ = {
+			isa = PBXGroup;
+			children = (
+				6DADC0FA228C095600FBFA94 /* pcas.json */,
+				6DADC0FB228C095600FBFA94 /* villages.json */,
+				6DADC0FC228C095600FBFA94 /* villages.csv */,
+				6DADC0FD228C095600FBFA94 /* streets.json */,
+				6DADC0FE228C095600FBFA94 /* cities.csv */,
+				6DADC0FF228C095600FBFA94 /* pca-code.json */,
+				6DADC100228C095600FBFA94 /* streets.csv */,
+				6DADC101228C095600FBFA94 /* pca.json */,
+				6DADC102228C095600FBFA94 /* areas.csv */,
+				6DADC103228C095600FBFA94 /* pc.json */,
+				6DADC104228C095600FBFA94 /* pc-code.json */,
+				6DADC105228C095600FBFA94 /* provinces.csv */,
+				6DADC106228C095600FBFA94 /* areas.json */,
+				6DADC107228C095600FBFA94 /* provinces.json */,
+				6DADC108228C095600FBFA94 /* pcas-code.json */,
+				6DADC109228C095600FBFA94 /* HK-MO-TW.json */,
+				6DADC10A228C095600FBFA94 /* cities.json */,
+				6DADC10B228C095600FBFA94 /* data.sqlite */,
+			);
+			path = dist;
+			sourceTree = "<group>";
+		};
 		6DC591B822767C5900813DAB /* Pay */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +407,7 @@
 		6DEC84F42276DB50000BCB3C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6DADC0F8228C093100FBFA94 /* Data */,
 				CBC6FB1C22844C9900EAF915 /* register_guide_video.mp4 */,
 				CBCFB1DD2281BD4600ADE61E /* GlobalModel.plist */,
 				6DEC84F52276DB50000BCB3C /* Font */,
@@ -673,11 +743,24 @@
 				6DEC85192276DB50000BCB3C /* AlibabaSans-MediumItalic.otf in Resources */,
 				6D9DF5A92277CE3C00FB9CFC /* TestSocialViewController.xib in Resources */,
 				CB8C26F6226CBCAA0058DAEE /* Assets.xcassets in Resources */,
+				6DADC11B228C095600FBFA94 /* HK-MO-TW.json in Resources */,
+				6DADC11D228C095600FBFA94 /* data.sqlite in Resources */,
 				6DEC85132276DB50000BCB3C /* AlibabaSans-Regular.otf in Resources */,
+				6DADC10C228C095600FBFA94 /* pcas.json in Resources */,
+				6DADC110228C095600FBFA94 /* cities.csv in Resources */,
+				6DADC118228C095600FBFA94 /* areas.json in Resources */,
+				6DADC11C228C095600FBFA94 /* cities.json in Resources */,
 				6DEC850B2276DB50000BCB3C /* 版权申明.rtf in Resources */,
+				6DADC112228C095600FBFA94 /* streets.csv in Resources */,
+				6DADC11A228C095600FBFA94 /* pcas-code.json in Resources */,
 				6DEC850C2276DB50000BCB3C /* Alibaba-PuHuiTi-Bold.otf in Resources */,
+				6DADC111228C095600FBFA94 /* pca-code.json in Resources */,
 				6DEC85172276DB50000BCB3C /* AlibabaSans-Italic.otf in Resources */,
+				6DADC116228C095600FBFA94 /* pc-code.json in Resources */,
+				6DADC10D228C095600FBFA94 /* villages.json in Resources */,
 				CBC6FB1D22844CED00EAF915 /* register_guide_video.mp4 in Resources */,
+				6DADC119228C095600FBFA94 /* provinces.json in Resources */,
+				6DADC113228C095600FBFA94 /* pca.json in Resources */,
 				6DEC850F2276DB50000BCB3C /* Alibaba-PuHuiTi-Medium.otf in Resources */,
 				6DEC85182276DB50000BCB3C /* AlibabaSans-BoldItalic.otf in Resources */,
 				6DEC85122276DB50000BCB3C /* AlibabaSans-Bold.otf in Resources */,
@@ -685,18 +768,23 @@
 				CBDB826D2281BA6300E27741 /* UserInfo.plist in Resources */,
 				CB6E67BD2279D62A00D3788E /* Main.storyboard in Resources */,
 				6DEC851B2276DB50000BCB3C /* AlibabaSans-HeavyItalic.otf in Resources */,
+				6DADC115228C095600FBFA94 /* pc.json in Resources */,
 				CB6E67C62279EECC00D3788E /* Localizable.strings in Resources */,
 				6DEC85112276DB50000BCB3C /* AlibabaSans-Light.otf in Resources */,
 				6DEC850E2276DB50000BCB3C /* Alibaba-PuHuiTi-Heavy.otf in Resources */,
 				CBCFB1DE2281BD4600ADE61E /* GlobalModel.plist in Resources */,
 				CB6E67C32279EAEC00D3788E /* LaunchScreen.xib in Resources */,
 				6DEC851A2276DB50000BCB3C /* AlibabaSans-LightItalic.otf in Resources */,
+				6DADC117228C095600FBFA94 /* provinces.csv in Resources */,
 				6DEC850D2276DB50000BCB3C /* Alibaba-PuHuiTi-Light.otf in Resources */,
 				6DEC85162276DB50000BCB3C /* AlibabaSans-Black.otf in Resources */,
 				6DEC85152276DB50000BCB3C /* AlibabaSans-Medium.otf in Resources */,
 				6DEC85102276DB50000BCB3C /* Alibaba-PuHuiTi-Regular.otf in Resources */,
+				6DADC114228C095600FBFA94 /* areas.csv in Resources */,
 				6DC591C422767C5900813DAB /* README.txt in Resources */,
 				6DEC85142276DB50000BCB3C /* AlibabaSans-Heavy.otf in Resources */,
+				6DADC10F228C095600FBFA94 /* streets.json in Resources */,
+				6DADC10E228C095600FBFA94 /* villages.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
