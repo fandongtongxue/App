@@ -14,6 +14,10 @@
 
 #import <Bugly/Bugly.h>
 
+#ifdef DEBUG
+#import <DoraemonKit/DoraemonManager.h>
+#endif
+
 #import "FDTabBarController.h"
 #import "FDNavigationController.h"
 #import "HomeViewController.h"
@@ -23,6 +27,10 @@
 @implementation AppDelegate (ThirdPart)
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
+    
+    #ifdef DEBUG
+        [[DoraemonManager shareInstance] install];
+    #endif
     
     // QMUIConsole 默认只在 DEBUG 下会显示，作为 Demo，改为不管什么环境都允许显示
     [QMUIConsole sharedInstance].canShow = YES;

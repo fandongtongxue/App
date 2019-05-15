@@ -58,4 +58,9 @@ target 'App' do
   pod 'QuickMobileTextField'
   # 验证码
   pod 'QuickSecurityCode'
+  #滴滴开发助手
+  pod 'DoraemonKit/Core', '~> 1.1.8', :configurations => ['Debug']
+  pod 'DoraemonKit/WithLogger', '~> 1.1.8', :configurations => ['Debug']
+  pod 'DoraemonKit/WithGPS', '~> 1.1.8', :configurations => ['Debug']
+  pod 'DoraemonKit/WithLoad', '~> 1.1.8', :configurations => ['Debug']
 end
