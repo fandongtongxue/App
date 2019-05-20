@@ -8,6 +8,8 @@
 
 #import "FDViewController.h"
 
+#import "FDAnalyzeManager.h"
+
 @interface FDViewController ()
 
 @end
@@ -21,6 +23,16 @@
 
 - (void)dealloc{
     DDLogDebug(@"%@ dealloc",NSStringFromClass([self class]));
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [FDAnalyzeManager pageBegin:NSStringFromClass([self class])];
+}
+
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [FDAnalyzeManager pageEnd:NSStringFromClass([self class])];
 }
 
 /*

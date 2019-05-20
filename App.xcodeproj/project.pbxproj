@@ -10,6 +10,7 @@
 		4921A4527F9422A2FC869784 /* Pods_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28EDAE5573319FD1924CF5E8 /* Pods_App.framework */; };
 		6D36CA8F228117E10046FA8C /* GlobalManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D36CA8B228117E10046FA8C /* GlobalManager.m */; };
 		6D36CA90228117E10046FA8C /* GlobalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D36CA8E228117E10046FA8C /* GlobalModel.m */; };
+		6D4125DB229257BB0045E3B5 /* FDAnalyzeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4125DA229257BB0045E3B5 /* FDAnalyzeManager.m */; };
 		6D4F0D14227695D6005A9B21 /* AppDelegate+HandleURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4F0D13227695D6005A9B21 /* AppDelegate+HandleURL.m */; };
 		6D72A0C72282660200F7DAD5 /* AgoraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D72A0C62282660200F7DAD5 /* AgoraViewController.m */; };
 		6D74C528227575D500332AAC /* AppDelegate+Launch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D74C527227575D500332AAC /* AppDelegate+Launch.m */; };
@@ -104,6 +105,8 @@
 		6D36CA8D228117E10046FA8C /* GlobalModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalModel.h; sourceTree = "<group>"; };
 		6D36CA8E228117E10046FA8C /* GlobalModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalModel.m; sourceTree = "<group>"; };
 		6D36CA9122811E460046FA8C /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		6D4125D9229257BB0045E3B5 /* FDAnalyzeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDAnalyzeManager.h; sourceTree = "<group>"; };
+		6D4125DA229257BB0045E3B5 /* FDAnalyzeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDAnalyzeManager.m; sourceTree = "<group>"; };
 		6D4F0D12227695D6005A9B21 /* AppDelegate+HandleURL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+HandleURL.h"; sourceTree = "<group>"; };
 		6D4F0D13227695D6005A9B21 /* AppDelegate+HandleURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+HandleURL.m"; sourceTree = "<group>"; };
 		6D72A0C52282660200F7DAD5 /* AgoraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AgoraViewController.h; sourceTree = "<group>"; };
@@ -298,6 +301,7 @@
 		6D74C51C22755D9D00332AAC /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				6D9837D12292575C001BEF7F /* Analyze */,
 				6D9DF5AA2277CE7700FB9CFC /* Social */,
 				6D9DF5A42277CE0900FB9CFC /* Test */,
 				6DC591B822767C5900813DAB /* Pay */,
@@ -307,6 +311,15 @@
 				6D4F0D13227695D6005A9B21 /* AppDelegate+HandleURL.m */,
 			);
 			path = ThirdPart;
+			sourceTree = "<group>";
+		};
+		6D9837D12292575C001BEF7F /* Analyze */ = {
+			isa = PBXGroup;
+			children = (
+				6D4125D9229257BB0045E3B5 /* FDAnalyzeManager.h */,
+				6D4125DA229257BB0045E3B5 /* FDAnalyzeManager.m */,
+			);
+			path = Analyze;
 			sourceTree = "<group>";
 		};
 		6D9DF5A42277CE0900FB9CFC /* Test */ = {
@@ -884,6 +897,7 @@
 				6D36CA90228117E10046FA8C /* GlobalModel.m in Sources */,
 				CB6E67B52279CF7B00D3788E /* QDCommonGroupListViewController.m in Sources */,
 				CBD8F54822830AE90069510C /* PhoneLoginViewController.m in Sources */,
+				6D4125DB229257BB0045E3B5 /* FDAnalyzeManager.m in Sources */,
 				CB6E67C12279D8D900D3788E /* HomeViewController.m in Sources */,
 				6D74C528227575D500332AAC /* AppDelegate+Launch.m in Sources */,
 				CB6E67B32279CF7B00D3788E /* UIImageEffects.m in Sources */,

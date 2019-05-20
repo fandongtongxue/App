@@ -41,7 +41,7 @@ target 'App' do
   # 轮播图
   pod 'SDCycleScrollView'
   # Switch
-  pod 'KLSwitch'
+  #pod 'KLSwitch'
   # Crash
   pod 'Bugly'
   # Player
@@ -59,8 +59,8 @@ target 'App' do
   # 验证码
   pod 'QuickSecurityCode'
   #滴滴开发助手
-  pod 'DoraemonKit/Core', '~> 1.1.8', :configurations => ['Debug']
-  pod 'DoraemonKit/WithLogger', '~> 1.1.8', :configurations => ['Debug']
-  pod 'DoraemonKit/WithGPS', '~> 1.1.8', :configurations => ['Debug']
-  pod 'DoraemonKit/WithLoad', '~> 1.1.8', :configurations => ['Debug']
+  #pod 'DoraemonKit/Core', '~> 1.1.8', :configurations => ['Debug']
+  #pod 'DoraemonKit/WithLogger', '~> 1.1.8', :configurations => ['Debug']
+  #pod 'DoraemonKit/WithGPS', '~> 1.1.8', :configurations => ['Debug']
+  #pod 'DoraemonKit/WithLoad', '~> 1.1.8', :configurations => ['Debug']
 end
