@@ -113,6 +113,7 @@
 		6D72A0C62282660200F7DAD5 /* AgoraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AgoraViewController.m; sourceTree = "<group>"; };
 		6D74C526227575D500332AAC /* AppDelegate+Launch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Launch.h"; sourceTree = "<group>"; };
 		6D74C527227575D500332AAC /* AppDelegate+Launch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Launch.m"; sourceTree = "<group>"; };
+		6D800E102293D4A800BC8BB8 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		6D9DF5A52277CE3C00FB9CFC /* TestSocialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestSocialViewController.h; sourceTree = "<group>"; };
 		6D9DF5A62277CE3C00FB9CFC /* TestSocialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestSocialViewController.m; sourceTree = "<group>"; };
 		6D9DF5A72277CE3C00FB9CFC /* TestSocialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestSocialViewController.xib; sourceTree = "<group>"; };
@@ -667,6 +668,7 @@
 				CB6E67BC2279D62A00D3788E /* Main.storyboard */,
 				6D9DF5B22277D7CC00FB9CFC /* PrefixHeader.pch */,
 				6D36CA9122811E460046FA8C /* Define.h */,
+				6D800E102293D4A800BC8BB8 /* Config.h */,
 				CB6E67C22279EAEC00D3788E /* LaunchScreen.xib */,
 				CB6E67C82279EECC00D3788E /* Localizable.strings */,
 				CB6E678A2279CF7B00D3788E /* Common */,
