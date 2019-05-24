@@ -85,6 +85,7 @@
                     if (strongSelf->_finishPhoneLoginCallBack) {
                         strongSelf->_finishPhoneLoginCallBack();
                     }
+                    [FDAnalyzeManager event:kFDEventIDPhoneLogin];
                 }
             }];
         }];

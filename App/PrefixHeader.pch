@@ -15,6 +15,8 @@
 #import "Config.h"
 #import "Define.h"
 
+#import "FDAnalyzeManager.h"
+
 #import <SVProgressHUD/SVProgressHUD.h>
 
 #import "UIViewController+FD.h"

@@ -28,4 +28,8 @@
     [MobClick endLogPageView:pageName];
 }
 
++(void)event:(NSString *)event{
+    [MobClick event:event];
+}
+
 @end

@@ -10,6 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+#define kFDEventIDPhoneLogin @"Login.PhoneLogin"
+
 @interface FDAnalyzeManager : NSObject
 
 + (FDAnalyzeManager *)defaultManager;
@@ -17,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)pageBegin:(NSString *)pageName;
 
 + (void)pageEnd:(NSString *)pageName;
+
++(void)event:(NSString *)event;
 
 @end
 
