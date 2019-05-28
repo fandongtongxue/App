@@ -186,7 +186,6 @@
     backgroundImageView.clipsToBounds = YES;
     
     UIImageView *logoImageView = launchScreenView.subviews[1];
-    UILabel *copyrightLabel = launchScreenView.subviews.lastObject;
     
     UIView *maskView = [[UIView alloc] initWithFrame:launchScreenView.bounds];
     maskView.backgroundColor = UIColorWhite;
@@ -206,7 +205,6 @@
     [UIView animateWithDuration:.15 delay:0.9 options:QMUIViewAnimationOptionsCurveOut animations:^{
         [launchScreenView layoutIfNeeded];
         logoImageView.alpha = 0.0;
-        copyrightLabel.alpha = 0;
     } completion:nil];
     [UIView animateWithDuration:1.2 delay:0.9 options:UIViewAnimationOptionCurveEaseOut animations:^{
         maskView.alpha = 0;

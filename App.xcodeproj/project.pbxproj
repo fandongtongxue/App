@@ -12,7 +12,6 @@
 		6D36CA90228117E10046FA8C /* GlobalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D36CA8E228117E10046FA8C /* GlobalModel.m */; };
 		6D4125DB229257BB0045E3B5 /* FDAnalyzeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4125DA229257BB0045E3B5 /* FDAnalyzeManager.m */; };
 		6D4F0D14227695D6005A9B21 /* AppDelegate+HandleURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4F0D13227695D6005A9B21 /* AppDelegate+HandleURL.m */; };
-		6D72A0C72282660200F7DAD5 /* AgoraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D72A0C62282660200F7DAD5 /* AgoraViewController.m */; };
 		6D74C528227575D500332AAC /* AppDelegate+Launch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D74C527227575D500332AAC /* AppDelegate+Launch.m */; };
 		6D9DF5A82277CE3C00FB9CFC /* TestSocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DF5A62277CE3C00FB9CFC /* TestSocialViewController.m */; };
 		6D9DF5A92277CE3C00FB9CFC /* TestSocialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D9DF5A72277CE3C00FB9CFC /* TestSocialViewController.xib */; };
@@ -94,7 +93,6 @@
 		CBCFB1DE2281BD4600ADE61E /* GlobalModel.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBCFB1DD2281BD4600ADE61E /* GlobalModel.plist */; };
 		CBCFB1E12281C5CB00ADE61E /* UIAlertController+supportedInterfaceOrientations.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCFB1E02281C5CB00ADE61E /* UIAlertController+supportedInterfaceOrientations.m */; };
 		CBD8F54822830AE90069510C /* PhoneLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD8F54722830AE90069510C /* PhoneLoginViewController.m */; };
-		CBDB826D2281BA6300E27741 /* UserInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBDB826C2281BA6300E27741 /* UserInfo.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,8 +107,6 @@
 		6D4125DA229257BB0045E3B5 /* FDAnalyzeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDAnalyzeManager.m; sourceTree = "<group>"; };
 		6D4F0D12227695D6005A9B21 /* AppDelegate+HandleURL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+HandleURL.h"; sourceTree = "<group>"; };
 		6D4F0D13227695D6005A9B21 /* AppDelegate+HandleURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+HandleURL.m"; sourceTree = "<group>"; };
-		6D72A0C52282660200F7DAD5 /* AgoraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AgoraViewController.h; sourceTree = "<group>"; };
-		6D72A0C62282660200F7DAD5 /* AgoraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AgoraViewController.m; sourceTree = "<group>"; };
 		6D74C526227575D500332AAC /* AppDelegate+Launch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Launch.h"; sourceTree = "<group>"; };
 		6D74C527227575D500332AAC /* AppDelegate+Launch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Launch.m"; sourceTree = "<group>"; };
 		6D800E102293D4A800BC8BB8 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
@@ -235,7 +231,6 @@
 		CBCFB1E02281C5CB00ADE61E /* UIAlertController+supportedInterfaceOrientations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+supportedInterfaceOrientations.m"; sourceTree = "<group>"; };
 		CBD8F54622830AE90069510C /* PhoneLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhoneLoginViewController.h; sourceTree = "<group>"; };
 		CBD8F54722830AE90069510C /* PhoneLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhoneLoginViewController.m; sourceTree = "<group>"; };
-		CBDB826C2281BA6300E27741 /* UserInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = UserInfo.plist; sourceTree = "<group>"; };
 		D8F4FE7B423BC276DC0C84C5 /* Pods-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.release.xcconfig"; path = "Target Support Files/Pods-App/Pods-App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -288,15 +283,6 @@
 				6D36CA8E228117E10046FA8C /* GlobalModel.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		6D72A0C4228265EC00F7DAD5 /* Agora */ = {
-			isa = PBXGroup;
-			children = (
-				6D72A0C52282660200F7DAD5 /* AgoraViewController.h */,
-				6D72A0C62282660200F7DAD5 /* AgoraViewController.m */,
-			);
-			path = Agora;
 			sourceTree = "<group>";
 		};
 		6D74C51C22755D9D00332AAC /* ThirdPart */ = {
@@ -425,7 +411,6 @@
 				CBC6FB1C22844C9900EAF915 /* register_guide_video.mp4 */,
 				CBCFB1DD2281BD4600ADE61E /* GlobalModel.plist */,
 				6DEC84F52276DB50000BCB3C /* Font */,
-				CBDB826C2281BA6300E27741 /* UserInfo.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -528,7 +513,6 @@
 		CB6E67712279A9BD00D3788E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				6D72A0C4228265EC00F7DAD5 /* Agora */,
 				6D36CA88228117E10046FA8C /* Global */,
 				CB8EA0DE227B1A02004177D4 /* Mine */,
 				CB6E67BE2279D86F00D3788E /* Home */,
@@ -780,7 +764,6 @@
 				6DEC85182276DB50000BCB3C /* AlibabaSans-BoldItalic.otf in Resources */,
 				6DEC85122276DB50000BCB3C /* AlibabaSans-Bold.otf in Resources */,
 				6DC591C222767C5900813DAB /* AlipaySDK.bundle in Resources */,
-				CBDB826D2281BA6300E27741 /* UserInfo.plist in Resources */,
 				CB6E67BD2279D62A00D3788E /* Main.storyboard in Resources */,
 				6DEC851B2276DB50000BCB3C /* AlibabaSans-HeavyItalic.otf in Resources */,
 				6DADC115228C095600FBFA94 /* pc.json in Resources */,
@@ -886,7 +869,6 @@
 				CB3508EC22709B5800EDC557 /* FDBaseApi.m in Sources */,
 				CB6E67BB2279CF7B00D3788E /* QDCommonTableViewController.m in Sources */,
 				CB6E677A2279AAEB00D3788E /* FDNavigationController.m in Sources */,
-				6D72A0C72282660200F7DAD5 /* AgoraViewController.m in Sources */,
 				CB6E67B12279CF7B00D3788E /* QMUIConfigurationTemplate.m in Sources */,
 				CB6E67B02279CF7B00D3788E /* QMUIConfigurationTemplateGrapefruit.m in Sources */,
 				CB6E67B42279CF7B00D3788E /* QDCommonUI.m in Sources */,

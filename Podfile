@@ -21,9 +21,9 @@ target 'App' do
   # 集成微信(完整版14.4M)
   pod 'UMCShare/Social/ReducedWeChat'
   # 集成QQ/QZone/TIM(完整版7.6M)
-  pod 'UMCShare/Social/ReducedQQ'
+  pod 'UMCShare/Social/QQ'
   # 集成新浪微博(完整版25.3M)
-  pod 'UMCShare/Social/ReducedSina'
+  pod 'UMCShare/Social/Sina'
   # 友盟统计
   pod 'UMCAnalytics'
   # HUD
@@ -40,8 +40,6 @@ target 'App' do
   pod 'Reachability'
   # 轮播图
   pod 'SDCycleScrollView'
-  # Switch
-  #pod 'KLSwitch'
   # Crash
   pod 'Bugly'
   # Player
@@ -50,8 +48,6 @@ target 'App' do
   pod 'ZFPlayer/AVPlayer'
   # 日志
   pod 'CocoaLumberjack'
-  # 声网
-  pod 'AgoraRtcEngine_iOS'
   # ShareSDK 短信
   pod 'mob_smssdk'
   # 手机号码输入框

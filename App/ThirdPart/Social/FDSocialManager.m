@@ -24,7 +24,7 @@
 }
 
 - (void)login:(FDSocialManagerLoginType)type currentViewController:(UIViewController *)viewController completion:(FDSocialManagerCompletionHandler)completion{
-    [[UMSocialManager defaultManager] authWithPlatform:type currentViewController:viewController completion:^(id result, NSError *error) {
+    [[UMSocialManager defaultManager] authWithPlatform:(UMSocialPlatformType)type currentViewController:viewController completion:^(id result, NSError *error) {
         NSString *message = nil;
         if (error) {
             message = [NSString stringWithFormat:@"获取用户信息失败:%@",error];
@@ -70,7 +70,7 @@
     messageObject.shareObject = shareObject;
     
     //调用分享接口
-    [[UMSocialManager defaultManager] shareToPlatform:type messageObject:messageObject currentViewController:viewController completion:^(id data, NSError *error) {
+    [[UMSocialManager defaultManager] shareToPlatform:(UMSocialPlatformType)type messageObject:messageObject currentViewController:viewController completion:^(id data, NSError *error) {
         NSString *message = nil;
         if (error) {
             message = [NSString stringWithFormat:@"获取用户信息失败:%@",error];
