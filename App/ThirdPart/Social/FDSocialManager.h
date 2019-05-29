@@ -25,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (FDSocialManager *)defaultManager;
 
+- (void)registerApp;
+
 - (void)login:(FDSocialManagerLoginType)type currentViewController:(UIViewController *)viewController completion:(FDSocialManagerCompletionHandler)completion;
 
 - (void)share:(FDSocialManagerLoginType)type object:(FDSocialShareModel *)model currentViewController:(UIViewController *)viewController completion:(FDSocialManagerCompletionHandler)completion;

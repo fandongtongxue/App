@@ -11,6 +11,7 @@
 
 #import <UMCommon/UMCommon.h>
 #import <UMShare/UMShare.h>
+#import <UMAnalytics/MobClick.h>
 
 @implementation FDSocialManager
 
@@ -21,6 +22,15 @@
         manager = [[self alloc] init];
     });
     return manager;
+}
+
+- (void)registerApp{
+    //友盟
+    // [UMConfigure setLogEnabled:YES];
+    [UMConfigure initWithAppkey:kUMengAppKey channel:@"App Store"];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:kWeChatAppKey appSecret:kWeChatAppSecret redirectURL:nil];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:kQQAppKey/*设置QQ平台的appID*/  appSecret:nil redirectURL:nil];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:kWeiboAppKey  appSecret:kWeiboAppSecret redirectURL:kWeiboRedirectURL];
 }
 
 - (void)login:(FDSocialManagerLoginType)type currentViewController:(UIViewController *)viewController completion:(FDSocialManagerCompletionHandler)completion{
