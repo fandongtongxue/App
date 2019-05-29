@@ -11,10 +11,7 @@
 #import <UMCommon/UMCommon.h>
 #import <UMShare/UMShare.h>
 
-#import <AlipaySDK/AlipaySDK.h>
-#import "WXApi.h"
-
-@interface AppDelegate()<WXApiDelegate>
+@interface AppDelegate()
 
 @end
 
