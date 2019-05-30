@@ -92,6 +92,10 @@
 		CB8EA0DD227AE453004177D4 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8EA0DC227AE453004177D4 /* SearchViewController.m */; };
 		CB8EA0E1227B1A2B004177D4 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8EA0E0227B1A2B004177D4 /* MineViewController.m */; };
 		CB8EA0E4227B2460004177D4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8EA0E3227B2460004177D4 /* LoginViewController.m */; };
+		CBB5492C22A010E1007B1A7C /* WXApiResponseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB5492722A010E1007B1A7C /* WXApiResponseHandler.m */; };
+		CBB5492D22A010E1007B1A7C /* WXApiRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB5492822A010E1007B1A7C /* WXApiRequestHandler.m */; };
+		CBB5492E22A010E1007B1A7C /* WXApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB5492B22A010E1007B1A7C /* WXApiManager.m */; };
+		CBB5493222A01104007B1A7C /* UIAlertView+WX.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB5493022A01104007B1A7C /* UIAlertView+WX.m */; };
 		CBC00E4622734B9000E0A471 /* YTKUrlArgumentsFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC00E4422734B9000E0A471 /* YTKUrlArgumentsFilter.m */; };
 		CBC6FB1D22844CED00EAF915 /* register_guide_video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CBC6FB1C22844C9900EAF915 /* register_guide_video.mp4 */; };
 		CBCFB1DE2281BD4600ADE61E /* GlobalModel.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBCFB1DD2281BD4600ADE61E /* GlobalModel.plist */; };
@@ -308,6 +312,14 @@
 		CB8EA0E0227B1A2B004177D4 /* MineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		CB8EA0E2227B2460004177D4 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		CB8EA0E3227B2460004177D4 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		CBB5492622A010E1007B1A7C /* WXApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiManager.h; sourceTree = "<group>"; };
+		CBB5492722A010E1007B1A7C /* WXApiResponseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXApiResponseHandler.m; sourceTree = "<group>"; };
+		CBB5492822A010E1007B1A7C /* WXApiRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXApiRequestHandler.m; sourceTree = "<group>"; };
+		CBB5492922A010E1007B1A7C /* WXApiRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiRequestHandler.h; sourceTree = "<group>"; };
+		CBB5492A22A010E1007B1A7C /* WXApiResponseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiResponseHandler.h; sourceTree = "<group>"; };
+		CBB5492B22A010E1007B1A7C /* WXApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXApiManager.m; sourceTree = "<group>"; };
+		CBB5493022A01104007B1A7C /* UIAlertView+WX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+WX.m"; sourceTree = "<group>"; };
+		CBB5493122A01104007B1A7C /* UIAlertView+WX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+WX.h"; sourceTree = "<group>"; };
 		CBC00E4422734B9000E0A471 /* YTKUrlArgumentsFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTKUrlArgumentsFilter.m; sourceTree = "<group>"; };
 		CBC00E4522734B9000E0A471 /* YTKUrlArgumentsFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTKUrlArgumentsFilter.h; sourceTree = "<group>"; };
 		CBC6FB1C22844C9900EAF915 /* register_guide_video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = register_guide_video.mp4; sourceTree = "<group>"; };
@@ -398,6 +410,7 @@
 				CB1980D7229EBC2500AA1002 /* AliPayUtil */,
 				6D598792229E662500113597 /* Alipay */,
 				6D598795229E662500113597 /* WeChatPay */,
+				CBB5492422A01091007B1A7C /* WeChaPayUtil */,
 				CB1980D4229EBAFF00AA1002 /* FDPayManager.h */,
 				CB1980D5229EBAFF00AA1002 /* FDPayManager.m */,
 			);
@@ -886,6 +899,37 @@
 			path = Mine;
 			sourceTree = "<group>";
 		};
+		CBB5492422A01091007B1A7C /* WeChaPayUtil */ = {
+			isa = PBXGroup;
+			children = (
+				CBB5492F22A01104007B1A7C /* Helper */,
+				CBB5492522A010E1007B1A7C /* Control */,
+			);
+			path = WeChaPayUtil;
+			sourceTree = "<group>";
+		};
+		CBB5492522A010E1007B1A7C /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				CBB5492622A010E1007B1A7C /* WXApiManager.h */,
+				CBB5492722A010E1007B1A7C /* WXApiResponseHandler.m */,
+				CBB5492822A010E1007B1A7C /* WXApiRequestHandler.m */,
+				CBB5492922A010E1007B1A7C /* WXApiRequestHandler.h */,
+				CBB5492A22A010E1007B1A7C /* WXApiResponseHandler.h */,
+				CBB5492B22A010E1007B1A7C /* WXApiManager.m */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		CBB5492F22A01104007B1A7C /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				CBB5493022A01104007B1A7C /* UIAlertView+WX.m */,
+				CBB5493122A01104007B1A7C /* UIAlertView+WX.h */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1063,14 +1107,17 @@
 			files = (
 				CB6E67B62279CF7B00D3788E /* QDCommonViewController.m in Sources */,
 				CB6E67AD2279CF7B00D3788E /* QDThemeManager.m in Sources */,
+				CBB5493222A01104007B1A7C /* UIAlertView+WX.m in Sources */,
 				CB6E67B92279CF7B00D3788E /* QDCommonListViewController.m in Sources */,
 				6D36CA8F228117E10046FA8C /* GlobalManager.m in Sources */,
+				CBB5492D22A010E1007B1A7C /* WXApiRequestHandler.m in Sources */,
 				CB6E67BA2279CF7B00D3788E /* QDNavigationController.m in Sources */,
 				6D4F0D14227695D6005A9B21 /* AppDelegate+HandleURL.m in Sources */,
 				CB6CE2D52271E440006B3DFA /* TestApi.m in Sources */,
 				CB6E67762279AA0C00D3788E /* FDTabBarController.m in Sources */,
 				CB19812B229EBC2600AA1002 /* APOrderInfo.m in Sources */,
 				6D9DF5AD2277CE9400FB9CFC /* FDSocialManager.m in Sources */,
+				CBB5492C22A010E1007B1A7C /* WXApiResponseHandler.m in Sources */,
 				6D9DF5B52277EC1D00FB9CFC /* FDSocialModel.m in Sources */,
 				CB6E67822279CC6D00D3788E /* FDViewController.m in Sources */,
 				CB1980D6229EBAFF00AA1002 /* FDPayManager.m in Sources */,
@@ -1086,6 +1133,7 @@
 				CB6E67B22279CF7B00D3788E /* QDUIHelper.m in Sources */,
 				6D9DF5B12277D79B00FB9CFC /* UIViewController+FD.m in Sources */,
 				CB6E67B72279CF7B00D3788E /* QDCommonGridViewController.m in Sources */,
+				CBB5492E22A010E1007B1A7C /* WXApiManager.m in Sources */,
 				CB8EA0E1227B1A2B004177D4 /* MineViewController.m in Sources */,
 				CB19812C229EBC2600AA1002 /* openssl_wrapper.m in Sources */,
 				6D36CA90228117E10046FA8C /* GlobalModel.m in Sources */,

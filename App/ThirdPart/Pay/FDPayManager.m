@@ -14,6 +14,8 @@
 #import "APOrderInfo.h"
 #import "APRSASigner.h"
 
+#import "WXApiRequestHandler.h"
+
 @interface FDPayManager ()<WXApiDelegate>
 
 @end
@@ -50,15 +52,15 @@
     /*============================================================================*/
     /*=======================需要填写商户app申请的===================================*/
     /*============================================================================*/
-    NSString *appID = @"";
+    NSString *appID = @"111111111";
     
     // 如下私钥，rsa2PrivateKey 或者 rsaPrivateKey 只需要填入一个
     // 如果商户两个都设置了，优先使用 rsa2PrivateKey
     // rsa2PrivateKey 可以保证商户交易在更加安全的环境下进行，建议使用 rsa2PrivateKey
     // 获取 rsa2PrivateKey，建议使用支付宝提供的公私钥生成工具生成，
     // 工具地址：https://doc.open.alipay.com/docs/doc.htm?treeId=291&articleId=106097&docType=1
-    NSString *rsa2PrivateKey = @"";
-    NSString *rsaPrivateKey = @"";
+    NSString *rsa2PrivateKey = @"11111";
+    NSString *rsaPrivateKey = @"11111111";
     /*============================================================================*/
     /*============================================================================*/
     /*============================================================================*/
@@ -154,7 +156,12 @@
 }
 
 - (void)wxPay{
-    
+    NSString *res = [WXApiRequestHandler jumpToBizPay];
+    if( ![@"" isEqual:res] ){
+        UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"支付失败" message:res delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        
+        [alter show];
+    }
 }
 
 - (BOOL)handleURL:(NSURL *)url payCompletionBlock:(payCompletionBlock)payCompletionBlock delegate:(id<FDPayManagerDelegate>)delegate{
