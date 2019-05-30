@@ -31,6 +31,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)share:(FDSocialManagerLoginType)type object:(FDSocialShareModel *)model currentViewController:(UIViewController *)viewController completion:(FDSocialManagerCompletionHandler)completion;
 
+-(BOOL)handleOpenURL:(NSURL *)url;
+
+-(BOOL)handleOpenURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation;
+
+-(BOOL)handleOpenURL:(NSURL *)url options:(NSDictionary*)options;
+
 @end
 
 NS_ASSUME_NONNULL_END

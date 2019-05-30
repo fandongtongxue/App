@@ -28,6 +28,8 @@
 }
 
 - (void)searchItemAction:(UIBarButtonItem *)item{
+    [[FDPayManager defaultManager] pay:FDPayTypeAli];
+    return;
     SearchViewController *searchVC = [[SearchViewController alloc]init];
     [self.navigationController pushViewController:searchVC animated:YES];
 }

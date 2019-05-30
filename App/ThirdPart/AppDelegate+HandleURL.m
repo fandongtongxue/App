@@ -8,9 +8,6 @@
 
 #import "AppDelegate+HandleURL.h"
 
-#import <UMCommon/UMCommon.h>
-#import <UMShare/UMShare.h>
-
 @interface AppDelegate()
 
 @end
@@ -20,62 +17,35 @@
 #if __IPHONE_OS_VERSION_MAX_ALLOWED > 100000
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options
 {
-    BOOL result = [[UMSocialManager defaultManager]  handleOpenURL:url options:options];
+    BOOL result = [[FDSocialManager defaultManager]  handleOpenURL:url options:options];
     if (!result) {
-        if ([url.host isEqualToString:@"safepay"]){
-            [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
-                NSLog(@"result = %@",resultDic);
-            }];
-            return YES;
-        }
-        else if([url.absoluteString rangeOfString:kWeChatAppKey].location != NSNotFound){
-            return  [WXApi handleOpenURL:url delegate:self];
-        }
+        return [[FDPayManager defaultManager] handleURL:url payCompletionBlock:^(NSDictionary * _Nonnull resultDic) {
+            NSLog(@"resultDic:%@",resultDic);
+        } delegate:nil];
     }
     return result;
 }
 
 #else
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
-    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
+    BOOL result = [[FDSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
     if (!result) {
-        if ([url.host isEqualToString:@"safepay"]){
-            [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
-                NSLog(@"result = %@",resultDic);
-            }];
-            return YES;
-        }
-        else if([url.absoluteString rangeOfString:kWeChatAppKey].location != NSNotFound){
-            return  [WXApi handleOpenURL:url delegate:self];
-        }
+        return [[FDPayManager defaultManager] handleURL:url payCompletionBlock:^(NSDictionary * _Nonnull resultDic) {
+            NSLog(@"resultDic:%@",resultDic);
+        } delegate:nil];
     }
     return result;
 }
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
-    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url];
+    BOOL result = [[FDSocialManager defaultManager] handleOpenURL:url];
     if (!result) {
-        if ([url.host isEqualToString:@"safepay"]){
-            [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
-                NSLog(@"result = %@",resultDic);
-            }];
-            return YES;
-        }
-        else if([url.absoluteString rangeOfString:kWeChatAppKey].location != NSNotFound){
-            return  [WXApi handleOpenURL:url delegate:self];
-        }
+        return [[FDPayManager defaultManager] handleURL:url payCompletionBlock:^(NSDictionary * _Nonnull resultDic) {
+            NSLog(@"resultDic:%@",resultDic);
+        } delegate:nil];
     }
     return result;
 }
 #endif
-
-#pragma mark - WXApiDelegate
-- (void)onReq:(BaseReq *)req{
-    
-}
-
-- (void)onResp:(BaseResp *)resp{
-    
-}
 
 @end

@@ -105,4 +105,16 @@
     }];
 }
 
+-(BOOL)handleOpenURL:(NSURL *)url{
+    return [[UMSocialManager defaultManager] handleOpenURL:url];
+}
+
+-(BOOL)handleOpenURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    return [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
+}
+
+-(BOOL)handleOpenURL:(NSURL *)url options:(NSDictionary*)options{
+    return [[UMSocialManager defaultManager]  handleOpenURL:url options:options];
+}
+
 @end
