@@ -177,4 +177,8 @@
     return YES;
 }
 
+- (void)onResp:(BaseResp *)resp{
+    NSLog(@"");
+}
+
 @end
