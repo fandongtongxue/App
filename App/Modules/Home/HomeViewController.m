@@ -28,8 +28,6 @@
 }
 
 - (void)searchItemAction:(UIBarButtonItem *)item{
-    [[FDPayManager defaultManager] pay:FDPayTypeWeChat];
-    return;
     SearchViewController *searchVC = [[SearchViewController alloc]init];
     [self.navigationController pushViewController:searchVC animated:YES];
 }

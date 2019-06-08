@@ -10,6 +10,10 @@
 
 #import <Bugly/Bugly.h>
 
+#import <UMCommon/UMCommon.h>
+#import <UMPush/UMessage.h>
+#import <UserNotifications/UserNotifications.h>
+
 #ifdef DEBUG
 //#import <DoraemonKit/DoraemonManager.h>
 #endif
@@ -19,6 +23,10 @@
 #import "HomeViewController.h"
 #import "MineViewController.h"
 #import "LoginViewController.h"
+
+@interface AppDelegate ()<UNUserNotificationCenterDelegate>
+
+@end
 
 @implementation AppDelegate (ThirdPart)
 
@@ -45,6 +53,22 @@
     
     //加载初始化数据
     [[GlobalManager manager] loadData];
+    
+    // Push's basic setting
+    UMessageRegisterEntity * entity = [[UMessageRegisterEntity alloc] init];
+    //type是对推送的几个参数的选择，可以选择一个或者多个。默认是三个全部打开，即：声音，弹窗，角标
+    entity.types = UMessageAuthorizationOptionBadge|UMessageAuthorizationOptionAlert;
+    if (@available(iOS 10.0, *)) {
+        [UNUserNotificationCenter currentNotificationCenter].delegate=self;
+    } else {
+        //do nothing
+    }
+    [UMessage registerForRemoteNotificationsWithLaunchOptions:launchOptions Entity:entity completionHandler:^(BOOL granted, NSError * _Nullable error) {
+        if (granted) {
+        }else
+        {
+        }
+    }];
     
     //注册第三方
     [self registerApp];
@@ -116,6 +140,10 @@
     [[FDSocialManager defaultManager] registerApp];
     //Bugly
     [Bugly startWithAppId:kBuglyAppId];
+    
+    [UMessage openDebugMode:YES];
+    [UMessage setWebViewClassString:@"UMWebViewController"];
+    [UMessage addLaunchMessage];
 }
 
 - (void)update{
@@ -134,6 +162,87 @@
         }
         [self.window.rootViewController presentViewController:alertVC animated:YES completion:nil];
     }
+}
+
+#pragma mark - 推送
+//iOS10以下使用这两个方法接收通知，
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    [UMessage setAutoAlert:NO];
+    if([[[UIDevice currentDevice] systemVersion]intValue] < 10){
+        [UMessage didReceiveRemoteNotification:userInfo];
+        
+        //    self.userInfo = userInfo;
+        //    //定制自定的的弹出框
+        //    if([UIApplication sharedApplication].applicationState == UIApplicationStateActive)
+        //    {
+        //        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"标题"
+        //                                                            message:@"Test On ApplicationStateActive"
+        //                                                           delegate:self
+        //                                                  cancelButtonTitle:@"确定"
+        //                                                  otherButtonTitles:nil];
+        //
+        //        [alertView show];
+        //
+        //    }
+        completionHandler(UIBackgroundFetchResultNewData);
+    }
+}
+
+//- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+//{
+//    //关闭友盟自带的弹出框
+//    [UMessage setAutoAlert:NO];
+//    [UMessage didReceiveRemoteNotification:userInfo];
+//
+//    //    self.userInfo = userInfo;
+//    //    //定制自定的的弹出框
+//    //    if([UIApplication sharedApplication].applicationState == UIApplicationStateActive)
+//    //    {
+//    //        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"标题"
+//    //                                                            message:@"Test On ApplicationStateActive"
+//    //                                                           delegate:self
+//    //                                                  cancelButtonTitle:@"确定"
+//    //                                                  otherButtonTitles:nil];
+//    //
+//    //        [alertView show];
+//    //
+//    //    }
+//
+//}
+#pragma mark - UNUserNotificationCenterDelegate
+//iOS10新增：处理前台收到通知的代理方法
+-(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler API_AVAILABLE(ios(10.0)){
+    NSDictionary * userInfo = notification.request.content.userInfo;
+    if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+        //应用处于前台时的远程推送接受
+        //关闭U-Push自带的弹出框
+        [UMessage setAutoAlert:NO];
+        //必须加这句代码
+        [UMessage didReceiveRemoteNotification:userInfo];
+        
+    }else{
+        //应用处于前台时的本地推送接受
+    }
+    //当应用处于前台时提示设置，需要哪个可以设置哪一个
+    completionHandler(UNNotificationPresentationOptionSound|UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionAlert);
+}
+
+//iOS10新增：处理后台点击通知的代理方法
+-(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler API_AVAILABLE(ios(10.0)){
+    NSDictionary * userInfo = response.notification.request.content.userInfo;
+    if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+        //应用处于后台时的远程推送接受
+        //必须加这句代码
+        [UMessage didReceiveRemoteNotification:userInfo];
+        
+    }else{
+        //应用处于后台时的本地推送接受
+    }
+}
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center openSettingsForNotification:(nullable UNNotification *)notification API_AVAILABLE(ios(10.0)){
+    
 }
 
 @end

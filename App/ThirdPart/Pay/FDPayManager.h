@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * 收到一个来自微信的处理结果。调用一次sendReq后会收到onResp。
  * 可能收到的处理结果有SendMessageToWXResp、SendAuthResp等。
- * @param resp具体的回应内容，是自动释放的
+ @param resp 具体的回应内容，是自动释放的
  */
 - (void)onPayResp:(BaseResp*)resp;
 
@@ -45,7 +45,7 @@ typedef void(^payCompletionBlock)(NSDictionary *resultDic);
 
 + (FDPayManager *)defaultManager;
 
-- (BOOL)handleURL:(NSURL *)url payCompletionBlock:(payCompletionBlock)payCompletionBlock delegate:(id<FDPayManagerDelegate>)delegate;
+- (BOOL)handleURL:(NSURL *)url payCompletionBlock:(payCompletionBlock)payCompletionBlock delegate:(_Nonnull id<FDPayManagerDelegate>)delegate;
 
 - (void)pay:(FDPayType)type;
 
