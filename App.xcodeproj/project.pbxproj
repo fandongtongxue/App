@@ -18,8 +18,6 @@
 		6D59879D229E662500113597 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6D598798229E662500113597 /* README.txt */; };
 		6D59879E229E662500113597 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D59879A229E662500113597 /* libWeChatSDK.a */; };
 		6D74C528227575D500332AAC /* AppDelegate+Launch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D74C527227575D500332AAC /* AppDelegate+Launch.m */; };
-		6D9DF5A82277CE3C00FB9CFC /* TestSocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DF5A62277CE3C00FB9CFC /* TestSocialViewController.m */; };
-		6D9DF5A92277CE3C00FB9CFC /* TestSocialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D9DF5A72277CE3C00FB9CFC /* TestSocialViewController.xib */; };
 		6D9DF5AD2277CE9400FB9CFC /* FDSocialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DF5AC2277CE9400FB9CFC /* FDSocialManager.m */; };
 		6D9DF5B12277D79B00FB9CFC /* UIViewController+FD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DF5B02277D79B00FB9CFC /* UIViewController+FD.m */; };
 		6D9DF5B52277EC1D00FB9CFC /* FDSocialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DF5B42277EC1D00FB9CFC /* FDSocialModel.m */; };
@@ -127,9 +125,6 @@
 		6D74C526227575D500332AAC /* AppDelegate+Launch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Launch.h"; sourceTree = "<group>"; };
 		6D74C527227575D500332AAC /* AppDelegate+Launch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Launch.m"; sourceTree = "<group>"; };
 		6D800E102293D4A800BC8BB8 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
-		6D9DF5A52277CE3C00FB9CFC /* TestSocialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestSocialViewController.h; sourceTree = "<group>"; };
-		6D9DF5A62277CE3C00FB9CFC /* TestSocialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestSocialViewController.m; sourceTree = "<group>"; };
-		6D9DF5A72277CE3C00FB9CFC /* TestSocialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestSocialViewController.xib; sourceTree = "<group>"; };
 		6D9DF5AB2277CE9400FB9CFC /* FDSocialManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDSocialManager.h; sourceTree = "<group>"; };
 		6D9DF5AC2277CE9400FB9CFC /* FDSocialManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDSocialManager.m; sourceTree = "<group>"; };
 		6D9DF5AF2277D79B00FB9CFC /* UIViewController+FD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FD.h"; sourceTree = "<group>"; };
@@ -358,13 +353,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6D02209F229F8572001FF792 /* Test */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Test;
-			sourceTree = "<group>";
-		};
 		6D369E43229E6BF6006C9DDF /* Constant */ = {
 			isa = PBXGroup;
 			children = (
@@ -407,7 +395,6 @@
 		6D598791229E662500113597 /* Pay */ = {
 			isa = PBXGroup;
 			children = (
-				6D02209F229F8572001FF792 /* Test */,
 				CB1980D7229EBC2500AA1002 /* AliPayUtil */,
 				6D598792229E662500113597 /* Alipay */,
 				6D598795229E662500113597 /* WeChatPay */,
@@ -462,20 +449,9 @@
 			path = Analyze;
 			sourceTree = "<group>";
 		};
-		6D9DF5A42277CE0900FB9CFC /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				6D9DF5A52277CE3C00FB9CFC /* TestSocialViewController.h */,
-				6D9DF5A62277CE3C00FB9CFC /* TestSocialViewController.m */,
-				6D9DF5A72277CE3C00FB9CFC /* TestSocialViewController.xib */,
-			);
-			path = Test;
-			sourceTree = "<group>";
-		};
 		6D9DF5AA2277CE7700FB9CFC /* Social */ = {
 			isa = PBXGroup;
 			children = (
-				6D9DF5A42277CE0900FB9CFC /* Test */,
 				6D9DF5AB2277CE9400FB9CFC /* FDSocialManager.h */,
 				6D9DF5AC2277CE9400FB9CFC /* FDSocialManager.m */,
 				6D9DF5B32277EC1D00FB9CFC /* FDSocialModel.h */,
@@ -984,7 +960,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DEC85192276DB50000BCB3C /* AlibabaSans-MediumItalic.otf in Resources */,
-				6D9DF5A92277CE3C00FB9CFC /* TestSocialViewController.xib in Resources */,
 				6D59879D229E662500113597 /* README.txt in Resources */,
 				CB8C26F6226CBCAA0058DAEE /* Assets.xcassets in Resources */,
 				6DADC11B228C095600FBFA94 /* HK-MO-TW.json in Resources */,
@@ -1134,7 +1109,6 @@
 				6D74C528227575D500332AAC /* AppDelegate+Launch.m in Sources */,
 				CB6E67B32279CF7B00D3788E /* UIImageEffects.m in Sources */,
 				6D022097229F6C56001FF792 /* FDNotificationName.m in Sources */,
-				6D9DF5A82277CE3C00FB9CFC /* TestSocialViewController.m in Sources */,
 				CBCFB1E12281C5CB00ADE61E /* UIAlertController+supportedInterfaceOrientations.m in Sources */,
 				CB8C26FC226CBCAA0058DAEE /* main.m in Sources */,
 				CB8C26EE226CBCA90058DAEE /* AppDelegate.m in Sources */,
