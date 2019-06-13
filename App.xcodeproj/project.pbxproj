@@ -11,6 +11,7 @@
 		6D022097229F6C56001FF792 /* FDNotificationName.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D022096229F6C56001FF792 /* FDNotificationName.m */; };
 		6D36CA8F228117E10046FA8C /* GlobalManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D36CA8B228117E10046FA8C /* GlobalManager.m */; };
 		6D36CA90228117E10046FA8C /* GlobalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D36CA8E228117E10046FA8C /* GlobalModel.m */; };
+		6D3C39DB22B1E79D00B861E7 /* FDGlobalApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3C39DA22B1E79D00B861E7 /* FDGlobalApi.m */; };
 		6D4125DB229257BB0045E3B5 /* FDAnalyzeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4125DA229257BB0045E3B5 /* FDAnalyzeManager.m */; };
 		6D4F0D14227695D6005A9B21 /* AppDelegate+HandleURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4F0D13227695D6005A9B21 /* AppDelegate+HandleURL.m */; };
 		6D59879B229E662500113597 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6D598793229E662500113597 /* AlipaySDK.bundle */; };
@@ -65,7 +66,6 @@
 		CB198131229EBD3B00AA1002 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB19812F229EBD3A00AA1002 /* libssl.a */; };
 		CB337B9622AC63010062FB55 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB337B9522AC63010062FB55 /* UserNotifications.framework */; };
 		CB3508EC22709B5800EDC557 /* FDBaseApi.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3508EB22709B5800EDC557 /* FDBaseApi.m */; };
-		CB6CE2D52271E440006B3DFA /* TestApi.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6CE2D42271E440006B3DFA /* TestApi.m */; };
 		CB6E67762279AA0C00D3788E /* FDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6E67752279AA0C00D3788E /* FDTabBarController.m */; };
 		CB6E677A2279AAEB00D3788E /* FDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6E67792279AAEB00D3788E /* FDNavigationController.m */; };
 		CB6E67822279CC6D00D3788E /* FDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6E67812279CC6D00D3788E /* FDViewController.m */; };
@@ -83,7 +83,6 @@
 		CB6E67BB2279CF7B00D3788E /* QDCommonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6E67AC2279CF7B00D3788E /* QDCommonTableViewController.m */; };
 		CB6E67BD2279D62A00D3788E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB6E67BC2279D62A00D3788E /* Main.storyboard */; };
 		CB6E67C12279D8D900D3788E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6E67C02279D8D900D3788E /* HomeViewController.m */; };
-		CB6E67C32279EAEC00D3788E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6E67C22279EAEC00D3788E /* LaunchScreen.xib */; };
 		CB6E67C62279EECC00D3788E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB6E67C82279EECC00D3788E /* Localizable.strings */; };
 		CB8C26EE226CBCA90058DAEE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8C26ED226CBCA90058DAEE /* AppDelegate.m */; };
 		CB8C26F6226CBCAA0058DAEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB8C26F5226CBCAA0058DAEE /* Assets.xcassets */; };
@@ -96,7 +95,6 @@
 		CBB5492E22A010E1007B1A7C /* WXApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB5492B22A010E1007B1A7C /* WXApiManager.m */; };
 		CBC00E4622734B9000E0A471 /* YTKUrlArgumentsFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC00E4422734B9000E0A471 /* YTKUrlArgumentsFilter.m */; };
 		CBC6FB1D22844CED00EAF915 /* register_guide_video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CBC6FB1C22844C9900EAF915 /* register_guide_video.mp4 */; };
-		CBCFB1DE2281BD4600ADE61E /* GlobalModel.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBCFB1DD2281BD4600ADE61E /* GlobalModel.plist */; };
 		CBCFB1E12281C5CB00ADE61E /* UIAlertController+supportedInterfaceOrientations.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCFB1E02281C5CB00ADE61E /* UIAlertController+supportedInterfaceOrientations.m */; };
 		CBD8F54822830AE90069510C /* PhoneLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD8F54722830AE90069510C /* PhoneLoginViewController.m */; };
 /* End PBXBuildFile section */
@@ -111,6 +109,8 @@
 		6D36CA8D228117E10046FA8C /* GlobalModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalModel.h; sourceTree = "<group>"; };
 		6D36CA8E228117E10046FA8C /* GlobalModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalModel.m; sourceTree = "<group>"; };
 		6D36CA9122811E460046FA8C /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		6D3C39D922B1E79D00B861E7 /* FDGlobalApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDGlobalApi.h; sourceTree = "<group>"; };
+		6D3C39DA22B1E79D00B861E7 /* FDGlobalApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDGlobalApi.m; sourceTree = "<group>"; };
 		6D4125D9229257BB0045E3B5 /* FDAnalyzeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDAnalyzeManager.h; sourceTree = "<group>"; };
 		6D4125DA229257BB0045E3B5 /* FDAnalyzeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDAnalyzeManager.m; sourceTree = "<group>"; };
 		6D4F0D12227695D6005A9B21 /* AppDelegate+HandleURL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+HandleURL.h"; sourceTree = "<group>"; };
@@ -257,8 +257,6 @@
 		CB3508EA22709B5800EDC557 /* FDBaseApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDBaseApi.h; sourceTree = "<group>"; };
 		CB3508EB22709B5800EDC557 /* FDBaseApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDBaseApi.m; sourceTree = "<group>"; };
 		CB3508F32270A1A100EDC557 /* FDNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDNetworking.h; sourceTree = "<group>"; };
-		CB6CE2D32271E440006B3DFA /* TestApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestApi.h; sourceTree = "<group>"; };
-		CB6CE2D42271E440006B3DFA /* TestApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestApi.m; sourceTree = "<group>"; };
 		CB6E67742279AA0C00D3788E /* FDTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDTabBarController.h; sourceTree = "<group>"; };
 		CB6E67752279AA0C00D3788E /* FDTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDTabBarController.m; sourceTree = "<group>"; };
 		CB6E67782279AAEB00D3788E /* FDNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDNavigationController.h; sourceTree = "<group>"; };
@@ -293,7 +291,6 @@
 		CB6E67BC2279D62A00D3788E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CB6E67BF2279D8D900D3788E /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		CB6E67C02279D8D900D3788E /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		CB6E67C22279EAEC00D3788E /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		CB6E67C72279EECC00D3788E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CB6E67C92279EEE600D3788E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		CB8C26E9226CBCA90058DAEE /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -317,7 +314,6 @@
 		CBC00E4422734B9000E0A471 /* YTKUrlArgumentsFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTKUrlArgumentsFilter.m; sourceTree = "<group>"; };
 		CBC00E4522734B9000E0A471 /* YTKUrlArgumentsFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTKUrlArgumentsFilter.h; sourceTree = "<group>"; };
 		CBC6FB1C22844C9900EAF915 /* register_guide_video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = register_guide_video.mp4; sourceTree = "<group>"; };
-		CBCFB1DD2281BD4600ADE61E /* GlobalModel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GlobalModel.plist; sourceTree = "<group>"; };
 		CBCFB1DF2281C5CB00ADE61E /* UIAlertController+supportedInterfaceOrientations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+supportedInterfaceOrientations.h"; sourceTree = "<group>"; };
 		CBCFB1E02281C5CB00ADE61E /* UIAlertController+supportedInterfaceOrientations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+supportedInterfaceOrientations.m"; sourceTree = "<group>"; };
 		CBD8F54622830AE90069510C /* PhoneLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhoneLoginViewController.h; sourceTree = "<group>"; };
@@ -390,6 +386,15 @@
 				6D36CA8E228117E10046FA8C /* GlobalModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		6D3C39D822B1E6DF00B861E7 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				6D3C39D922B1E79D00B861E7 /* FDGlobalApi.h */,
+				6D3C39DA22B1E79D00B861E7 /* FDGlobalApi.m */,
+			);
+			path = Global;
 			sourceTree = "<group>";
 		};
 		6D598791229E662500113597 /* Pay */ = {
@@ -508,12 +513,10 @@
 			isa = PBXGroup;
 			children = (
 				CB6E67C82279EECC00D3788E /* Localizable.strings */,
-				CB6E67C22279EAEC00D3788E /* LaunchScreen.xib */,
 				CB8C26FB226CBCAA0058DAEE /* main.m */,
 				CB6E67BC2279D62A00D3788E /* Main.storyboard */,
 				6DADC0F8228C093100FBFA94 /* Data */,
 				CBC6FB1C22844C9900EAF915 /* register_guide_video.mp4 */,
-				CBCFB1DD2281BD4600ADE61E /* GlobalModel.plist */,
 				6DEC84F52276DB50000BCB3C /* Font */,
 			);
 			path = Resources;
@@ -693,7 +696,7 @@
 		CB3508E822709B3E00EDC557 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				CB6CE2D22271E41C006B3DFA /* Test */,
+				6D3C39D822B1E6DF00B861E7 /* Global */,
 				CB3508E922709B4100EDC557 /* Base */,
 			);
 			path = Network;
@@ -709,15 +712,6 @@
 				CB3508EB22709B5800EDC557 /* FDBaseApi.m */,
 			);
 			path = Base;
-			sourceTree = "<group>";
-		};
-		CB6CE2D22271E41C006B3DFA /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				CB6CE2D32271E440006B3DFA /* TestApi.h */,
-				CB6CE2D42271E440006B3DFA /* TestApi.m */,
-			);
-			path = Test;
 			sourceTree = "<group>";
 		};
 		CB6E67712279A9BD00D3788E /* Modules */ = {
@@ -932,6 +926,11 @@
 				TargetAttributes = {
 					CB8C26E8226CBCA90058DAEE = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -990,8 +989,6 @@
 				CB6E67C62279EECC00D3788E /* Localizable.strings in Resources */,
 				6DEC85112276DB50000BCB3C /* AlibabaSans-Light.otf in Resources */,
 				6DEC850E2276DB50000BCB3C /* Alibaba-PuHuiTi-Heavy.otf in Resources */,
-				CBCFB1DE2281BD4600ADE61E /* GlobalModel.plist in Resources */,
-				CB6E67C32279EAEC00D3788E /* LaunchScreen.xib in Resources */,
 				6DEC851A2276DB50000BCB3C /* AlibabaSans-LightItalic.otf in Resources */,
 				6DADC117228C095600FBFA94 /* provinces.csv in Resources */,
 				6DEC850D2276DB50000BCB3C /* Alibaba-PuHuiTi-Light.otf in Resources */,
@@ -1078,7 +1075,6 @@
 				CBB5492D22A010E1007B1A7C /* WXApiRequestHandler.m in Sources */,
 				CB6E67BA2279CF7B00D3788E /* QDNavigationController.m in Sources */,
 				6D4F0D14227695D6005A9B21 /* AppDelegate+HandleURL.m in Sources */,
-				CB6CE2D52271E440006B3DFA /* TestApi.m in Sources */,
 				CB6E67762279AA0C00D3788E /* FDTabBarController.m in Sources */,
 				CB19812B229EBC2600AA1002 /* APOrderInfo.m in Sources */,
 				6D9DF5AD2277CE9400FB9CFC /* FDSocialManager.m in Sources */,
@@ -1093,6 +1089,7 @@
 				CB6E677A2279AAEB00D3788E /* FDNavigationController.m in Sources */,
 				CB6E67B12279CF7B00D3788E /* QMUIConfigurationTemplate.m in Sources */,
 				CB6E67B42279CF7B00D3788E /* QDCommonUI.m in Sources */,
+				6D3C39DB22B1E79D00B861E7 /* FDGlobalApi.m in Sources */,
 				CBC00E4622734B9000E0A471 /* YTKUrlArgumentsFilter.m in Sources */,
 				CB8EA0E4227B2460004177D4 /* LoginViewController.m in Sources */,
 				CB6E67B22279CF7B00D3788E /* QDUIHelper.m in Sources */,

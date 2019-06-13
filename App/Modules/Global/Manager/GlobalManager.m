@@ -7,6 +7,7 @@
 //
 
 #import "GlobalManager.h"
+#import "FDGlobalApi.h"
 
 @implementation GlobalManager
 
@@ -20,8 +21,11 @@
 }
 
 - (void)loadData{
-    NSDictionary *dict  = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"GlobalModel" ofType:@"plist"]];
-    [GlobalManager manager].globalModel = [GlobalModel mj_objectWithKeyValues:dict[@"data"]];
+    [[[FDGlobalApi alloc]init] startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        NSLog(@"");
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        NSLog(@"");
+    }];
 }
 
 @end
