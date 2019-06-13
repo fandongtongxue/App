@@ -14,6 +14,8 @@
 #import <UMPush/UMessage.h>
 #import <UserNotifications/UserNotifications.h>
 
+#import <XHLaunchAd/XHLaunchAd.h>
+
 #ifdef DEBUG
 //#import <DoraemonKit/DoraemonManager.h>
 #endif
@@ -24,7 +26,7 @@
 #import "MineViewController.h"
 #import "LoginViewController.h"
 
-@interface AppDelegate ()<UNUserNotificationCenterDelegate>
+@interface AppDelegate ()<UNUserNotificationCenterDelegate,XHLaunchAdDelegate>
 
 @end
 
@@ -46,6 +48,24 @@
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         [QDUIHelper qmuiEmotions];
     });
+    
+    //设置你工程的启动页使用的是:LaunchImage 还是 LaunchScreen.storyboard(不设置默认:LaunchImage)
+    [XHLaunchAd setLaunchSourceType:SourceTypeLaunchScreen];
+    
+    //1.因为数据请求是异步的,请在数据请求前,调用下面方法配置数据等待时间.
+    //2.设为3即表示:启动页将停留3s等待服务器返回广告数据,3s内等到广告数据,将正常显示广告,否则将不显示
+    //3.数据获取成功,配置广告数据后,自动结束等待,显示广告
+    //注意:请求广告数据前,必须设置此属性,否则会先进入window的的根控制器
+    [XHLaunchAd setWaitDataDuration:3];
+    //配置广告数据
+    XHLaunchImageAdConfiguration *imageAdconfiguration = [XHLaunchImageAdConfiguration defaultConfiguration];
+    //广告图片URLString/或本地图片名(.jpg/.gif请带上后缀)
+    imageAdconfiguration.imageNameOrURLString = @"";
+    //广告点击打开页面参数(openModel可为NSString,模型,字典等任意类型)
+    imageAdconfiguration.openModel = @"http://blog.fandong.me";
+    imageAdconfiguration.duration = 5;
+    //显示开屏广告
+    [XHLaunchAd imageAdWithImageAdConfiguration:imageAdconfiguration delegate:self];
     
     // 界面
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -164,54 +184,24 @@
     }
 }
 
-#pragma mark - 推送
+#pragma mark - Push
 //iOS10以下使用这两个方法接收通知，
--(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
-{
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
     [UMessage setAutoAlert:NO];
     if([[[UIDevice currentDevice] systemVersion]intValue] < 10){
         [UMessage didReceiveRemoteNotification:userInfo];
-        
-        //    self.userInfo = userInfo;
-        //    //定制自定的的弹出框
-        //    if([UIApplication sharedApplication].applicationState == UIApplicationStateActive)
-        //    {
-        //        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"标题"
-        //                                                            message:@"Test On ApplicationStateActive"
-        //                                                           delegate:self
-        //                                                  cancelButtonTitle:@"确定"
-        //                                                  otherButtonTitles:nil];
-        //
-        //        [alertView show];
-        //
-        //    }
         completionHandler(UIBackgroundFetchResultNewData);
     }
 }
 
-//- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
-//{
-//    //关闭友盟自带的弹出框
-//    [UMessage setAutoAlert:NO];
-//    [UMessage didReceiveRemoteNotification:userInfo];
-//
-//    //    self.userInfo = userInfo;
-//    //    //定制自定的的弹出框
-//    //    if([UIApplication sharedApplication].applicationState == UIApplicationStateActive)
-//    //    {
-//    //        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"标题"
-//    //                                                            message:@"Test On ApplicationStateActive"
-//    //                                                           delegate:self
-//    //                                                  cancelButtonTitle:@"确定"
-//    //                                                  otherButtonTitles:nil];
-//    //
-//    //        [alertView show];
-//    //
-//    //    }
-//
-//}
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+    //关闭友盟自带的弹出框
+    [UMessage setAutoAlert:NO];
+    [UMessage didReceiveRemoteNotification:userInfo];
+}
+
 #pragma mark - UNUserNotificationCenterDelegate
-//iOS10新增：处理前台收到通知的代理方法
+//iOS10新增:处理前台收到通知的代理方法
 -(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler API_AVAILABLE(ios(10.0)){
     NSDictionary * userInfo = notification.request.content.userInfo;
     if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
@@ -228,20 +218,28 @@
     completionHandler(UNNotificationPresentationOptionSound|UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionAlert);
 }
 
-//iOS10新增：处理后台点击通知的代理方法
+//iOS10新增:处理后台点击通知的代理方法
 -(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler API_AVAILABLE(ios(10.0)){
     NSDictionary * userInfo = response.notification.request.content.userInfo;
     if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
         //应用处于后台时的远程推送接受
         //必须加这句代码
         [UMessage didReceiveRemoteNotification:userInfo];
-        
     }else{
         //应用处于后台时的本地推送接受
     }
 }
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center openSettingsForNotification:(nullable UNNotification *)notification API_AVAILABLE(ios(10.0)){
+    
+}
+
+#pragma mark - XHLaunchAdDelegate
+- (void)xhLaunchAdShowFinish:(XHLaunchAd *)launchAd{
+    
+}
+
+- (void)xhLaunchAd:(XHLaunchAd *)launchAd clickAndOpenModel:(id)openModel clickPoint:(CGPoint)clickPoint{
     
 }
 
