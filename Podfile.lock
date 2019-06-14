@@ -20,6 +20,9 @@ PODS:
   - CocoaLumberjack/Core (3.5.3)
   - FBRetainCycleDetector (0.1.4)
   - FLAnimatedImage (1.0.12)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
   - Masonry (1.1.0)
   - MJExtension (3.0.17)
   - MJRefresh (3.2.0)
@@ -346,6 +349,7 @@ PODS:
 DEPENDENCIES:
   - Bugly
   - CocoaLumberjack
+  - FMDB
   - Masonry
   - MJExtension
   - MJRefresh
@@ -379,6 +383,7 @@ SPEC REPOS:
     - CocoaLumberjack
     - FBRetainCycleDetector
     - FLAnimatedImage
+    - FMDB
     - Masonry
     - MJExtension
     - MJRefresh
@@ -415,6 +420,7 @@ SPEC CHECKSUMS:
   CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 74ec83124a68891619fb7ba9c5c811bbf1691076
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
@@ -437,6 +443,6 @@ SPEC CHECKSUMS:
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
   ZFPlayer: fdc92702cc611922182a951991dea78566da7605
 
-PODFILE CHECKSUM: 20be8fbc284721c7f7288c9c4a6344a42e9fccbd
+PODFILE CHECKSUM: 2fb0ed91d2e8862b8596ef916a50bef814237a2d
 
 COCOAPODS: 1.7.1

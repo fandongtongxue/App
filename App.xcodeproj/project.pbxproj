@@ -12,6 +12,14 @@
 		6D36CA8F228117E10046FA8C /* GlobalManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D36CA8B228117E10046FA8C /* GlobalManager.m */; };
 		6D36CA90228117E10046FA8C /* GlobalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D36CA8E228117E10046FA8C /* GlobalModel.m */; };
 		6D3C39DB22B1E79D00B861E7 /* FDGlobalApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3C39DA22B1E79D00B861E7 /* FDGlobalApi.m */; };
+		6D3C39E522B21E8000B861E7 /* JKDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3C39E122B21E8000B861E7 /* JKDBModel.m */; };
+		6D3C39E622B21E8000B861E7 /* JKDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3C39E222B21E8000B861E7 /* JKDBHelper.m */; };
+		6D3C39EB22B21FC300B861E7 /* FDProvinceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3C39EA22B21FC200B861E7 /* FDProvinceModel.m */; };
+		6D3C39EE22B21FD000B861E7 /* FDCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3C39ED22B21FD000B861E7 /* FDCityModel.m */; };
+		6D3C39F122B21FED00B861E7 /* FDAreaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3C39F022B21FED00B861E7 /* FDAreaModel.m */; };
+		6D3C39F422B2200000B861E7 /* FDStreetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3C39F322B2200000B861E7 /* FDStreetModel.m */; };
+		6D3C39F722B2200C00B861E7 /* FDVillageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3C39F622B2200C00B861E7 /* FDVillageModel.m */; };
+		6D3C39F922B2243C00B861E7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3C39F822B2243C00B861E7 /* libsqlite3.tbd */; };
 		6D4125DB229257BB0045E3B5 /* FDAnalyzeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4125DA229257BB0045E3B5 /* FDAnalyzeManager.m */; };
 		6D4F0D14227695D6005A9B21 /* AppDelegate+HandleURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4F0D13227695D6005A9B21 /* AppDelegate+HandleURL.m */; };
 		6D59879B229E662500113597 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6D598793229E662500113597 /* AlipaySDK.bundle */; };
@@ -22,23 +30,6 @@
 		6D9DF5AD2277CE9400FB9CFC /* FDSocialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DF5AC2277CE9400FB9CFC /* FDSocialManager.m */; };
 		6D9DF5B12277D79B00FB9CFC /* UIViewController+FD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DF5B02277D79B00FB9CFC /* UIViewController+FD.m */; };
 		6D9DF5B52277EC1D00FB9CFC /* FDSocialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DF5B42277EC1D00FB9CFC /* FDSocialModel.m */; };
-		6DADC10C228C095600FBFA94 /* pcas.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC0FA228C095600FBFA94 /* pcas.json */; };
-		6DADC10D228C095600FBFA94 /* villages.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC0FB228C095600FBFA94 /* villages.json */; };
-		6DADC10E228C095600FBFA94 /* villages.csv in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC0FC228C095600FBFA94 /* villages.csv */; };
-		6DADC10F228C095600FBFA94 /* streets.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC0FD228C095600FBFA94 /* streets.json */; };
-		6DADC110228C095600FBFA94 /* cities.csv in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC0FE228C095600FBFA94 /* cities.csv */; };
-		6DADC111228C095600FBFA94 /* pca-code.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC0FF228C095600FBFA94 /* pca-code.json */; };
-		6DADC112228C095600FBFA94 /* streets.csv in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC100228C095600FBFA94 /* streets.csv */; };
-		6DADC113228C095600FBFA94 /* pca.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC101228C095600FBFA94 /* pca.json */; };
-		6DADC114228C095600FBFA94 /* areas.csv in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC102228C095600FBFA94 /* areas.csv */; };
-		6DADC115228C095600FBFA94 /* pc.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC103228C095600FBFA94 /* pc.json */; };
-		6DADC116228C095600FBFA94 /* pc-code.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC104228C095600FBFA94 /* pc-code.json */; };
-		6DADC117228C095600FBFA94 /* provinces.csv in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC105228C095600FBFA94 /* provinces.csv */; };
-		6DADC118228C095600FBFA94 /* areas.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC106228C095600FBFA94 /* areas.json */; };
-		6DADC119228C095600FBFA94 /* provinces.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC107228C095600FBFA94 /* provinces.json */; };
-		6DADC11A228C095600FBFA94 /* pcas-code.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC108228C095600FBFA94 /* pcas-code.json */; };
-		6DADC11B228C095600FBFA94 /* HK-MO-TW.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC109228C095600FBFA94 /* HK-MO-TW.json */; };
-		6DADC11C228C095600FBFA94 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC10A228C095600FBFA94 /* cities.json */; };
 		6DADC11D228C095600FBFA94 /* data.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC10B228C095600FBFA94 /* data.sqlite */; };
 		6DC591C722767CB600813DAB /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DC591C622767CB500813DAB /* CoreMotion.framework */; };
 		6DEC850B2276DB50000BCB3C /* 版权申明.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC84F62276DB50000BCB3C /* 版权申明.rtf */; };
@@ -58,6 +49,18 @@
 		6DEC85192276DB50000BCB3C /* AlibabaSans-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC85082276DB50000BCB3C /* AlibabaSans-MediumItalic.otf */; };
 		6DEC851A2276DB50000BCB3C /* AlibabaSans-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC85092276DB50000BCB3C /* AlibabaSans-LightItalic.otf */; };
 		6DEC851B2276DB50000BCB3C /* AlibabaSans-HeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC850A2276DB50000BCB3C /* AlibabaSans-HeavyItalic.otf */; };
+		6DEF408D22B3745F00A88CE2 /* QDThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF407222B3745F00A88CE2 /* QDThemeManager.m */; };
+		6DEF408E22B3745F00A88CE2 /* QMUIConfigurationTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF407622B3745F00A88CE2 /* QMUIConfigurationTemplate.m */; };
+		6DEF408F22B3745F00A88CE2 /* QDUIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF407A22B3745F00A88CE2 /* QDUIHelper.m */; };
+		6DEF409022B3745F00A88CE2 /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF407B22B3745F00A88CE2 /* UIImageEffects.m */; };
+		6DEF409122B3745F00A88CE2 /* QDCommonUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF407C22B3745F00A88CE2 /* QDCommonUI.m */; };
+		6DEF409222B3745F00A88CE2 /* QDCommonGroupListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF407F22B3745F00A88CE2 /* QDCommonGroupListViewController.m */; };
+		6DEF409322B3745F00A88CE2 /* QDCommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF408222B3745F00A88CE2 /* QDCommonViewController.m */; };
+		6DEF409422B3745F00A88CE2 /* QDCommonGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF408522B3745F00A88CE2 /* QDCommonGridViewController.m */; };
+		6DEF409522B3745F00A88CE2 /* QDTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF408622B3745F00A88CE2 /* QDTabBarViewController.m */; };
+		6DEF409622B3745F00A88CE2 /* QDCommonListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF408822B3745F00A88CE2 /* QDCommonListViewController.m */; };
+		6DEF409722B3745F00A88CE2 /* QDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF408B22B3745F00A88CE2 /* QDNavigationController.m */; };
+		6DEF409822B3745F00A88CE2 /* QDCommonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF408C22B3745F00A88CE2 /* QDCommonTableViewController.m */; };
 		CB1980D6229EBAFF00AA1002 /* FDPayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1980D5229EBAFF00AA1002 /* FDPayManager.m */; };
 		CB19812B229EBC2600AA1002 /* APOrderInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1980D8229EBC2500AA1002 /* APOrderInfo.m */; };
 		CB19812C229EBC2600AA1002 /* openssl_wrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1980DA229EBC2500AA1002 /* openssl_wrapper.m */; };
@@ -69,18 +72,6 @@
 		CB6E67762279AA0C00D3788E /* FDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6E67752279AA0C00D3788E /* FDTabBarController.m */; };
 		CB6E677A2279AAEB00D3788E /* FDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6E67792279AAEB00D3788E /* FDNavigationController.m */; };
 		CB6E67822279CC6D00D3788E /* FDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6E67812279CC6D00D3788E /* FDViewController.m */; };
-		CB6E67AD2279CF7B00D3788E /* QDThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6E678E2279CF7B00D3788E /* QDThemeManager.m */; };
-		CB6E67B12279CF7B00D3788E /* QMUIConfigurationTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6E67962279CF7B00D3788E /* QMUIConfigurationTemplate.m */; };
-		CB6E67B22279CF7B00D3788E /* QDUIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6E679A2279CF7B00D3788E /* QDUIHelper.m */; };
-		CB6E67B32279CF7B00D3788E /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6E679B2279CF7B00D3788E /* UIImageEffects.m */; };
-		CB6E67B42279CF7B00D3788E /* QDCommonUI.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6E679C2279CF7B00D3788E /* QDCommonUI.m */; };
-		CB6E67B52279CF7B00D3788E /* QDCommonGroupListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6E679F2279CF7B00D3788E /* QDCommonGroupListViewController.m */; };
-		CB6E67B62279CF7B00D3788E /* QDCommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6E67A22279CF7B00D3788E /* QDCommonViewController.m */; };
-		CB6E67B72279CF7B00D3788E /* QDCommonGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6E67A52279CF7B00D3788E /* QDCommonGridViewController.m */; };
-		CB6E67B82279CF7B00D3788E /* QDTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6E67A62279CF7B00D3788E /* QDTabBarViewController.m */; };
-		CB6E67B92279CF7B00D3788E /* QDCommonListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6E67A82279CF7B00D3788E /* QDCommonListViewController.m */; };
-		CB6E67BA2279CF7B00D3788E /* QDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6E67AB2279CF7B00D3788E /* QDNavigationController.m */; };
-		CB6E67BB2279CF7B00D3788E /* QDCommonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6E67AC2279CF7B00D3788E /* QDCommonTableViewController.m */; };
 		CB6E67BD2279D62A00D3788E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB6E67BC2279D62A00D3788E /* Main.storyboard */; };
 		CB6E67C12279D8D900D3788E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6E67C02279D8D900D3788E /* HomeViewController.m */; };
 		CB6E67C62279EECC00D3788E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB6E67C82279EECC00D3788E /* Localizable.strings */; };
@@ -111,6 +102,21 @@
 		6D36CA9122811E460046FA8C /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
 		6D3C39D922B1E79D00B861E7 /* FDGlobalApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDGlobalApi.h; sourceTree = "<group>"; };
 		6D3C39DA22B1E79D00B861E7 /* FDGlobalApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDGlobalApi.m; sourceTree = "<group>"; };
+		6D3C39E122B21E8000B861E7 /* JKDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKDBModel.m; sourceTree = "<group>"; };
+		6D3C39E222B21E8000B861E7 /* JKDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKDBHelper.m; sourceTree = "<group>"; };
+		6D3C39E322B21E8000B861E7 /* JKDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKDBModel.h; sourceTree = "<group>"; };
+		6D3C39E422B21E8000B861E7 /* JKDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKDBHelper.h; sourceTree = "<group>"; };
+		6D3C39E922B21FC200B861E7 /* FDProvinceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDProvinceModel.h; sourceTree = "<group>"; };
+		6D3C39EA22B21FC200B861E7 /* FDProvinceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDProvinceModel.m; sourceTree = "<group>"; };
+		6D3C39EC22B21FD000B861E7 /* FDCityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDCityModel.h; sourceTree = "<group>"; };
+		6D3C39ED22B21FD000B861E7 /* FDCityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDCityModel.m; sourceTree = "<group>"; };
+		6D3C39EF22B21FED00B861E7 /* FDAreaModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDAreaModel.h; sourceTree = "<group>"; };
+		6D3C39F022B21FED00B861E7 /* FDAreaModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDAreaModel.m; sourceTree = "<group>"; };
+		6D3C39F222B2200000B861E7 /* FDStreetModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDStreetModel.h; sourceTree = "<group>"; };
+		6D3C39F322B2200000B861E7 /* FDStreetModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDStreetModel.m; sourceTree = "<group>"; };
+		6D3C39F522B2200C00B861E7 /* FDVillageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDVillageModel.h; sourceTree = "<group>"; };
+		6D3C39F622B2200C00B861E7 /* FDVillageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDVillageModel.m; sourceTree = "<group>"; };
+		6D3C39F822B2243C00B861E7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		6D4125D9229257BB0045E3B5 /* FDAnalyzeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDAnalyzeManager.h; sourceTree = "<group>"; };
 		6D4125DA229257BB0045E3B5 /* FDAnalyzeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDAnalyzeManager.m; sourceTree = "<group>"; };
 		6D4F0D12227695D6005A9B21 /* AppDelegate+HandleURL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+HandleURL.h"; sourceTree = "<group>"; };
@@ -132,23 +138,6 @@
 		6D9DF5B22277D7CC00FB9CFC /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		6D9DF5B32277EC1D00FB9CFC /* FDSocialModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDSocialModel.h; sourceTree = "<group>"; };
 		6D9DF5B42277EC1D00FB9CFC /* FDSocialModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDSocialModel.m; sourceTree = "<group>"; };
-		6DADC0FA228C095600FBFA94 /* pcas.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pcas.json; sourceTree = "<group>"; };
-		6DADC0FB228C095600FBFA94 /* villages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = villages.json; sourceTree = "<group>"; };
-		6DADC0FC228C095600FBFA94 /* villages.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = villages.csv; sourceTree = "<group>"; };
-		6DADC0FD228C095600FBFA94 /* streets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = streets.json; sourceTree = "<group>"; };
-		6DADC0FE228C095600FBFA94 /* cities.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cities.csv; sourceTree = "<group>"; };
-		6DADC0FF228C095600FBFA94 /* pca-code.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "pca-code.json"; sourceTree = "<group>"; };
-		6DADC100228C095600FBFA94 /* streets.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = streets.csv; sourceTree = "<group>"; };
-		6DADC101228C095600FBFA94 /* pca.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pca.json; sourceTree = "<group>"; };
-		6DADC102228C095600FBFA94 /* areas.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = areas.csv; sourceTree = "<group>"; };
-		6DADC103228C095600FBFA94 /* pc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pc.json; sourceTree = "<group>"; };
-		6DADC104228C095600FBFA94 /* pc-code.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "pc-code.json"; sourceTree = "<group>"; };
-		6DADC105228C095600FBFA94 /* provinces.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = provinces.csv; sourceTree = "<group>"; };
-		6DADC106228C095600FBFA94 /* areas.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = areas.json; sourceTree = "<group>"; };
-		6DADC107228C095600FBFA94 /* provinces.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = provinces.json; sourceTree = "<group>"; };
-		6DADC108228C095600FBFA94 /* pcas-code.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "pcas-code.json"; sourceTree = "<group>"; };
-		6DADC109228C095600FBFA94 /* HK-MO-TW.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "HK-MO-TW.json"; sourceTree = "<group>"; };
-		6DADC10A228C095600FBFA94 /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
 		6DADC10B228C095600FBFA94 /* data.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = data.sqlite; sourceTree = "<group>"; };
 		6DC591C622767CB500813DAB /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		6DEC84F62276DB50000BCB3C /* 版权申明.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "版权申明.rtf"; sourceTree = "<group>"; };
@@ -168,6 +157,31 @@
 		6DEC85082276DB50000BCB3C /* AlibabaSans-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AlibabaSans-MediumItalic.otf"; sourceTree = "<group>"; };
 		6DEC85092276DB50000BCB3C /* AlibabaSans-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AlibabaSans-LightItalic.otf"; sourceTree = "<group>"; };
 		6DEC850A2276DB50000BCB3C /* AlibabaSans-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AlibabaSans-HeavyItalic.otf"; sourceTree = "<group>"; };
+		6DEF407222B3745F00A88CE2 /* QDThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDThemeManager.m; sourceTree = "<group>"; };
+		6DEF407322B3745F00A88CE2 /* QMUIConfigurationTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMUIConfigurationTemplate.h; sourceTree = "<group>"; };
+		6DEF407422B3745F00A88CE2 /* QDThemeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDThemeProtocol.h; sourceTree = "<group>"; };
+		6DEF407522B3745F00A88CE2 /* QDThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDThemeManager.h; sourceTree = "<group>"; };
+		6DEF407622B3745F00A88CE2 /* QMUIConfigurationTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMUIConfigurationTemplate.m; sourceTree = "<group>"; };
+		6DEF407822B3745F00A88CE2 /* UIImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageEffects.h; sourceTree = "<group>"; };
+		6DEF407922B3745F00A88CE2 /* QDCommonUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCommonUI.h; sourceTree = "<group>"; };
+		6DEF407A22B3745F00A88CE2 /* QDUIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDUIHelper.m; sourceTree = "<group>"; };
+		6DEF407B22B3745F00A88CE2 /* UIImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageEffects.m; sourceTree = "<group>"; };
+		6DEF407C22B3745F00A88CE2 /* QDCommonUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCommonUI.m; sourceTree = "<group>"; };
+		6DEF407D22B3745F00A88CE2 /* QDUIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDUIHelper.h; sourceTree = "<group>"; };
+		6DEF407F22B3745F00A88CE2 /* QDCommonGroupListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCommonGroupListViewController.m; sourceTree = "<group>"; };
+		6DEF408022B3745F00A88CE2 /* QDTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDTabBarViewController.h; sourceTree = "<group>"; };
+		6DEF408122B3745F00A88CE2 /* QDCommonListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCommonListViewController.h; sourceTree = "<group>"; };
+		6DEF408222B3745F00A88CE2 /* QDCommonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCommonViewController.m; sourceTree = "<group>"; };
+		6DEF408322B3745F00A88CE2 /* QDNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDNavigationController.h; sourceTree = "<group>"; };
+		6DEF408422B3745F00A88CE2 /* QDCommonTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCommonTableViewController.h; sourceTree = "<group>"; };
+		6DEF408522B3745F00A88CE2 /* QDCommonGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCommonGridViewController.m; sourceTree = "<group>"; };
+		6DEF408622B3745F00A88CE2 /* QDTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDTabBarViewController.m; sourceTree = "<group>"; };
+		6DEF408722B3745F00A88CE2 /* QDCommonGroupListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCommonGroupListViewController.h; sourceTree = "<group>"; };
+		6DEF408822B3745F00A88CE2 /* QDCommonListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCommonListViewController.m; sourceTree = "<group>"; };
+		6DEF408922B3745F00A88CE2 /* QDCommonGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCommonGridViewController.h; sourceTree = "<group>"; };
+		6DEF408A22B3745F00A88CE2 /* QDCommonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCommonViewController.h; sourceTree = "<group>"; };
+		6DEF408B22B3745F00A88CE2 /* QDNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDNavigationController.m; sourceTree = "<group>"; };
+		6DEF408C22B3745F00A88CE2 /* QDCommonTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCommonTableViewController.m; sourceTree = "<group>"; };
 		CB1980D4229EBAFF00AA1002 /* FDPayManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDPayManager.h; sourceTree = "<group>"; };
 		CB1980D5229EBAFF00AA1002 /* FDPayManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDPayManager.m; sourceTree = "<group>"; };
 		CB1980D8229EBC2500AA1002 /* APOrderInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APOrderInfo.m; sourceTree = "<group>"; };
@@ -263,31 +277,6 @@
 		CB6E67792279AAEB00D3788E /* FDNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDNavigationController.m; sourceTree = "<group>"; };
 		CB6E67802279CC6D00D3788E /* FDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDViewController.h; sourceTree = "<group>"; };
 		CB6E67812279CC6D00D3788E /* FDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDViewController.m; sourceTree = "<group>"; };
-		CB6E678E2279CF7B00D3788E /* QDThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDThemeManager.m; sourceTree = "<group>"; };
-		CB6E67902279CF7B00D3788E /* QMUIConfigurationTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMUIConfigurationTemplate.h; sourceTree = "<group>"; };
-		CB6E67922279CF7B00D3788E /* QDThemeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDThemeProtocol.h; sourceTree = "<group>"; };
-		CB6E67942279CF7B00D3788E /* QDThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDThemeManager.h; sourceTree = "<group>"; };
-		CB6E67962279CF7B00D3788E /* QMUIConfigurationTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMUIConfigurationTemplate.m; sourceTree = "<group>"; };
-		CB6E67982279CF7B00D3788E /* UIImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageEffects.h; sourceTree = "<group>"; };
-		CB6E67992279CF7B00D3788E /* QDCommonUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCommonUI.h; sourceTree = "<group>"; };
-		CB6E679A2279CF7B00D3788E /* QDUIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDUIHelper.m; sourceTree = "<group>"; };
-		CB6E679B2279CF7B00D3788E /* UIImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageEffects.m; sourceTree = "<group>"; };
-		CB6E679C2279CF7B00D3788E /* QDCommonUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCommonUI.m; sourceTree = "<group>"; };
-		CB6E679D2279CF7B00D3788E /* QDUIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDUIHelper.h; sourceTree = "<group>"; };
-		CB6E679F2279CF7B00D3788E /* QDCommonGroupListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCommonGroupListViewController.m; sourceTree = "<group>"; };
-		CB6E67A02279CF7B00D3788E /* QDTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDTabBarViewController.h; sourceTree = "<group>"; };
-		CB6E67A12279CF7B00D3788E /* QDCommonListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCommonListViewController.h; sourceTree = "<group>"; };
-		CB6E67A22279CF7B00D3788E /* QDCommonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCommonViewController.m; sourceTree = "<group>"; };
-		CB6E67A32279CF7B00D3788E /* QDNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDNavigationController.h; sourceTree = "<group>"; };
-		CB6E67A42279CF7B00D3788E /* QDCommonTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCommonTableViewController.h; sourceTree = "<group>"; };
-		CB6E67A52279CF7B00D3788E /* QDCommonGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCommonGridViewController.m; sourceTree = "<group>"; };
-		CB6E67A62279CF7B00D3788E /* QDTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDTabBarViewController.m; sourceTree = "<group>"; };
-		CB6E67A72279CF7B00D3788E /* QDCommonGroupListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCommonGroupListViewController.h; sourceTree = "<group>"; };
-		CB6E67A82279CF7B00D3788E /* QDCommonListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCommonListViewController.m; sourceTree = "<group>"; };
-		CB6E67A92279CF7B00D3788E /* QDCommonGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCommonGridViewController.h; sourceTree = "<group>"; };
-		CB6E67AA2279CF7B00D3788E /* QDCommonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCommonViewController.h; sourceTree = "<group>"; };
-		CB6E67AB2279CF7B00D3788E /* QDNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDNavigationController.m; sourceTree = "<group>"; };
-		CB6E67AC2279CF7B00D3788E /* QDCommonTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCommonTableViewController.m; sourceTree = "<group>"; };
 		CB6E67BC2279D62A00D3788E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CB6E67BF2279D8D900D3788E /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		CB6E67C02279D8D900D3788E /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
@@ -326,6 +315,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D3C39F922B2243C00B861E7 /* libsqlite3.tbd in Frameworks */,
 				CB337B9622AC63010062FB55 /* UserNotifications.framework in Frameworks */,
 				6DC591C722767CB600813DAB /* CoreMotion.framework in Frameworks */,
 				CB198130229EBD3B00AA1002 /* libcrypto.a in Frameworks */,
@@ -342,6 +332,7 @@
 		125A1304F9336BCC8EF91275 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6D3C39F822B2243C00B861E7 /* libsqlite3.tbd */,
 				CB337B9522AC63010062FB55 /* UserNotifications.framework */,
 				6DC591C622767CB500813DAB /* CoreMotion.framework */,
 				28EDAE5573319FD1924CF5E8 /* Pods_App.framework */,
@@ -395,6 +386,50 @@
 				6D3C39DA22B1E79D00B861E7 /* FDGlobalApi.m */,
 			);
 			path = Global;
+			sourceTree = "<group>";
+		};
+		6D3C39DF22B21E8000B861E7 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				6D3C39E022B21E8000B861E7 /* DBModel */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		6D3C39E022B21E8000B861E7 /* DBModel */ = {
+			isa = PBXGroup;
+			children = (
+				6D3C39E122B21E8000B861E7 /* JKDBModel.m */,
+				6D3C39E222B21E8000B861E7 /* JKDBHelper.m */,
+				6D3C39E322B21E8000B861E7 /* JKDBModel.h */,
+				6D3C39E422B21E8000B861E7 /* JKDBHelper.h */,
+			);
+			path = DBModel;
+			sourceTree = "<group>";
+		};
+		6D3C39E722B21F9D00B861E7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6D3C39E822B21F9D00B861E7 /* Address */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6D3C39E822B21F9D00B861E7 /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				6D3C39E922B21FC200B861E7 /* FDProvinceModel.h */,
+				6D3C39EA22B21FC200B861E7 /* FDProvinceModel.m */,
+				6D3C39EC22B21FD000B861E7 /* FDCityModel.h */,
+				6D3C39ED22B21FD000B861E7 /* FDCityModel.m */,
+				6D3C39EF22B21FED00B861E7 /* FDAreaModel.h */,
+				6D3C39F022B21FED00B861E7 /* FDAreaModel.m */,
+				6D3C39F222B2200000B861E7 /* FDStreetModel.h */,
+				6D3C39F322B2200000B861E7 /* FDStreetModel.m */,
+				6D3C39F522B2200C00B861E7 /* FDVillageModel.h */,
+				6D3C39F622B2200C00B861E7 /* FDVillageModel.m */,
+			);
+			path = Address;
 			sourceTree = "<group>";
 		};
 		6D598791229E662500113597 /* Pay */ = {
@@ -479,34 +514,9 @@
 		6DADC0F8228C093100FBFA94 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				6DADC0F9228C095600FBFA94 /* dist */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		6DADC0F9228C095600FBFA94 /* dist */ = {
-			isa = PBXGroup;
-			children = (
-				6DADC0FA228C095600FBFA94 /* pcas.json */,
-				6DADC0FB228C095600FBFA94 /* villages.json */,
-				6DADC0FC228C095600FBFA94 /* villages.csv */,
-				6DADC0FD228C095600FBFA94 /* streets.json */,
-				6DADC0FE228C095600FBFA94 /* cities.csv */,
-				6DADC0FF228C095600FBFA94 /* pca-code.json */,
-				6DADC100228C095600FBFA94 /* streets.csv */,
-				6DADC101228C095600FBFA94 /* pca.json */,
-				6DADC102228C095600FBFA94 /* areas.csv */,
-				6DADC103228C095600FBFA94 /* pc.json */,
-				6DADC104228C095600FBFA94 /* pc-code.json */,
-				6DADC105228C095600FBFA94 /* provinces.csv */,
-				6DADC106228C095600FBFA94 /* areas.json */,
-				6DADC107228C095600FBFA94 /* provinces.json */,
-				6DADC108228C095600FBFA94 /* pcas-code.json */,
-				6DADC109228C095600FBFA94 /* HK-MO-TW.json */,
-				6DADC10A228C095600FBFA94 /* cities.json */,
 				6DADC10B228C095600FBFA94 /* data.sqlite */,
 			);
-			path = dist;
+			path = Data;
 			sourceTree = "<group>";
 		};
 		6DEC84F42276DB50000BCB3C /* Resources */ = {
@@ -576,6 +586,62 @@
 				6DEC850A2276DB50000BCB3C /* AlibabaSans-HeavyItalic.otf */,
 			);
 			path = "AlibabaSans ltalics";
+			sourceTree = "<group>";
+		};
+		6DEF407022B3745F00A88CE2 /* QMUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				6DEF407122B3745F00A88CE2 /* Configuration */,
+				6DEF407722B3745F00A88CE2 /* Utils */,
+				6DEF407E22B3745F00A88CE2 /* Controllers */,
+			);
+			path = QMUIKit;
+			sourceTree = "<group>";
+		};
+		6DEF407122B3745F00A88CE2 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				6DEF407222B3745F00A88CE2 /* QDThemeManager.m */,
+				6DEF407322B3745F00A88CE2 /* QMUIConfigurationTemplate.h */,
+				6DEF407422B3745F00A88CE2 /* QDThemeProtocol.h */,
+				6DEF407522B3745F00A88CE2 /* QDThemeManager.h */,
+				6DEF407622B3745F00A88CE2 /* QMUIConfigurationTemplate.m */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		6DEF407722B3745F00A88CE2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6DEF407822B3745F00A88CE2 /* UIImageEffects.h */,
+				6DEF407922B3745F00A88CE2 /* QDCommonUI.h */,
+				6DEF407A22B3745F00A88CE2 /* QDUIHelper.m */,
+				6DEF407B22B3745F00A88CE2 /* UIImageEffects.m */,
+				6DEF407C22B3745F00A88CE2 /* QDCommonUI.m */,
+				6DEF407D22B3745F00A88CE2 /* QDUIHelper.h */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		6DEF407E22B3745F00A88CE2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6DEF407F22B3745F00A88CE2 /* QDCommonGroupListViewController.m */,
+				6DEF408022B3745F00A88CE2 /* QDTabBarViewController.h */,
+				6DEF408122B3745F00A88CE2 /* QDCommonListViewController.h */,
+				6DEF408222B3745F00A88CE2 /* QDCommonViewController.m */,
+				6DEF408322B3745F00A88CE2 /* QDNavigationController.h */,
+				6DEF408422B3745F00A88CE2 /* QDCommonTableViewController.h */,
+				6DEF408522B3745F00A88CE2 /* QDCommonGridViewController.m */,
+				6DEF408622B3745F00A88CE2 /* QDTabBarViewController.m */,
+				6DEF408722B3745F00A88CE2 /* QDCommonGroupListViewController.h */,
+				6DEF408822B3745F00A88CE2 /* QDCommonListViewController.m */,
+				6DEF408922B3745F00A88CE2 /* QDCommonGridViewController.h */,
+				6DEF408A22B3745F00A88CE2 /* QDCommonViewController.h */,
+				6DEF408B22B3745F00A88CE2 /* QDNavigationController.m */,
+				6DEF408C22B3745F00A88CE2 /* QDCommonTableViewController.m */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		BEBD1D2AB71059642F79F3CB /* Pods */ = {
@@ -757,57 +823,10 @@
 		CB6E678A2279CF7B00D3788E /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				CB6E678B2279CF7B00D3788E /* Configuration */,
-				CB6E67972279CF7B00D3788E /* Utils */,
-				CB6E679E2279CF7B00D3788E /* Controllers */,
+				6DEF407022B3745F00A88CE2 /* QMUIKit */,
+				6D3C39E722B21F9D00B861E7 /* Model */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		CB6E678B2279CF7B00D3788E /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				CB6E67942279CF7B00D3788E /* QDThemeManager.h */,
-				CB6E678E2279CF7B00D3788E /* QDThemeManager.m */,
-				CB6E67922279CF7B00D3788E /* QDThemeProtocol.h */,
-				CB6E67902279CF7B00D3788E /* QMUIConfigurationTemplate.h */,
-				CB6E67962279CF7B00D3788E /* QMUIConfigurationTemplate.m */,
-			);
-			path = Configuration;
-			sourceTree = "<group>";
-		};
-		CB6E67972279CF7B00D3788E /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				CB6E67982279CF7B00D3788E /* UIImageEffects.h */,
-				CB6E679B2279CF7B00D3788E /* UIImageEffects.m */,
-				CB6E67992279CF7B00D3788E /* QDCommonUI.h */,
-				CB6E679C2279CF7B00D3788E /* QDCommonUI.m */,
-				CB6E679D2279CF7B00D3788E /* QDUIHelper.h */,
-				CB6E679A2279CF7B00D3788E /* QDUIHelper.m */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		CB6E679E2279CF7B00D3788E /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				CB6E67A92279CF7B00D3788E /* QDCommonGridViewController.h */,
-				CB6E67A52279CF7B00D3788E /* QDCommonGridViewController.m */,
-				CB6E67A02279CF7B00D3788E /* QDTabBarViewController.h */,
-				CB6E67A62279CF7B00D3788E /* QDTabBarViewController.m */,
-				CB6E67A72279CF7B00D3788E /* QDCommonGroupListViewController.h */,
-				CB6E679F2279CF7B00D3788E /* QDCommonGroupListViewController.m */,
-				CB6E67A12279CF7B00D3788E /* QDCommonListViewController.h */,
-				CB6E67A82279CF7B00D3788E /* QDCommonListViewController.m */,
-				CB6E67AA2279CF7B00D3788E /* QDCommonViewController.h */,
-				CB6E67A22279CF7B00D3788E /* QDCommonViewController.m */,
-				CB6E67A32279CF7B00D3788E /* QDNavigationController.h */,
-				CB6E67AB2279CF7B00D3788E /* QDNavigationController.m */,
-				CB6E67A42279CF7B00D3788E /* QDCommonTableViewController.h */,
-				CB6E67AC2279CF7B00D3788E /* QDCommonTableViewController.m */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		CB6E67BE2279D86F00D3788E /* Home */ = {
@@ -853,6 +872,7 @@
 				6DEC84F42276DB50000BCB3C /* Resources */,
 				6D74C51C22755D9D00332AAC /* ThirdPart */,
 				CB3508E822709B3E00EDC557 /* Network */,
+				6D3C39DF22B21E8000B861E7 /* Vendors */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -961,44 +981,27 @@
 				6DEC85192276DB50000BCB3C /* AlibabaSans-MediumItalic.otf in Resources */,
 				6D59879D229E662500113597 /* README.txt in Resources */,
 				CB8C26F6226CBCAA0058DAEE /* Assets.xcassets in Resources */,
-				6DADC11B228C095600FBFA94 /* HK-MO-TW.json in Resources */,
 				6DADC11D228C095600FBFA94 /* data.sqlite in Resources */,
 				6DEC85132276DB50000BCB3C /* AlibabaSans-Regular.otf in Resources */,
-				6DADC10C228C095600FBFA94 /* pcas.json in Resources */,
-				6DADC110228C095600FBFA94 /* cities.csv in Resources */,
-				6DADC118228C095600FBFA94 /* areas.json in Resources */,
-				6DADC11C228C095600FBFA94 /* cities.json in Resources */,
 				6DEC850B2276DB50000BCB3C /* 版权申明.rtf in Resources */,
-				6DADC112228C095600FBFA94 /* streets.csv in Resources */,
-				6DADC11A228C095600FBFA94 /* pcas-code.json in Resources */,
 				6DEC850C2276DB50000BCB3C /* Alibaba-PuHuiTi-Bold.otf in Resources */,
-				6DADC111228C095600FBFA94 /* pca-code.json in Resources */,
 				6DEC85172276DB50000BCB3C /* AlibabaSans-Italic.otf in Resources */,
-				6DADC116228C095600FBFA94 /* pc-code.json in Resources */,
-				6DADC10D228C095600FBFA94 /* villages.json in Resources */,
 				CBC6FB1D22844CED00EAF915 /* register_guide_video.mp4 in Resources */,
-				6DADC119228C095600FBFA94 /* provinces.json in Resources */,
-				6DADC113228C095600FBFA94 /* pca.json in Resources */,
 				6DEC850F2276DB50000BCB3C /* Alibaba-PuHuiTi-Medium.otf in Resources */,
 				6D59879B229E662500113597 /* AlipaySDK.bundle in Resources */,
 				6DEC85182276DB50000BCB3C /* AlibabaSans-BoldItalic.otf in Resources */,
 				6DEC85122276DB50000BCB3C /* AlibabaSans-Bold.otf in Resources */,
 				CB6E67BD2279D62A00D3788E /* Main.storyboard in Resources */,
 				6DEC851B2276DB50000BCB3C /* AlibabaSans-HeavyItalic.otf in Resources */,
-				6DADC115228C095600FBFA94 /* pc.json in Resources */,
 				CB6E67C62279EECC00D3788E /* Localizable.strings in Resources */,
 				6DEC85112276DB50000BCB3C /* AlibabaSans-Light.otf in Resources */,
 				6DEC850E2276DB50000BCB3C /* Alibaba-PuHuiTi-Heavy.otf in Resources */,
 				6DEC851A2276DB50000BCB3C /* AlibabaSans-LightItalic.otf in Resources */,
-				6DADC117228C095600FBFA94 /* provinces.csv in Resources */,
 				6DEC850D2276DB50000BCB3C /* Alibaba-PuHuiTi-Light.otf in Resources */,
 				6DEC85162276DB50000BCB3C /* AlibabaSans-Black.otf in Resources */,
 				6DEC85152276DB50000BCB3C /* AlibabaSans-Medium.otf in Resources */,
 				6DEC85102276DB50000BCB3C /* Alibaba-PuHuiTi-Regular.otf in Resources */,
-				6DADC114228C095600FBFA94 /* areas.csv in Resources */,
 				6DEC85142276DB50000BCB3C /* AlibabaSans-Heavy.otf in Resources */,
-				6DADC10F228C095600FBFA94 /* streets.json in Resources */,
-				6DADC10E228C095600FBFA94 /* villages.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1068,48 +1071,55 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB6E67B62279CF7B00D3788E /* QDCommonViewController.m in Sources */,
-				CB6E67AD2279CF7B00D3788E /* QDThemeManager.m in Sources */,
-				CB6E67B92279CF7B00D3788E /* QDCommonListViewController.m in Sources */,
+				6D3C39EE22B21FD000B861E7 /* FDCityModel.m in Sources */,
+				6D3C39F722B2200C00B861E7 /* FDVillageModel.m in Sources */,
 				6D36CA8F228117E10046FA8C /* GlobalManager.m in Sources */,
 				CBB5492D22A010E1007B1A7C /* WXApiRequestHandler.m in Sources */,
-				CB6E67BA2279CF7B00D3788E /* QDNavigationController.m in Sources */,
+				6D3C39F122B21FED00B861E7 /* FDAreaModel.m in Sources */,
 				6D4F0D14227695D6005A9B21 /* AppDelegate+HandleURL.m in Sources */,
 				CB6E67762279AA0C00D3788E /* FDTabBarController.m in Sources */,
 				CB19812B229EBC2600AA1002 /* APOrderInfo.m in Sources */,
 				6D9DF5AD2277CE9400FB9CFC /* FDSocialManager.m in Sources */,
+				6D3C39E522B21E8000B861E7 /* JKDBModel.m in Sources */,
+				6DEF409022B3745F00A88CE2 /* UIImageEffects.m in Sources */,
 				CBB5492C22A010E1007B1A7C /* WXApiResponseHandler.m in Sources */,
+				6DEF409722B3745F00A88CE2 /* QDNavigationController.m in Sources */,
+				6DEF409322B3745F00A88CE2 /* QDCommonViewController.m in Sources */,
 				6D9DF5B52277EC1D00FB9CFC /* FDSocialModel.m in Sources */,
 				CB6E67822279CC6D00D3788E /* FDViewController.m in Sources */,
 				CB1980D6229EBAFF00AA1002 /* FDPayManager.m in Sources */,
+				6DEF408E22B3745F00A88CE2 /* QMUIConfigurationTemplate.m in Sources */,
 				CB8EA0DD227AE453004177D4 /* SearchViewController.m in Sources */,
+				6DEF409422B3745F00A88CE2 /* QDCommonGridViewController.m in Sources */,
+				6D3C39EB22B21FC300B861E7 /* FDProvinceModel.m in Sources */,
+				6DEF408D22B3745F00A88CE2 /* QDThemeManager.m in Sources */,
 				CB19812D229EBC2600AA1002 /* APRSASigner.m in Sources */,
 				CB3508EC22709B5800EDC557 /* FDBaseApi.m in Sources */,
-				CB6E67BB2279CF7B00D3788E /* QDCommonTableViewController.m in Sources */,
 				CB6E677A2279AAEB00D3788E /* FDNavigationController.m in Sources */,
-				CB6E67B12279CF7B00D3788E /* QMUIConfigurationTemplate.m in Sources */,
-				CB6E67B42279CF7B00D3788E /* QDCommonUI.m in Sources */,
 				6D3C39DB22B1E79D00B861E7 /* FDGlobalApi.m in Sources */,
 				CBC00E4622734B9000E0A471 /* YTKUrlArgumentsFilter.m in Sources */,
 				CB8EA0E4227B2460004177D4 /* LoginViewController.m in Sources */,
-				CB6E67B22279CF7B00D3788E /* QDUIHelper.m in Sources */,
+				6D3C39E622B21E8000B861E7 /* JKDBHelper.m in Sources */,
 				6D9DF5B12277D79B00FB9CFC /* UIViewController+FD.m in Sources */,
-				CB6E67B72279CF7B00D3788E /* QDCommonGridViewController.m in Sources */,
+				6DEF409522B3745F00A88CE2 /* QDTabBarViewController.m in Sources */,
 				CBB5492E22A010E1007B1A7C /* WXApiManager.m in Sources */,
 				CB8EA0E1227B1A2B004177D4 /* MineViewController.m in Sources */,
 				CB19812C229EBC2600AA1002 /* openssl_wrapper.m in Sources */,
+				6DEF409222B3745F00A88CE2 /* QDCommonGroupListViewController.m in Sources */,
 				6D36CA90228117E10046FA8C /* GlobalModel.m in Sources */,
-				CB6E67B52279CF7B00D3788E /* QDCommonGroupListViewController.m in Sources */,
 				CBD8F54822830AE90069510C /* PhoneLoginViewController.m in Sources */,
 				6D4125DB229257BB0045E3B5 /* FDAnalyzeManager.m in Sources */,
 				CB6E67C12279D8D900D3788E /* HomeViewController.m in Sources */,
 				6D74C528227575D500332AAC /* AppDelegate+Launch.m in Sources */,
-				CB6E67B32279CF7B00D3788E /* UIImageEffects.m in Sources */,
+				6DEF409622B3745F00A88CE2 /* QDCommonListViewController.m in Sources */,
+				6DEF408F22B3745F00A88CE2 /* QDUIHelper.m in Sources */,
 				6D022097229F6C56001FF792 /* FDNotificationName.m in Sources */,
+				6DEF409822B3745F00A88CE2 /* QDCommonTableViewController.m in Sources */,
 				CBCFB1E12281C5CB00ADE61E /* UIAlertController+supportedInterfaceOrientations.m in Sources */,
+				6D3C39F422B2200000B861E7 /* FDStreetModel.m in Sources */,
 				CB8C26FC226CBCAA0058DAEE /* main.m in Sources */,
 				CB8C26EE226CBCA90058DAEE /* AppDelegate.m in Sources */,
-				CB6E67B82279CF7B00D3788E /* QDTabBarViewController.m in Sources */,
+				6DEF409122B3745F00A88CE2 /* QDCommonUI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1248,7 +1258,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F9N98X7P4L;
+				DEVELOPMENT_TEAM = ZLN5K59YB7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/App/ThirdPart/Pay/Alipay",
@@ -1288,7 +1298,7 @@
 					"$(PROJECT_DIR)/App/ThirdPart/Pay/AliPayUtil",
 				);
 				OTHER_CFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = me.fandong.AppDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = me.fandong.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1300,7 +1310,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F9N98X7P4L;
+				DEVELOPMENT_TEAM = ZLN5K59YB7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/App/ThirdPart/Pay/Alipay",
@@ -1340,7 +1350,7 @@
 					"$(PROJECT_DIR)/App/ThirdPart/Pay/AliPayUtil",
 				);
 				OTHER_CFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = me.fandong.AppDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = me.fandong.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
