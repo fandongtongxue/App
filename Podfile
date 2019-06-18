@@ -64,4 +64,6 @@ target 'App' do
   #启动广告图
   pod 'XHLaunchAd'
   pod 'FDFullscreenPopGesture'
+  # 直播
+  pod 'TXLiteAVSDK_Smart'
 end
