@@ -30,8 +30,8 @@
 		6D9DF5AD2277CE9400FB9CFC /* FDSocialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DF5AC2277CE9400FB9CFC /* FDSocialManager.m */; };
 		6D9DF5B12277D79B00FB9CFC /* UIViewController+FD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DF5B02277D79B00FB9CFC /* UIViewController+FD.m */; };
 		6D9DF5B52277EC1D00FB9CFC /* FDSocialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DF5B42277EC1D00FB9CFC /* FDSocialModel.m */; };
-		6DADC11D228C095600FBFA94 /* data.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 6DADC10B228C095600FBFA94 /* data.sqlite */; };
 		6DC591C722767CB600813DAB /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DC591C622767CB500813DAB /* CoreMotion.framework */; };
+		6DD3119122B879C60043B5EE /* FDPCASVApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD3119022B879C60043B5EE /* FDPCASVApi.m */; };
 		6DEC850B2276DB50000BCB3C /* 版权申明.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC84F62276DB50000BCB3C /* 版权申明.rtf */; };
 		6DEC850C2276DB50000BCB3C /* Alibaba-PuHuiTi-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC84F82276DB50000BCB3C /* Alibaba-PuHuiTi-Bold.otf */; };
 		6DEC850D2276DB50000BCB3C /* Alibaba-PuHuiTi-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC84F92276DB50000BCB3C /* Alibaba-PuHuiTi-Light.otf */; };
@@ -138,8 +138,9 @@
 		6D9DF5B22277D7CC00FB9CFC /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		6D9DF5B32277EC1D00FB9CFC /* FDSocialModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDSocialModel.h; sourceTree = "<group>"; };
 		6D9DF5B42277EC1D00FB9CFC /* FDSocialModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDSocialModel.m; sourceTree = "<group>"; };
-		6DADC10B228C095600FBFA94 /* data.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = data.sqlite; sourceTree = "<group>"; };
 		6DC591C622767CB500813DAB /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		6DD3118F22B879C60043B5EE /* FDPCASVApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDPCASVApi.h; sourceTree = "<group>"; };
+		6DD3119022B879C60043B5EE /* FDPCASVApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDPCASVApi.m; sourceTree = "<group>"; };
 		6DEC84F62276DB50000BCB3C /* 版权申明.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "版权申明.rtf"; sourceTree = "<group>"; };
 		6DEC84F82276DB50000BCB3C /* Alibaba-PuHuiTi-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alibaba-PuHuiTi-Bold.otf"; sourceTree = "<group>"; };
 		6DEC84F92276DB50000BCB3C /* Alibaba-PuHuiTi-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alibaba-PuHuiTi-Light.otf"; sourceTree = "<group>"; };
@@ -384,6 +385,8 @@
 			children = (
 				6D3C39D922B1E79D00B861E7 /* FDGlobalApi.h */,
 				6D3C39DA22B1E79D00B861E7 /* FDGlobalApi.m */,
+				6DD3118F22B879C60043B5EE /* FDPCASVApi.h */,
+				6DD3119022B879C60043B5EE /* FDPCASVApi.m */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -511,21 +514,12 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
-		6DADC0F8228C093100FBFA94 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				6DADC10B228C095600FBFA94 /* data.sqlite */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
 		6DEC84F42276DB50000BCB3C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				CB6E67C82279EECC00D3788E /* Localizable.strings */,
 				CB8C26FB226CBCAA0058DAEE /* main.m */,
 				CB6E67BC2279D62A00D3788E /* Main.storyboard */,
-				6DADC0F8228C093100FBFA94 /* Data */,
 				CBC6FB1C22844C9900EAF915 /* register_guide_video.mp4 */,
 				6DEC84F52276DB50000BCB3C /* Font */,
 			);
@@ -981,7 +975,6 @@
 				6DEC85192276DB50000BCB3C /* AlibabaSans-MediumItalic.otf in Resources */,
 				6D59879D229E662500113597 /* README.txt in Resources */,
 				CB8C26F6226CBCAA0058DAEE /* Assets.xcassets in Resources */,
-				6DADC11D228C095600FBFA94 /* data.sqlite in Resources */,
 				6DEC85132276DB50000BCB3C /* AlibabaSans-Regular.otf in Resources */,
 				6DEC850B2276DB50000BCB3C /* 版权申明.rtf in Resources */,
 				6DEC850C2276DB50000BCB3C /* Alibaba-PuHuiTi-Bold.otf in Resources */,
@@ -1073,6 +1066,7 @@
 			files = (
 				6D3C39EE22B21FD000B861E7 /* FDCityModel.m in Sources */,
 				6D3C39F722B2200C00B861E7 /* FDVillageModel.m in Sources */,
+				6DD3119122B879C60043B5EE /* FDPCASVApi.m in Sources */,
 				6D36CA8F228117E10046FA8C /* GlobalManager.m in Sources */,
 				CBB5492D22A010E1007B1A7C /* WXApiRequestHandler.m in Sources */,
 				6D3C39F122B21FED00B861E7 /* FDAreaModel.m in Sources */,

@@ -12,7 +12,7 @@
 #import "FDBaseApi.h"
 
 #define FDBaseUrl @"http://phpapi.fenfa.im/public/"
-#define FDBaseCdnUrl @"http://cdn.fandong.me"
+#define FDBaseCdnUrl @"http://app.fandong.me/"
 
 
 #endif /* FDNetworking_h */
