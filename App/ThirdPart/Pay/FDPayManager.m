@@ -158,9 +158,6 @@
 - (void)wxPay{
     NSString *res = [WXApiRequestHandler jumpToBizPay];
     if( ![@"" isEqual:res] ){
-//        UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"支付失败" message:res delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//
-//        [alter show];
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"支付失败" message:res preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
         [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
