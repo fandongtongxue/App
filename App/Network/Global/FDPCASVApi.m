@@ -27,9 +27,8 @@
 }
 
 - (NSString *)resumableDownloadPath {
-    NSString *libPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSString *cachePath = [libPath stringByAppendingPathComponent:@"Document"];
-    NSString *filePath = [cachePath stringByAppendingPathComponent:@"pcasv.sqlite"];
+    NSString *documentPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES)lastObject];
+    NSString *filePath = [documentPath stringByAppendingPathComponent:@"pcasv.sqlite"];
     return filePath;
 }
 

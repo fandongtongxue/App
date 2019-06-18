@@ -12,13 +12,6 @@
 		6D36CA8F228117E10046FA8C /* GlobalManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D36CA8B228117E10046FA8C /* GlobalManager.m */; };
 		6D36CA90228117E10046FA8C /* GlobalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D36CA8E228117E10046FA8C /* GlobalModel.m */; };
 		6D3C39DB22B1E79D00B861E7 /* FDGlobalApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3C39DA22B1E79D00B861E7 /* FDGlobalApi.m */; };
-		6D3C39E522B21E8000B861E7 /* JKDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3C39E122B21E8000B861E7 /* JKDBModel.m */; };
-		6D3C39E622B21E8000B861E7 /* JKDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3C39E222B21E8000B861E7 /* JKDBHelper.m */; };
-		6D3C39EB22B21FC300B861E7 /* FDProvinceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3C39EA22B21FC200B861E7 /* FDProvinceModel.m */; };
-		6D3C39EE22B21FD000B861E7 /* FDCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3C39ED22B21FD000B861E7 /* FDCityModel.m */; };
-		6D3C39F122B21FED00B861E7 /* FDAreaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3C39F022B21FED00B861E7 /* FDAreaModel.m */; };
-		6D3C39F422B2200000B861E7 /* FDStreetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3C39F322B2200000B861E7 /* FDStreetModel.m */; };
-		6D3C39F722B2200C00B861E7 /* FDVillageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3C39F622B2200C00B861E7 /* FDVillageModel.m */; };
 		6D3C39F922B2243C00B861E7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3C39F822B2243C00B861E7 /* libsqlite3.tbd */; };
 		6D4125DB229257BB0045E3B5 /* FDAnalyzeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4125DA229257BB0045E3B5 /* FDAnalyzeManager.m */; };
 		6D4F0D14227695D6005A9B21 /* AppDelegate+HandleURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4F0D13227695D6005A9B21 /* AppDelegate+HandleURL.m */; };
@@ -102,20 +95,6 @@
 		6D36CA9122811E460046FA8C /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
 		6D3C39D922B1E79D00B861E7 /* FDGlobalApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDGlobalApi.h; sourceTree = "<group>"; };
 		6D3C39DA22B1E79D00B861E7 /* FDGlobalApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDGlobalApi.m; sourceTree = "<group>"; };
-		6D3C39E122B21E8000B861E7 /* JKDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKDBModel.m; sourceTree = "<group>"; };
-		6D3C39E222B21E8000B861E7 /* JKDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKDBHelper.m; sourceTree = "<group>"; };
-		6D3C39E322B21E8000B861E7 /* JKDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKDBModel.h; sourceTree = "<group>"; };
-		6D3C39E422B21E8000B861E7 /* JKDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKDBHelper.h; sourceTree = "<group>"; };
-		6D3C39E922B21FC200B861E7 /* FDProvinceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDProvinceModel.h; sourceTree = "<group>"; };
-		6D3C39EA22B21FC200B861E7 /* FDProvinceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDProvinceModel.m; sourceTree = "<group>"; };
-		6D3C39EC22B21FD000B861E7 /* FDCityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDCityModel.h; sourceTree = "<group>"; };
-		6D3C39ED22B21FD000B861E7 /* FDCityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDCityModel.m; sourceTree = "<group>"; };
-		6D3C39EF22B21FED00B861E7 /* FDAreaModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDAreaModel.h; sourceTree = "<group>"; };
-		6D3C39F022B21FED00B861E7 /* FDAreaModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDAreaModel.m; sourceTree = "<group>"; };
-		6D3C39F222B2200000B861E7 /* FDStreetModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDStreetModel.h; sourceTree = "<group>"; };
-		6D3C39F322B2200000B861E7 /* FDStreetModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDStreetModel.m; sourceTree = "<group>"; };
-		6D3C39F522B2200C00B861E7 /* FDVillageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDVillageModel.h; sourceTree = "<group>"; };
-		6D3C39F622B2200C00B861E7 /* FDVillageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDVillageModel.m; sourceTree = "<group>"; };
 		6D3C39F822B2243C00B861E7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		6D4125D9229257BB0045E3B5 /* FDAnalyzeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDAnalyzeManager.h; sourceTree = "<group>"; };
 		6D4125DA229257BB0045E3B5 /* FDAnalyzeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDAnalyzeManager.m; sourceTree = "<group>"; };
@@ -394,45 +373,15 @@
 		6D3C39DF22B21E8000B861E7 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
-				6D3C39E022B21E8000B861E7 /* DBModel */,
 			);
 			path = Vendors;
-			sourceTree = "<group>";
-		};
-		6D3C39E022B21E8000B861E7 /* DBModel */ = {
-			isa = PBXGroup;
-			children = (
-				6D3C39E122B21E8000B861E7 /* JKDBModel.m */,
-				6D3C39E222B21E8000B861E7 /* JKDBHelper.m */,
-				6D3C39E322B21E8000B861E7 /* JKDBModel.h */,
-				6D3C39E422B21E8000B861E7 /* JKDBHelper.h */,
-			);
-			path = DBModel;
 			sourceTree = "<group>";
 		};
 		6D3C39E722B21F9D00B861E7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6D3C39E822B21F9D00B861E7 /* Address */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		6D3C39E822B21F9D00B861E7 /* Address */ = {
-			isa = PBXGroup;
-			children = (
-				6D3C39E922B21FC200B861E7 /* FDProvinceModel.h */,
-				6D3C39EA22B21FC200B861E7 /* FDProvinceModel.m */,
-				6D3C39EC22B21FD000B861E7 /* FDCityModel.h */,
-				6D3C39ED22B21FD000B861E7 /* FDCityModel.m */,
-				6D3C39EF22B21FED00B861E7 /* FDAreaModel.h */,
-				6D3C39F022B21FED00B861E7 /* FDAreaModel.m */,
-				6D3C39F222B2200000B861E7 /* FDStreetModel.h */,
-				6D3C39F322B2200000B861E7 /* FDStreetModel.m */,
-				6D3C39F522B2200C00B861E7 /* FDVillageModel.h */,
-				6D3C39F622B2200C00B861E7 /* FDVillageModel.m */,
-			);
-			path = Address;
 			sourceTree = "<group>";
 		};
 		6D598791229E662500113597 /* Pay */ = {
@@ -1064,17 +1013,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D3C39EE22B21FD000B861E7 /* FDCityModel.m in Sources */,
-				6D3C39F722B2200C00B861E7 /* FDVillageModel.m in Sources */,
 				6DD3119122B879C60043B5EE /* FDPCASVApi.m in Sources */,
 				6D36CA8F228117E10046FA8C /* GlobalManager.m in Sources */,
 				CBB5492D22A010E1007B1A7C /* WXApiRequestHandler.m in Sources */,
-				6D3C39F122B21FED00B861E7 /* FDAreaModel.m in Sources */,
 				6D4F0D14227695D6005A9B21 /* AppDelegate+HandleURL.m in Sources */,
 				CB6E67762279AA0C00D3788E /* FDTabBarController.m in Sources */,
 				CB19812B229EBC2600AA1002 /* APOrderInfo.m in Sources */,
 				6D9DF5AD2277CE9400FB9CFC /* FDSocialManager.m in Sources */,
-				6D3C39E522B21E8000B861E7 /* JKDBModel.m in Sources */,
 				6DEF409022B3745F00A88CE2 /* UIImageEffects.m in Sources */,
 				CBB5492C22A010E1007B1A7C /* WXApiResponseHandler.m in Sources */,
 				6DEF409722B3745F00A88CE2 /* QDNavigationController.m in Sources */,
@@ -1085,7 +1030,6 @@
 				6DEF408E22B3745F00A88CE2 /* QMUIConfigurationTemplate.m in Sources */,
 				CB8EA0DD227AE453004177D4 /* SearchViewController.m in Sources */,
 				6DEF409422B3745F00A88CE2 /* QDCommonGridViewController.m in Sources */,
-				6D3C39EB22B21FC300B861E7 /* FDProvinceModel.m in Sources */,
 				6DEF408D22B3745F00A88CE2 /* QDThemeManager.m in Sources */,
 				CB19812D229EBC2600AA1002 /* APRSASigner.m in Sources */,
 				CB3508EC22709B5800EDC557 /* FDBaseApi.m in Sources */,
@@ -1093,7 +1037,6 @@
 				6D3C39DB22B1E79D00B861E7 /* FDGlobalApi.m in Sources */,
 				CBC00E4622734B9000E0A471 /* YTKUrlArgumentsFilter.m in Sources */,
 				CB8EA0E4227B2460004177D4 /* LoginViewController.m in Sources */,
-				6D3C39E622B21E8000B861E7 /* JKDBHelper.m in Sources */,
 				6D9DF5B12277D79B00FB9CFC /* UIViewController+FD.m in Sources */,
 				6DEF409522B3745F00A88CE2 /* QDTabBarViewController.m in Sources */,
 				CBB5492E22A010E1007B1A7C /* WXApiManager.m in Sources */,
@@ -1110,7 +1053,6 @@
 				6D022097229F6C56001FF792 /* FDNotificationName.m in Sources */,
 				6DEF409822B3745F00A88CE2 /* QDCommonTableViewController.m in Sources */,
 				CBCFB1E12281C5CB00ADE61E /* UIAlertController+supportedInterfaceOrientations.m in Sources */,
-				6D3C39F422B2200000B861E7 /* FDStreetModel.m in Sources */,
 				CB8C26FC226CBCAA0058DAEE /* main.m in Sources */,
 				CB8C26EE226CBCA90058DAEE /* AppDelegate.m in Sources */,
 				6DEF409122B3745F00A88CE2 /* QDCommonUI.m in Sources */,
@@ -1252,7 +1194,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZLN5K59YB7;
+				DEVELOPMENT_TEAM = F9N98X7P4L;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/App/ThirdPart/Pay/Alipay",
@@ -1304,7 +1246,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZLN5K59YB7;
+				DEVELOPMENT_TEAM = F9N98X7P4L;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/App/ThirdPart/Pay/Alipay",

@@ -63,6 +63,5 @@ target 'App' do
   #pod 'DoraemonKit/WithLoad', '~> 1.1.8', :configurations => ['Debug']
   #启动广告图
   pod 'XHLaunchAd'
-  # FMDB
-  pod 'FMDB'
+  pod 'FDFullscreenPopGesture'
 end
