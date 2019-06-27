@@ -22,10 +22,12 @@ PODS:
   - FDFullscreenPopGesture (1.1)
   - FLAnimatedImage (1.0.12)
   - Masonry (1.1.0)
+  - MBProgressHUD (1.1.0)
   - MJExtension (3.0.17)
   - MJRefresh (3.2.0)
   - MLeaksFinder (1.0.0):
     - FBRetainCycleDetector
+  - MMLayout (0.2.0)
   - mob_smssdk (3.2.3):
     - MOBFoundation
   - MOBFoundation (3.2.3)
@@ -298,12 +300,22 @@ PODS:
   - QuickMobileTextField (1.0.7)
   - QuickSecurityCode (1.0.3)
   - Reachability (3.2)
+  - ReactiveObjC (3.1.1)
   - SDCycleScrollView (1.80):
     - SDWebImage (>= 5.0.0)
   - SDWebImage (5.0.6):
     - SDWebImage/Core (= 5.0.6)
   - SDWebImage/Core (5.0.6)
   - SVProgressHUD (2.2.6)
+  - Toast (4.0.0)
+  - TXIMSDK_iOS (4.4.479)
+  - TXIMSDK_TUIKit_iOS (4.4.479):
+    - MMLayout
+    - ReactiveObjC
+    - SDWebImage
+    - Toast
+    - TXIMSDK_iOS
+  - TXLiteAVSDK_Smart (6.5.7273)
   - UMCAnalytics (6.0.3):
     - UMCCommon
   - UMCCommon (2.0.1)
@@ -349,17 +361,23 @@ DEPENDENCIES:
   - CocoaLumberjack
   - FDFullscreenPopGesture
   - Masonry
+  - MBProgressHUD
   - MJExtension
   - MJRefresh
   - MLeaksFinder
+  - MMLayout
   - mob_smssdk
   - QMUIKit
   - QuickMobileTextField
   - QuickSecurityCode
   - Reachability
+  - ReactiveObjC
   - SDCycleScrollView
   - SDWebImage
   - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
+  - TXIMSDK_iOS
+  - TXIMSDK_TUIKit_iOS
+  - TXLiteAVSDK_Smart
   - UMCAnalytics
   - UMCCommon
   - UMCPush
@@ -383,17 +401,24 @@ SPEC REPOS:
     - FDFullscreenPopGesture
     - FLAnimatedImage
     - Masonry
+    - MBProgressHUD
     - MJExtension
     - MJRefresh
     - MLeaksFinder
+    - MMLayout
     - mob_smssdk
     - MOBFoundation
     - QMUIKit
     - QuickMobileTextField
     - QuickSecurityCode
     - Reachability
+    - ReactiveObjC
     - SDCycleScrollView
     - SDWebImage
+    - Toast
+    - TXIMSDK_iOS
+    - TXIMSDK_TUIKit_iOS
+    - TXLiteAVSDK_Smart
     - UMCAnalytics
     - UMCCommon
     - UMCPush
@@ -420,18 +445,25 @@ SPEC CHECKSUMS:
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJExtension: 74ec83124a68891619fb7ba9c5c811bbf1691076
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
+  MMLayout: 3fb59d58eeb8656c64e61d550fb0088e10666c11
   mob_smssdk: cdb6a31d4fd4667ed928e2eca03f21ad89ebc05c
   MOBFoundation: 246159a97f5e6c8a271b674dd885dc4b0953e45e
   QMUIKit: a3af645843b9558eb7aaf407b320eaeb45ab6144
   QuickMobileTextField: 61e4b90df95c3b63637a7398c37572cd5945d641
   QuickSecurityCode: 44b25518b6a69e0dc34a7e5faa78a03a88528dc9
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
   SVProgressHUD: 6ed134667e9ebb2f33679e8273cd48fd3fa349e5
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+  TXIMSDK_iOS: 762407cdbcfc415bfb87666daec7481a2ad4cbc6
+  TXIMSDK_TUIKit_iOS: f8a59111c114d990a844ad8f531dfb61db086098
+  TXLiteAVSDK_Smart: 20ac0568acb46ee73d4dcb0e98c208c41acf9b33
   UMCAnalytics: ff58714ada407682c4a07548156f94bcec92f055
   UMCCommon: 0263a057a2e1ae1da4c8308541e56904a493ce13
   UMCPush: 1edd856027dcf905333effb4040ace5d236a7316
@@ -441,6 +473,6 @@ SPEC CHECKSUMS:
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
   ZFPlayer: fdc92702cc611922182a951991dea78566da7605
 
-PODFILE CHECKSUM: 28f4588e47fb34813f457e2e4ac6a13be1f968bd
+PODFILE CHECKSUM: 102e5243afa7b3e45bf0da8312633bba85a2c7ac
 
 COCOAPODS: 1.7.1

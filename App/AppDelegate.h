@@ -12,5 +12,9 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (nonatomic, strong) NSData *deviceToken;
+- (UIViewController *)getLoginController;
+- (UITabBarController *)getMainController;
+
 @end
 

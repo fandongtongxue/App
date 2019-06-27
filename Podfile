@@ -66,4 +66,10 @@ target 'App' do
   pod 'FDFullscreenPopGesture'
   # 直播
   pod 'TXLiteAVSDK_Smart'
+  # 腾讯IM
+  pod 'MBProgressHUD'
+  pod 'MMLayout'
+  pod 'ReactiveObjC'
+  pod 'TXIMSDK_TUIKit_iOS'
+  pod 'TXIMSDK_iOS'
 end

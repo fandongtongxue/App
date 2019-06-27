@@ -20,7 +20,7 @@
     BOOL result = [[FDSocialManager defaultManager]  handleOpenURL:url options:options];
     if (!result) {
         return [[FDPayManager defaultManager] handleURL:url payCompletionBlock:^(NSDictionary * _Nonnull resultDic) {
-            NSLog(@"resultDic:%@",resultDic);
+            DDLogDebug(@"resultDic:%@",resultDic);
         } delegate:nil];
     }
     return result;
@@ -31,7 +31,7 @@
     BOOL result = [[FDSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
     if (!result) {
         return [[FDPayManager defaultManager] handleURL:url payCompletionBlock:^(NSDictionary * _Nonnull resultDic) {
-            NSLog(@"resultDic:%@",resultDic);
+            DDLogDebug(@"resultDic:%@",resultDic);
         } delegate:nil];
     }
     return result;
@@ -41,7 +41,7 @@
     BOOL result = [[FDSocialManager defaultManager] handleOpenURL:url];
     if (!result) {
         return [[FDPayManager defaultManager] handleURL:url payCompletionBlock:^(NSDictionary * _Nonnull resultDic) {
-            NSLog(@"resultDic:%@",resultDic);
+            DDLogDebug(@"resultDic:%@",resultDic);
         } delegate:nil];
     }
     return result;

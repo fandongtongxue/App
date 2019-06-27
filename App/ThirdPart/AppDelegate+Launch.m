@@ -26,7 +26,14 @@
 #import "MineViewController.h"
 #import "LoginViewController.h"
 
-@interface AppDelegate ()<UNUserNotificationCenterDelegate,XHLaunchAdDelegate>
+#import "TUITabBarController.h"
+#import "TNavigationController.h"
+#import "ConversationController.h"
+#import "SettingController.h"
+#import "ContactsController.h"
+#import <THeader.h>
+
+@interface AppDelegate ()<UNUserNotificationCenterDelegate,XHLaunchAdDelegate,BuglyDelegate>
 
 @end
 
@@ -143,6 +150,7 @@
     [mineNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateNormal];
     [mineNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateSelected];
     AddAccessibilityHint(mineNav.tabBarItem, Localized(@"Mine.Title"));
+    
     tabBarVC.viewControllers = @[homeNav,mineNav];
         
     self.window.rootViewController = tabBarVC;
@@ -159,11 +167,61 @@
 - (void)registerApp{
     [[FDSocialManager defaultManager] registerApp];
     //Bugly
-    [Bugly startWithAppId:kBuglyAppId];
+    // Get the default config
+    BuglyConfig * config = [[BuglyConfig alloc] init];
+    
+    // Open the debug mode to print the sdk log message.
+    // Default value is NO, please DISABLE it in your RELEASE version.
+#if DEBUG
+    config.debugMode = YES;
+#endif
+    
+    // Open the customized log record and report, BuglyLogLevelWarn will report Warn, Error log message.
+    // Default value is BuglyLogLevelSilent that means DISABLE it.
+    // You could change the value according to you need.
+    //    config.reportLogLevel = BuglyLogLevelWarn;
+    
+    // Open the STUCK scene data in MAIN thread record and report.
+    // Default value is NO
+    //config.blockMonitorEnable = YES;
+    
+    // Set the STUCK THRESHOLD time, when STUCK time > THRESHOLD it will record an event and report data when the app launched next time.
+    // Default value is 3.5 second.
+    //config.blockMonitorTimeout = 1.5;
+    
+    // Set the app channel to deployment
+    config.channel = @"Bugly";
+    
+    config.delegate = self;
+    
+    config.consolelogEnable = NO;
+    config.viewControllerTrackingEnable = NO;
+//    config.version = [[TIMManager sharedInstance] GetVersion];
+    
+    // NOTE:Required
+    // Start the Bugly sdk with APP_ID and your config
+    [Bugly startWithAppId:kBuglyAppId
+#if DEBUG
+        developmentDevice:YES
+#endif
+                   config:config];
+    
+    // Set the customizd tag thats config in your APP registerd on the  bugly.qq.com
+    // [Bugly setTag:1799];
+    
+    [Bugly setUserIdentifier:[NSString stringWithFormat:@"User: %@", [UIDevice currentDevice].name]];
+    
+    [Bugly setUserValue:[NSProcessInfo processInfo].processName forKey:@"Process"];
     
     [UMessage openDebugMode:YES];
     [UMessage setWebViewClassString:@"UMWebViewController"];
     [UMessage addLaunchMessage];
+}
+
+void uncaughtExceptionHandler(NSException*exception){
+    DDLogDebug(@"CRASH: %@", exception);
+    DDLogDebug(@"Stack Trace: %@",[exception callStackSymbols]);
+    // Internal error reporting
 }
 
 - (void)update{
@@ -241,6 +299,11 @@
 
 - (void)xhLaunchAd:(XHLaunchAd *)launchAd clickAndOpenModel:(id)openModel clickPoint:(CGPoint)clickPoint{
     
+}
+
+#pragma mark - BuglyDelegate
+- (NSString * BLY_NULLABLE)attachmentForException:(NSException * BLY_NULLABLE)exception{
+    return @"";
 }
 
 @end
