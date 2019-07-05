@@ -26,7 +26,6 @@
 		6DA3F89A22C45F1600E1CA2A /* FDIMManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA3F89922C45F1500E1CA2A /* FDIMManager.m */; };
 		6DC591C722767CB600813DAB /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DC591C622767CB500813DAB /* CoreMotion.framework */; };
 		6DD3119122B879C60043B5EE /* FDPCASVApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD3119022B879C60043B5EE /* FDPCASVApi.m */; };
-		6DD713F822CF029A002A90B1 /* FDLiveManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD713F722CF029A002A90B1 /* FDLiveManager.m */; };
 		6DEC850B2276DB50000BCB3C /* 版权申明.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC84F62276DB50000BCB3C /* 版权申明.rtf */; };
 		6DEC850C2276DB50000BCB3C /* Alibaba-PuHuiTi-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC84F82276DB50000BCB3C /* Alibaba-PuHuiTi-Bold.otf */; };
 		6DEC850D2276DB50000BCB3C /* Alibaba-PuHuiTi-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC84F92276DB50000BCB3C /* Alibaba-PuHuiTi-Light.otf */; };
@@ -149,8 +148,6 @@
 		6DC591C622767CB500813DAB /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		6DD3118F22B879C60043B5EE /* FDPCASVApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDPCASVApi.h; sourceTree = "<group>"; };
 		6DD3119022B879C60043B5EE /* FDPCASVApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDPCASVApi.m; sourceTree = "<group>"; };
-		6DD713F622CF029A002A90B1 /* FDLiveManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDLiveManager.h; sourceTree = "<group>"; };
-		6DD713F722CF029A002A90B1 /* FDLiveManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDLiveManager.m; sourceTree = "<group>"; };
 		6DEC84F62276DB50000BCB3C /* 版权申明.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "版权申明.rtf"; sourceTree = "<group>"; };
 		6DEC84F82276DB50000BCB3C /* Alibaba-PuHuiTi-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alibaba-PuHuiTi-Bold.otf"; sourceTree = "<group>"; };
 		6DEC84F92276DB50000BCB3C /* Alibaba-PuHuiTi-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alibaba-PuHuiTi-Light.otf"; sourceTree = "<group>"; };
@@ -447,20 +444,6 @@
 			path = Global;
 			sourceTree = "<group>";
 		};
-		6D3C39DF22B21E8000B861E7 /* Vendors */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Vendors;
-			sourceTree = "<group>";
-		};
-		6D3C39E722B21F9D00B861E7 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		6D598791229E662500113597 /* Pay */ = {
 			isa = PBXGroup;
 			children = (
@@ -498,7 +481,6 @@
 		6D74C51C22755D9D00332AAC /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
-				6DD713F522CF028E002A90B1 /* Live */,
 				6DA3F89722C45EFC00E1CA2A /* IM */,
 				6D598791229E662500113597 /* Pay */,
 				6D9837D12292575C001BEF7F /* Analyze */,
@@ -550,15 +532,6 @@
 				6DA3F89922C45F1500E1CA2A /* FDIMManager.m */,
 			);
 			path = IM;
-			sourceTree = "<group>";
-		};
-		6DD713F522CF028E002A90B1 /* Live */ = {
-			isa = PBXGroup;
-			children = (
-				6DD713F622CF029A002A90B1 /* FDLiveManager.h */,
-				6DD713F722CF029A002A90B1 /* FDLiveManager.m */,
-			);
-			path = Live;
 			sourceTree = "<group>";
 		};
 		6DEC84F42276DB50000BCB3C /* Resources */ = {
@@ -990,7 +963,6 @@
 			isa = PBXGroup;
 			children = (
 				6DEF407022B3745F00A88CE2 /* QMUIKit */,
-				6D3C39E722B21F9D00B861E7 /* Model */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1038,7 +1010,6 @@
 				6DEC84F42276DB50000BCB3C /* Resources */,
 				6D74C51C22755D9D00332AAC /* ThirdPart */,
 				CB3508E822709B3E00EDC557 /* Network */,
-				6D3C39DF22B21E8000B861E7 /* Vendors */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -1301,7 +1272,6 @@
 				CBCFB1E12281C5CB00ADE61E /* UIAlertController+supportedInterfaceOrientations.m in Sources */,
 				6DF019C122C46AF800B30D54 /* GroupMemberController.m in Sources */,
 				CB8C26FC226CBCAA0058DAEE /* main.m in Sources */,
-				6DD713F822CF029A002A90B1 /* FDLiveManager.m in Sources */,
 				6DF019C822C46AF800B30D54 /* TCUtil.m in Sources */,
 				CB8C26EE226CBCA90058DAEE /* AppDelegate.m in Sources */,
 				6DEF409122B3745F00A88CE2 /* QDCommonUI.m in Sources */,
