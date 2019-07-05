@@ -21,6 +21,7 @@ PODS:
   - FBRetainCycleDetector (0.1.4)
   - FDFullscreenPopGesture (1.1)
   - FLAnimatedImage (1.0.12)
+  - ISVImageScrollView (0.1.2)
   - Masonry (1.1.0)
   - MBProgressHUD (1.1.0)
   - MJExtension (3.0.17)
@@ -308,8 +309,9 @@ PODS:
   - SDWebImage/Core (5.0.6)
   - SVProgressHUD (2.2.6)
   - Toast (4.0.0)
-  - TXIMSDK_iOS (4.4.479)
-  - TXIMSDK_TUIKit_iOS (4.4.479):
+  - TXIMSDK_iOS (4.4.627)
+  - TXIMSDK_TUIKit_iOS (4.4.627):
+    - ISVImageScrollView
     - MMLayout
     - ReactiveObjC
     - SDWebImage
@@ -400,6 +402,7 @@ SPEC REPOS:
     - FBRetainCycleDetector
     - FDFullscreenPopGesture
     - FLAnimatedImage
+    - ISVImageScrollView
     - Masonry
     - MBProgressHUD
     - MJExtension
@@ -444,6 +447,7 @@ SPEC CHECKSUMS:
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  ISVImageScrollView: ba511d12a1661b40feb8921309c0854bf93ec749
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJExtension: 74ec83124a68891619fb7ba9c5c811bbf1691076
@@ -461,8 +465,8 @@ SPEC CHECKSUMS:
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
   SVProgressHUD: 6ed134667e9ebb2f33679e8273cd48fd3fa349e5
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
-  TXIMSDK_iOS: 762407cdbcfc415bfb87666daec7481a2ad4cbc6
-  TXIMSDK_TUIKit_iOS: f8a59111c114d990a844ad8f531dfb61db086098
+  TXIMSDK_iOS: 6641a71d741a1a1fb31b69419b2431d9aecdf12e
+  TXIMSDK_TUIKit_iOS: 168d95421e6476e8994139f7e21401cc6b13fff7
   TXLiteAVSDK_Smart: 20ac0568acb46ee73d4dcb0e98c208c41acf9b33
   UMCAnalytics: ff58714ada407682c4a07548156f94bcec92f055
   UMCCommon: 0263a057a2e1ae1da4c8308541e56904a493ce13
@@ -473,6 +477,6 @@ SPEC CHECKSUMS:
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
   ZFPlayer: fdc92702cc611922182a951991dea78566da7605
 
-PODFILE CHECKSUM: 102e5243afa7b3e45bf0da8312633bba85a2c7ac
+PODFILE CHECKSUM: 719a9fee95aa1030bdf663f32087af691b76b516
 
 COCOAPODS: 1.7.1

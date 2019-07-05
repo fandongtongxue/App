@@ -72,4 +72,6 @@ target 'App' do
   pod 'ReactiveObjC'
   pod 'TXIMSDK_TUIKit_iOS'
   pod 'TXIMSDK_iOS'
+  # 腾讯云直播
+  pod 'TXLiteAVSDK_Smart'
 end

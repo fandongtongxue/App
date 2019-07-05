@@ -110,7 +110,7 @@
     //将商品信息拼接成字符串
     NSString *orderInfo = [order orderInfoEncoded:NO];
     NSString *orderInfoEncoded = [order orderInfoEncoded:YES];
-    NSLog(@"orderSpec = %@",orderInfo);
+    DDLogDebug(@"orderSpec = %@",orderInfo);
     
     // NOTE: 获取私钥并将商户信息签名，外部商户的加签过程请务必放在服务端，防止公私钥数据泄露；
     //       需要遵循RSA签名规范，并将签名字符串base64编码和UrlEncode
@@ -133,7 +133,7 @@
         
         // NOTE: 调用支付结果开始支付
         [[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback:^(NSDictionary *resultDic) {
-            NSLog(@"reslut = %@",resultDic);
+            DDLogDebug(@"reslut = %@",resultDic);
         }];
     }
 }
@@ -167,7 +167,7 @@
 - (BOOL)handleURL:(NSURL *)url payCompletionBlock:(payCompletionBlock)payCompletionBlock delegate:(id<FDPayManagerDelegate>)delegate{
     if ([url.host isEqualToString:@"safepay"]){
         [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
-            NSLog(@"result = %@",resultDic);
+            DDLogDebug(@"result = %@",resultDic);
         }];
         return YES;
     }
@@ -178,7 +178,7 @@
 }
 
 - (void)onResp:(BaseResp *)resp{
-    NSLog(@"");
+    DDLogDebug(@"");
 }
 
 @end
