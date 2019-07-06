@@ -16,6 +16,12 @@
 		6D405CE322D026D3008D5316 /* FDVideoCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D405CE222D026D3008D5316 /* FDVideoCallViewController.m */; };
 		6D405CE522D027D4008D5316 /* FDVideoCallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D405CE422D027D4008D5316 /* FDVideoCallViewController.xib */; };
 		6D405CE722D02810008D5316 /* VideoCallMedia.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D405CE622D02810008D5316 /* VideoCallMedia.xcassets */; };
+		6D405CF222D069C6008D5316 /* ZFDouYinCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D405CE922D069C6008D5316 /* ZFDouYinCell.m */; };
+		6D405CF322D069C6008D5316 /* ZFTableData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D405CEA22D069C6008D5316 /* ZFTableData.m */; };
+		6D405CF422D069C6008D5316 /* ZFDouYinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D405CEB22D069C6008D5316 /* ZFDouYinViewController.m */; };
+		6D405CF522D069C6008D5316 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 6D405CED22D069C6008D5316 /* data.json */; };
+		6D405CF622D069C6008D5316 /* ZFDouYinControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D405CF122D069C6008D5316 /* ZFDouYinControlView.m */; };
+		6D405CF822D06CE3008D5316 /* VideoMedia.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D405CF722D06CE3008D5316 /* VideoMedia.xcassets */; };
 		6D4125DB229257BB0045E3B5 /* FDAnalyzeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4125DA229257BB0045E3B5 /* FDAnalyzeManager.m */; };
 		6D4F0D14227695D6005A9B21 /* AppDelegate+HandleURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4F0D13227695D6005A9B21 /* AppDelegate+HandleURL.m */; };
 		6D59879B229E662500113597 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6D598793229E662500113597 /* AlipaySDK.bundle */; };
@@ -129,6 +135,16 @@
 		6D405CE222D026D3008D5316 /* FDVideoCallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDVideoCallViewController.m; sourceTree = "<group>"; };
 		6D405CE422D027D4008D5316 /* FDVideoCallViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FDVideoCallViewController.xib; sourceTree = "<group>"; };
 		6D405CE622D02810008D5316 /* VideoCallMedia.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = VideoCallMedia.xcassets; sourceTree = "<group>"; };
+		6D405CE922D069C6008D5316 /* ZFDouYinCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFDouYinCell.m; sourceTree = "<group>"; };
+		6D405CEA22D069C6008D5316 /* ZFTableData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFTableData.m; sourceTree = "<group>"; };
+		6D405CEB22D069C6008D5316 /* ZFDouYinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFDouYinViewController.m; sourceTree = "<group>"; };
+		6D405CEC22D069C6008D5316 /* ZFDouYinControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFDouYinControlView.h; sourceTree = "<group>"; };
+		6D405CED22D069C6008D5316 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		6D405CEE22D069C6008D5316 /* ZFTableData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFTableData.h; sourceTree = "<group>"; };
+		6D405CEF22D069C6008D5316 /* ZFDouYinCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFDouYinCell.h; sourceTree = "<group>"; };
+		6D405CF022D069C6008D5316 /* ZFDouYinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFDouYinViewController.h; sourceTree = "<group>"; };
+		6D405CF122D069C6008D5316 /* ZFDouYinControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFDouYinControlView.m; sourceTree = "<group>"; };
+		6D405CF722D06CE3008D5316 /* VideoMedia.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = VideoMedia.xcassets; sourceTree = "<group>"; };
 		6D4125D9229257BB0045E3B5 /* FDAnalyzeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDAnalyzeManager.h; sourceTree = "<group>"; };
 		6D4125DA229257BB0045E3B5 /* FDAnalyzeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDAnalyzeManager.m; sourceTree = "<group>"; };
 		6D4F0D12227695D6005A9B21 /* AppDelegate+HandleURL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+HandleURL.h"; sourceTree = "<group>"; };
@@ -462,6 +478,23 @@
 			path = VideoCall;
 			sourceTree = "<group>";
 		};
+		6D405CE822D069C6008D5316 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				6D405CE922D069C6008D5316 /* ZFDouYinCell.m */,
+				6D405CEA22D069C6008D5316 /* ZFTableData.m */,
+				6D405CEB22D069C6008D5316 /* ZFDouYinViewController.m */,
+				6D405CEC22D069C6008D5316 /* ZFDouYinControlView.h */,
+				6D405CED22D069C6008D5316 /* data.json */,
+				6D405CEE22D069C6008D5316 /* ZFTableData.h */,
+				6D405CEF22D069C6008D5316 /* ZFDouYinCell.h */,
+				6D405CF022D069C6008D5316 /* ZFDouYinViewController.h */,
+				6D405CF122D069C6008D5316 /* ZFDouYinControlView.m */,
+				6D405CF722D06CE3008D5316 /* VideoMedia.xcassets */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
 		6D598791229E662500113597 /* Pay */ = {
 			isa = PBXGroup;
 			children = (
@@ -499,6 +532,7 @@
 		6D74C51C22755D9D00332AAC /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				6D405CE822D069C6008D5316 /* Video */,
 				6D405CE022D026B8008D5316 /* VideoCall */,
 				6DA3F89722C45EFC00E1CA2A /* IM */,
 				6D598791229E662500113597 /* Pay */,
@@ -1140,6 +1174,7 @@
 				6DF019CF22C46AF800B30D54 /* 00.caf in Resources */,
 				6D405CE522D027D4008D5316 /* FDVideoCallViewController.xib in Resources */,
 				CB8C26F6226CBCAA0058DAEE /* Assets.xcassets in Resources */,
+				6D405CF822D06CE3008D5316 /* VideoMedia.xcassets in Resources */,
 				6DEC85132276DB50000BCB3C /* AlibabaSans-Regular.otf in Resources */,
 				6DEC850B2276DB50000BCB3C /* 版权申明.rtf in Resources */,
 				6DF019CD22C46AF800B30D54 /* 11.caf in Resources */,
@@ -1164,6 +1199,7 @@
 				6DEC85152276DB50000BCB3C /* AlibabaSans-Medium.otf in Resources */,
 				6DEC85102276DB50000BCB3C /* Alibaba-PuHuiTi-Regular.otf in Resources */,
 				6DEC85142276DB50000BCB3C /* AlibabaSans-Heavy.otf in Resources */,
+				6D405CF522D069C6008D5316 /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1246,6 +1282,7 @@
 				CB19812B229EBC2600AA1002 /* APOrderInfo.m in Sources */,
 				6D9DF5AD2277CE9400FB9CFC /* FDSocialManager.m in Sources */,
 				6DF019BB22C46AF800B30D54 /* TFriendProfileController.m in Sources */,
+				6D405CF222D069C6008D5316 /* ZFDouYinCell.m in Sources */,
 				6DEF409022B3745F00A88CE2 /* UIImageEffects.m in Sources */,
 				CBB5492C22A010E1007B1A7C /* WXApiResponseHandler.m in Sources */,
 				6DF019C322C46AF800B30D54 /* TUserProfileController.m in Sources */,
@@ -1256,6 +1293,7 @@
 				CB6E67822279CC6D00D3788E /* FDViewController.m in Sources */,
 				CB1980D6229EBAFF00AA1002 /* FDPayManager.m in Sources */,
 				6DEF408E22B3745F00A88CE2 /* QMUIConfigurationTemplate.m in Sources */,
+				6D405CF322D069C6008D5316 /* ZFTableData.m in Sources */,
 				CB8EA0DD227AE453004177D4 /* SearchViewController.m in Sources */,
 				6DEF409422B3745F00A88CE2 /* QDCommonGridViewController.m in Sources */,
 				6DEF408D22B3745F00A88CE2 /* QDThemeManager.m in Sources */,
@@ -1281,6 +1319,7 @@
 				6DF019C522C46AF800B30D54 /* MyCustomCellData.m in Sources */,
 				CBD8F54822830AE90069510C /* PhoneLoginViewController.m in Sources */,
 				6DF019BD22C46AF800B30D54 /* SearchFriendViewController.m in Sources */,
+				6D405CF622D069C6008D5316 /* ZFDouYinControlView.m in Sources */,
 				6D4125DB229257BB0045E3B5 /* FDAnalyzeManager.m in Sources */,
 				CB6E67C12279D8D900D3788E /* HomeViewController.m in Sources */,
 				6D74C528227575D500332AAC /* AppDelegate+Launch.m in Sources */,
@@ -1289,6 +1328,7 @@
 				6DEF408F22B3745F00A88CE2 /* QDUIHelper.m in Sources */,
 				6DF019BE22C46AF800B30D54 /* FriendRequestViewController.m in Sources */,
 				6DF019C022C46AF800B30D54 /* ContactsController.m in Sources */,
+				6D405CF422D069C6008D5316 /* ZFDouYinViewController.m in Sources */,
 				6D022097229F6C56001FF792 /* FDNotificationName.m in Sources */,
 				6DEF409822B3745F00A88CE2 /* QDCommonTableViewController.m in Sources */,
 				CBCFB1E12281C5CB00ADE61E /* UIAlertController+supportedInterfaceOrientations.m in Sources */,
