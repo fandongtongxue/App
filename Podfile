@@ -76,4 +76,6 @@ target 'App' do
   pod 'TXLiteAVSDK_Smart'
   # 声网
   pod 'AgoraRtcEngine_iOS'
+  # 七牛云存储
+  pod "Qiniu", "~> 7.1"
 end

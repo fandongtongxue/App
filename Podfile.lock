@@ -22,6 +22,7 @@ PODS:
   - FBRetainCycleDetector (0.1.4)
   - FDFullscreenPopGesture (1.1)
   - FLAnimatedImage (1.0.12)
+  - HappyDNS (0.3.15)
   - ISVImageScrollView (0.1.2)
   - Masonry (1.1.0)
   - MBProgressHUD (1.1.0)
@@ -33,6 +34,8 @@ PODS:
   - mob_smssdk (3.2.3):
     - MOBFoundation
   - MOBFoundation (3.2.3)
+  - Qiniu (7.2.5):
+    - HappyDNS (~> 0.3)
   - QMUIKit (3.2.1):
     - QMUIKit/QMUIComponents (= 3.2.1)
     - QMUIKit/QMUICore (= 3.2.1)
@@ -371,6 +374,7 @@ DEPENDENCIES:
   - MLeaksFinder
   - MMLayout
   - mob_smssdk
+  - Qiniu (~> 7.1)
   - QMUIKit
   - QuickMobileTextField
   - QuickSecurityCode
@@ -405,6 +409,7 @@ SPEC REPOS:
     - FBRetainCycleDetector
     - FDFullscreenPopGesture
     - FLAnimatedImage
+    - HappyDNS
     - ISVImageScrollView
     - Masonry
     - MBProgressHUD
@@ -414,6 +419,7 @@ SPEC REPOS:
     - MMLayout
     - mob_smssdk
     - MOBFoundation
+    - Qiniu
     - QMUIKit
     - QuickMobileTextField
     - QuickSecurityCode
@@ -451,6 +457,7 @@ SPEC CHECKSUMS:
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  HappyDNS: 00c15e651a347206e58a20503a32a5564589b56a
   ISVImageScrollView: ba511d12a1661b40feb8921309c0854bf93ec749
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
@@ -460,6 +467,7 @@ SPEC CHECKSUMS:
   MMLayout: 3fb59d58eeb8656c64e61d550fb0088e10666c11
   mob_smssdk: cdb6a31d4fd4667ed928e2eca03f21ad89ebc05c
   MOBFoundation: 246159a97f5e6c8a271b674dd885dc4b0953e45e
+  Qiniu: 909b408ee489ea54827e9717be90b94bc9dfbc48
   QMUIKit: a3af645843b9558eb7aaf407b320eaeb45ab6144
   QuickMobileTextField: 61e4b90df95c3b63637a7398c37572cd5945d641
   QuickSecurityCode: 44b25518b6a69e0dc34a7e5faa78a03a88528dc9
@@ -481,6 +489,6 @@ SPEC CHECKSUMS:
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
   ZFPlayer: fdc92702cc611922182a951991dea78566da7605
 
-PODFILE CHECKSUM: 87223ccfc95a9b6af36fcaa3bd97ebc848b16566
+PODFILE CHECKSUM: b8ae3af74d2b1f3587cf8e9281b3727261d1263b
 
 COCOAPODS: 1.7.3

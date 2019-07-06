@@ -11,6 +11,7 @@
 		6D022097229F6C56001FF792 /* FDNotificationName.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D022096229F6C56001FF792 /* FDNotificationName.m */; };
 		6D36CA8F228117E10046FA8C /* GlobalManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D36CA8B228117E10046FA8C /* GlobalManager.m */; };
 		6D36CA90228117E10046FA8C /* GlobalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D36CA8E228117E10046FA8C /* GlobalModel.m */; };
+		6D3790D222D0978B00A6B9AE /* FDQiniuManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3790D122D0978B00A6B9AE /* FDQiniuManager.m */; };
 		6D3C39DB22B1E79D00B861E7 /* FDGlobalApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3C39DA22B1E79D00B861E7 /* FDGlobalApi.m */; };
 		6D3C39F922B2243C00B861E7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3C39F822B2243C00B861E7 /* libsqlite3.tbd */; };
 		6D405CE322D026D3008D5316 /* FDVideoCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D405CE222D026D3008D5316 /* FDVideoCallViewController.m */; };
@@ -128,6 +129,8 @@
 		6D36CA8D228117E10046FA8C /* GlobalModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalModel.h; sourceTree = "<group>"; };
 		6D36CA8E228117E10046FA8C /* GlobalModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalModel.m; sourceTree = "<group>"; };
 		6D36CA9122811E460046FA8C /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		6D3790D022D0978B00A6B9AE /* FDQiniuManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDQiniuManager.h; sourceTree = "<group>"; };
+		6D3790D122D0978B00A6B9AE /* FDQiniuManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDQiniuManager.m; sourceTree = "<group>"; };
 		6D3C39D922B1E79D00B861E7 /* FDGlobalApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDGlobalApi.h; sourceTree = "<group>"; };
 		6D3C39DA22B1E79D00B861E7 /* FDGlobalApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDGlobalApi.m; sourceTree = "<group>"; };
 		6D3C39F822B2243C00B861E7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -456,6 +459,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		6D3790CF22D0977C00A6B9AE /* Qiniu */ = {
+			isa = PBXGroup;
+			children = (
+				6D3790D022D0978B00A6B9AE /* FDQiniuManager.h */,
+				6D3790D122D0978B00A6B9AE /* FDQiniuManager.m */,
+			);
+			path = Qiniu;
+			sourceTree = "<group>";
+		};
 		6D3C39D822B1E6DF00B861E7 /* Global */ = {
 			isa = PBXGroup;
 			children = (
@@ -532,6 +544,7 @@
 		6D74C51C22755D9D00332AAC /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				6D3790CF22D0977C00A6B9AE /* Qiniu */,
 				6D405CE822D069C6008D5316 /* Video */,
 				6D405CE022D026B8008D5316 /* VideoCall */,
 				6DA3F89722C45EFC00E1CA2A /* IM */,
@@ -1323,6 +1336,7 @@
 				6D4125DB229257BB0045E3B5 /* FDAnalyzeManager.m in Sources */,
 				CB6E67C12279D8D900D3788E /* HomeViewController.m in Sources */,
 				6D74C528227575D500332AAC /* AppDelegate+Launch.m in Sources */,
+				6D3790D222D0978B00A6B9AE /* FDQiniuManager.m in Sources */,
 				6DF019BF22C46AF800B30D54 /* GroupRequestViewController.m in Sources */,
 				6DEF409622B3745F00A88CE2 /* QDCommonListViewController.m in Sources */,
 				6DEF408F22B3745F00A88CE2 /* QDUIHelper.m in Sources */,
