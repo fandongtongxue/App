@@ -74,4 +74,6 @@ target 'App' do
   pod 'TXIMSDK_iOS'
   # 腾讯云直播
   pod 'TXLiteAVSDK_Smart'
+  # 声网
+  pod 'AgoraRtcEngine_iOS'
 end

@@ -13,6 +13,9 @@
 		6D36CA90228117E10046FA8C /* GlobalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D36CA8E228117E10046FA8C /* GlobalModel.m */; };
 		6D3C39DB22B1E79D00B861E7 /* FDGlobalApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3C39DA22B1E79D00B861E7 /* FDGlobalApi.m */; };
 		6D3C39F922B2243C00B861E7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3C39F822B2243C00B861E7 /* libsqlite3.tbd */; };
+		6D405CE322D026D3008D5316 /* FDVideoCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D405CE222D026D3008D5316 /* FDVideoCallViewController.m */; };
+		6D405CE522D027D4008D5316 /* FDVideoCallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D405CE422D027D4008D5316 /* FDVideoCallViewController.xib */; };
+		6D405CE722D02810008D5316 /* VideoCallMedia.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D405CE622D02810008D5316 /* VideoCallMedia.xcassets */; };
 		6D4125DB229257BB0045E3B5 /* FDAnalyzeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4125DA229257BB0045E3B5 /* FDAnalyzeManager.m */; };
 		6D4F0D14227695D6005A9B21 /* AppDelegate+HandleURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4F0D13227695D6005A9B21 /* AppDelegate+HandleURL.m */; };
 		6D59879B229E662500113597 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6D598793229E662500113597 /* AlipaySDK.bundle */; };
@@ -122,6 +125,10 @@
 		6D3C39D922B1E79D00B861E7 /* FDGlobalApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDGlobalApi.h; sourceTree = "<group>"; };
 		6D3C39DA22B1E79D00B861E7 /* FDGlobalApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDGlobalApi.m; sourceTree = "<group>"; };
 		6D3C39F822B2243C00B861E7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		6D405CE122D026D3008D5316 /* FDVideoCallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDVideoCallViewController.h; sourceTree = "<group>"; };
+		6D405CE222D026D3008D5316 /* FDVideoCallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDVideoCallViewController.m; sourceTree = "<group>"; };
+		6D405CE422D027D4008D5316 /* FDVideoCallViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FDVideoCallViewController.xib; sourceTree = "<group>"; };
+		6D405CE622D02810008D5316 /* VideoCallMedia.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = VideoCallMedia.xcassets; sourceTree = "<group>"; };
 		6D4125D9229257BB0045E3B5 /* FDAnalyzeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDAnalyzeManager.h; sourceTree = "<group>"; };
 		6D4125DA229257BB0045E3B5 /* FDAnalyzeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDAnalyzeManager.m; sourceTree = "<group>"; };
 		6D4F0D12227695D6005A9B21 /* AppDelegate+HandleURL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+HandleURL.h"; sourceTree = "<group>"; };
@@ -444,6 +451,17 @@
 			path = Global;
 			sourceTree = "<group>";
 		};
+		6D405CE022D026B8008D5316 /* VideoCall */ = {
+			isa = PBXGroup;
+			children = (
+				6D405CE122D026D3008D5316 /* FDVideoCallViewController.h */,
+				6D405CE222D026D3008D5316 /* FDVideoCallViewController.m */,
+				6D405CE422D027D4008D5316 /* FDVideoCallViewController.xib */,
+				6D405CE622D02810008D5316 /* VideoCallMedia.xcassets */,
+			);
+			path = VideoCall;
+			sourceTree = "<group>";
+		};
 		6D598791229E662500113597 /* Pay */ = {
 			isa = PBXGroup;
 			children = (
@@ -481,6 +499,7 @@
 		6D74C51C22755D9D00332AAC /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				6D405CE022D026B8008D5316 /* VideoCall */,
 				6DA3F89722C45EFC00E1CA2A /* IM */,
 				6D598791229E662500113597 /* Pay */,
 				6D9837D12292575C001BEF7F /* Analyze */,
@@ -1117,7 +1136,9 @@
 			files = (
 				6DEC85192276DB50000BCB3C /* AlibabaSans-MediumItalic.otf in Resources */,
 				6D59879D229E662500113597 /* README.txt in Resources */,
+				6D405CE722D02810008D5316 /* VideoCallMedia.xcassets in Resources */,
 				6DF019CF22C46AF800B30D54 /* 00.caf in Resources */,
+				6D405CE522D027D4008D5316 /* FDVideoCallViewController.xib in Resources */,
 				CB8C26F6226CBCAA0058DAEE /* Assets.xcassets in Resources */,
 				6DEC85132276DB50000BCB3C /* AlibabaSans-Regular.otf in Resources */,
 				6DEC850B2276DB50000BCB3C /* 版权申明.rtf in Resources */,
@@ -1247,6 +1268,7 @@
 				6D9DF5B12277D79B00FB9CFC /* UIViewController+FD.m in Sources */,
 				6DF019C222C46AF800B30D54 /* ChatViewController.m in Sources */,
 				6DEF409522B3745F00A88CE2 /* QDTabBarViewController.m in Sources */,
+				6D405CE322D026D3008D5316 /* FDVideoCallViewController.m in Sources */,
 				CBB5492E22A010E1007B1A7C /* WXApiManager.m in Sources */,
 				6DF019D222C46AF800B30D54 /* LoginController.m in Sources */,
 				6DF019BC22C46AF800B30D54 /* SearchGroupViewController.m in Sources */,
