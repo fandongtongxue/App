@@ -10,11 +10,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void(^progressHandler)(float percent);
+
+typedef void(^completionHandler)(NSDictionary *result);
+
 @interface FDQiniuManager : NSObject
 
 + (FDQiniuManager *)defaultManager;
 
-- (void)uploadImage:(UIImage *)image Key:(NSString *)key;
+- (void)uploadImage:(UIImage *)image key:(NSString *)key progress:(progressHandler)progress completion:(completionHandler)completion;
 
 @end
 

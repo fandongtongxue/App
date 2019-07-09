@@ -20,15 +20,22 @@
     return manager;
 }
 
-- (void)uploadImage:(UIImage *)image Key:(NSString *)key{
+- (void)uploadImage:(UIImage *)image key:(NSString *)key progress:(progressHandler)progress completion:(completionHandler)completion{
     NSString *token = @"从服务端SDK获取";
     QNUploadManager *upManager = [[QNUploadManager alloc] init];
+    QNUploadOption *upOption =[[QNUploadOption alloc]initWithProgressHandler:^(NSString *key, float percent) {
+        if (progress) {
+            progress(percent);
+        }
+    }];
     NSData *data = UIImageJPEGRepresentation(image, 1);
     [upManager putData:data key:key token:token
               complete: ^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
-                  NSLog(@"%@", info);
-                  NSLog(@"%@", resp);
-              } option:nil];
+                  DDLogDebug(@"QNResponseInfo:%@\nresp:%@",info,resp);
+                  if (completion) {
+                      completion(resp);
+                  }
+              } option:upOption];
 }
 
 @end
