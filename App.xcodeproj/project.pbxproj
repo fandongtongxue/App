@@ -90,6 +90,8 @@
 		6DF019D222C46AF800B30D54 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF019B422C46AF800B30D54 /* LoginController.m */; };
 		6DF019D322C46AF800B30D54 /* UserSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF019B622C46AF800B30D54 /* UserSelectView.m */; };
 		6DF019D422C46AF800B30D54 /* ConversationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF019B922C46AF800B30D54 /* ConversationController.m */; };
+		6DF3B6EF22D4709200BAF1C0 /* FDSQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF3B6EE22D4709200BAF1C0 /* FDSQLiteManager.m */; };
+		6DF535CF22D8665C006FCD3F /* FDAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF535CE22D8665C006FCD3F /* FDAddressModel.m */; };
 		CB1980D6229EBAFF00AA1002 /* FDPayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1980D5229EBAFF00AA1002 /* FDPayManager.m */; };
 		CB19812B229EBC2600AA1002 /* APOrderInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1980D8229EBC2500AA1002 /* APOrderInfo.m */; };
 		CB19812C229EBC2600AA1002 /* openssl_wrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1980DA229EBC2500AA1002 /* openssl_wrapper.m */; };
@@ -262,6 +264,10 @@
 		6DF019B722C46AF800B30D54 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
 		6DF019B922C46AF800B30D54 /* ConversationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationController.m; sourceTree = "<group>"; };
 		6DF019BA22C46AF800B30D54 /* ConversationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationController.h; sourceTree = "<group>"; };
+		6DF3B6ED22D4709200BAF1C0 /* FDSQLiteManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDSQLiteManager.h; sourceTree = "<group>"; };
+		6DF3B6EE22D4709200BAF1C0 /* FDSQLiteManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDSQLiteManager.m; sourceTree = "<group>"; };
+		6DF535CD22D8665C006FCD3F /* FDAddressModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDAddressModel.h; sourceTree = "<group>"; };
+		6DF535CE22D8665C006FCD3F /* FDAddressModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDAddressModel.m; sourceTree = "<group>"; };
 		CB1980D4229EBAFF00AA1002 /* FDPayManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDPayManager.h; sourceTree = "<group>"; };
 		CB1980D5229EBAFF00AA1002 /* FDPayManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDPayManager.m; sourceTree = "<group>"; };
 		CB1980D8229EBC2500AA1002 /* APOrderInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APOrderInfo.m; sourceTree = "<group>"; };
@@ -420,6 +426,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6D1D784C22D6EB810085D1F3 /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				6DF535CD22D8665C006FCD3F /* FDAddressModel.h */,
+				6DF535CE22D8665C006FCD3F /* FDAddressModel.m */,
+			);
+			path = Address;
+			sourceTree = "<group>";
+		};
 		6D369E43229E6BF6006C9DDF /* Constant */ = {
 			isa = PBXGroup;
 			children = (
@@ -544,6 +559,8 @@
 		6D74C51C22755D9D00332AAC /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				6D1D784C22D6EB810085D1F3 /* Address */,
+				6DF3B6EC22D4708200BAF1C0 /* Storage */,
 				6D3790CF22D0977C00A6B9AE /* Qiniu */,
 				6D405CE822D069C6008D5316 /* Video */,
 				6D405CE022D026B8008D5316 /* VideoCall */,
@@ -847,6 +864,15 @@
 				6DF019BA22C46AF800B30D54 /* ConversationController.h */,
 			);
 			path = Conversation;
+			sourceTree = "<group>";
+		};
+		6DF3B6EC22D4708200BAF1C0 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				6DF3B6ED22D4709200BAF1C0 /* FDSQLiteManager.h */,
+				6DF3B6EE22D4709200BAF1C0 /* FDSQLiteManager.m */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		BEBD1D2AB71059642F79F3CB /* Pods */ = {
@@ -1326,6 +1352,7 @@
 				CB8EA0E1227B1A2B004177D4 /* MineViewController.m in Sources */,
 				6DF019CC22C46AF800B30D54 /* SettingController.m in Sources */,
 				CB19812C229EBC2600AA1002 /* openssl_wrapper.m in Sources */,
+				6DF535CF22D8665C006FCD3F /* FDAddressModel.m in Sources */,
 				6DF019C622C46AF800B30D54 /* MyCustomCell.m in Sources */,
 				6DEF409222B3745F00A88CE2 /* QDCommonGroupListViewController.m in Sources */,
 				6D36CA90228117E10046FA8C /* GlobalModel.m in Sources */,
@@ -1333,6 +1360,7 @@
 				CBD8F54822830AE90069510C /* PhoneLoginViewController.m in Sources */,
 				6DF019BD22C46AF800B30D54 /* SearchFriendViewController.m in Sources */,
 				6D405CF622D069C6008D5316 /* ZFDouYinControlView.m in Sources */,
+				6DF3B6EF22D4709200BAF1C0 /* FDSQLiteManager.m in Sources */,
 				6D4125DB229257BB0045E3B5 /* FDAnalyzeManager.m in Sources */,
 				CB6E67C12279D8D900D3788E /* HomeViewController.m in Sources */,
 				6D74C528227575D500332AAC /* AppDelegate+Launch.m in Sources */,
@@ -1495,6 +1523,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/App/ThirdPart/Pay/Alipay",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = $SRCROOT/App/Constant/PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1547,6 +1576,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/App/ThirdPart/Pay/Alipay",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = $SRCROOT/App/Constant/PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",

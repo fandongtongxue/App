@@ -16,9 +16,7 @@
 
 #import <XHLaunchAd/XHLaunchAd.h>
 
-#ifdef DEBUG
-//#import <DoraemonKit/DoraemonManager.h>
-#endif
+#import <Matrix/Matrix.h>
 
 #import "FDTabBarController.h"
 #import "FDNavigationController.h"
@@ -31,19 +29,16 @@
 #import "ConversationController.h"
 #import "SettingController.h"
 #import "ContactsController.h"
+#import "ZFDouyinViewController.h"
 #import <THeader.h>
 
-@interface AppDelegate ()<UNUserNotificationCenterDelegate,XHLaunchAdDelegate,BuglyDelegate>
+@interface AppDelegate ()<UNUserNotificationCenterDelegate,XHLaunchAdDelegate,BuglyDelegate,MatrixPluginListenerDelegate>
 
 @end
 
 @implementation AppDelegate (ThirdPart)
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
-    
-    #ifdef DEBUG
-//        [[DoraemonManager shareInstance] install];
-    #endif
     
     // QMUIConsole 默认只在 DEBUG 下会显示，作为 Demo，改为不管什么环境都允许显示
     [QMUIConsole sharedInstance].canShow = YES;
@@ -126,6 +121,22 @@
     fileLogger.logFileManager.maximumNumberOfLogFiles = 7; // 保存一周的日志，即7天
     [DDLog addLogger:fileLogger];
     
+    Matrix *matrix = [Matrix sharedInstance];
+    MatrixBuilder *curBuilder = [[MatrixBuilder alloc] init];
+    curBuilder.pluginListener = self; // pluginListener 回调 plugin 的相关事件
+    
+    WCCrashBlockMonitorPlugin *crashBlockPlugin = [[WCCrashBlockMonitorPlugin alloc] init];
+    [curBuilder addPlugin:crashBlockPlugin]; // 添加卡顿和崩溃监控
+    
+    WCMemoryStatPlugin *memoryStatPlugin = [[WCMemoryStatPlugin alloc] init];
+    [curBuilder addPlugin:memoryStatPlugin]; // 添加内存监控功能
+    
+    [matrix addMatrixBuilder:curBuilder];
+    
+    [crashBlockPlugin start]; // 开启卡顿和崩溃监控
+    // [memoryStatPlugin start];
+    // 开启内存监控，注意 memoryStatPlugin 开启之后对性能损耗较大，建议按需开启
+    
     return YES;
 }
 
@@ -135,13 +146,20 @@
     NSMutableDictionary *attrDict = [NSMutableDictionary dictionary];
     attrDict[NSFontAttributeName] = Font(12);
     
-    HomeViewController *homeVC = [[HomeViewController alloc]init];
-    homeVC.hidesBottomBarWhenPushed = NO;
-    FDNavigationController *homeNav = [[FDNavigationController alloc]initWithRootViewController:homeVC];
-    homeNav.tabBarItem = [QDUIHelper tabBarItemWithTitle:Localized(@"Home.Title") image:[UIImageMake(@"tab_home_normal") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"tab_home_selected") tag:0];
-    [homeNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateNormal];
-    [homeNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateSelected];
-    AddAccessibilityHint(homeNav.tabBarItem, Localized(@"Home.Title"));
+    ZFDouYinViewController *douyinVC = [[ZFDouYinViewController alloc]init];
+    douyinVC.hidesBottomBarWhenPushed = NO;
+    douyinVC.tabBarItem = [QDUIHelper tabBarItemWithTitle:Localized(@"Home.Title") image:[UIImageMake(@"tab_home_normal") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"tab_home_selected") tag:0];
+    [douyinVC.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateNormal];
+    [douyinVC.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateSelected];
+    AddAccessibilityHint(douyinVC.tabBarItem, Localized(@"Home.Title"));
+    
+    ConversationController *conVC = [[ConversationController alloc]init];
+    conVC.hidesBottomBarWhenPushed = NO;
+    FDNavigationController *conNav = [[FDNavigationController alloc]initWithRootViewController:conVC];
+    conNav.tabBarItem = [QDUIHelper tabBarItemWithTitle:Localized(@"Message.Title") image:[UIImageMake(@"tab_chat_normal") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"tab_chat_selected") tag:0];
+    [conNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateNormal];
+    [conNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateSelected];
+    AddAccessibilityHint(conNav.tabBarItem, Localized(@"Message.Title"));
     
     MineViewController *mineVC = [[MineViewController alloc]init];
     mineVC.hidesBottomBarWhenPushed = NO;
@@ -151,7 +169,7 @@
     [mineNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateSelected];
     AddAccessibilityHint(mineNav.tabBarItem, Localized(@"Mine.Title"));
     
-    tabBarVC.viewControllers = @[homeNav,mineNav];
+    tabBarVC.viewControllers = @[douyinVC,conVC,mineNav];
         
     self.window.rootViewController = tabBarVC;
 }
@@ -304,6 +322,27 @@ void uncaughtExceptionHandler(NSException*exception){
 #pragma mark - BuglyDelegate
 - (NSString * BLY_NULLABLE)attachmentForException:(NSException * BLY_NULLABLE)exception{
     return @"";
+}
+
+#pragma mark - MatrixPluginListenerDelegate
+- (void)onInit:(id<MatrixPluginProtocol>)plugin{
+    DDLogDebug(@"%s",__func__);
+}
+
+- (void)onStart:(id<MatrixPluginProtocol>)plugin{
+    DDLogDebug(@"%s",__func__);
+}
+
+- (void)onStop:(id<MatrixPluginProtocol>)plugin{
+    DDLogDebug(@"%s",__func__);
+}
+
+- (void)onDestroy:(id<MatrixPluginProtocol>)plugin{
+    DDLogDebug(@"%s",__func__);
+}
+
+- (void)onReportIssue:(MatrixIssue *)issue{
+    DDLogDebug(@"%s",__func__);
 }
 
 @end

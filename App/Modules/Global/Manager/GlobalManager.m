@@ -9,6 +9,7 @@
 #import "GlobalManager.h"
 #import "FDGlobalApi.h"
 #import "FDPCASVApi.h"
+#import "FDSQliteManager.h"
 
 @implementation GlobalManager
 
@@ -24,16 +25,16 @@
 - (void)loadData{
     //初始化配置数据
     [[[FDGlobalApi alloc]init] startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-        NSLog(@"");
+        DDLogDebug(@"");
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-        NSLog(@"");
+        DDLogDebug(@"");
     }];
     //初始化资源文件
-//    http://pt9t5o14j.bkt.clouddn.com/pcasv.sqlite
+//    http://app.fandong.me/pcasv.sqlite
     [[[FDPCASVApi alloc] init] startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-        NSLog(@"");
+        DDLogDebug(@"");
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-        NSLog(@"");
+        DDLogDebug(@"");
     }];
 }
 

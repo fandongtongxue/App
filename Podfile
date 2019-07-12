@@ -48,6 +48,7 @@ target 'App' do
   pod 'ZFPlayer'
   pod 'ZFPlayer/ControlView'
   pod 'ZFPlayer/AVPlayer'
+  pod 'FDFullscreenPopGesture'
   # 日志
   pod 'CocoaLumberjack'
   # ShareSDK 短信
@@ -56,24 +57,18 @@ target 'App' do
   pod 'QuickMobileTextField'
   # 验证码
   pod 'QuickSecurityCode'
-  # 滴滴开发助手
-  #pod 'DoraemonKit/Core', '~> 1.1.8', :configurations => ['Debug']
-  #pod 'DoraemonKit/WithLogger', '~> 1.1.8', :configurations => ['Debug']
-  #pod 'DoraemonKit/WithGPS', '~> 1.1.8', :configurations => ['Debug']
-  #pod 'DoraemonKit/WithLoad', '~> 1.1.8', :configurations => ['Debug']
   #启动广告图
   pod 'XHLaunchAd'
-  pod 'FDFullscreenPopGesture'
-  # 直播
+  # 腾讯云直播
   pod 'TXLiteAVSDK_Smart'
-  # 腾讯IM
-  pod 'MBProgressHUD'
+  # 腾讯云通信
   pod 'MMLayout'
   pod 'ReactiveObjC'
   pod 'TXIMSDK_TUIKit_iOS'
   pod 'TXIMSDK_iOS'
-  # 腾讯云直播
-  pod 'TXLiteAVSDK_Smart'
+  # 腾讯Github
+  pod 'MMKV'
+  pod 'matrix-wechat'
   # 声网
   pod 'AgoraRtcEngine_iOS'
   # 七牛云存储

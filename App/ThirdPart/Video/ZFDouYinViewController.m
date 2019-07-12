@@ -37,7 +37,7 @@ static NSString *kIdentifier = @"kIdentifier";
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
-    [self.view addSubview:self.backBtn];
+//    [self.view addSubview:self.backBtn];
     self.fd_prefersNavigationBarHidden = YES;
     [self requestData];
     
