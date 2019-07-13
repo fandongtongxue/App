@@ -39,7 +39,7 @@ static NSString *kIdentifier = @"kIdentifier";
     [self.view addSubview:self.tableView];
 //    [self.view addSubview:self.backBtn];
     self.fd_prefersNavigationBarHidden = YES;
-    [self requestData];
+    [self loadNewData];
     
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     self.tableView.mj_header = header;

@@ -60,7 +60,7 @@ target 'App' do
   #启动广告图
   pod 'XHLaunchAd'
   # 腾讯云直播
-  pod 'TXLiteAVSDK_Smart'
+  # pod 'TXLiteAVSDK_Smart'
   # 腾讯云通信
   pod 'MMLayout'
   pod 'ReactiveObjC'

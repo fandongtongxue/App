@@ -67,7 +67,7 @@
     min_w = 40;
     min_h = min_w;
     min_x = min_view_w - min_w - 20;
-    min_y = min_view_h - min_h - 80;
+    min_y = min_view_h - min_h - 80 - 50;
     self.shareBtn.frame = CGRectMake(min_x, min_y, min_w, min_h);
     
     min_w = CGRectGetWidth(self.shareBtn.frame);
@@ -84,7 +84,7 @@
     
     min_x = 20;
     min_h = 20;
-    min_y = min_view_h - min_h - 50;
+    min_y = min_view_h - min_h - 50- 50;
     min_w = self.likeBtn.zf_left - margin;
     self.titleLabel.frame = CGRectMake(min_x, min_y, min_w, min_h);
 }
