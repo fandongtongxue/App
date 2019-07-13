@@ -154,7 +154,7 @@
     AddAccessibilityHint(douyinVC.tabBarItem, Localized(@"Home.Title"));
     
     ConversationController *conVC = [[ConversationController alloc]init];
-    conVC.hidesBottomBarWhenPushed = NO;
+    conVC.hidesBottomBarWhenPushed = YES;
     FDNavigationController *conNav = [[FDNavigationController alloc]initWithRootViewController:conVC];
     conNav.tabBarItem = [QDUIHelper tabBarItemWithTitle:Localized(@"Message.Title") image:[UIImageMake(@"tab_chat_normal") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"tab_chat_selected") tag:0];
     [conNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateNormal];
@@ -162,14 +162,14 @@
     AddAccessibilityHint(conNav.tabBarItem, Localized(@"Message.Title"));
     
     MineViewController *mineVC = [[MineViewController alloc]init];
-    mineVC.hidesBottomBarWhenPushed = NO;
+    mineVC.hidesBottomBarWhenPushed = YES;
     FDNavigationController *mineNav = [[FDNavigationController alloc]initWithRootViewController:mineVC];
     mineNav.tabBarItem = [QDUIHelper tabBarItemWithTitle:Localized(@"Mine.Title") image:[UIImageMake(@"tab_mine_normal") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"tab_mine_selected") tag:0];
     [mineNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateNormal];
     [mineNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateSelected];
     AddAccessibilityHint(mineNav.tabBarItem, Localized(@"Mine.Title"));
     
-    tabBarVC.viewControllers = @[douyinVC,conVC,mineNav];
+    tabBarVC.viewControllers = @[douyinVC,conNav,mineNav];
         
     self.window.rootViewController = tabBarVC;
 }
