@@ -11,7 +11,7 @@
 @implementation FDPCASVApi
 
 -(NSString *)requestUrl{
-    return @"pcasv.sqlite";
+    return @"data.sqlite";
 }
 
 - (YTKRequestMethod)requestMethod {
