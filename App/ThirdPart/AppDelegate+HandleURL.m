@@ -14,7 +14,6 @@
 
 @implementation AppDelegate (HandleURL)
 
-#if __IPHONE_OS_VERSION_MAX_ALLOWED > 90000
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options
 {
     BOOL result = [[FDSocialManager defaultManager]  handleOpenURL:url options:options];
@@ -26,7 +25,6 @@
     return result;
 }
 
-#else
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
     BOOL result = [[FDSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
     if (!result) {
@@ -46,6 +44,5 @@
     }
     return result;
 }
-#endif
 
 @end
