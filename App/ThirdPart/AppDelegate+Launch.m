@@ -121,6 +121,7 @@
     fileLogger.logFileManager.maximumNumberOfLogFiles = 7; // 保存一周的日志，即7天
     [DDLog addLogger:fileLogger];
     
+    //腾讯Debug
     Matrix *matrix = [Matrix sharedInstance];
     MatrixBuilder *curBuilder = [[MatrixBuilder alloc] init];
     curBuilder.pluginListener = self; // pluginListener 回调 plugin 的相关事件

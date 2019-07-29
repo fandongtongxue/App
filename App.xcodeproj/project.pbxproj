@@ -29,6 +29,7 @@
 		6D59879C229E662500113597 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D598794229E662500113597 /* AlipaySDK.framework */; };
 		6D59879D229E662500113597 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6D598798229E662500113597 /* README.txt */; };
 		6D59879E229E662500113597 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D59879A229E662500113597 /* libWeChatSDK.a */; };
+		6D5F988C22EE7D1F009C3E10 /* FDKeyName.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5F988B22EE7D1F009C3E10 /* FDKeyName.m */; };
 		6D74C528227575D500332AAC /* AppDelegate+Launch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D74C527227575D500332AAC /* AppDelegate+Launch.m */; };
 		6D9DF5AD2277CE9400FB9CFC /* FDSocialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DF5AC2277CE9400FB9CFC /* FDSocialManager.m */; };
 		6D9DF5B12277D79B00FB9CFC /* UIViewController+FD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DF5B02277D79B00FB9CFC /* UIViewController+FD.m */; };
@@ -162,6 +163,8 @@
 		6D598798229E662500113597 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		6D598799229E662500113597 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
 		6D59879A229E662500113597 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		6D5F988A22EE7D1F009C3E10 /* FDKeyName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDKeyName.h; sourceTree = "<group>"; };
+		6D5F988B22EE7D1F009C3E10 /* FDKeyName.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDKeyName.m; sourceTree = "<group>"; };
 		6D74C526227575D500332AAC /* AppDelegate+Launch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Launch.h"; sourceTree = "<group>"; };
 		6D74C527227575D500332AAC /* AppDelegate+Launch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Launch.m"; sourceTree = "<group>"; };
 		6D800E102293D4A800BC8BB8 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
@@ -446,6 +449,8 @@
 				6D800E102293D4A800BC8BB8 /* Config.h */,
 				6D022095229F6C56001FF792 /* FDNotificationName.h */,
 				6D022096229F6C56001FF792 /* FDNotificationName.m */,
+				6D5F988A22EE7D1F009C3E10 /* FDKeyName.h */,
+				6D5F988B22EE7D1F009C3E10 /* FDKeyName.m */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -1383,6 +1388,7 @@
 				6DEF408F22B3745F00A88CE2 /* QDUIHelper.m in Sources */,
 				6DCE88CF22EA934A00CAFA15 /* FDKVManager.m in Sources */,
 				6DF019BE22C46AF800B30D54 /* FriendRequestViewController.m in Sources */,
+				6D5F988C22EE7D1F009C3E10 /* FDKeyName.m in Sources */,
 				6DF019C022C46AF800B30D54 /* ContactsController.m in Sources */,
 				6D405CF422D069C6008D5316 /* ZFDouYinViewController.m in Sources */,
 				6D022097229F6C56001FF792 /* FDNotificationName.m in Sources */,

@@ -14,6 +14,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (FDKVManager *)defaultManager;
 
+- (void)setObject:(id)object forKey:(NSString *)key;
+
+- (void)setBool:(BOOL)object forKey:(NSString *)key;
+
+- (id)getObjectOfClass:(NSString *)className ForKey:(NSString *)key;
+
+- (BOOL)boolForKey:(NSString *)key;
+
 @end
 
 NS_ASSUME_NONNULL_END

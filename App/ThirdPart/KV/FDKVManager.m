@@ -20,6 +20,20 @@
     return manager;
 }
 
+- (void)setObject:(id)object forKey:(NSString *)key{
+    [[MMKV defaultMMKV] setObject:object forKey:key];
+}
 
+- (void)setBool:(BOOL)object forKey:(NSString *)key{
+    [[MMKV defaultMMKV] setBool:object forKey:key];
+}
+
+- (id)getObjectOfClass:(NSString *)className ForKey:(NSString *)key{
+    return [[MMKV defaultMMKV] getObjectOfClass:NSClassFromString(className) forKey:key];
+}
+
+- (BOOL)boolForKey:(NSString *)key{
+    return [[MMKV defaultMMKV] getBoolForKey:key];
+}
 
 @end

@@ -20,6 +20,7 @@
 #import "FDAnalyzeManager.h"
 #import "FDPayManager.h"
 #import "FDSocialManager.h"
+#import "FDKeyName.h"
 
 #import <SVProgressHUD/SVProgressHUD.h>
 
