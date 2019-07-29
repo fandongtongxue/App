@@ -165,6 +165,7 @@
 		6D59879A229E662500113597 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		6D5F988A22EE7D1F009C3E10 /* FDKeyName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDKeyName.h; sourceTree = "<group>"; };
 		6D5F988B22EE7D1F009C3E10 /* FDKeyName.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDKeyName.m; sourceTree = "<group>"; };
+		6D5F989022EE8FAE009C3E10 /* data.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = data.sqlite; sourceTree = "<group>"; };
 		6D74C526227575D500332AAC /* AppDelegate+Launch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Launch.h"; sourceTree = "<group>"; };
 		6D74C527227575D500332AAC /* AppDelegate+Launch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Launch.m"; sourceTree = "<group>"; };
 		6D800E102293D4A800BC8BB8 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
@@ -638,6 +639,7 @@
 		6DEC84F42276DB50000BCB3C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6D5F989022EE8FAE009C3E10 /* data.sqlite */,
 				CB6E67C82279EECC00D3788E /* Localizable.strings */,
 				CB8C26FB226CBCAA0058DAEE /* main.m */,
 				CB6E67BC2279D62A00D3788E /* Main.storyboard */,
