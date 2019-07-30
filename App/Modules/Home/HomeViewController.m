@@ -8,7 +8,6 @@
 
 #import "HomeViewController.h"
 #import "SearchViewController.h"
-#import "ZFDouYinViewController.h"
 
 @interface HomeViewController ()
 
@@ -26,13 +25,6 @@
     [super setupNavigationItems];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(searchItemAction:)];
     AddAccessibilityLabel(self.navigationItem.leftBarButtonItem, Localized(@"Search.Title"));
-}
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [super touchesBegan:touches withEvent:event];
-    ZFDouYinViewController *douyinVC = [[ZFDouYinViewController alloc]init];
-    douyinVC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:douyinVC animated:YES];
 }
 
 - (void)searchItemAction:(UIBarButtonItem *)item{

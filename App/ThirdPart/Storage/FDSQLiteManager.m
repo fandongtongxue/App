@@ -33,13 +33,14 @@ static sqlite3 * dbPoint = Nil;
         if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
             sqlite3_open([filePath UTF8String], &dbPoint);
         }else{
-            NSString * sourcePath = [[NSBundle mainBundle]pathForResource:@"pcasv" ofType:@"sqlite"];//获得Bundle包里的路径
+            NSString * sourcePath = [[NSBundle mainBundle]pathForResource:@"data" ofType:@"sqlite"];//获得Bundle包里的路径
             BOOL judge = [[NSFileManager defaultManager] copyItemAtPath:sourcePath toPath:filePath error:NULL];//copy 从sourcePath到destinationPath
             if (judge) {
                 DDLogDebug(@"复制 pcasv.sqlite 成功");
             }else{
                 DDLogDebug(@"复制 pcasv.sqlite 失败");
             }
+            sqlite3_open([filePath UTF8String], &dbPoint);
         }
         return dbPoint;
     }

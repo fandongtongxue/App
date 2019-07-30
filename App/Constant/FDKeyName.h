@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FDKeyName : NSObject
 
-NSString *const TestKey = @"TestKey";
+UIKIT_EXTERN NSString *const TestKey;
 
 @end
 
