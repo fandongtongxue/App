@@ -305,14 +305,24 @@
  */
 - (void)onEditFriendApply
 {
-    UIActionSheet *sheet = [[UIActionSheet alloc] init];
-    sheet.tag = SHEET_AGREE;
-    [sheet addButtonWithTitle:@"同意任何用户加好友"];
-    [sheet addButtonWithTitle:@"需要验证"];
-    [sheet addButtonWithTitle:@"拒绝任何人加好友"];
-    [sheet setCancelButtonIndex:[sheet addButtonWithTitle:@"取消"]];
-    [sheet setDelegate:self];
-    [sheet showInView:self.view];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    [alert addAction:[UIAlertAction actionWithTitle:@"同意任何用户加好友" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        self.profile.allowType = 0;
+        [self setupData];
+        [[TIMFriendshipManager sharedInstance] modifySelfProfile:@{TIMProfileTypeKey_AllowType:[NSNumber numberWithInteger:0]} succ:nil fail:nil];
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"需要验证" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        self.profile.allowType = 1;
+        [self setupData];
+        [[TIMFriendshipManager sharedInstance] modifySelfProfile:@{TIMProfileTypeKey_AllowType:[NSNumber numberWithInteger:1]} succ:nil fail:nil];
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"拒绝任何人加好友" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        self.profile.allowType = 2;
+        [self setupData];
+        [[TIMFriendshipManager sharedInstance] modifySelfProfile:@{TIMProfileTypeKey_AllowType:[NSNumber numberWithInteger:2]} succ:nil fail:nil];
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+    [self presentViewController:alert animated:YES completion:nil];
     [self setupData];
 }
 
@@ -338,17 +348,6 @@
     }
 }
 
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (actionSheet.tag == SHEET_AGREE) {
-        if (buttonIndex >= 3)
-            return;
-        self.profile.allowType = buttonIndex;
-        [self setupData];
-        [[TIMFriendshipManager sharedInstance] modifySelfProfile:@{TIMProfileTypeKey_AllowType:[NSNumber numberWithInteger:buttonIndex]} succ:nil fail:nil];
-    }
-
-}
 - (void)didSelectLog
 {
     [[PAirSandbox sharedInstance] showSandboxBrowser];

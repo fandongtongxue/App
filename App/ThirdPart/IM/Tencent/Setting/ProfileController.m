@@ -283,14 +283,25 @@
 
 - (void)didSelectSex
 {
-    UIActionSheet *sheet = [[UIActionSheet alloc] init];
-    sheet.tag = SHEET_SEX;
-    sheet.title = @"修改性别";
-    [sheet addButtonWithTitle:@"男"];
-    [sheet addButtonWithTitle:@"女"];
-    [sheet setCancelButtonIndex:[sheet addButtonWithTitle:@"取消"]];
-    [sheet setDelegate:self];
-    [sheet showInView:self.view];
+    UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"修改性别" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [ac addAction:[UIAlertAction actionWithTitle:@"男" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        TIMGender gender = TIM_GENDER_UNKNOWN;
+        gender = TIM_GENDER_MALE;
+        self.profile.gender = gender;
+        [self setupData];
+        [[TIMFriendshipManager sharedInstance] modifySelfProfile:@{TIMProfileTypeKey_Gender: @(gender)}
+                                                            succ:nil fail:nil];
+    }]];
+    [ac addAction:[UIAlertAction actionWithTitle:@"女" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        TIMGender gender = TIM_GENDER_UNKNOWN;
+        gender = TIM_GENDER_FEMALE;
+        self.profile.gender = gender;
+        [self setupData];
+        [[TIMFriendshipManager sharedInstance] modifySelfProfile:@{TIMProfileTypeKey_Gender: @(gender)}
+                                                            succ:nil fail:nil];
+    }]];
+    [ac addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+    [self presentViewController:ac animated:YES completion:nil];
 }
 
 - (void)didSelectAvatar
@@ -309,23 +320,6 @@
     [self presentViewController:ac animated:YES completion:nil];
 }
 
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-
-    if (actionSheet.tag == SHEET_SEX) {
-        TIMGender gender = TIM_GENDER_UNKNOWN;
-        if (buttonIndex == 0) {
-            gender = TIM_GENDER_MALE;
-        }
-        if (buttonIndex == 1) {
-            gender = TIM_GENDER_FEMALE;
-        }
-        self.profile.gender = gender;
-        [self setupData];
-        [[TIMFriendshipManager sharedInstance] modifySelfProfile:@{TIMProfileTypeKey_Gender: @(gender)}
-                                                            succ:nil fail:nil];
-    }
-}
 
 /**
  *  以下两个函数实现了长按的复制功能。

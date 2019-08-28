@@ -150,8 +150,9 @@
     
     //_SDKAppID 填写自己控制台申请的sdkAppid
     if (SDKAPPID == 0) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Demo 尚未配置 SDKAPPID，请前往 GenerateTestUserSig.h 配置" message:nil delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
-        [alert show];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Demo 尚未配置 SDKAPPID，请前往 GenerateTestUserSig.h 配置" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleCancel handler:nil]];
+        [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
     }else{
         [[TUIKit sharedInstance] setupWithAppId:SDKAPPID];
     }
@@ -421,7 +422,7 @@ void uncaughtExceptionHandler(NSException*exception){
     
     TUITabBarItem *setItem = [[TUITabBarItem alloc] init];
     setItem.title = @"我";
-    setItem.selectedImage = [UIImage imageNamed:@"setting_pressed")];
+    setItem.selectedImage = [UIImage imageNamed:@"setting_pressed"];
     setItem.normalImage = [UIImage imageNamed:@"setting_normal"];
     setItem.controller = [[TNavigationController alloc] initWithRootViewController:[[SettingController alloc] init]];
     [items addObject:setItem];
@@ -436,8 +437,49 @@ void uncaughtExceptionHandler(NSException*exception){
     switch (status) {
         case TUser_Status_ForceOffline:
         {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"下线通知" message:@"您的帐号于另一台手机上登录。" delegate:self cancelButtonTitle:@"退出" otherButtonTitles:@"重新登录", nil];
-            [alertView show];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"下线通知" message:@"您的帐号于另一台手机上登录。" preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"重新登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                /****此处未提供reLogin接口，而是直接使用保存在本地的数据登录，仅适用于Demo体验版本****/
+                NSNumber *appId = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_Appid];
+                NSString *identifier = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_User];
+                NSString *userSig = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_Sig];
+                if([appId integerValue] == SDKAPPID && identifier.length != 0 && userSig.length != 0){
+                    __weak typeof(self) ws = self;
+                    TIMLoginParam *param = [[TIMLoginParam alloc] init];
+                    param.identifier = identifier;
+                    param.userSig = userSig;
+                    [[TIMManager sharedInstance] login:param succ:^{
+                        if (ws.deviceToken) {
+                            TIMTokenParam *param = [[TIMTokenParam alloc] init];
+                            /* 用户自己到苹果注册开发者证书，在开发者帐号中下载并生成证书(p12 文件)，将生成的 p12 文件传到腾讯证书管理控制台，控制台会自动生成一个证书 ID，将证书 ID 传入一下 busiId 参数中。*/
+                            //企业证书 ID
+                            param.busiId = sdkBusiId;
+                            [param setToken:ws.deviceToken];
+                            [[TIMManager sharedInstance] setToken:param succ:^{
+                                NSLog(@"-----> 上传 token 成功 ");
+                            } fail:^(int code, NSString *msg) {
+                                NSLog(@"-----> 上传 token 失败 ");
+                            }];
+                        }
+                        ws.window.rootViewController = [self getMainController];
+                    } fail:^(int code, NSString *msg) {
+                        [[NSUserDefaults standardUserDefaults] setObject:@(0) forKey:Key_UserInfo_Appid];
+                        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:Key_UserInfo_User];
+                        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:Key_UserInfo_Pwd];
+                        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:Key_UserInfo_Sig];
+                        ws.window.rootViewController = [self getLoginController];
+                    }];
+                }
+                else{
+                    self.window.rootViewController = [self getLoginController];
+                }
+            }]];
+            [alert addAction:[UIAlertAction actionWithTitle:@"退出" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+                LoginController *login = [board instantiateViewControllerWithIdentifier:@"LoginController"];
+                self.window.rootViewController = login;
+            }]];
+            [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
         }
             break;
         case TUser_Status_ReConnFailed:
@@ -452,53 +494,6 @@ void uncaughtExceptionHandler(NSException*exception){
             break;
         default:
             break;
-    }
-}
-
-
-/**
- *强制下线后的响应函数委托
- */
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if(buttonIndex == 0){
-        UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-        LoginController *login = [board instantiateViewControllerWithIdentifier:@"LoginController"];
-        self.window.rootViewController = login;
-    }else if(buttonIndex == 1){
-        /****此处未提供reLogin接口，而是直接使用保存在本地的数据登录，仅适用于Demo体验版本****/
-        NSNumber *appId = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_Appid];
-        NSString *identifier = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_User];
-        NSString *userSig = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_Sig];
-        if([appId integerValue] == SDKAPPID && identifier.length != 0 && userSig.length != 0){
-            __weak typeof(self) ws = self;
-            TIMLoginParam *param = [[TIMLoginParam alloc] init];
-            param.identifier = identifier;
-            param.userSig = userSig;
-            [[TIMManager sharedInstance] login:param succ:^{
-                if (ws.deviceToken) {
-                    TIMTokenParam *param = [[TIMTokenParam alloc] init];
-                    /* 用户自己到苹果注册开发者证书，在开发者帐号中下载并生成证书(p12 文件)，将生成的 p12 文件传到腾讯证书管理控制台，控制台会自动生成一个证书 ID，将证书 ID 传入一下 busiId 参数中。*/
-                    //企业证书 ID
-                    param.busiId = sdkBusiId;
-                    [param setToken:ws.deviceToken];
-                    [[TIMManager sharedInstance] setToken:param succ:^{
-                        NSLog(@"-----> 上传 token 成功 ");
-                    } fail:^(int code, NSString *msg) {
-                        NSLog(@"-----> 上传 token 失败 ");
-                    }];
-                }
-                ws.window.rootViewController = [self getMainController];
-            } fail:^(int code, NSString *msg) {
-                [[NSUserDefaults standardUserDefaults] setObject:@(0) forKey:Key_UserInfo_Appid];
-                [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:Key_UserInfo_User];
-                [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:Key_UserInfo_Pwd];
-                [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:Key_UserInfo_Sig];
-                ws.window.rootViewController = [self getLoginController];
-            }];
-        }
-        else{
-            self.window.rootViewController = [self getLoginController];
-        }
     }
 }
 

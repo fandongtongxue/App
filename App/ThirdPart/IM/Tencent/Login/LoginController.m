@@ -22,12 +22,14 @@
 - (IBAction)login:(id)sender {
     __weak typeof(self) ws = self;
     if (SDKAPPID == 0 || [SECRETKEY isEqual: @""]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Demo 尚未配置 sdkAppid 和加密密钥，请前往 GenerateTestUserSig.h 配置" message:nil delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
-        [alert show];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Demo 尚未配置 sdkAppid 和加密密钥，请前往 GenerateTestUserSig.h 配置" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
     }
     else if ([_userNameTextFeild.text isEqual: @""]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"请输入用户名！" message:nil delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
-        [alert show];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请输入用户名！" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
     }
     else{
         TIMLoginParam *param = [[TIMLoginParam alloc] init];
@@ -65,8 +67,9 @@
                 [ws presentViewController:[((AppDelegate *)[UIApplication sharedApplication].delegate) getMainController] animated:YES completion:nil];
             });;
         } fail:^(int code, NSString *msg) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"code:%d msdg:%@ ,请检查 sdkappid,identifier,userSig 是否正确配置",code,msg] message:nil delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
-            [alert show];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"code:%d msdg:%@ ,请检查 sdkappid,identifier,userSig 是否正确配置",code,msg] message:nil preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:nil]];
+            [self presentViewController:alert animated:YES completion:nil];
         }];
     }
 }
