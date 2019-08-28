@@ -5,6 +5,13 @@
 //  Created by annidyfeng on 2019/3/11.
 //  Copyright © 2019年 kennethmiao. All rights reserved.
 //
+/** 腾讯云IM Demo 用户信息视图
+ *  本文件实现了用户信息的视图，在您想要查看其他用户信息时提供UI
+ *  在这里，用户是指非好友身份的其他用户
+ *  好友信息视图请查看TUIKitDemo/Contact/TFriendProfileController
+ *
+ *  本类依赖于腾讯云 TUIKit和IMSDK 实现
+ */
 
 #import "TUserProfileController.h"
 #import "TUIProfileCardCell.h"
@@ -20,23 +27,30 @@
 #import "TIMUserProfile+DataProvider.h"
 #import "Toast/Toast.h"
 #import "TUIKit.h"
-@import ImSDK;
+#import "TUIGroupPendencyCellData.h"
+#import "TCommonPendencyCellData.h"
+#import "TUIImageViewController.h"
+#import "TUIAvatarViewController.h"
+#import <ImSDK/ImSDK.h>
 
 @TCServiceRegister(TUIUserProfileControllerServiceProtocol, TUserProfileController)
 
 @interface TUserProfileController ()
-@property NSMutableArray<TCommonTextCellData *> *dataList;
-@property UITableViewHeaderFooterView *footer;
+@property NSMutableArray<NSArray *> *dataList;
 @end
 
 @implementation TUserProfileController
 {
     TIMUserProfile *_userProfile;
     ProfileControllerAction _actionType;
+    TUIGroupPendencyCellData *_groupPendency;
+    TCommonPendencyCellData *_pendency;
 }
 
 @synthesize userProfile = _userProfile;
 @synthesize actionType = _actionType;
+@synthesize groupPendency = _groupPendency;
+@synthesize pendency = _pendency;
 
 - (instancetype)init
 {
@@ -54,25 +68,64 @@
     [super viewDidLoad];
     
     self.title = @"详细资料";
+    self.clearsSelectionOnViewWillAppear = YES;
 
     [self.tableView registerClass:[TCommonTextCell class] forCellReuseIdentifier:@"TextCell"];
+    [self.tableView registerClass:[TUIProfileCardCell class] forCellReuseIdentifier:@"CardCell"];
+    [self.tableView registerClass:[TUIButtonCell class] forCellReuseIdentifier:@"ButtonCell"];
+    
+    //如果不加这一行代码，依然可以实现点击反馈，但反馈会有轻微延迟，体验不好。
+    self.tableView.delaysContentTouches = NO;
     
     [self loadData];
 }
 
+
+/**
+ * 加载视图信息
+ */
 - (void)loadData
 {
-    
     NSMutableArray *list = @[].mutableCopy;
     [list addObject:({
-        TCommonTextCellData *data = TCommonTextCellData.new;
-        data.key = @"昵称";
-        data.value = [self.userProfile showName];
-        data;
+        NSMutableArray *inlist = @[].mutableCopy;
+        [inlist addObject:({
+            TUIProfileCardCellData *personal = [[TUIProfileCardCellData alloc] init];
+            personal.identifier = self.userProfile.identifier;
+            personal.avatarImage = DefaultAvatarImage;
+            personal.avatarUrl = [NSURL URLWithString:self.userProfile.faceURL];
+            personal.name = [self.userProfile showName];
+            personal.genderString = [self.userProfile showGender];
+            personal.signature = [self.userProfile showSignature];
+            personal.reuseId = @"CardCell";
+            personal;
+        })];
+        inlist;
     })];
-    self.dataList = list;
-    self.footer = [[UITableViewHeaderFooterView alloc] initWithFrame:CGRectMake(0, 0, self.view.mm_w, 80)];
     
+    //当用户状态为请求添加好友/请求添加群组时，视图加载出验证消息模块
+    if (self.pendency || self.groupPendency) {
+        [list addObject:({
+            NSMutableArray *inlist = @[].mutableCopy;
+            [inlist addObject:({
+                TCommonTextCellData *data = TCommonTextCellData.new;
+                data.key = @"验证消息";
+                if (self.pendency) {
+                    data.value = self.pendency.addWording;
+                } else if (self.groupPendency) {
+                    data.value = self.groupPendency.requestMsg;
+                }
+                data.reuseId = @"TextCell";
+                data;
+            })];
+            inlist;
+        })];
+    }
+    
+    
+    self.dataList = list;
+    
+    //当用户为陌生人时，在当前视图给出"加好友"按钮
     if (self.actionType == PCA_ADD_FRIEND) {
         TIMFriendCheckInfo *ck = TIMFriendCheckInfo.new;
         ck.users = @[self.userProfile.identifier];
@@ -82,99 +135,117 @@
             if (result.resultType == TIM_FRIEND_RELATION_TYPE_MY_UNI || result.resultType == TIM_FRIEND_RELATION_TYPE_BOTHWAY) {
                 return;
             }
-           
             
-            UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-            [self.footer addSubview:btn2];
-            [btn2 setTitle:@"加好友" forState:UIControlStateNormal];
-            [btn2 setBackgroundColor:[UIColor blueColor]];
-            [btn2 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            btn2.mm_left(12).mm_height(48).mm_top(20).mm_flexToRight(12);
-            [btn2 addTarget:self action:@selector(onAddFriend) forControlEvents:UIControlEventTouchUpInside];
             
+            [self.dataList addObject:({
+                NSMutableArray *inlist = @[].mutableCopy;
+                [inlist addObject:({
+                    TUIButtonCellData *data = TUIButtonCellData.new;
+                    data.title = @"加好友";
+                    data.style = ButtonGreen;
+                    data.cbuttonSelector = @selector(onAddFriend);
+                    data.reuseId = @"ButtonCell";
+                    data;
+                })];
+                inlist;
+            })];
             [self.tableView reloadData];
         } fail:^(int code, NSString *msg) {
             
         }];
     }
     
+    //当用户请求添加使用者为好友时，在当前视图给出"同意"、"拒绝"，使当前用户进行选择
     if (self.actionType == PCA_PENDENDY_CONFIRM) {
-        UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        [self.footer addSubview:btn2];
-        [btn2 setTitle:@"拒绝" forState:UIControlStateNormal];
-        [btn2 setBackgroundColor:[UIColor redColor]];
-        [btn2 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        btn2.mm_left(12).mm_height(48).mm_top(20).mm_width((self.view.mm_w-36)/2);
-        [btn2 addTarget:self action:@selector(onRejectFriend) forControlEvents:UIControlEventTouchUpInside];
-        
-        UIButton *btn3 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        [self.footer addSubview:btn3];
-        [btn3 setTitle:@"同意" forState:UIControlStateNormal];
-        [btn3 setBackgroundColor:[UIColor blueColor]];
-        [btn3 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        btn3.mm_height(48).mm_top(20).mm_width((self.view.mm_w-36)/2).mm_right(12);
-        [btn3 addTarget:self action:@selector(onAgreeFriend) forControlEvents:UIControlEventTouchUpInside];
+        [self.dataList addObject:({
+            NSMutableArray *inlist = @[].mutableCopy;
+            [inlist addObject:({
+                TUIButtonCellData *data = TUIButtonCellData.new;
+                data.title = @"同意";
+                data.style = ButtonGreen;
+                data.cbuttonSelector = @selector(onAgreeFriend);
+                data.reuseId = @"ButtonCell";
+                data;
+            })];
+            [inlist addObject:({
+                TUIButtonCellData *data = TUIButtonCellData.new;
+                data.title = @"拒绝";
+                data.style = ButtonRedText;
+                data.cbuttonSelector =  @selector(onRejectFriend);
+                data.reuseId = @"ButtonCell";
+                data;
+            })];
+            inlist;
+        })];
+    }
+    
+    //当用户请求加入群组时，在当前视图给出"同意"、"拒绝"，使当前群组管理员进行选择
+    if (self.actionType == PCA_GROUP_CONFIRM) {
+        [self.dataList addObject:({
+            NSMutableArray *inlist = @[].mutableCopy;
+            [inlist addObject:({
+                TUIButtonCellData *data = TUIButtonCellData.new;
+                data.title = @"同意";
+                data.style = ButtonGreen;
+                data.cbuttonSelector = @selector(onAgreeGroup);
+                data.reuseId = @"ButtonCell";
+                data;
+            })];
+            [inlist addObject:({
+                TUIButtonCellData *data = TUIButtonCellData.new;
+                data.title = @"拒绝";
+                data.style = ButtonRedText;
+                data.cbuttonSelector =  @selector(onRejectGroup);
+                data.reuseId = @"ButtonCell";
+                data;
+            })];
+            inlist;
+        })];
     }
     
     [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
+/**
+ *  tableView数据源函数
+ */
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.dataList.count;
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.dataList[section].count;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    TCommonTextCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextCell" forIndexPath:indexPath];
-    [cell fillWithData:self.dataList[indexPath.row]];
+    
+    TCommonCellData *data = self.dataList[indexPath.section][indexPath.row];
+    TCommonTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:data.reuseId forIndexPath:indexPath];
+    //如果是 profileCard 的话，添加委托。
+    if([cell isKindOfClass:[TUIProfileCardCell class]]){
+        TUIProfileCardCell *cardCell = (TUIProfileCardCell *)cell;
+        cardCell.delegate = self;
+        cell = cardCell;
+    }
+    [cell fillWithData:data];
     
     return cell;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath
 {
-    UITableViewHeaderFooterView *header = [[UITableViewHeaderFooterView alloc] initWithFrame:CGRectMake(0, 0, self.view.mm_w, 120)];
-    UIImageView *avatarView = [[UIImageView alloc] initWithFrame:CGRectZero];
-    [header addSubview:avatarView];
-    if (self.userProfile.faceURL) {
-        [avatarView sd_setImageWithURL:[NSURL URLWithString:self.userProfile.faceURL] placeholderImage:DefaultAvatarImage];
-    } else {
-        [avatarView setImage:DefaultAvatarImage];
-    }
-    avatarView.layer.cornerRadius = 40;
-    avatarView.layer.masksToBounds = YES;
-    avatarView.mm_width(80).mm_height(80).mm_center();
-    
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
-    [header addSubview:label];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.mm_width(header.mm_w).mm_top(avatarView.mm_maxY+10).mm_height(20);
-    label.text = self.userProfile.identifier;
-    label.font = [UIFont preferredFontForTextStyle:UIFontTextStyleFootnote];
-    
-    return header;
+    TCommonCellData *data = self.dataList[indexPath.section][indexPath.row];
+    return [data heightOfWidth:Screen_Width];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 160;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    return self.footer;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    return 80;
-}
-
+/**
+ *  点击 发送信息 按钮后执行的函数
+ */
 - (void)onSendMessage
 {
     TUIConversationCellData *data = [[TUIConversationCellData alloc] init];
@@ -186,6 +257,9 @@
     [self.navigationController pushViewController:chat animated:YES];
 }
 
+/**
+ *  点击 加好友 按钮后执行的函数
+ */
 - (void)onAddFriend
 {
     FriendRequestViewController *vc = [FriendRequestViewController new];
@@ -193,32 +267,50 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+/**
+ *  点击 同意(好友) 按钮后执行的函数
+ */
 - (void)onAgreeFriend
 {
-    TIMFriendResponse *rsp = TIMFriendResponse.new;
-    rsp.identifier = self.userProfile.identifier;
-    rsp.responseType = TIM_FRIEND_RESPONSE_AGREE_AND_ADD;
-    [[TIMFriendshipManager sharedInstance] doResponse:rsp succ:^(TIMFriendResult *result) {
-        [self.toastView makeToast:@"已发送"];
-    } fail:^(int code, NSString *msg) {
-        [self.toastView makeToast:msg];
-    }];
+    [self.pendency agree];
 }
 
 - (void)onRejectFriend
 {
-    TIMFriendResponse *rsp = TIMFriendResponse.new;
-    rsp.identifier = self.userProfile.identifier;;
-    rsp.responseType = TIM_FRIEND_RESPONSE_REJECT;
-    [[TIMFriendshipManager sharedInstance] doResponse:rsp succ:^(TIMFriendResult *result) {
-        [self.toastView makeToast:@"已发送"];
-    } fail:^(int code, NSString *msg) {
-        [self.toastView makeToast:msg];
-    }];
+    [self.pendency reject];
+}
+
+- (void)onAgreeGroup
+{
+    [self.groupPendency accept];
+}
+
+- (void)onRejectGroup
+{
+    [self.groupPendency reject];
 }
 
 - (UIView *)toastView
 {
     return [UIApplication sharedApplication].keyWindow;
 }
+
+-(void)didSelectAvatar{
+    TUIAvatarViewController *image = [[TUIAvatarViewController alloc] init];
+    image.avatarData.avatarUrl = [NSURL URLWithString:self.userProfile.faceURL];
+    NSArray *list = self.dataList;
+    NSLog(@"%@",list);
+    
+    [self.navigationController pushViewController:image animated:YES];
+}
+
+/**
+ *  点击头像查看大图的委托实现
+ */
+-(void)didTapOnAvatar:(TUIProfileCardCell *)cell{
+    TUIAvatarViewController *image = [[TUIAvatarViewController alloc] init];
+    image.avatarData = cell.cardData;
+    [self.navigationController pushViewController:image animated:YES];
+}
+
 @end
