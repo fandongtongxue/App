@@ -11,12 +11,8 @@
 #import <Bugly/Bugly.h>
 
 #import <UMCommon/UMCommon.h>
-#import <UMPush/UMessage.h>
-#import <UserNotifications/UserNotifications.h>
 
 #import <XHLaunchAd/XHLaunchAd.h>
-
-#import <Matrix/Matrix.h>
 
 #import "FDTabBarController.h"
 #import "FDNavigationController.h"
@@ -37,25 +33,17 @@
 #import "ImSDK.h"
 #import "GenerateTestUserSig.h"
 
-@interface AppDelegate ()<UNUserNotificationCenterDelegate,XHLaunchAdDelegate,BuglyDelegate,MatrixPluginListenerDelegate>
+@interface AppDelegate ()<XHLaunchAdDelegate,BuglyDelegate>
 
 @end
 
 @implementation AppDelegate (ThirdPart)
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
-    
-    // QMUIConsole 默认只在 DEBUG 下会显示，作为 Demo，改为不管什么环境都允许显示
-    [QMUIConsole sharedInstance].canShow = YES;
-    
-    // QD自定义的全局样式渲染
-    [QDCommonUI renderGlobalAppearances];
-    
-    // 预加载 QQ 表情，避免第一次使用时卡顿
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        [QDUIHelper qmuiEmotions];
-    });
-    
+    NSString *resourcePath = [[NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"TUIKitResource" ofType:@"bundle"]] resourcePath];
+    NSLog(@"resourcePath:%@",resourcePath);
+    NSString *decc = NSHomeDirectory();
+    NSLog(@"decc:%@",decc);
     //设置你工程的启动页使用的是:LaunchImage 还是 LaunchScreen.storyboard(不设置默认:LaunchImage)
     [XHLaunchAd setLaunchSourceType:SourceTypeLaunchImage];
     
@@ -76,34 +64,12 @@
     
     // 界面
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [self createTabBarController];
     
     //加载初始化数据
     [[GlobalManager manager] loadData];
     
-    // Push's basic setting
-    UMessageRegisterEntity * entity = [[UMessageRegisterEntity alloc] init];
-    //type是对推送的几个参数的选择，可以选择一个或者多个。默认是三个全部打开，即：声音，弹窗，角标
-    entity.types = UMessageAuthorizationOptionBadge|UMessageAuthorizationOptionAlert;
-    if (@available(iOS 10.0, *)) {
-        [UNUserNotificationCenter currentNotificationCenter].delegate=self;
-    } else {
-        //do nothing
-    }
-    [UMessage registerForRemoteNotificationsWithLaunchOptions:launchOptions Entity:entity completionHandler:^(BOOL granted, NSError * _Nullable error) {
-        if (granted) {
-        }else
-        {
-        }
-    }];
-    
     //注册第三方
     [self registerApp];
-    
-    //RootViewController
-    [self createTabBarController];
-    
-    [self.window makeKeyAndVisible];
     
     //必须登录
 //    if ([GlobalManager manager].globalModel.isMustLogin) {
@@ -125,23 +91,6 @@
     fileLogger.rollingFrequency = 60 * 60 * 24; // 刷新频率为24小时
     fileLogger.logFileManager.maximumNumberOfLogFiles = 7; // 保存一周的日志，即7天
     [DDLog addLogger:fileLogger];
-    
-    //腾讯Debug
-    Matrix *matrix = [Matrix sharedInstance];
-    MatrixBuilder *curBuilder = [[MatrixBuilder alloc] init];
-    curBuilder.pluginListener = self; // pluginListener 回调 plugin 的相关事件
-    
-    WCCrashBlockMonitorPlugin *crashBlockPlugin = [[WCCrashBlockMonitorPlugin alloc] init];
-    [curBuilder addPlugin:crashBlockPlugin]; // 添加卡顿和崩溃监控
-    
-    WCMemoryStatPlugin *memoryStatPlugin = [[WCMemoryStatPlugin alloc] init];
-    [curBuilder addPlugin:memoryStatPlugin]; // 添加内存监控功能
-    
-    [matrix addMatrixBuilder:curBuilder];
-    
-    [crashBlockPlugin start]; // 开启卡顿和崩溃监控
-    // [memoryStatPlugin start];
-    // 开启内存监控，注意 memoryStatPlugin 开启之后对性能损耗较大，建议按需开启
     
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserStatus:) name:TUIKitNotification_TIMUserStatusListener object:nil];
@@ -191,7 +140,8 @@
     else{
         self.window.rootViewController = [self getLoginController];
     }
-    
+    [self createTabBarController];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
@@ -283,9 +233,6 @@
     
     [Bugly setUserValue:[NSProcessInfo processInfo].processName forKey:@"Process"];
     
-    [UMessage openDebugMode:YES];
-    [UMessage setWebViewClassString:@"UMWebViewController"];
-    [UMessage addLaunchMessage];
 }
 
 void uncaughtExceptionHandler(NSException*exception){
@@ -312,56 +259,6 @@ void uncaughtExceptionHandler(NSException*exception){
     }
 }
 
-#pragma mark - Push
-//iOS10以下使用这两个方法接收通知，
--(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
-    [UMessage setAutoAlert:NO];
-    if([[[UIDevice currentDevice] systemVersion]intValue] < 10){
-        [UMessage didReceiveRemoteNotification:userInfo];
-        completionHandler(UIBackgroundFetchResultNewData);
-    }
-}
-
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
-    //关闭友盟自带的弹出框
-    [UMessage setAutoAlert:NO];
-    [UMessage didReceiveRemoteNotification:userInfo];
-}
-
-#pragma mark - UNUserNotificationCenterDelegate
-//iOS10新增:处理前台收到通知的代理方法
--(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler API_AVAILABLE(ios(10.0)){
-    NSDictionary * userInfo = notification.request.content.userInfo;
-    if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
-        //应用处于前台时的远程推送接受
-        //关闭U-Push自带的弹出框
-        [UMessage setAutoAlert:NO];
-        //必须加这句代码
-        [UMessage didReceiveRemoteNotification:userInfo];
-        
-    }else{
-        //应用处于前台时的本地推送接受
-    }
-    //当应用处于前台时提示设置，需要哪个可以设置哪一个
-    completionHandler(UNNotificationPresentationOptionSound|UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionAlert);
-}
-
-//iOS10新增:处理后台点击通知的代理方法
--(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler API_AVAILABLE(ios(10.0)){
-    NSDictionary * userInfo = response.notification.request.content.userInfo;
-    if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
-        //应用处于后台时的远程推送接受
-        //必须加这句代码
-        [UMessage didReceiveRemoteNotification:userInfo];
-    }else{
-        //应用处于后台时的本地推送接受
-    }
-}
-
-- (void)userNotificationCenter:(UNUserNotificationCenter *)center openSettingsForNotification:(nullable UNNotification *)notification API_AVAILABLE(ios(10.0)){
-    
-}
-
 #pragma mark - XHLaunchAdDelegate
 - (void)xhLaunchAdShowFinish:(XHLaunchAd *)launchAd{
     
@@ -374,27 +271,6 @@ void uncaughtExceptionHandler(NSException*exception){
 #pragma mark - BuglyDelegate
 - (NSString * BLY_NULLABLE)attachmentForException:(NSException * BLY_NULLABLE)exception{
     return @"";
-}
-
-#pragma mark - MatrixPluginListenerDelegate
-- (void)onInit:(id<MatrixPluginProtocol>)plugin{
-    DDLogDebug(@"%s",__func__);
-}
-
-- (void)onStart:(id<MatrixPluginProtocol>)plugin{
-    DDLogDebug(@"%s",__func__);
-}
-
-- (void)onStop:(id<MatrixPluginProtocol>)plugin{
-    DDLogDebug(@"%s",__func__);
-}
-
-- (void)onDestroy:(id<MatrixPluginProtocol>)plugin{
-    DDLogDebug(@"%s",__func__);
-}
-
-- (void)onReportIssue:(MatrixIssue *)issue{
-    DDLogDebug(@"%s",__func__);
 }
 
 - (UIViewController *)getLoginController{

@@ -33,7 +33,6 @@
 #import "TIMUserProfile+DataProvider.h"
 #import <ImSDK/ImSDK.h>
 
-
 @interface ContactsController () <TPopViewDelegate>
 
 @end

@@ -25,15 +25,6 @@ PODS:
   - HappyDNS (0.3.15)
   - ISVImageScrollView (0.1.2)
   - Masonry (1.1.0)
-  - matrix-wechat (0.6.0):
-    - matrix-wechat/matrixARC (= 0.6.0)
-    - matrix-wechat/matrixNonARC1 (= 0.6.0)
-    - matrix-wechat/matrixNonARC2 (= 0.6.0)
-  - matrix-wechat/matrixARC (0.6.0):
-    - matrix-wechat/matrixNonARC1
-  - matrix-wechat/matrixNonARC1 (0.6.0)
-  - matrix-wechat/matrixNonARC2 (0.6.0):
-    - matrix-wechat/matrixARC
   - MJExtension (3.1.0)
   - MJRefresh (3.2.0)
   - MLeaksFinder (1.0.0):
@@ -333,8 +324,6 @@ PODS:
   - UMCAnalytics (6.0.5):
     - UMCCommon
   - UMCCommon (2.1.1)
-  - UMCPush (3.2.4):
-    - UMCCommon
   - UMCSecurityPlugins (1.0.6)
   - UMCShare/Core (6.9.6):
     - UMCCommon
@@ -376,7 +365,6 @@ DEPENDENCIES:
   - CocoaLumberjack
   - FDFullscreenPopGesture
   - Masonry
-  - matrix-wechat
   - MJExtension
   - MJRefresh
   - MLeaksFinder
@@ -396,7 +384,6 @@ DEPENDENCIES:
   - TXIMSDK_TUIKit_iOS
   - UMCAnalytics
   - UMCCommon
-  - UMCPush
   - UMCSecurityPlugins
   - UMCShare/Social/QQ
   - UMCShare/Social/ReducedWeChat
@@ -420,7 +407,6 @@ SPEC REPOS:
     - HappyDNS
     - ISVImageScrollView
     - Masonry
-    - matrix-wechat
     - MJExtension
     - MJRefresh
     - MLeaksFinder
@@ -441,7 +427,6 @@ SPEC REPOS:
     - TXIMSDK_TUIKit_iOS
     - UMCAnalytics
     - UMCCommon
-    - UMCPush
     - UMCSecurityPlugins
     - UMCShare
     - XHLaunchAd
@@ -468,7 +453,6 @@ SPEC CHECKSUMS:
   HappyDNS: 00c15e651a347206e58a20503a32a5564589b56a
   ISVImageScrollView: ba511d12a1661b40feb8921309c0854bf93ec749
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  matrix-wechat: d8dcd9fc42649f20908e6fe4498f9bdb18e60d1c
   MJExtension: 6b69b3bef2864fd550ce1a184eda219e321209d2
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
@@ -490,13 +474,12 @@ SPEC CHECKSUMS:
   TXIMSDK_TUIKit_iOS: c6ba8a30b963e2a076fdaacc5ac42e5ad43f18c0
   UMCAnalytics: 045be2cd1ec05aa95ad62405a850757f932e2d59
   UMCCommon: 971f324a5a99c9d662ae040a815e7e3d7ef8b2a8
-  UMCPush: 1edd856027dcf905333effb4040ace5d236a7316
   UMCSecurityPlugins: 0831a08f3988f3cea9f1d3a7626cd9bee4fef150
   UMCShare: e0cef55c0fd6051254c8cda1d0630eb578b27bad
   XHLaunchAd: 45048592af01aa501c9d2d0c45e95ca74c4d0596
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
   ZFPlayer: b2ba40c924e1b9a7f0a670632c4235ffbe6ee055
 
-PODFILE CHECKSUM: fdd9bf0ce120bbb01325a2fc4b9e54c7d7cf86c6
+PODFILE CHECKSUM: b150184adccd1db33ae4c069a26069cd1417748f
 
-COCOAPODS: 1.8.0.beta.1
+COCOAPODS: 1.8.0.beta.2
