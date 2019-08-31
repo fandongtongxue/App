@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4921A4527F9422A2FC869784 /* Pods_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28EDAE5573319FD1924CF5E8 /* Pods_App.framework */; };
 		6D022097229F6C56001FF792 /* FDNotificationName.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D022096229F6C56001FF792 /* FDNotificationName.m */; };
+		6D141853231A55620063067F /* TUIKitFace.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6D141851231A55620063067F /* TUIKitFace.bundle */; };
+		6D141854231A55620063067F /* TUIKitResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6D141852231A55620063067F /* TUIKitResource.bundle */; };
 		6D36CA8F228117E10046FA8C /* GlobalManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D36CA8B228117E10046FA8C /* GlobalManager.m */; };
 		6D36CA90228117E10046FA8C /* GlobalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D36CA8E228117E10046FA8C /* GlobalModel.m */; };
 		6D3790D222D0978B00A6B9AE /* FDQiniuManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3790D122D0978B00A6B9AE /* FDQiniuManager.m */; };
@@ -130,6 +132,8 @@
 		28EDAE5573319FD1924CF5E8 /* Pods_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D022095229F6C56001FF792 /* FDNotificationName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDNotificationName.h; sourceTree = "<group>"; };
 		6D022096229F6C56001FF792 /* FDNotificationName.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDNotificationName.m; sourceTree = "<group>"; };
+		6D141851231A55620063067F /* TUIKitFace.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TUIKitFace.bundle; path = Pods/TXIMSDK_TUIKit_iOS/TUIKit/Resources/TUIKitFace.bundle; sourceTree = SOURCE_ROOT; };
+		6D141852231A55620063067F /* TUIKitResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TUIKitResource.bundle; path = Pods/TXIMSDK_TUIKit_iOS/TUIKit/Resources/TUIKitResource.bundle; sourceTree = SOURCE_ROOT; };
 		6D36CA8A228117E10046FA8C /* GlobalManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalManager.h; sourceTree = "<group>"; };
 		6D36CA8B228117E10046FA8C /* GlobalManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalManager.m; sourceTree = "<group>"; };
 		6D36CA8D228117E10046FA8C /* GlobalModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalModel.h; sourceTree = "<group>"; };
@@ -782,6 +786,8 @@
 		6DEC84F42276DB50000BCB3C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6D141851231A55620063067F /* TUIKitFace.bundle */,
+				6D141852231A55620063067F /* TUIKitResource.bundle */,
 				6D5F989022EE8FAE009C3E10 /* data.sqlite */,
 				CB6E67C82279EECC00D3788E /* Localizable.strings */,
 				CB8C26FB226CBCAA0058DAEE /* main.m */,
@@ -1251,6 +1257,7 @@
 				6D405CE522D027D4008D5316 /* FDVideoCallViewController.xib in Resources */,
 				CB8C26F6226CBCAA0058DAEE /* Assets.xcassets in Resources */,
 				6D618A482316077000F7D0A1 /* 00.caf in Resources */,
+				6D141853231A55620063067F /* TUIKitFace.bundle in Resources */,
 				6D405CF822D06CE3008D5316 /* VideoMedia.xcassets in Resources */,
 				6D618A412316077000F7D0A1 /* IMAssets.xcassets in Resources */,
 				6DEC85132276DB50000BCB3C /* AlibabaSans-Regular.otf in Resources */,
@@ -1259,6 +1266,7 @@
 				6DEC85172276DB50000BCB3C /* AlibabaSans-Italic.otf in Resources */,
 				CBC6FB1D22844CED00EAF915 /* register_guide_video.mp4 in Resources */,
 				6DEC850F2276DB50000BCB3C /* Alibaba-PuHuiTi-Medium.otf in Resources */,
+				6D141854231A55620063067F /* TUIKitResource.bundle in Resources */,
 				6D59879B229E662500113597 /* AlipaySDK.bundle in Resources */,
 				6D618A462316077000F7D0A1 /* 11.caf in Resources */,
 				6D618A472316077000F7D0A1 /* 10.caf in Resources */,
