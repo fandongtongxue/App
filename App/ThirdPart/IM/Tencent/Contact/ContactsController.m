@@ -5,6 +5,12 @@
 //  Created by annidyfeng on 2019/3/25.
 //  Copyright © 2019年 kennethmiao. All rights reserved.
 //
+/** 腾讯云IM Demo好友列表视图
+ *  本文件实现了好友列表的视图控制器，使用户可以浏览自己的好友、群组并对其进行管理
+ *  本文件所实现的视图控制器，对应了下方barItemView中的 "通讯录" 视图
+ *
+ *  本类依赖于腾讯云 TUIKit和IMSDK 实现
+ */
 
 #import "ContactsController.h"
 #import "TUIContactController.h"
@@ -25,8 +31,7 @@
 #import "ChatViewController.h"
 #import "TUIContactSelectController.h"
 #import "TIMUserProfile+DataProvider.h"
-@import ImSDK;
-
+#import <ImSDK/ImSDK.h>
 
 @interface ContactsController () <TPopViewDelegate>
 
@@ -50,6 +55,9 @@
     self.navigationItem.rightBarButtonItem = moreItem;
     
     self.title = @"通讯录";
+    
+    //如果不加这一行代码，依然可以实现点击反馈，但反馈会有轻微延迟，体验不好。
+    self.tableView.delaysContentTouches = NO;
 }
 
 
@@ -57,6 +65,9 @@
     
 }
 
+/**
+ *在导航栏中添加右侧按钮，使用popView展示进一步的内容
+ */
 - (void)onRightItem:(UIButton *)rightBarButton;
 {
     NSMutableArray *menus = [NSMutableArray array];
@@ -84,10 +95,12 @@
 - (void)popView:(TPopView *)popView didSelectRowAtIndex:(NSInteger)index
 {
     if(index == 0){
+        //添加好友
         UIViewController *add = [[SearchFriendViewController alloc] init];
         [self.navigationController pushViewController:add animated:YES];
     }
     if(index == 1){
+        //添加群组
         UIViewController *add = [[SearchGroupViewController alloc] init];
         [self.navigationController pushViewController:add animated:YES];
     }

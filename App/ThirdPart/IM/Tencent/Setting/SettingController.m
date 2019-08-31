@@ -5,14 +5,19 @@
 //  Created by kennethmiao on 2018/10/19.
 //  Copyright © 2018年 Tencent. All rights reserved.
 //
-
+/** 腾讯云IM Demo 设置主界面视图
+ *  本文件实现了设置视图控制器，即TabBar内 "我" 按钮对应的视图
+ *
+ *  您可以在此处查看、并修改您的个人信息，或是执行退出登录等操作
+ *
+ *  本类依赖于腾讯云 TUIKit和IMSDK 实现
+ */
 #import "SettingController.h"
 #import "LoginController.h"
 #import "AppDelegate.h"
 #import "TUIProfileCardCell.h"
 #import "TUIButtonCell.h"
 #import "THeader.h"
-#import "TAlertView.h"
 #import "IMMessageExt.h"
 #import "TTextEditController.h"
 #import "TDateEditController.h"
@@ -25,8 +30,11 @@
 #import "ReactiveObjC/ReactiveObjC.h"
 #import "UIImage+TUIKIT.h"
 #import "TUIKit.h"
+#import "ProfileController.h"
+#import "PAirSandbox.h"
+#import "TUIAvatarViewController.h"
 
-@import ImSDK;
+#import <ImSDK/ImSDK.h>
 
 #define SHEET_COMMON 1
 #define SHEET_AGREE  2
@@ -47,6 +55,9 @@
     return shareInstance;
 }
 
+/**
+ *获取签名
+ */
 - (NSString *)getSignature:(TIMUserProfile *)profile
 {
     NSString *ret = [super getSignature:profile];
@@ -55,12 +66,15 @@
     return @"暂无个性签名";
 }
 
+/**
+ *获取所在地
+ */
 - (NSString *)getLocation:(TIMUserProfile *)profile
 {
     NSString *ret = [super getLocation:profile];
     if (ret.length != 0)
         return ret;
-    return @"未知";
+    return @"未设置";
 }
 
 @end
@@ -68,6 +82,7 @@
 @interface SettingController () <UIActionSheetDelegate>
 @property (nonatomic, strong) NSMutableArray *data;
 @property TIMUserProfile *profile;
+@property (nonatomic, strong) TUIProfileCardCellData *profileCellData;
 @end
 
 @implementation SettingController
@@ -76,7 +91,20 @@
     [super viewDidLoad];
     [[TCServiceManager shareInstance] registerService:@protocol(TUIUserProfileDataProviderServiceProtocol) implClass:[MyUserProfileExpresser class]];
     [self setupViews];
+    
+    //如果不加这一行代码，依然可以实现点击反馈，但反馈会有轻微延迟，体验不好。
+    self.tableView.delaysContentTouches = NO;
 
+}
+
+//在此处设置一次 setuoData，才能使得“我”界面消息更新。否则由于 UITabBar 的维护，“我”界面的消息将一直无法更新。
+- (void)viewWillAppear:(BOOL)animated{
+ [[TIMFriendshipManager sharedInstance] getSelfProfile:^(TIMUserProfile *profile) {
+ self.profile = profile;
+ [self setupData];
+ } fail:^(int code, NSString *msg) {
+ 
+ }];
 }
 
 - (void)setupViews
@@ -99,6 +127,9 @@
     }];
 }
 
+/**
+ *初始化视图显示数据
+ */
 - (void)setupData
 {
 
@@ -107,34 +138,15 @@
     TUIProfileCardCellData *personal = [[TUIProfileCardCellData alloc] init];
     personal.identifier = self.profile.identifier;
     personal.avatarImage = DefaultAvatarImage;
+    personal.avatarUrl = [NSURL URLWithString:self.profile.faceURL];
     personal.name = [self.profile showName];
+    personal.genderString = [self.profile showGender];
     personal.signature = [self.profile showSignature];
     personal.cselector = @selector(didSelectCommon);
     personal.showAccessory = YES;
+    self.profileCellData = personal;
     [_data addObject:@[personal]];
-    
-    TCommonTextCellData *birthdayData = [TCommonTextCellData new];
-    birthdayData.key = @"生日";
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"YYYY年M月d日";
-    if ([self.profile showBirthday])
-        birthdayData.value = [formatter stringFromDate:[self.profile showBirthday]];
-    birthdayData.showAccessory = YES;
-    birthdayData.cselector = @selector(didSelectBirthday);
-    
-    TCommonTextCellData *sexData = [TCommonTextCellData new];
-    sexData.key = @"性别";
-    sexData.value = [self.profile showGender];
-    sexData.showAccessory = YES;
-    sexData.cselector = @selector(didSelectSex);
-    
-    TCommonTextCellData *localData = [TCommonTextCellData new];
-    localData.key = @"所在地";
-    localData.value = [self.profile showLocation];
-    localData.showAccessory = YES;
-    localData.cselector = @selector(didSelectLocal);
-    [_data addObject:@[birthdayData, sexData, localData]];
-    
+
     
     TCommonTextCellData *friendApply = [TCommonTextCellData new];
     friendApply.key = @"好友申请";
@@ -162,6 +174,12 @@
     about.cselector = @selector(didSelectAbout);
     [_data addObject:@[about]];
     
+    TCommonTextCellData *log = [TCommonTextCellData new];
+    log.key = @"开发调试";
+    log.showAccessory = YES;
+    log.cselector = @selector(didSelectLog);
+    [_data addObject:@[log]];
+    
     TUIButtonCellData *button =  [[TUIButtonCellData alloc] init];
     button.title = @"退出登录";
     button.style = ButtonRedText;
@@ -171,6 +189,9 @@
     [self.tableView reloadData];
 }
 #pragma mark - Table view data source
+/**
+ *  tableView委托函数
+ */
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return _data.count;
@@ -204,6 +225,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -211,6 +233,8 @@
     NSObject *data = array[indexPath.row];
     if([data isKindOfClass:[TUIProfileCardCellData class]]){
         TUIProfileCardCell *cell = [tableView dequeueReusableCellWithIdentifier:@"personalCell" forIndexPath:indexPath];
+        //设置 profileCard 的委托
+        cell.delegate = self;
         [cell fillWithData:(TUIProfileCardCellData *)data];
         return cell;
     }
@@ -231,65 +255,20 @@
 
 - (void)didSelectCommon
 {
-    UIActionSheet *sheet = [[UIActionSheet alloc] init];
-    sheet.tag = SHEET_COMMON;
-    [sheet addButtonWithTitle:@"修改昵称"];
-    [sheet addButtonWithTitle:@"修改个性签名"];
-    [sheet setCancelButtonIndex:[sheet addButtonWithTitle:@"取消"]];
-    [sheet setDelegate:self];
-    [sheet showInView:self.view];
+    [self setupData];
+    //点击个人资料，跳转到详细界面。
+    ProfileController *test = [[ProfileController alloc] init];
+    [self.navigationController pushViewController:test animated:YES];
+
 }
 
-- (void)didSelectChangeNick
-{
-    TTextEditController *vc = [[TTextEditController alloc] initWithText:self.profile.nickname];
-    vc.title = @"修改昵称";
-    [self.navigationController pushViewController:vc animated:YES];
-    @weakify(self)
-    [[RACObserve(vc, textValue) skip:1] subscribeNext:^(NSString *x) {
-        @strongify(self)
-        self.profile.nickname = x;
-        [self setupData];
-        [[TIMFriendshipManager sharedInstance] modifySelfProfile:@{TIMProfileTypeKey_Nick: x}
-                                                            succ:nil fail:nil];
-    }];
-}
-
-- (void)didSelectChangeSignature
-{
-    TTextEditController *vc = [[TTextEditController alloc] initWithText:[self.profile showSignature]];
-    vc.title = @"修改个性签名";
-    [self.navigationController pushViewController:vc animated:YES];
-    
-    @weakify(self)
-    [[RACObserve(vc, textValue) skip:1] subscribeNext:^(NSString *x) {
-        @strongify(self)
-        self.profile.selfSignature = [x dataUsingEncoding:NSUTF8StringEncoding];
-        [self setupData];
-        [[TIMFriendshipManager sharedInstance] modifySelfProfile:@{TIMProfileTypeKey_SelfSignature: x}
-                                                            succ:nil fail:nil];
-    }];
-}
-
-- (void)didSelectLocal
-{
-    TTextEditController *vc = [[TTextEditController alloc] initWithText:[self.profile showLocation]];
-    vc.title = @"修改所在地";
-    [self.navigationController pushViewController:vc animated:YES];
-    @weakify(self)
-    [[RACObserve(vc, textValue) skip:1] subscribeNext:^(NSString *x) {
-        @strongify(self)
-        self.profile.location = [x dataUsingEncoding:NSUTF8StringEncoding];
-        [self setupData];
-        [[TIMFriendshipManager sharedInstance] modifySelfProfile:@{TIMProfileTypeKey_Location: x}
-                                                            succ:nil fail:nil];
-    }];
-}
-
+/**
+ *点击 消息提醒 后执行的函数，使用户能够对消息提醒模式作出设置
+ *消息提醒视图可以阅读 NotifySetupController.m 详细了解
+ */
 - (void)didSelectNotifySet
 {
     [[TIMManager sharedInstance] getAPNSConfig:^(TIMAPNSConfig *config){
-        
         NotifySetupController *vc = [[NotifySetupController alloc] init:config];
         [self.navigationController pushViewController:vc animated:YES];
     } fail:^(int code, NSString *err){
@@ -297,33 +276,9 @@
     }];
 }
 
-- (void)didSelectBirthday
-{
-    TDateEditController *vc = [[TDateEditController alloc] initWithDate:[self.profile showBirthday]];
-    vc.title = @"修改生日";
-    [self.navigationController pushViewController:vc animated:YES];
-    @weakify(self)
-    [[RACObserve(vc, dateValue) skip:1] subscribeNext:^(NSDate *value) {
-        @strongify(self)
-        [self.profile setShowBirthday:value];
-        [self setupData];
-        [[TIMFriendshipManager sharedInstance] modifySelfProfile:@{TIMProfileTypeKey_Birthday: @(self.profile.birthday)}
-                                                            succ:nil fail:nil];
-    }];
-}
-
-- (void)didSelectSex
-{
-    UIActionSheet *sheet = [[UIActionSheet alloc] init];
-    sheet.tag = SHEET_SEX;
-    sheet.title = @"修改性别";
-    [sheet addButtonWithTitle:@"男"];
-    [sheet addButtonWithTitle:@"女"];
-    [sheet setCancelButtonIndex:[sheet addButtonWithTitle:@"取消"]];
-    [sheet setDelegate:self];
-    [sheet showInView:self.view];
-}
-
+/**
+ *点击 退出登录 后执行的函数，负责账户登出的操作
+ */
 - (void)logout:(TUIButtonCell *)cell
 {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"确定退出吗" message:nil preferredStyle:UIAlertControllerStyleAlert];
@@ -345,48 +300,30 @@
     }];
 }
 
+/**
+ *点击 好友申请 后执行的函数，使用户能够设置自己审核好友申请的程度
+ */
 - (void)onEditFriendApply
 {
-    UIActionSheet *sheet = [[UIActionSheet alloc] init];
-    sheet.tag = SHEET_AGREE;
-    [sheet addButtonWithTitle:@"同意任何用户加好友"];
-    [sheet addButtonWithTitle:@"需要验证"];
-    [sheet addButtonWithTitle:@"拒绝任何人加好友"];
-    [sheet setCancelButtonIndex:[sheet addButtonWithTitle:@"取消"]];
-    [sheet setDelegate:self];
-    [sheet showInView:self.view];
-}
-
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (actionSheet.tag == SHEET_AGREE) {
-        if (buttonIndex >= 3)
-            return;
-        self.profile.allowType = buttonIndex;
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    [alert addAction:[UIAlertAction actionWithTitle:@"同意任何用户加好友" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        self.profile.allowType = 0;
         [self setupData];
-        [[TIMFriendshipManager sharedInstance] modifySelfProfile:@{TIMProfileTypeKey_AllowType:[NSNumber numberWithInteger:buttonIndex]} succ:nil fail:nil];
-    }
-    if (actionSheet.tag == SHEET_COMMON) {
-        if (buttonIndex == 0) {
-            [self didSelectChangeNick];
-        }
-        if (buttonIndex == 1) {
-            [self didSelectChangeSignature];
-        }
-    }
-    if (actionSheet.tag == SHEET_SEX) {
-        TIMGender gender = TIM_GENDER_UNKNOWN;
-        if (buttonIndex == 0) {
-            gender = TIM_GENDER_MALE;
-        }
-        if (buttonIndex == 1) {
-            gender = TIM_GENDER_FEMALE;
-        }
-        self.profile.gender = gender;
+        [[TIMFriendshipManager sharedInstance] modifySelfProfile:@{TIMProfileTypeKey_AllowType:[NSNumber numberWithInteger:0]} succ:nil fail:nil];
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"需要验证" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        self.profile.allowType = 1;
         [self setupData];
-        [[TIMFriendshipManager sharedInstance] modifySelfProfile:@{TIMProfileTypeKey_Gender: @(gender)}
-                                                            succ:nil fail:nil];
-    }
+        [[TIMFriendshipManager sharedInstance] modifySelfProfile:@{TIMProfileTypeKey_AllowType:[NSNumber numberWithInteger:1]} succ:nil fail:nil];
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"拒绝任何人加好友" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        self.profile.allowType = 2;
+        [self setupData];
+        [[TIMFriendshipManager sharedInstance] modifySelfProfile:@{TIMProfileTypeKey_AllowType:[NSNumber numberWithInteger:2]} succ:nil fail:nil];
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+    [self presentViewController:alert animated:YES completion:nil];
+    [self setupData];
 }
 
 - (void)didLogoutInSettingController:(SettingController *)controller
@@ -409,5 +346,19 @@
     } else {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://cloud.tencent.com/product/im"]];
     }
+}
+
+- (void)didSelectLog
+{
+    [[PAirSandbox sharedInstance] showSandboxBrowser];
+}
+
+/**
+ *  点击头像查看大图的委托实现。
+ */
+-(void)didTapOnAvatar:(TUIProfileCardCell *)cell{
+    TUIAvatarViewController *image = [[TUIAvatarViewController alloc] init];
+    image.avatarData = cell.cardData;
+    [self.navigationController pushViewController:image animated:YES];
 }
 @end

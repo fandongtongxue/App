@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		4921A4527F9422A2FC869784 /* Pods_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28EDAE5573319FD1924CF5E8 /* Pods_App.framework */; };
 		6D022097229F6C56001FF792 /* FDNotificationName.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D022096229F6C56001FF792 /* FDNotificationName.m */; };
+		6D141853231A55620063067F /* TUIKitFace.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6D141851231A55620063067F /* TUIKitFace.bundle */; };
+		6D141854231A55620063067F /* TUIKitResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6D141852231A55620063067F /* TUIKitResource.bundle */; };
+		6D14185C231A64630063067F /* MusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D14185B231A64630063067F /* MusicViewController.m */; };
+		6D14185F231A64830063067F /* MusicCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D14185E231A64830063067F /* MusicCategoryModel.m */; };
+		6D141862231A64C90063067F /* MusicCategoryApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D141861231A64C90063067F /* MusicCategoryApi.m */; };
+		6D141865231A686E0063067F /* MusicCategoryControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D141864231A686E0063067F /* MusicCategoryControl.m */; };
 		6D36CA8F228117E10046FA8C /* GlobalManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D36CA8B228117E10046FA8C /* GlobalManager.m */; };
 		6D36CA90228117E10046FA8C /* GlobalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D36CA8E228117E10046FA8C /* GlobalModel.m */; };
 		6D3790D222D0978B00A6B9AE /* FDQiniuManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3790D122D0978B00A6B9AE /* FDQiniuManager.m */; };
@@ -29,12 +35,41 @@
 		6D59879C229E662500113597 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D598794229E662500113597 /* AlipaySDK.framework */; };
 		6D59879D229E662500113597 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6D598798229E662500113597 /* README.txt */; };
 		6D59879E229E662500113597 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D59879A229E662500113597 /* libWeChatSDK.a */; };
+		6D5F988C22EE7D1F009C3E10 /* FDKeyName.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5F988B22EE7D1F009C3E10 /* FDKeyName.m */; };
+		6D618A322316077000F7D0A1 /* TFriendProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6189F62316077000F7D0A1 /* TFriendProfileController.m */; };
+		6D618A332316077000F7D0A1 /* SearchGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6189F82316077000F7D0A1 /* SearchGroupViewController.m */; };
+		6D618A342316077000F7D0A1 /* SearchFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6189FC2316077000F7D0A1 /* SearchFriendViewController.m */; };
+		6D618A352316077000F7D0A1 /* FriendRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6189FD2316077000F7D0A1 /* FriendRequestViewController.m */; };
+		6D618A362316077000F7D0A1 /* GroupRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6189FE2316077000F7D0A1 /* GroupRequestViewController.m */; };
+		6D618A372316077000F7D0A1 /* ContactsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D618A002316077000F7D0A1 /* ContactsController.m */; };
+		6D618A382316077000F7D0A1 /* GroupMemberController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D618A032316077000F7D0A1 /* GroupMemberController.m */; };
+		6D618A392316077000F7D0A1 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D618A042316077000F7D0A1 /* ChatViewController.m */; };
+		6D618A3A2316077000F7D0A1 /* TUserProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D618A052316077000F7D0A1 /* TUserProfileController.m */; };
+		6D618A3B2316077000F7D0A1 /* GroupInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D618A062316077000F7D0A1 /* GroupInfoController.m */; };
+		6D618A3C2316077000F7D0A1 /* MyCustomCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D618A092316077000F7D0A1 /* MyCustomCellData.m */; };
+		6D618A3D2316077000F7D0A1 /* MyCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D618A0C2316077000F7D0A1 /* MyCustomCell.m */; };
+		6D618A3F2316077000F7D0A1 /* PAirSandbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D618A122316077000F7D0A1 /* PAirSandbox.m */; };
+		6D618A402316077000F7D0A1 /* TCUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D618A142316077000F7D0A1 /* TCUtil.m */; };
+		6D618A412316077000F7D0A1 /* IMAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D618A172316077000F7D0A1 /* IMAssets.xcassets */; };
+		6D618A422316077000F7D0A1 /* Aspects.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D618A1A2316077000F7D0A1 /* Aspects.m */; };
+		6D618A432316077000F7D0A1 /* NotifySetupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D618A1D2316077000F7D0A1 /* NotifySetupController.m */; };
+		6D618A442316077000F7D0A1 /* SettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D618A1F2316077000F7D0A1 /* SettingController.m */; };
+		6D618A452316077000F7D0A1 /* ProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D618A202316077000F7D0A1 /* ProfileController.m */; };
+		6D618A462316077000F7D0A1 /* 11.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6D618A232316077000F7D0A1 /* 11.caf */; };
+		6D618A472316077000F7D0A1 /* 10.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6D618A242316077000F7D0A1 /* 10.caf */; };
+		6D618A482316077000F7D0A1 /* 00.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6D618A252316077000F7D0A1 /* 00.caf */; };
+		6D618A492316077000F7D0A1 /* 01.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6D618A262316077000F7D0A1 /* 01.caf */; };
+		6D618A4A2316077000F7D0A1 /* TCLoginParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D618A282316077000F7D0A1 /* TCLoginParam.m */; };
+		6D618A4B2316077000F7D0A1 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D618A292316077000F7D0A1 /* LoginController.m */; };
+		6D618A4C2316077000F7D0A1 /* GenerateTestUserSig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D618A2D2316077000F7D0A1 /* GenerateTestUserSig.m */; };
+		6D618A4D2316077000F7D0A1 /* ConversationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D618A302316077000F7D0A1 /* ConversationController.m */; };
 		6D74C528227575D500332AAC /* AppDelegate+Launch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D74C527227575D500332AAC /* AppDelegate+Launch.m */; };
 		6D9DF5AD2277CE9400FB9CFC /* FDSocialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DF5AC2277CE9400FB9CFC /* FDSocialManager.m */; };
 		6D9DF5B12277D79B00FB9CFC /* UIViewController+FD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DF5B02277D79B00FB9CFC /* UIViewController+FD.m */; };
 		6D9DF5B52277EC1D00FB9CFC /* FDSocialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DF5B42277EC1D00FB9CFC /* FDSocialModel.m */; };
 		6DA3F89A22C45F1600E1CA2A /* FDIMManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA3F89922C45F1500E1CA2A /* FDIMManager.m */; };
 		6DC591C722767CB600813DAB /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DC591C622767CB500813DAB /* CoreMotion.framework */; };
+		6DCE88CF22EA934A00CAFA15 /* FDKVManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCE88CE22EA934A00CAFA15 /* FDKVManager.m */; };
 		6DD3119122B879C60043B5EE /* FDPCASVApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD3119022B879C60043B5EE /* FDPCASVApi.m */; };
 		6DEC850B2276DB50000BCB3C /* 版权申明.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC84F62276DB50000BCB3C /* 版权申明.rtf */; };
 		6DEC850C2276DB50000BCB3C /* Alibaba-PuHuiTi-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC84F82276DB50000BCB3C /* Alibaba-PuHuiTi-Bold.otf */; };
@@ -65,31 +100,6 @@
 		6DEF409622B3745F00A88CE2 /* QDCommonListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF408822B3745F00A88CE2 /* QDCommonListViewController.m */; };
 		6DEF409722B3745F00A88CE2 /* QDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF408B22B3745F00A88CE2 /* QDNavigationController.m */; };
 		6DEF409822B3745F00A88CE2 /* QDCommonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF408C22B3745F00A88CE2 /* QDCommonTableViewController.m */; };
-		6DF019BB22C46AF800B30D54 /* TFriendProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF0198422C46AF700B30D54 /* TFriendProfileController.m */; };
-		6DF019BC22C46AF800B30D54 /* SearchGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF0198622C46AF700B30D54 /* SearchGroupViewController.m */; };
-		6DF019BD22C46AF800B30D54 /* SearchFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF0198A22C46AF700B30D54 /* SearchFriendViewController.m */; };
-		6DF019BE22C46AF800B30D54 /* FriendRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF0198B22C46AF700B30D54 /* FriendRequestViewController.m */; };
-		6DF019BF22C46AF800B30D54 /* GroupRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF0198C22C46AF700B30D54 /* GroupRequestViewController.m */; };
-		6DF019C022C46AF800B30D54 /* ContactsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF0198E22C46AF700B30D54 /* ContactsController.m */; };
-		6DF019C122C46AF800B30D54 /* GroupMemberController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF0199122C46AF700B30D54 /* GroupMemberController.m */; };
-		6DF019C222C46AF800B30D54 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF0199222C46AF700B30D54 /* ChatViewController.m */; };
-		6DF019C322C46AF800B30D54 /* TUserProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF0199322C46AF700B30D54 /* TUserProfileController.m */; };
-		6DF019C422C46AF800B30D54 /* GroupInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF0199422C46AF700B30D54 /* GroupInfoController.m */; };
-		6DF019C522C46AF800B30D54 /* MyCustomCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF0199722C46AF700B30D54 /* MyCustomCellData.m */; };
-		6DF019C622C46AF800B30D54 /* MyCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF0199A22C46AF700B30D54 /* MyCustomCell.m */; };
-		6DF019C822C46AF800B30D54 /* TCUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF019A122C46AF700B30D54 /* TCUtil.m */; };
-		6DF019C922C46AF800B30D54 /* IMAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DF019A322C46AF700B30D54 /* IMAssets.xcassets */; };
-		6DF019CA22C46AF800B30D54 /* Aspects.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF019A622C46AF700B30D54 /* Aspects.m */; };
-		6DF019CB22C46AF800B30D54 /* NotifySetupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF019A922C46AF700B30D54 /* NotifySetupController.m */; };
-		6DF019CC22C46AF800B30D54 /* SettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF019AA22C46AF800B30D54 /* SettingController.m */; };
-		6DF019CD22C46AF800B30D54 /* 11.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6DF019AD22C46AF800B30D54 /* 11.caf */; };
-		6DF019CE22C46AF800B30D54 /* 10.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6DF019AE22C46AF800B30D54 /* 10.caf */; };
-		6DF019CF22C46AF800B30D54 /* 00.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6DF019AF22C46AF800B30D54 /* 00.caf */; };
-		6DF019D022C46AF800B30D54 /* 01.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6DF019B022C46AF800B30D54 /* 01.caf */; };
-		6DF019D122C46AF800B30D54 /* TCLoginParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF019B322C46AF800B30D54 /* TCLoginParam.m */; };
-		6DF019D222C46AF800B30D54 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF019B422C46AF800B30D54 /* LoginController.m */; };
-		6DF019D322C46AF800B30D54 /* UserSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF019B622C46AF800B30D54 /* UserSelectView.m */; };
-		6DF019D422C46AF800B30D54 /* ConversationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF019B922C46AF800B30D54 /* ConversationController.m */; };
 		6DF3B6EF22D4709200BAF1C0 /* FDSQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF3B6EE22D4709200BAF1C0 /* FDSQLiteManager.m */; };
 		6DF535CF22D8665C006FCD3F /* FDAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF535CE22D8665C006FCD3F /* FDAddressModel.m */; };
 		CB1980D6229EBAFF00AA1002 /* FDPayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1980D5229EBAFF00AA1002 /* FDPayManager.m */; };
@@ -126,6 +136,16 @@
 		28EDAE5573319FD1924CF5E8 /* Pods_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D022095229F6C56001FF792 /* FDNotificationName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDNotificationName.h; sourceTree = "<group>"; };
 		6D022096229F6C56001FF792 /* FDNotificationName.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDNotificationName.m; sourceTree = "<group>"; };
+		6D141851231A55620063067F /* TUIKitFace.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TUIKitFace.bundle; path = Pods/TXIMSDK_TUIKit_iOS/TUIKit/Resources/TUIKitFace.bundle; sourceTree = SOURCE_ROOT; };
+		6D141852231A55620063067F /* TUIKitResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TUIKitResource.bundle; path = Pods/TXIMSDK_TUIKit_iOS/TUIKit/Resources/TUIKitResource.bundle; sourceTree = SOURCE_ROOT; };
+		6D14185A231A64630063067F /* MusicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicViewController.h; sourceTree = "<group>"; };
+		6D14185B231A64630063067F /* MusicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicViewController.m; sourceTree = "<group>"; };
+		6D14185D231A64830063067F /* MusicCategoryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicCategoryModel.h; sourceTree = "<group>"; };
+		6D14185E231A64830063067F /* MusicCategoryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicCategoryModel.m; sourceTree = "<group>"; };
+		6D141860231A64C90063067F /* MusicCategoryApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicCategoryApi.h; sourceTree = "<group>"; };
+		6D141861231A64C90063067F /* MusicCategoryApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicCategoryApi.m; sourceTree = "<group>"; };
+		6D141863231A686E0063067F /* MusicCategoryControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicCategoryControl.h; sourceTree = "<group>"; };
+		6D141864231A686E0063067F /* MusicCategoryControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicCategoryControl.m; sourceTree = "<group>"; };
 		6D36CA8A228117E10046FA8C /* GlobalManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalManager.h; sourceTree = "<group>"; };
 		6D36CA8B228117E10046FA8C /* GlobalManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalManager.m; sourceTree = "<group>"; };
 		6D36CA8D228117E10046FA8C /* GlobalModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalModel.h; sourceTree = "<group>"; };
@@ -161,6 +181,59 @@
 		6D598798229E662500113597 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		6D598799229E662500113597 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
 		6D59879A229E662500113597 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		6D5F988A22EE7D1F009C3E10 /* FDKeyName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDKeyName.h; sourceTree = "<group>"; };
+		6D5F988B22EE7D1F009C3E10 /* FDKeyName.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDKeyName.m; sourceTree = "<group>"; };
+		6D5F989022EE8FAE009C3E10 /* data.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = data.sqlite; sourceTree = "<group>"; };
+		6D6189F52316077000F7D0A1 /* SearchFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchFriendViewController.h; sourceTree = "<group>"; };
+		6D6189F62316077000F7D0A1 /* TFriendProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFriendProfileController.m; sourceTree = "<group>"; };
+		6D6189F72316077000F7D0A1 /* FriendRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendRequestViewController.h; sourceTree = "<group>"; };
+		6D6189F82316077000F7D0A1 /* SearchGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchGroupViewController.m; sourceTree = "<group>"; };
+		6D6189F92316077000F7D0A1 /* GroupRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupRequestViewController.h; sourceTree = "<group>"; };
+		6D6189FA2316077000F7D0A1 /* ContactsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsController.h; sourceTree = "<group>"; };
+		6D6189FB2316077000F7D0A1 /* TFriendProfileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFriendProfileController.h; sourceTree = "<group>"; };
+		6D6189FC2316077000F7D0A1 /* SearchFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchFriendViewController.m; sourceTree = "<group>"; };
+		6D6189FD2316077000F7D0A1 /* FriendRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendRequestViewController.m; sourceTree = "<group>"; };
+		6D6189FE2316077000F7D0A1 /* GroupRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupRequestViewController.m; sourceTree = "<group>"; };
+		6D6189FF2316077000F7D0A1 /* SearchGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchGroupViewController.h; sourceTree = "<group>"; };
+		6D618A002316077000F7D0A1 /* ContactsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsController.m; sourceTree = "<group>"; };
+		6D618A022316077000F7D0A1 /* GroupInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupInfoController.h; sourceTree = "<group>"; };
+		6D618A032316077000F7D0A1 /* GroupMemberController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupMemberController.m; sourceTree = "<group>"; };
+		6D618A042316077000F7D0A1 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		6D618A052316077000F7D0A1 /* TUserProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUserProfileController.m; sourceTree = "<group>"; };
+		6D618A062316077000F7D0A1 /* GroupInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupInfoController.m; sourceTree = "<group>"; };
+		6D618A072316077000F7D0A1 /* GroupMemberController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupMemberController.h; sourceTree = "<group>"; };
+		6D618A092316077000F7D0A1 /* MyCustomCellData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomCellData.m; sourceTree = "<group>"; };
+		6D618A0A2316077000F7D0A1 /* MyCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomCell.h; sourceTree = "<group>"; };
+		6D618A0B2316077000F7D0A1 /* MyCustomCellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomCellData.h; sourceTree = "<group>"; };
+		6D618A0C2316077000F7D0A1 /* MyCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomCell.m; sourceTree = "<group>"; };
+		6D618A0D2316077000F7D0A1 /* TUserProfileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUserProfileController.h; sourceTree = "<group>"; };
+		6D618A0E2316077000F7D0A1 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		6D618A112316077000F7D0A1 /* TCUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCUtil.h; sourceTree = "<group>"; };
+		6D618A122316077000F7D0A1 /* PAirSandbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAirSandbox.m; sourceTree = "<group>"; };
+		6D618A132316077000F7D0A1 /* TCConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCConstants.h; sourceTree = "<group>"; };
+		6D618A142316077000F7D0A1 /* TCUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCUtil.m; sourceTree = "<group>"; };
+		6D618A162316077000F7D0A1 /* PAirSandbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAirSandbox.h; sourceTree = "<group>"; };
+		6D618A172316077000F7D0A1 /* IMAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = IMAssets.xcassets; sourceTree = "<group>"; };
+		6D618A192316077000F7D0A1 /* Aspects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aspects.h; sourceTree = "<group>"; };
+		6D618A1A2316077000F7D0A1 /* Aspects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Aspects.m; sourceTree = "<group>"; };
+		6D618A1C2316077000F7D0A1 /* SettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingController.h; sourceTree = "<group>"; };
+		6D618A1D2316077000F7D0A1 /* NotifySetupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotifySetupController.m; sourceTree = "<group>"; };
+		6D618A1E2316077000F7D0A1 /* ProfileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileController.h; sourceTree = "<group>"; };
+		6D618A1F2316077000F7D0A1 /* SettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingController.m; sourceTree = "<group>"; };
+		6D618A202316077000F7D0A1 /* ProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileController.m; sourceTree = "<group>"; };
+		6D618A212316077000F7D0A1 /* NotifySetupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotifySetupController.h; sourceTree = "<group>"; };
+		6D618A232316077000F7D0A1 /* 11.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 11.caf; sourceTree = "<group>"; };
+		6D618A242316077000F7D0A1 /* 10.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 10.caf; sourceTree = "<group>"; };
+		6D618A252316077000F7D0A1 /* 00.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 00.caf; sourceTree = "<group>"; };
+		6D618A262316077000F7D0A1 /* 01.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 01.caf; sourceTree = "<group>"; };
+		6D618A282316077000F7D0A1 /* TCLoginParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCLoginParam.m; sourceTree = "<group>"; };
+		6D618A292316077000F7D0A1 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
+		6D618A2A2316077000F7D0A1 /* TCLoginParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCLoginParam.h; sourceTree = "<group>"; };
+		6D618A2B2316077000F7D0A1 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
+		6D618A2D2316077000F7D0A1 /* GenerateTestUserSig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenerateTestUserSig.m; sourceTree = "<group>"; };
+		6D618A2E2316077000F7D0A1 /* GenerateTestUserSig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenerateTestUserSig.h; sourceTree = "<group>"; };
+		6D618A302316077000F7D0A1 /* ConversationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationController.m; sourceTree = "<group>"; };
+		6D618A312316077000F7D0A1 /* ConversationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationController.h; sourceTree = "<group>"; };
 		6D74C526227575D500332AAC /* AppDelegate+Launch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Launch.h"; sourceTree = "<group>"; };
 		6D74C527227575D500332AAC /* AppDelegate+Launch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Launch.m"; sourceTree = "<group>"; };
 		6D800E102293D4A800BC8BB8 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
@@ -174,6 +247,8 @@
 		6DA3F89822C45F1500E1CA2A /* FDIMManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDIMManager.h; sourceTree = "<group>"; };
 		6DA3F89922C45F1500E1CA2A /* FDIMManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDIMManager.m; sourceTree = "<group>"; };
 		6DC591C622767CB500813DAB /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		6DCE88CD22EA934A00CAFA15 /* FDKVManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDKVManager.h; sourceTree = "<group>"; };
+		6DCE88CE22EA934A00CAFA15 /* FDKVManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDKVManager.m; sourceTree = "<group>"; };
 		6DD3118F22B879C60043B5EE /* FDPCASVApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDPCASVApi.h; sourceTree = "<group>"; };
 		6DD3119022B879C60043B5EE /* FDPCASVApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDPCASVApi.m; sourceTree = "<group>"; };
 		6DEC84F62276DB50000BCB3C /* 版权申明.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "版权申明.rtf"; sourceTree = "<group>"; };
@@ -218,52 +293,6 @@
 		6DEF408A22B3745F00A88CE2 /* QDCommonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCommonViewController.h; sourceTree = "<group>"; };
 		6DEF408B22B3745F00A88CE2 /* QDNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDNavigationController.m; sourceTree = "<group>"; };
 		6DEF408C22B3745F00A88CE2 /* QDCommonTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCommonTableViewController.m; sourceTree = "<group>"; };
-		6DF0198322C46AF700B30D54 /* SearchFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchFriendViewController.h; sourceTree = "<group>"; };
-		6DF0198422C46AF700B30D54 /* TFriendProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFriendProfileController.m; sourceTree = "<group>"; };
-		6DF0198522C46AF700B30D54 /* FriendRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendRequestViewController.h; sourceTree = "<group>"; };
-		6DF0198622C46AF700B30D54 /* SearchGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchGroupViewController.m; sourceTree = "<group>"; };
-		6DF0198722C46AF700B30D54 /* GroupRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupRequestViewController.h; sourceTree = "<group>"; };
-		6DF0198822C46AF700B30D54 /* ContactsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsController.h; sourceTree = "<group>"; };
-		6DF0198922C46AF700B30D54 /* TFriendProfileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFriendProfileController.h; sourceTree = "<group>"; };
-		6DF0198A22C46AF700B30D54 /* SearchFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchFriendViewController.m; sourceTree = "<group>"; };
-		6DF0198B22C46AF700B30D54 /* FriendRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendRequestViewController.m; sourceTree = "<group>"; };
-		6DF0198C22C46AF700B30D54 /* GroupRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupRequestViewController.m; sourceTree = "<group>"; };
-		6DF0198D22C46AF700B30D54 /* SearchGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchGroupViewController.h; sourceTree = "<group>"; };
-		6DF0198E22C46AF700B30D54 /* ContactsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsController.m; sourceTree = "<group>"; };
-		6DF0199022C46AF700B30D54 /* GroupInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupInfoController.h; sourceTree = "<group>"; };
-		6DF0199122C46AF700B30D54 /* GroupMemberController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupMemberController.m; sourceTree = "<group>"; };
-		6DF0199222C46AF700B30D54 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
-		6DF0199322C46AF700B30D54 /* TUserProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUserProfileController.m; sourceTree = "<group>"; };
-		6DF0199422C46AF700B30D54 /* GroupInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupInfoController.m; sourceTree = "<group>"; };
-		6DF0199522C46AF700B30D54 /* GroupMemberController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupMemberController.h; sourceTree = "<group>"; };
-		6DF0199722C46AF700B30D54 /* MyCustomCellData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomCellData.m; sourceTree = "<group>"; };
-		6DF0199822C46AF700B30D54 /* MyCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomCell.h; sourceTree = "<group>"; };
-		6DF0199922C46AF700B30D54 /* MyCustomCellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomCellData.h; sourceTree = "<group>"; };
-		6DF0199A22C46AF700B30D54 /* MyCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomCell.m; sourceTree = "<group>"; };
-		6DF0199B22C46AF700B30D54 /* TUserProfileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUserProfileController.h; sourceTree = "<group>"; };
-		6DF0199C22C46AF700B30D54 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
-		6DF0199F22C46AF700B30D54 /* TCUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCUtil.h; sourceTree = "<group>"; };
-		6DF019A022C46AF700B30D54 /* TCConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCConstants.h; sourceTree = "<group>"; };
-		6DF019A122C46AF700B30D54 /* TCUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCUtil.m; sourceTree = "<group>"; };
-		6DF019A322C46AF700B30D54 /* IMAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = IMAssets.xcassets; sourceTree = "<group>"; };
-		6DF019A522C46AF700B30D54 /* Aspects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aspects.h; sourceTree = "<group>"; };
-		6DF019A622C46AF700B30D54 /* Aspects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Aspects.m; sourceTree = "<group>"; };
-		6DF019A822C46AF700B30D54 /* SettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingController.h; sourceTree = "<group>"; };
-		6DF019A922C46AF700B30D54 /* NotifySetupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotifySetupController.m; sourceTree = "<group>"; };
-		6DF019AA22C46AF800B30D54 /* SettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingController.m; sourceTree = "<group>"; };
-		6DF019AB22C46AF800B30D54 /* NotifySetupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotifySetupController.h; sourceTree = "<group>"; };
-		6DF019AD22C46AF800B30D54 /* 11.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 11.caf; sourceTree = "<group>"; };
-		6DF019AE22C46AF800B30D54 /* 10.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 10.caf; sourceTree = "<group>"; };
-		6DF019AF22C46AF800B30D54 /* 00.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 00.caf; sourceTree = "<group>"; };
-		6DF019B022C46AF800B30D54 /* 01.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 01.caf; sourceTree = "<group>"; };
-		6DF019B222C46AF800B30D54 /* UserSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSelectView.h; sourceTree = "<group>"; };
-		6DF019B322C46AF800B30D54 /* TCLoginParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCLoginParam.m; sourceTree = "<group>"; };
-		6DF019B422C46AF800B30D54 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
-		6DF019B522C46AF800B30D54 /* TCLoginParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCLoginParam.h; sourceTree = "<group>"; };
-		6DF019B622C46AF800B30D54 /* UserSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSelectView.m; sourceTree = "<group>"; };
-		6DF019B722C46AF800B30D54 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
-		6DF019B922C46AF800B30D54 /* ConversationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationController.m; sourceTree = "<group>"; };
-		6DF019BA22C46AF800B30D54 /* ConversationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationController.h; sourceTree = "<group>"; };
 		6DF3B6ED22D4709200BAF1C0 /* FDSQLiteManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDSQLiteManager.h; sourceTree = "<group>"; };
 		6DF3B6EE22D4709200BAF1C0 /* FDSQLiteManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDSQLiteManager.m; sourceTree = "<group>"; };
 		6DF535CD22D8665C006FCD3F /* FDAddressModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDAddressModel.h; sourceTree = "<group>"; };
@@ -426,6 +455,53 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6D141855231A63F10063067F /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				6D141859231A642F0063067F /* View */,
+				6D141858231A64240063067F /* API */,
+				6D141857231A64100063067F /* Model */,
+				6D141856231A63FC0063067F /* Controller */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
+		6D141856231A63FC0063067F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6D14185A231A64630063067F /* MusicViewController.h */,
+				6D14185B231A64630063067F /* MusicViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6D141857231A64100063067F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6D14185D231A64830063067F /* MusicCategoryModel.h */,
+				6D14185E231A64830063067F /* MusicCategoryModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6D141858231A64240063067F /* API */ = {
+			isa = PBXGroup;
+			children = (
+				6D141860231A64C90063067F /* MusicCategoryApi.h */,
+				6D141861231A64C90063067F /* MusicCategoryApi.m */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		6D141859231A642F0063067F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6D141863231A686E0063067F /* MusicCategoryControl.h */,
+				6D141864231A686E0063067F /* MusicCategoryControl.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		6D1D784C22D6EB810085D1F3 /* Address */ = {
 			isa = PBXGroup;
 			children = (
@@ -443,6 +519,8 @@
 				6D800E102293D4A800BC8BB8 /* Config.h */,
 				6D022095229F6C56001FF792 /* FDNotificationName.h */,
 				6D022096229F6C56001FF792 /* FDNotificationName.m */,
+				6D5F988A22EE7D1F009C3E10 /* FDKeyName.h */,
+				6D5F988B22EE7D1F009C3E10 /* FDKeyName.m */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -556,9 +634,147 @@
 			path = WeChatPay;
 			sourceTree = "<group>";
 		};
+		6D6189F32316077000F7D0A1 /* Tencent */ = {
+			isa = PBXGroup;
+			children = (
+				6D6189F42316077000F7D0A1 /* Contact */,
+				6D618A012316077000F7D0A1 /* Chat */,
+				6D618A0F2316077000F7D0A1 /* Util */,
+				6D618A172316077000F7D0A1 /* IMAssets.xcassets */,
+				6D618A182316077000F7D0A1 /* Utils */,
+				6D618A1B2316077000F7D0A1 /* Setting */,
+				6D618A222316077000F7D0A1 /* Sound */,
+				6D618A272316077000F7D0A1 /* Login */,
+				6D618A2C2316077000F7D0A1 /* Debug */,
+				6D618A2F2316077000F7D0A1 /* Conversation */,
+			);
+			path = Tencent;
+			sourceTree = "<group>";
+		};
+		6D6189F42316077000F7D0A1 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				6D6189F52316077000F7D0A1 /* SearchFriendViewController.h */,
+				6D6189F62316077000F7D0A1 /* TFriendProfileController.m */,
+				6D6189F72316077000F7D0A1 /* FriendRequestViewController.h */,
+				6D6189F82316077000F7D0A1 /* SearchGroupViewController.m */,
+				6D6189F92316077000F7D0A1 /* GroupRequestViewController.h */,
+				6D6189FA2316077000F7D0A1 /* ContactsController.h */,
+				6D6189FB2316077000F7D0A1 /* TFriendProfileController.h */,
+				6D6189FC2316077000F7D0A1 /* SearchFriendViewController.m */,
+				6D6189FD2316077000F7D0A1 /* FriendRequestViewController.m */,
+				6D6189FE2316077000F7D0A1 /* GroupRequestViewController.m */,
+				6D6189FF2316077000F7D0A1 /* SearchGroupViewController.h */,
+				6D618A002316077000F7D0A1 /* ContactsController.m */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		6D618A012316077000F7D0A1 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				6D618A022316077000F7D0A1 /* GroupInfoController.h */,
+				6D618A032316077000F7D0A1 /* GroupMemberController.m */,
+				6D618A042316077000F7D0A1 /* ChatViewController.m */,
+				6D618A052316077000F7D0A1 /* TUserProfileController.m */,
+				6D618A062316077000F7D0A1 /* GroupInfoController.m */,
+				6D618A072316077000F7D0A1 /* GroupMemberController.h */,
+				6D618A082316077000F7D0A1 /* Custom */,
+				6D618A0D2316077000F7D0A1 /* TUserProfileController.h */,
+				6D618A0E2316077000F7D0A1 /* ChatViewController.h */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		6D618A082316077000F7D0A1 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				6D618A092316077000F7D0A1 /* MyCustomCellData.m */,
+				6D618A0A2316077000F7D0A1 /* MyCustomCell.h */,
+				6D618A0B2316077000F7D0A1 /* MyCustomCellData.h */,
+				6D618A0C2316077000F7D0A1 /* MyCustomCell.m */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		6D618A0F2316077000F7D0A1 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				6D618A112316077000F7D0A1 /* TCUtil.h */,
+				6D618A122316077000F7D0A1 /* PAirSandbox.m */,
+				6D618A132316077000F7D0A1 /* TCConstants.h */,
+				6D618A142316077000F7D0A1 /* TCUtil.m */,
+				6D618A162316077000F7D0A1 /* PAirSandbox.h */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		6D618A182316077000F7D0A1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6D618A192316077000F7D0A1 /* Aspects.h */,
+				6D618A1A2316077000F7D0A1 /* Aspects.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		6D618A1B2316077000F7D0A1 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				6D618A1C2316077000F7D0A1 /* SettingController.h */,
+				6D618A1D2316077000F7D0A1 /* NotifySetupController.m */,
+				6D618A1E2316077000F7D0A1 /* ProfileController.h */,
+				6D618A1F2316077000F7D0A1 /* SettingController.m */,
+				6D618A202316077000F7D0A1 /* ProfileController.m */,
+				6D618A212316077000F7D0A1 /* NotifySetupController.h */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		6D618A222316077000F7D0A1 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				6D618A232316077000F7D0A1 /* 11.caf */,
+				6D618A242316077000F7D0A1 /* 10.caf */,
+				6D618A252316077000F7D0A1 /* 00.caf */,
+				6D618A262316077000F7D0A1 /* 01.caf */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		6D618A272316077000F7D0A1 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6D618A282316077000F7D0A1 /* TCLoginParam.m */,
+				6D618A292316077000F7D0A1 /* LoginController.m */,
+				6D618A2A2316077000F7D0A1 /* TCLoginParam.h */,
+				6D618A2B2316077000F7D0A1 /* LoginController.h */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		6D618A2C2316077000F7D0A1 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				6D618A2D2316077000F7D0A1 /* GenerateTestUserSig.m */,
+				6D618A2E2316077000F7D0A1 /* GenerateTestUserSig.h */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
+		6D618A2F2316077000F7D0A1 /* Conversation */ = {
+			isa = PBXGroup;
+			children = (
+				6D618A302316077000F7D0A1 /* ConversationController.m */,
+				6D618A312316077000F7D0A1 /* ConversationController.h */,
+			);
+			path = Conversation;
+			sourceTree = "<group>";
+		};
 		6D74C51C22755D9D00332AAC /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				6DCE88CC22EA933C00CAFA15 /* KV */,
 				6D1D784C22D6EB810085D1F3 /* Address */,
 				6DF3B6EC22D4708200BAF1C0 /* Storage */,
 				6D3790CF22D0977C00A6B9AE /* Qiniu */,
@@ -610,16 +826,28 @@
 		6DA3F89722C45EFC00E1CA2A /* IM */ = {
 			isa = PBXGroup;
 			children = (
-				6DF0198122C46AF700B30D54 /* Tencent */,
+				6D6189F32316077000F7D0A1 /* Tencent */,
 				6DA3F89822C45F1500E1CA2A /* FDIMManager.h */,
 				6DA3F89922C45F1500E1CA2A /* FDIMManager.m */,
 			);
 			path = IM;
 			sourceTree = "<group>";
 		};
+		6DCE88CC22EA933C00CAFA15 /* KV */ = {
+			isa = PBXGroup;
+			children = (
+				6DCE88CD22EA934A00CAFA15 /* FDKVManager.h */,
+				6DCE88CE22EA934A00CAFA15 /* FDKVManager.m */,
+			);
+			path = KV;
+			sourceTree = "<group>";
+		};
 		6DEC84F42276DB50000BCB3C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6D141851231A55620063067F /* TUIKitFace.bundle */,
+				6D141852231A55620063067F /* TUIKitResource.bundle */,
+				6D5F989022EE8FAE009C3E10 /* data.sqlite */,
 				CB6E67C82279EECC00D3788E /* Localizable.strings */,
 				CB8C26FB226CBCAA0058DAEE /* main.m */,
 				CB6E67BC2279D62A00D3788E /* Main.storyboard */,
@@ -739,131 +967,6 @@
 				6DEF408C22B3745F00A88CE2 /* QDCommonTableViewController.m */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		6DF0198122C46AF700B30D54 /* Tencent */ = {
-			isa = PBXGroup;
-			children = (
-				6DF0198222C46AF700B30D54 /* Contact */,
-				6DF0198F22C46AF700B30D54 /* Chat */,
-				6DF0199D22C46AF700B30D54 /* Util */,
-				6DF019A322C46AF700B30D54 /* IMAssets.xcassets */,
-				6DF019A422C46AF700B30D54 /* Utils */,
-				6DF019A722C46AF700B30D54 /* Setting */,
-				6DF019AC22C46AF800B30D54 /* Sound */,
-				6DF019B122C46AF800B30D54 /* Login */,
-				6DF019B822C46AF800B30D54 /* Conversation */,
-			);
-			path = Tencent;
-			sourceTree = "<group>";
-		};
-		6DF0198222C46AF700B30D54 /* Contact */ = {
-			isa = PBXGroup;
-			children = (
-				6DF0198322C46AF700B30D54 /* SearchFriendViewController.h */,
-				6DF0198422C46AF700B30D54 /* TFriendProfileController.m */,
-				6DF0198522C46AF700B30D54 /* FriendRequestViewController.h */,
-				6DF0198622C46AF700B30D54 /* SearchGroupViewController.m */,
-				6DF0198722C46AF700B30D54 /* GroupRequestViewController.h */,
-				6DF0198822C46AF700B30D54 /* ContactsController.h */,
-				6DF0198922C46AF700B30D54 /* TFriendProfileController.h */,
-				6DF0198A22C46AF700B30D54 /* SearchFriendViewController.m */,
-				6DF0198B22C46AF700B30D54 /* FriendRequestViewController.m */,
-				6DF0198C22C46AF700B30D54 /* GroupRequestViewController.m */,
-				6DF0198D22C46AF700B30D54 /* SearchGroupViewController.h */,
-				6DF0198E22C46AF700B30D54 /* ContactsController.m */,
-			);
-			path = Contact;
-			sourceTree = "<group>";
-		};
-		6DF0198F22C46AF700B30D54 /* Chat */ = {
-			isa = PBXGroup;
-			children = (
-				6DF0199022C46AF700B30D54 /* GroupInfoController.h */,
-				6DF0199122C46AF700B30D54 /* GroupMemberController.m */,
-				6DF0199222C46AF700B30D54 /* ChatViewController.m */,
-				6DF0199322C46AF700B30D54 /* TUserProfileController.m */,
-				6DF0199422C46AF700B30D54 /* GroupInfoController.m */,
-				6DF0199522C46AF700B30D54 /* GroupMemberController.h */,
-				6DF0199622C46AF700B30D54 /* Custom */,
-				6DF0199B22C46AF700B30D54 /* TUserProfileController.h */,
-				6DF0199C22C46AF700B30D54 /* ChatViewController.h */,
-			);
-			path = Chat;
-			sourceTree = "<group>";
-		};
-		6DF0199622C46AF700B30D54 /* Custom */ = {
-			isa = PBXGroup;
-			children = (
-				6DF0199722C46AF700B30D54 /* MyCustomCellData.m */,
-				6DF0199822C46AF700B30D54 /* MyCustomCell.h */,
-				6DF0199922C46AF700B30D54 /* MyCustomCellData.h */,
-				6DF0199A22C46AF700B30D54 /* MyCustomCell.m */,
-			);
-			path = Custom;
-			sourceTree = "<group>";
-		};
-		6DF0199D22C46AF700B30D54 /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				6DF0199F22C46AF700B30D54 /* TCUtil.h */,
-				6DF019A022C46AF700B30D54 /* TCConstants.h */,
-				6DF019A122C46AF700B30D54 /* TCUtil.m */,
-			);
-			path = Util;
-			sourceTree = "<group>";
-		};
-		6DF019A422C46AF700B30D54 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				6DF019A522C46AF700B30D54 /* Aspects.h */,
-				6DF019A622C46AF700B30D54 /* Aspects.m */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		6DF019A722C46AF700B30D54 /* Setting */ = {
-			isa = PBXGroup;
-			children = (
-				6DF019A822C46AF700B30D54 /* SettingController.h */,
-				6DF019A922C46AF700B30D54 /* NotifySetupController.m */,
-				6DF019AA22C46AF800B30D54 /* SettingController.m */,
-				6DF019AB22C46AF800B30D54 /* NotifySetupController.h */,
-			);
-			path = Setting;
-			sourceTree = "<group>";
-		};
-		6DF019AC22C46AF800B30D54 /* Sound */ = {
-			isa = PBXGroup;
-			children = (
-				6DF019AD22C46AF800B30D54 /* 11.caf */,
-				6DF019AE22C46AF800B30D54 /* 10.caf */,
-				6DF019AF22C46AF800B30D54 /* 00.caf */,
-				6DF019B022C46AF800B30D54 /* 01.caf */,
-			);
-			path = Sound;
-			sourceTree = "<group>";
-		};
-		6DF019B122C46AF800B30D54 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				6DF019B222C46AF800B30D54 /* UserSelectView.h */,
-				6DF019B322C46AF800B30D54 /* TCLoginParam.m */,
-				6DF019B422C46AF800B30D54 /* LoginController.m */,
-				6DF019B522C46AF800B30D54 /* TCLoginParam.h */,
-				6DF019B622C46AF800B30D54 /* UserSelectView.m */,
-				6DF019B722C46AF800B30D54 /* LoginController.h */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		6DF019B822C46AF800B30D54 /* Conversation */ = {
-			isa = PBXGroup;
-			children = (
-				6DF019B922C46AF800B30D54 /* ConversationController.m */,
-				6DF019BA22C46AF800B30D54 /* ConversationController.h */,
-			);
-			path = Conversation;
 			sourceTree = "<group>";
 		};
 		6DF3B6EC22D4708200BAF1C0 /* Storage */ = {
@@ -1014,6 +1117,7 @@
 		CB6E67712279A9BD00D3788E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				6D141855231A63F10063067F /* Music */,
 				6D36CA88228117E10046FA8C /* Global */,
 				CB8EA0DE227B1A02004177D4 /* Mine */,
 				CB6E67BE2279D86F00D3788E /* Home */,
@@ -1210,22 +1314,23 @@
 				6DEC85192276DB50000BCB3C /* AlibabaSans-MediumItalic.otf in Resources */,
 				6D59879D229E662500113597 /* README.txt in Resources */,
 				6D405CE722D02810008D5316 /* VideoCallMedia.xcassets in Resources */,
-				6DF019CF22C46AF800B30D54 /* 00.caf in Resources */,
 				6D405CE522D027D4008D5316 /* FDVideoCallViewController.xib in Resources */,
 				CB8C26F6226CBCAA0058DAEE /* Assets.xcassets in Resources */,
+				6D618A482316077000F7D0A1 /* 00.caf in Resources */,
+				6D141853231A55620063067F /* TUIKitFace.bundle in Resources */,
 				6D405CF822D06CE3008D5316 /* VideoMedia.xcassets in Resources */,
+				6D618A412316077000F7D0A1 /* IMAssets.xcassets in Resources */,
 				6DEC85132276DB50000BCB3C /* AlibabaSans-Regular.otf in Resources */,
 				6DEC850B2276DB50000BCB3C /* 版权申明.rtf in Resources */,
-				6DF019CD22C46AF800B30D54 /* 11.caf in Resources */,
 				6DEC850C2276DB50000BCB3C /* Alibaba-PuHuiTi-Bold.otf in Resources */,
-				6DF019C922C46AF800B30D54 /* IMAssets.xcassets in Resources */,
 				6DEC85172276DB50000BCB3C /* AlibabaSans-Italic.otf in Resources */,
 				CBC6FB1D22844CED00EAF915 /* register_guide_video.mp4 in Resources */,
 				6DEC850F2276DB50000BCB3C /* Alibaba-PuHuiTi-Medium.otf in Resources */,
+				6D141854231A55620063067F /* TUIKitResource.bundle in Resources */,
 				6D59879B229E662500113597 /* AlipaySDK.bundle in Resources */,
+				6D618A462316077000F7D0A1 /* 11.caf in Resources */,
+				6D618A472316077000F7D0A1 /* 10.caf in Resources */,
 				6DEC85182276DB50000BCB3C /* AlibabaSans-BoldItalic.otf in Resources */,
-				6DF019CE22C46AF800B30D54 /* 10.caf in Resources */,
-				6DF019D022C46AF800B30D54 /* 01.caf in Resources */,
 				6DEC85122276DB50000BCB3C /* AlibabaSans-Bold.otf in Resources */,
 				CB6E67BD2279D62A00D3788E /* Main.storyboard in Resources */,
 				6DEC851B2276DB50000BCB3C /* AlibabaSans-HeavyItalic.otf in Resources */,
@@ -1239,6 +1344,7 @@
 				6DEC85102276DB50000BCB3C /* Alibaba-PuHuiTi-Regular.otf in Resources */,
 				6DEC85142276DB50000BCB3C /* AlibabaSans-Heavy.otf in Resources */,
 				6D405CF522D069C6008D5316 /* data.json in Resources */,
+				6D618A492316077000F7D0A1 /* 01.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1308,27 +1414,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D618A352316077000F7D0A1 /* FriendRequestViewController.m in Sources */,
+				6D141865231A686E0063067F /* MusicCategoryControl.m in Sources */,
 				6DD3119122B879C60043B5EE /* FDPCASVApi.m in Sources */,
-				6DF019C422C46AF800B30D54 /* GroupInfoController.m in Sources */,
-				6DF019D122C46AF800B30D54 /* TCLoginParam.m in Sources */,
-				6DF019D422C46AF800B30D54 /* ConversationController.m in Sources */,
+				6D618A372316077000F7D0A1 /* ContactsController.m in Sources */,
+				6D14185F231A64830063067F /* MusicCategoryModel.m in Sources */,
 				6D36CA8F228117E10046FA8C /* GlobalManager.m in Sources */,
-				6DF019D322C46AF800B30D54 /* UserSelectView.m in Sources */,
 				CBB5492D22A010E1007B1A7C /* WXApiRequestHandler.m in Sources */,
+				6D618A4B2316077000F7D0A1 /* LoginController.m in Sources */,
 				6D4F0D14227695D6005A9B21 /* AppDelegate+HandleURL.m in Sources */,
-				6DF019CA22C46AF800B30D54 /* Aspects.m in Sources */,
 				CB6E67762279AA0C00D3788E /* FDTabBarController.m in Sources */,
 				CB19812B229EBC2600AA1002 /* APOrderInfo.m in Sources */,
+				6D618A402316077000F7D0A1 /* TCUtil.m in Sources */,
 				6D9DF5AD2277CE9400FB9CFC /* FDSocialManager.m in Sources */,
-				6DF019BB22C46AF800B30D54 /* TFriendProfileController.m in Sources */,
 				6D405CF222D069C6008D5316 /* ZFDouYinCell.m in Sources */,
 				6DEF409022B3745F00A88CE2 /* UIImageEffects.m in Sources */,
 				CBB5492C22A010E1007B1A7C /* WXApiResponseHandler.m in Sources */,
-				6DF019C322C46AF800B30D54 /* TUserProfileController.m in Sources */,
 				6DEF409722B3745F00A88CE2 /* QDNavigationController.m in Sources */,
 				6DEF409322B3745F00A88CE2 /* QDCommonViewController.m in Sources */,
-				6DF019CB22C46AF800B30D54 /* NotifySetupController.m in Sources */,
+				6D618A422316077000F7D0A1 /* Aspects.m in Sources */,
 				6D9DF5B52277EC1D00FB9CFC /* FDSocialModel.m in Sources */,
+				6D618A3A2316077000F7D0A1 /* TUserProfileController.m in Sources */,
 				CB6E67822279CC6D00D3788E /* FDViewController.m in Sources */,
 				CB1980D6229EBAFF00AA1002 /* FDPayManager.m in Sources */,
 				6DEF408E22B3745F00A88CE2 /* QMUIConfigurationTemplate.m in Sources */,
@@ -1336,47 +1442,55 @@
 				CB8EA0DD227AE453004177D4 /* SearchViewController.m in Sources */,
 				6DEF409422B3745F00A88CE2 /* QDCommonGridViewController.m in Sources */,
 				6DEF408D22B3745F00A88CE2 /* QDThemeManager.m in Sources */,
+				6D618A3F2316077000F7D0A1 /* PAirSandbox.m in Sources */,
 				CB19812D229EBC2600AA1002 /* APRSASigner.m in Sources */,
 				CB3508EC22709B5800EDC557 /* FDBaseApi.m in Sources */,
+				6D618A322316077000F7D0A1 /* TFriendProfileController.m in Sources */,
+				6D14185C231A64630063067F /* MusicViewController.m in Sources */,
 				CB6E677A2279AAEB00D3788E /* FDNavigationController.m in Sources */,
 				6D3C39DB22B1E79D00B861E7 /* FDGlobalApi.m in Sources */,
 				CBC00E4622734B9000E0A471 /* YTKUrlArgumentsFilter.m in Sources */,
 				CB8EA0E4227B2460004177D4 /* LoginViewController.m in Sources */,
 				6D9DF5B12277D79B00FB9CFC /* UIViewController+FD.m in Sources */,
-				6DF019C222C46AF800B30D54 /* ChatViewController.m in Sources */,
 				6DEF409522B3745F00A88CE2 /* QDTabBarViewController.m in Sources */,
 				6D405CE322D026D3008D5316 /* FDVideoCallViewController.m in Sources */,
 				CBB5492E22A010E1007B1A7C /* WXApiManager.m in Sources */,
-				6DF019D222C46AF800B30D54 /* LoginController.m in Sources */,
-				6DF019BC22C46AF800B30D54 /* SearchGroupViewController.m in Sources */,
 				CB8EA0E1227B1A2B004177D4 /* MineViewController.m in Sources */,
-				6DF019CC22C46AF800B30D54 /* SettingController.m in Sources */,
+				6D618A4A2316077000F7D0A1 /* TCLoginParam.m in Sources */,
 				CB19812C229EBC2600AA1002 /* openssl_wrapper.m in Sources */,
 				6DF535CF22D8665C006FCD3F /* FDAddressModel.m in Sources */,
-				6DF019C622C46AF800B30D54 /* MyCustomCell.m in Sources */,
+				6D618A4D2316077000F7D0A1 /* ConversationController.m in Sources */,
 				6DEF409222B3745F00A88CE2 /* QDCommonGroupListViewController.m in Sources */,
 				6D36CA90228117E10046FA8C /* GlobalModel.m in Sources */,
-				6DF019C522C46AF800B30D54 /* MyCustomCellData.m in Sources */,
 				CBD8F54822830AE90069510C /* PhoneLoginViewController.m in Sources */,
-				6DF019BD22C46AF800B30D54 /* SearchFriendViewController.m in Sources */,
+				6D618A4C2316077000F7D0A1 /* GenerateTestUserSig.m in Sources */,
 				6D405CF622D069C6008D5316 /* ZFDouYinControlView.m in Sources */,
 				6DF3B6EF22D4709200BAF1C0 /* FDSQLiteManager.m in Sources */,
 				6D4125DB229257BB0045E3B5 /* FDAnalyzeManager.m in Sources */,
+				6D618A332316077000F7D0A1 /* SearchGroupViewController.m in Sources */,
 				CB6E67C12279D8D900D3788E /* HomeViewController.m in Sources */,
+				6D141862231A64C90063067F /* MusicCategoryApi.m in Sources */,
+				6D618A3B2316077000F7D0A1 /* GroupInfoController.m in Sources */,
+				6D618A392316077000F7D0A1 /* ChatViewController.m in Sources */,
 				6D74C528227575D500332AAC /* AppDelegate+Launch.m in Sources */,
 				6D3790D222D0978B00A6B9AE /* FDQiniuManager.m in Sources */,
-				6DF019BF22C46AF800B30D54 /* GroupRequestViewController.m in Sources */,
 				6DEF409622B3745F00A88CE2 /* QDCommonListViewController.m in Sources */,
 				6DEF408F22B3745F00A88CE2 /* QDUIHelper.m in Sources */,
-				6DF019BE22C46AF800B30D54 /* FriendRequestViewController.m in Sources */,
-				6DF019C022C46AF800B30D54 /* ContactsController.m in Sources */,
+				6D618A3C2316077000F7D0A1 /* MyCustomCellData.m in Sources */,
+				6DCE88CF22EA934A00CAFA15 /* FDKVManager.m in Sources */,
+				6D5F988C22EE7D1F009C3E10 /* FDKeyName.m in Sources */,
 				6D405CF422D069C6008D5316 /* ZFDouYinViewController.m in Sources */,
 				6D022097229F6C56001FF792 /* FDNotificationName.m in Sources */,
+				6D618A362316077000F7D0A1 /* GroupRequestViewController.m in Sources */,
+				6D618A382316077000F7D0A1 /* GroupMemberController.m in Sources */,
 				6DEF409822B3745F00A88CE2 /* QDCommonTableViewController.m in Sources */,
 				CBCFB1E12281C5CB00ADE61E /* UIAlertController+supportedInterfaceOrientations.m in Sources */,
-				6DF019C122C46AF800B30D54 /* GroupMemberController.m in Sources */,
+				6D618A3D2316077000F7D0A1 /* MyCustomCell.m in Sources */,
+				6D618A442316077000F7D0A1 /* SettingController.m in Sources */,
+				6D618A432316077000F7D0A1 /* NotifySetupController.m in Sources */,
+				6D618A452316077000F7D0A1 /* ProfileController.m in Sources */,
 				CB8C26FC226CBCAA0058DAEE /* main.m in Sources */,
-				6DF019C822C46AF800B30D54 /* TCUtil.m in Sources */,
+				6D618A342316077000F7D0A1 /* SearchFriendViewController.m in Sources */,
 				CB8C26EE226CBCA90058DAEE /* AppDelegate.m in Sources */,
 				6DEF409122B3745F00A88CE2 /* QDCommonUI.m in Sources */,
 				6DA3F89A22C45F1600E1CA2A /* FDIMManager.m in Sources */,

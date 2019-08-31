@@ -5,7 +5,12 @@
 //  Created by kennethmiao on 2018/10/10.
 //  Copyright © 2018年 Tencent. All rights reserved.
 //
-
+/** 腾讯云IM Demo 对话列表视图
+ *  本文件实现了对话列表视图控制器，即下方按钮“消息”对应的视图控制器
+ *  您可以从此处查看最近消息，整理您的消息列表
+ *
+ *  本类依赖于腾讯云 TUIKit和IMSDK 实现
+ */
 #import "ConversationController.h"
 #import "TUIConversationListController.h"
 #import "ChatViewController.h"
@@ -18,8 +23,10 @@
 #import "TIMUserProfile+DataProvider.h"
 #import "TNaviBarIndicatorView.h"
 #import "TUIKit.h"
+#import "THelper.h"
+#import "TIMUserProfile+DataProvider.h"
 
-@import ImSDK;
+#import <ImSDK/ImSDK.h>
 
 @interface ConversationController () <TUIConversationListControllerDelegagte, TPopViewDelegate>
 @property (nonatomic, strong) TNaviBarIndicatorView *titleView;
@@ -34,6 +41,10 @@
     [self addChildViewController:conv];
     [self.view addSubview:conv.view];
     
+    //如果不加这一行代码，依然可以实现点击反馈，但反馈会有轻微延迟，体验不好。
+    conv.tableView.delaysContentTouches = NO;
+    
+    
     UIButton *moreButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
     [moreButton setImage:[UIImage imageNamed:TUIKitResource(@"more")] forState:UIControlStateNormal];
     [moreButton addTarget:self action:@selector(rightBarButtonClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -43,6 +54,9 @@
     [self setupNavigation];
 }
 
+/**
+ *初始化导航栏
+ */
 - (void)setupNavigation
 {
     _titleView = [[TNaviBarIndicatorView alloc] init];
@@ -53,6 +67,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onNetworkChanged:) name:TUIKitNotification_TIMConnListener object:nil];
 }
 
+/**
+ *初始化导航栏Title，不同连接状态下Title显示内容不同
+ */
 - (void)onNetworkChanged:(NSNotification *)notification
 {
     TUINetStatus status = (TUINetStatus)[notification.object intValue];
@@ -79,6 +96,9 @@
     }
 }
 
+/**
+ *在消息列表内，点击了某一具体会话后的响应函数
+ */
 - (void)conversationListController:(TUIConversationListController *)conversationController didSelectConversation:(TUIConversationCell *)conversation
 {
     ChatViewController *chat = [[ChatViewController alloc] init];
@@ -86,6 +106,9 @@
     [self.navigationController pushViewController:chat animated:YES];
 }
 
+/**
+ *对导航栏右侧的按钮（即视图右上角按钮）进行初始化，创建对应的popView
+ */
 - (void)rightBarButtonClick:(UIButton *)rightBarButton
 {
     NSMutableArray *menus = [NSMutableArray array];
@@ -120,10 +143,14 @@
     [popView showInWindow:self.view.window];
 }
 
+/**
+ *点击了popView中具体某一行后的响应函数，popView初始化请参照上述 rightBarButtonClick: 函数
+ */
 - (void)popView:(TPopView *)popView didSelectRowAtIndex:(NSInteger)index
 {
     @weakify(self)
     if(index == 0){
+        //发起会话
         TUIContactSelectController *vc = [TUIContactSelectController new];
         vc.title = @"选择联系人";
         vc.maxSelectCount = 1;
@@ -145,6 +172,7 @@
         return;
     }
     else if(index == 1){
+        //创建讨论组
         TUIContactSelectController *vc = [TUIContactSelectController new];
         vc.title = @"选择联系人";
         [self.navigationController pushViewController:vc animated:YES];
@@ -154,6 +182,7 @@
         };
         return;
     } else if(index == 2){
+        //创建群聊
         TUIContactSelectController *vc = [TUIContactSelectController new];
         vc.title = @"选择联系人";
         [self.navigationController pushViewController:vc animated:YES];
@@ -163,6 +192,7 @@
         };
         return;
     } else if(index == 3){
+        //创建聊天室
         TUIContactSelectController *vc = [TUIContactSelectController new];
         vc.title = @"选择联系人";
         [self.navigationController pushViewController:vc animated:YES];
@@ -177,11 +207,19 @@
     }
 }
 
+/**
+ *创建讨论组、群聊、聊天室的函数
+ *groupType:创建的具体类型 Private--讨论组  Public--群聊 ChatRoom--聊天室
+ *addOption:创建后加群时的选项          TIM_GROUP_ADD_FORBID       禁止任何人加群
+                                     TIM_GROUP_ADD_AUTH        加群需要管理员审批
+                                     TIM_GROUP_ADD_ANY         任何人可以加群
+ *withContacts:群成员的信息数组。数组内每一个元素分别包含了对应成员的头像、ID等信息。具体信息可参照 TCommonContactSelectCellData 定义
+ */
 - (void)addGroup:(NSString *)groupType addOption:(TIMGroupAddOpt)addOption withContacts:(NSArray<TCommonContactSelectCellData *>  *)contacts
 {
     NSMutableString *groupName = [[[TIMFriendshipManager sharedInstance] querySelfProfile] showName].mutableCopy;
     NSMutableArray *members = [NSMutableArray array];
-    
+    //遍历contacts，初始化群组成员信息、群组名称信息
     for (TCommonContactSelectCellData *item in contacts) {
         TIMCreateGroupMemberInfo *member = [[TIMCreateGroupMemberInfo alloc] init];
         member.member = item.identifier;
@@ -189,7 +227,8 @@
         [groupName appendFormat:@"、%@", item.title];
         [members addObject:member];
     }
-
+    
+    //群组名称默认长度不超过10，如有需求可在此更改，但可能会出现UI上的显示bug
     if ([groupName length] > 10) {
         groupName = [groupName substringToIndex:10].mutableCopy;
     }
@@ -206,18 +245,36 @@
     }
     info.membersInfo = members;
     
+    //发送创建请求后的回调函数
     @weakify(self)
     [[TIMGroupManager sharedInstance] createGroup:info succ:^(NSString *groupId) {
+        //创建成功后，在群内推送创建成功的信息
         @strongify(self)
         TIMMessage *tip = [[TIMMessage alloc] init];
         TIMCustomElem *custom = [[TIMCustomElem alloc] init];
         custom.data = [@"group_create" dataUsingEncoding:NSUTF8StringEncoding];
-        custom.ext = [NSString stringWithFormat:@"\"%@\"创建群组", [[TIMManager sharedInstance] getLoginUser]];
+        
+        //对于创建群消息时的名称显示（此时还未设置群名片），优先显示用户昵称。
+        NSString *userId = [[TIMManager sharedInstance] getLoginUser];
+        TIMUserProfile *user = [[TIMFriendshipManager sharedInstance] queryUserProfile:userId];
+        
+        if([info.groupType isEqualToString:@"Private"]) {
+            custom.ext = [NSString stringWithFormat:@"\"%@\"创建讨论组",user.showName];
+        } else if([info.groupType isEqualToString:@"Public"]){
+            custom.ext = [NSString stringWithFormat:@"\"%@\"创建群聊",user.showName];
+        } else if([info.groupType isEqualToString:@"ChatRoom"]) {
+            custom.ext = [NSString stringWithFormat:@"\"%@\"创建聊天室",user.showName];
+        } else {
+            custom.ext = [NSString stringWithFormat:@"\"%@\"创建群组",user.showName];
+        }
+        
+        
         [tip addElem:custom];
         TIMConversation *conv = [[TIMManager sharedInstance] getConversation:TIM_GROUP receiver:groupId];
         [conv sendMessage:tip succ:nil fail:nil];
         
         
+        //创建成功后，默认跳转到群组对应的聊天界面
         TUIConversationCellData *data = [[TUIConversationCellData alloc] init];
         data.convId = groupId;
         data.convType = TIM_GROUP;
@@ -231,7 +288,7 @@
         self.navigationController.viewControllers = tempArray;
         
     } fail:^(int code, NSString *msg) {
-        [self.view makeToast:msg];
+        [THelper makeToastError:code msg:msg];
     }];
 }
 @end

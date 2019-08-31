@@ -35,6 +35,10 @@
     return YTKRequestMethodGET;
 }
 
+- (YTKResponseSerializerType)responseSerializerType{
+    return YTKResponseSerializerTypeJSON;
+}
+
 - (id)requestArgument {
     DDLogDebug(@"%s 需要子类实现",__func__);
     return nil;
@@ -61,7 +65,6 @@
 }
 
 - (void)startWithCompletionBlockWithSuccess:(YTKRequestCompletionBlock)success failure:(YTKRequestCompletionBlock)failure{
-    [super startWithCompletionBlockWithSuccess:success failure:failure];
     if (self.requestMethod == YTKRequestMethodPOST) {
         DDLogDebug(@"请求Url:%@%@",FDBaseUrl,self.requestUrl);
         DDLogDebug(@"请求参数:%@",self.requestArgument);
@@ -77,6 +80,7 @@
         }
         DDLogDebug(@"请求Url:%@%@%@",FDBaseUrl,self.requestUrl,tempString);
     }
+    [super startWithCompletionBlockWithSuccess:success failure:failure];
 }
 
 @end

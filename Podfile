@@ -26,8 +26,6 @@ target 'App' do
   pod 'UMCShare/Social/Sina'
   # 友盟统计
   pod 'UMCAnalytics'
-  # 友盟推送
-  pod 'UMCPush'
   # HUD
   pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
   # layout
@@ -68,7 +66,6 @@ target 'App' do
   pod 'TXIMSDK_iOS'
   # 腾讯Github
   pod 'MMKV'
-  pod 'matrix-wechat'
   # 声网
   pod 'AgoraRtcEngine_iOS'
   # 七牛云存储

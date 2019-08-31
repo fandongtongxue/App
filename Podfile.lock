@@ -14,7 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - AgoraRtcEngine_iOS (2.8.0)
+  - AgoraRtcEngine_iOS (2.9.0)
   - Bugly (2.5.0)
   - CocoaLumberjack (3.5.3):
     - CocoaLumberjack/Core (= 3.5.3)
@@ -25,16 +25,7 @@ PODS:
   - HappyDNS (0.3.15)
   - ISVImageScrollView (0.1.2)
   - Masonry (1.1.0)
-  - matrix-wechat (0.5.2):
-    - matrix-wechat/matrixARC (= 0.5.2)
-    - matrix-wechat/matrixNonARC1 (= 0.5.2)
-    - matrix-wechat/matrixNonARC2 (= 0.5.2)
-  - matrix-wechat/matrixARC (0.5.2):
-    - matrix-wechat/matrixNonARC1
-  - matrix-wechat/matrixNonARC1 (0.5.2)
-  - matrix-wechat/matrixNonARC2 (0.5.2):
-    - matrix-wechat/matrixARC
-  - MJExtension (3.0.17)
+  - MJExtension (3.1.0)
   - MJRefresh (3.2.0)
   - MLeaksFinder (1.0.0):
     - FBRetainCycleDetector
@@ -42,7 +33,7 @@ PODS:
   - MMLayout (0.2.0)
   - mob_smssdk (3.2.3):
     - MOBFoundation
-  - MOBFoundation (3.2.3)
+  - MOBFoundation (3.2.4)
   - Qiniu (7.2.5):
     - HappyDNS (~> 0.3)
   - QMUIKit (3.2.1):
@@ -317,13 +308,13 @@ PODS:
   - ReactiveObjC (3.1.1)
   - SDCycleScrollView (1.80):
     - SDWebImage (>= 5.0.0)
-  - SDWebImage (5.0.6):
-    - SDWebImage/Core (= 5.0.6)
-  - SDWebImage/Core (5.0.6)
+  - SDWebImage (5.1.0):
+    - SDWebImage/Core (= 5.1.0)
+  - SDWebImage/Core (5.1.0)
   - SVProgressHUD (2.2.6)
   - Toast (4.0.0)
-  - TXIMSDK_iOS (4.4.627)
-  - TXIMSDK_TUIKit_iOS (4.4.627):
+  - TXIMSDK_iOS (4.4.900)
+  - TXIMSDK_TUIKit_iOS (4.4.900):
     - ISVImageScrollView
     - MMLayout
     - ReactiveObjC
@@ -332,9 +323,7 @@ PODS:
     - TXIMSDK_iOS
   - UMCAnalytics (6.0.5):
     - UMCCommon
-  - UMCCommon (2.1.0)
-  - UMCPush (3.2.4):
-    - UMCCommon
+  - UMCCommon (2.1.1)
   - UMCSecurityPlugins (1.0.6)
   - UMCShare/Core (6.9.6):
     - UMCCommon
@@ -362,13 +351,13 @@ PODS:
     - FLAnimatedImage (~> 1.0.12)
   - YTKNetwork (2.0.4):
     - AFNetworking (~> 3.0)
-  - ZFPlayer (3.2.12):
-    - ZFPlayer/Core (= 3.2.12)
-  - ZFPlayer/AVPlayer (3.2.12):
+  - ZFPlayer (3.2.13):
+    - ZFPlayer/Core (= 3.2.13)
+  - ZFPlayer/AVPlayer (3.2.13):
     - ZFPlayer/Core
-  - ZFPlayer/ControlView (3.2.12):
+  - ZFPlayer/ControlView (3.2.13):
     - ZFPlayer/Core
-  - ZFPlayer/Core (3.2.12)
+  - ZFPlayer/Core (3.2.13)
 
 DEPENDENCIES:
   - AgoraRtcEngine_iOS
@@ -376,7 +365,6 @@ DEPENDENCIES:
   - CocoaLumberjack
   - FDFullscreenPopGesture
   - Masonry
-  - matrix-wechat
   - MJExtension
   - MJRefresh
   - MLeaksFinder
@@ -396,7 +384,6 @@ DEPENDENCIES:
   - TXIMSDK_TUIKit_iOS
   - UMCAnalytics
   - UMCCommon
-  - UMCPush
   - UMCSecurityPlugins
   - UMCShare/Social/QQ
   - UMCShare/Social/ReducedWeChat
@@ -409,7 +396,7 @@ DEPENDENCIES:
   - ZFPlayer/ControlView
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - AFNetworking
     - AgoraRtcEngine_iOS
     - Bugly
@@ -420,7 +407,6 @@ SPEC REPOS:
     - HappyDNS
     - ISVImageScrollView
     - Masonry
-    - matrix-wechat
     - MJExtension
     - MJRefresh
     - MLeaksFinder
@@ -441,7 +427,6 @@ SPEC REPOS:
     - TXIMSDK_TUIKit_iOS
     - UMCAnalytics
     - UMCCommon
-    - UMCPush
     - UMCSecurityPlugins
     - UMCShare
     - XHLaunchAd
@@ -459,7 +444,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  AgoraRtcEngine_iOS: 85810ba2f492646ab0eb20fbd8ca016b4b69002d
+  AgoraRtcEngine_iOS: b316f64bc07f7973f0239316b2b4f79ec369e25c
   Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
   CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
@@ -468,14 +453,13 @@ SPEC CHECKSUMS:
   HappyDNS: 00c15e651a347206e58a20503a32a5564589b56a
   ISVImageScrollView: ba511d12a1661b40feb8921309c0854bf93ec749
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  matrix-wechat: 517ce129cde15a8baaed079bf4c872ec5aec12d3
-  MJExtension: 74ec83124a68891619fb7ba9c5c811bbf1691076
+  MJExtension: 6b69b3bef2864fd550ce1a184eda219e321209d2
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   MMKV: 99b05c376c0eb412b468ba1d3e6813502edeaa24
   MMLayout: 3fb59d58eeb8656c64e61d550fb0088e10666c11
   mob_smssdk: cdb6a31d4fd4667ed928e2eca03f21ad89ebc05c
-  MOBFoundation: 246159a97f5e6c8a271b674dd885dc4b0953e45e
+  MOBFoundation: dd8f319dde9331590d515a1676d27baccc0070e5
   Qiniu: 909b408ee489ea54827e9717be90b94bc9dfbc48
   QMUIKit: a3af645843b9558eb7aaf407b320eaeb45ab6144
   QuickMobileTextField: 61e4b90df95c3b63637a7398c37572cd5945d641
@@ -483,20 +467,19 @@ SPEC CHECKSUMS:
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
-  SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
+  SDWebImage: fb387001955223213dde14bc08c8b73f371f8d8f
   SVProgressHUD: 6ed134667e9ebb2f33679e8273cd48fd3fa349e5
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
-  TXIMSDK_iOS: 6641a71d741a1a1fb31b69419b2431d9aecdf12e
-  TXIMSDK_TUIKit_iOS: 168d95421e6476e8994139f7e21401cc6b13fff7
+  TXIMSDK_iOS: 54c04c0807ccf0c406366ef86cff663ea277e235
+  TXIMSDK_TUIKit_iOS: c6ba8a30b963e2a076fdaacc5ac42e5ad43f18c0
   UMCAnalytics: 045be2cd1ec05aa95ad62405a850757f932e2d59
-  UMCCommon: c9637200488c482b30cdebebb0bd595b9adf0847
-  UMCPush: 1edd856027dcf905333effb4040ace5d236a7316
+  UMCCommon: 971f324a5a99c9d662ae040a815e7e3d7ef8b2a8
   UMCSecurityPlugins: 0831a08f3988f3cea9f1d3a7626cd9bee4fef150
   UMCShare: e0cef55c0fd6051254c8cda1d0630eb578b27bad
   XHLaunchAd: 45048592af01aa501c9d2d0c45e95ca74c4d0596
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
-  ZFPlayer: fdc92702cc611922182a951991dea78566da7605
+  ZFPlayer: b2ba40c924e1b9a7f0a670632c4235ffbe6ee055
 
-PODFILE CHECKSUM: fdd9bf0ce120bbb01325a2fc4b9e54c7d7cf86c6
+PODFILE CHECKSUM: b150184adccd1db33ae4c069a26069cd1417748f
 
-COCOAPODS: 1.7.4
+COCOAPODS: 1.8.0.beta.2
