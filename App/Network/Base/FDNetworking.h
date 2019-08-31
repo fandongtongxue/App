@@ -11,7 +11,8 @@
 
 #import "FDBaseApi.h"
 
-#define FDBaseUrl @"http://phpapi.fenfa.im/public/"
+//#define FDBaseUrl @"http://phpapi.fenfa.im/public/"
+#define FDBaseUrl @"https://v1.itooi.cn/"
 #define FDBaseCdnUrl @"http://app.fandong.me/"
 
 

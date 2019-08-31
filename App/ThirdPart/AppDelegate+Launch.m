@@ -21,6 +21,7 @@
 #import "LoginViewController.h"
 
 #import "ZFDouyinViewController.h"
+#import "MusicViewController.h"
 
 #import "TNavigationController.h"
 #import "ConversationController.h"
@@ -136,7 +137,9 @@
     else{
         self.window.rootViewController = [self getLoginController];
     }
-    [self createTabBarController];
+//    if (!self.window.rootViewController) {
+        [self createTabBarController];
+//    }
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -147,12 +150,13 @@
     NSMutableDictionary *attrDict = [NSMutableDictionary dictionary];
     attrDict[NSFontAttributeName] = Font(12);
     
-    ZFDouYinViewController *douyinVC = [[ZFDouYinViewController alloc]init];
-    douyinVC.hidesBottomBarWhenPushed = NO;
-    douyinVC.tabBarItem = [QDUIHelper tabBarItemWithTitle:Localized(@"Home.Title") image:[UIImageMake(@"tab_home_normal") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"tab_home_selected") tag:0];
-    [douyinVC.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateNormal];
-    [douyinVC.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateSelected];
-    AddAccessibilityHint(douyinVC.tabBarItem, Localized(@"Home.Title"));
+//    ZFDouYinViewController *douyinVC = [[ZFDouYinViewController alloc]init];
+    MusicViewController *musicVC = [[MusicViewController alloc]init];
+    musicVC.hidesBottomBarWhenPushed = NO;
+    musicVC.tabBarItem = [QDUIHelper tabBarItemWithTitle:Localized(@"Home.Title") image:[UIImageMake(@"tab_home_normal") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"tab_home_selected") tag:0];
+    [musicVC.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateNormal];
+    [musicVC.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateSelected];
+    AddAccessibilityHint(musicVC.tabBarItem, Localized(@"Home.Title"));
     
     MineViewController *mineVC = [[MineViewController alloc]init];
     mineVC.hidesBottomBarWhenPushed = YES;
@@ -162,7 +166,7 @@
     [mineNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateSelected];
     AddAccessibilityHint(mineNav.tabBarItem, Localized(@"Mine.Title"));
     
-    tabBarVC.viewControllers = @[douyinVC,mineNav];
+    tabBarVC.viewControllers = @[musicVC,mineNav];
         
     self.window.rootViewController = tabBarVC;
 }
@@ -280,22 +284,22 @@ void uncaughtExceptionHandler(NSException*exception){
     NSMutableArray *items = [NSMutableArray array];
     TUITabBarItem *msgItem = [[TUITabBarItem alloc] init];
     msgItem.title = @"消息";
-    msgItem.selectedImage = [UIImage imageNamed:@"message_pressed"];
-    msgItem.normalImage = [UIImage imageNamed:@"message_normal"];
+    msgItem.selectedImage = [UIImage imageNamed:TUIKitResource(@"message_pressed")];
+    msgItem.normalImage = [UIImage imageNamed:TUIKitResource(@"message_normal")];
     msgItem.controller = [[TNavigationController alloc] initWithRootViewController:[[ConversationController alloc] init]];
     [items addObject:msgItem];
     
     TUITabBarItem *contactItem = [[TUITabBarItem alloc] init];
     contactItem.title = @"通讯录";
-    contactItem.selectedImage = [UIImage imageNamed:@"contacts_pressed"];
-    contactItem.normalImage = [UIImage imageNamed:@"contacts_normal"];
+    contactItem.selectedImage = [UIImage imageNamed:TUIKitResource(@"contacts_pressed")];
+    contactItem.normalImage = [UIImage imageNamed:TUIKitResource(@"contacts_normal")];
     contactItem.controller = [[TNavigationController alloc] initWithRootViewController:[[ContactsController alloc] init]];
     [items addObject:contactItem];
     
     TUITabBarItem *setItem = [[TUITabBarItem alloc] init];
     setItem.title = @"我";
-    setItem.selectedImage = [UIImage imageNamed:@"setting_pressed"];
-    setItem.normalImage = [UIImage imageNamed:@"setting_normal"];
+    setItem.selectedImage = [UIImage imageNamed:TUIKitResource(@"setting_pressed")];
+    setItem.normalImage = [UIImage imageNamed:TUIKitResource(@"setting_normal")];
     setItem.controller = [[TNavigationController alloc] initWithRootViewController:[[SettingController alloc] init]];
     [items addObject:setItem];
     tbc.tabBarItems = items;
