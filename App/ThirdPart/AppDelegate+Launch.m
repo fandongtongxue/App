@@ -21,7 +21,6 @@
 #import "LoginViewController.h"
 
 #import "ZFDouyinViewController.h"
-#import "MusicViewController.h"
 
 #import "TNavigationController.h"
 #import "ConversationController.h"
@@ -150,13 +149,13 @@
     NSMutableDictionary *attrDict = [NSMutableDictionary dictionary];
     attrDict[NSFontAttributeName] = Font(12);
     
-//    ZFDouYinViewController *douyinVC = [[ZFDouYinViewController alloc]init];
-    MusicViewController *musicVC = [[MusicViewController alloc]init];
-    musicVC.hidesBottomBarWhenPushed = NO;
-    musicVC.tabBarItem = [QDUIHelper tabBarItemWithTitle:Localized(@"Home.Title") image:[UIImageMake(@"tab_home_normal") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"tab_home_selected") tag:0];
-    [musicVC.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateNormal];
-    [musicVC.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateSelected];
-    AddAccessibilityHint(musicVC.tabBarItem, Localized(@"Home.Title"));
+    ZFDouYinViewController *douyinVC = [[ZFDouYinViewController alloc]init];
+    douyinVC.hidesBottomBarWhenPushed = NO;
+    FDNavigationController *homeNav = [[FDNavigationController alloc]initWithRootViewController:douyinVC];
+    homeNav.tabBarItem = [QDUIHelper tabBarItemWithTitle:Localized(@"Home.Title") image:[UIImageMake(@"tab_home_normal") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"tab_home_selected") tag:0];
+    [homeNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateNormal];
+    [homeNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateSelected];
+    AddAccessibilityHint(homeNav.tabBarItem, Localized(@"Home.Title"));
     
     MineViewController *mineVC = [[MineViewController alloc]init];
     mineVC.hidesBottomBarWhenPushed = YES;
@@ -166,7 +165,7 @@
     [mineNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateSelected];
     AddAccessibilityHint(mineNav.tabBarItem, Localized(@"Mine.Title"));
     
-    tabBarVC.viewControllers = @[musicVC,mineNav];
+    tabBarVC.viewControllers = @[homeNav,mineNav];
         
     self.window.rootViewController = tabBarVC;
 }
