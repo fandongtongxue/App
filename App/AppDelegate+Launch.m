@@ -15,12 +15,8 @@
 #import <XHLaunchAd/XHLaunchAd.h>
 
 #import "FDTabBarController.h"
-#import "FDNavigationController.h"
-#import "HomeViewController.h"
-#import "MineViewController.h"
-#import "LoginViewController.h"
 
-#import "ZFDouyinViewController.h"
+#import "LoginViewController.h"
 
 @interface AppDelegate ()<XHLaunchAdDelegate,BuglyDelegate>
 
@@ -50,17 +46,9 @@
     //处理更新
     [self update];
     
-    //日志系统
-    if (@available(iOS 10, *)) {
-        [DDLog addLogger:[DDOSLogger sharedInstance]];
-    } else {
-        //do nothing
-    }
-    DDFileLogger *fileLogger = [[DDFileLogger alloc] init];
-    fileLogger.rollingFrequency = 60 * 60 * 24; // 刷新频率为24小时
-    fileLogger.logFileManager.maximumNumberOfLogFiles = 7; // 保存一周的日志，即7天
-    [DDLog addLogger:fileLogger];
+    [self initLog];
     
+    //监听崩溃
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
     
     [self registNotification];
@@ -70,6 +58,7 @@
     [self loginIM];
     
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
@@ -93,6 +82,19 @@
     [XHLaunchAd imageAdWithImageAdConfiguration:imageAdconfiguration delegate:self];
 }
 
+- (void)initLog{
+    //日志系统
+    if (@available(iOS 10, *)) {
+        [DDLog addLogger:[DDOSLogger sharedInstance]];
+    } else {
+        //do nothing
+    }
+    DDFileLogger *fileLogger = [[DDFileLogger alloc] init];
+    fileLogger.rollingFrequency = 60 * 60 * 24; // 刷新频率为24小时
+    fileLogger.logFileManager.maximumNumberOfLogFiles = 7; // 保存一周的日志，即7天
+    [DDLog addLogger:fileLogger];
+}
+
 - (void)loginIM{
     NSString *appId = [[FDKVManager defaultManager] getObjectOfClass:NSStringFromClass([NSString class]) ForKey:Key_UserInfo_Appid];
     NSString *identifier = [[FDKVManager defaultManager] getObjectOfClass:NSStringFromClass([NSString class]) ForKey:Key_UserInfo_User];
@@ -114,28 +116,6 @@
 
 - (void)createTabBarController{
     FDTabBarController *tabBarVC = [[FDTabBarController alloc]init];
-    
-    NSMutableDictionary *attrDict = [NSMutableDictionary dictionary];
-    attrDict[NSFontAttributeName] = Font(12);
-    
-    ZFDouYinViewController *douyinVC = [[ZFDouYinViewController alloc]init];
-    douyinVC.hidesBottomBarWhenPushed = NO;
-    FDNavigationController *homeNav = [[FDNavigationController alloc]initWithRootViewController:douyinVC];
-    homeNav.tabBarItem = [QDUIHelper tabBarItemWithTitle:Localized(@"Home.Title") image:[UIImageMake(@"tab_home_normal") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"tab_home_selected") tag:0];
-    [homeNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateNormal];
-    [homeNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateSelected];
-    AddAccessibilityHint(homeNav.tabBarItem, Localized(@"Home.Title"));
-    
-    MineViewController *mineVC = [[MineViewController alloc]init];
-    mineVC.hidesBottomBarWhenPushed = YES;
-    FDNavigationController *mineNav = [[FDNavigationController alloc]initWithRootViewController:mineVC];
-    mineNav.tabBarItem = [QDUIHelper tabBarItemWithTitle:Localized(@"Mine.Title") image:[UIImageMake(@"tab_mine_normal") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"tab_mine_selected") tag:0];
-    [mineNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateNormal];
-    [mineNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateSelected];
-    AddAccessibilityHint(mineNav.tabBarItem, Localized(@"Mine.Title"));
-    
-    tabBarVC.viewControllers = @[homeNav,mineNav];
-        
     self.window.rootViewController = tabBarVC;
 }
 
@@ -150,53 +130,22 @@
 
 - (void)registerApp{
     [[FDSocialManager defaultManager] registerApp];
-    //Bugly
-    // Get the default config
-    BuglyConfig * config = [[BuglyConfig alloc] init];
     
-    // Open the debug mode to print the sdk log message.
-    // Default value is NO, please DISABLE it in your RELEASE version.
+    BuglyConfig * config = [[BuglyConfig alloc] init];
 #if DEBUG
     config.debugMode = YES;
 #endif
-    
-    // Open the customized log record and report, BuglyLogLevelWarn will report Warn, Error log message.
-    // Default value is BuglyLogLevelSilent that means DISABLE it.
-    // You could change the value according to you need.
-    //    config.reportLogLevel = BuglyLogLevelWarn;
-    
-    // Open the STUCK scene data in MAIN thread record and report.
-    // Default value is NO
-    //config.blockMonitorEnable = YES;
-    
-    // Set the STUCK THRESHOLD time, when STUCK time > THRESHOLD it will record an event and report data when the app launched next time.
-    // Default value is 3.5 second.
-    //config.blockMonitorTimeout = 1.5;
-    
-    // Set the app channel to deployment
     config.channel = @"Bugly";
-    
     config.delegate = self;
-    
     config.consolelogEnable = NO;
     config.viewControllerTrackingEnable = NO;
-//    config.version = [[TIMManager sharedInstance] GetVersion];
-    
-    // NOTE:Required
-    // Start the Bugly sdk with APP_ID and your config
     [Bugly startWithAppId:kBuglyAppId
 #if DEBUG
         developmentDevice:YES
 #endif
                    config:config];
-    
-    // Set the customizd tag thats config in your APP registerd on the  bugly.qq.com
-    // [Bugly setTag:1799];
-    
     [Bugly setUserIdentifier:[NSString stringWithFormat:@"User: %@", [UIDevice currentDevice].name]];
-    
     [Bugly setUserValue:[NSProcessInfo processInfo].processName forKey:@"Process"];
-    
 }
 
 void uncaughtExceptionHandler(NSException*exception){
@@ -254,8 +203,7 @@ void uncaughtExceptionHandler(NSException*exception){
     self.deviceToken = deviceToken;
 }
 
-- (void)registNotification
-{
+- (void)registNotification{
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
     {
         [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];

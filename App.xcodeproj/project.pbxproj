@@ -720,10 +720,6 @@
 				6D598791229E662500113597 /* Pay */,
 				6D9837D12292575C001BEF7F /* Analyze */,
 				6D9DF5AA2277CE7700FB9CFC /* Social */,
-				6D74C526227575D500332AAC /* AppDelegate+Launch.h */,
-				6D74C527227575D500332AAC /* AppDelegate+Launch.m */,
-				6D4F0D12227695D6005A9B21 /* AppDelegate+HandleURL.h */,
-				6D4F0D13227695D6005A9B21 /* AppDelegate+HandleURL.m */,
 			);
 			path = ThirdPart;
 			sourceTree = "<group>";
@@ -1132,6 +1128,10 @@
 			children = (
 				CB8C26EC226CBCA90058DAEE /* AppDelegate.h */,
 				CB8C26ED226CBCA90058DAEE /* AppDelegate.m */,
+				6D74C526227575D500332AAC /* AppDelegate+Launch.h */,
+				6D74C527227575D500332AAC /* AppDelegate+Launch.m */,
+				6D4F0D12227695D6005A9B21 /* AppDelegate+HandleURL.h */,
+				6D4F0D13227695D6005A9B21 /* AppDelegate+HandleURL.m */,
 				CB8C26F5226CBCAA0058DAEE /* Assets.xcassets */,
 				CB8C26FA226CBCAA0058DAEE /* Info.plist */,
 				CB6E678A2279CF7B00D3788E /* Common */,
