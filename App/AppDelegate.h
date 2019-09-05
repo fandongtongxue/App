@@ -14,8 +14,7 @@
 
 @property (nonatomic, strong) NSData *deviceToken;
 
-- (UIViewController *)getLoginController;
-- (UITabBarController *)getMainController;
+@property(nonatomic, strong) LoginViewController *loginVC;
 
 @end
 

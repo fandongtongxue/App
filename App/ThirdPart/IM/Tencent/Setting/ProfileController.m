@@ -7,7 +7,6 @@
 //
 
 #import "ProfileController.h"
-#import "LoginController.h"
 #import "AppDelegate.h"
 #import "TUIButtonCell.h"
 #import "THeader.h"

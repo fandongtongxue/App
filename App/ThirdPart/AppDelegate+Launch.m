@@ -22,17 +22,6 @@
 
 #import "ZFDouyinViewController.h"
 
-#import "TNavigationController.h"
-#import "ConversationController.h"
-#import "SettingController.h"
-#import "ContactsController.h"
-#import "LoginController.h"
-#import "TUITabBarController.h"
-#import "TUIKit.h"
-#import "THeader.h"
-#import "ImSDK.h"
-#import "GenerateTestUserSig.h"
-
 @interface AppDelegate ()<XHLaunchAdDelegate,BuglyDelegate>
 
 @end
@@ -40,24 +29,8 @@
 @implementation AppDelegate (ThirdPart)
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
-    //设置你工程的启动页使用的是:LaunchImage 还是 LaunchScreen.storyboard(不设置默认:LaunchImage)
-    [XHLaunchAd setLaunchSourceType:SourceTypeLaunchImage];
     
-    //1.因为数据请求是异步的,请在数据请求前,调用下面方法配置数据等待时间.
-    //2.设为3即表示:启动页将停留3s等待服务器返回广告数据,3s内等到广告数据,将正常显示广告,否则将不显示
-    //3.数据获取成功,配置广告数据后,自动结束等待,显示广告
-    //注意:请求广告数据前,必须设置此属性,否则会先进入window的的根控制器
-    [XHLaunchAd setWaitDataDuration:3];
-    //配置广告数据
-    XHLaunchImageAdConfiguration *imageAdconfiguration = [XHLaunchImageAdConfiguration defaultConfiguration];
-    //广告图片URLString/或本地图片名(.jpg/.gif请带上后缀)
-    imageAdconfiguration.imageNameOrURLString = @"";
-    //广告点击打开页面参数(openModel可为NSString,模型,字典等任意类型)
-    imageAdconfiguration.openModel = @"http://blog.fandong.me";
-    imageAdconfiguration.duration = 5;
-    //显示开屏广告
-    [XHLaunchAd imageAdWithImageAdConfiguration:imageAdconfiguration delegate:self];
-    
+    [self initLaunchAd];
     // 界面
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
@@ -89,58 +62,54 @@
     [DDLog addLogger:fileLogger];
     
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserStatus:) name:TUIKitNotification_TIMUserStatusListener object:nil];
     
     [self registNotification];
     
-    //_SDKAppID 填写自己控制台申请的sdkAppid
-    if (SDKAPPID == 0) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Demo 尚未配置 SDKAPPID，请前往 GenerateTestUserSig.h 配置" message:nil preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleCancel handler:nil]];
-        [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
-    }else{
-        [[TUIKit sharedInstance] setupWithAppId:SDKAPPID];
-    }
+    [self createTabBarController];
     
-    NSNumber *appId = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_Appid];
-    NSString *identifier = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_User];
-    //NSString *pwd = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_Pwd];
-    NSString *userSig = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_Sig];
-    if([appId integerValue] == SDKAPPID && identifier.length != 0 && userSig.length != 0){
-        __weak typeof(self) ws = self;
-        TIMLoginParam *param = [[TIMLoginParam alloc] init];
-        param.identifier = identifier;
-        param.userSig = userSig;
-        [[TIMManager sharedInstance] login:param succ:^{
-            if (ws.deviceToken) {
-                TIMTokenParam *param = [[TIMTokenParam alloc] init];
-                /* 用户自己到苹果注册开发者证书，在开发者帐号中下载并生成证书(p12 文件)，将生成的 p12 文件传到腾讯证书管理控制台，控制台会自动生成一个证书 ID，将证书 ID 传入一下 busiId 参数中。*/
-                //企业证书 ID
-                param.busiId = sdkBusiId;
-                [param setToken:ws.deviceToken];
-                [[TIMManager sharedInstance] setToken:param succ:^{
-                    NSLog(@"-----> 上传 token 成功 ");
-                } fail:^(int code, NSString *msg) {
-                    NSLog(@"-----> 上传 token 失败 ");
-                }];
-            }
-            ws.window.rootViewController = [self getMainController];
-        } fail:^(int code, NSString *msg) {
-            [[NSUserDefaults standardUserDefaults] setObject:@(0) forKey:Key_UserInfo_Appid];
-            [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:Key_UserInfo_User];
-            [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:Key_UserInfo_Pwd];
-            [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:Key_UserInfo_Sig];
-            ws.window.rootViewController = [self getLoginController];
-        }];
-    }
-    else{
-        self.window.rootViewController = [self getLoginController];
-    }
-//    if (!self.window.rootViewController) {
-        [self createTabBarController];
-//    }
+    [self loginIM];
+    
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)initLaunchAd{
+    //设置你工程的启动页使用的是:LaunchImage 还是 LaunchScreen.storyboard(不设置默认:LaunchImage)
+    [XHLaunchAd setLaunchSourceType:SourceTypeLaunchImage];
+    
+    //1.因为数据请求是异步的,请在数据请求前,调用下面方法配置数据等待时间.
+    //2.设为3即表示:启动页将停留3s等待服务器返回广告数据,3s内等到广告数据,将正常显示广告,否则将不显示
+    //3.数据获取成功,配置广告数据后,自动结束等待,显示广告
+    //注意:请求广告数据前,必须设置此属性,否则会先进入window的的根控制器
+    [XHLaunchAd setWaitDataDuration:3];
+    //配置广告数据
+    XHLaunchImageAdConfiguration *imageAdconfiguration = [XHLaunchImageAdConfiguration defaultConfiguration];
+    //广告图片URLString/或本地图片名(.jpg/.gif请带上后缀)
+    imageAdconfiguration.imageNameOrURLString = @"";
+    //广告点击打开页面参数(openModel可为NSString,模型,字典等任意类型)
+    imageAdconfiguration.openModel = @"http://blog.fandong.me";
+    imageAdconfiguration.duration = 5;
+    //显示开屏广告
+    [XHLaunchAd imageAdWithImageAdConfiguration:imageAdconfiguration delegate:self];
+}
+
+- (void)loginIM{
+    NSString *appId = [[FDKVManager defaultManager] getObjectOfClass:NSStringFromClass([NSString class]) ForKey:Key_UserInfo_Appid];
+    NSString *identifier = [[FDKVManager defaultManager] getObjectOfClass:NSStringFromClass([NSString class]) ForKey:Key_UserInfo_User];
+    NSString *userSig = [[FDKVManager defaultManager] getObjectOfClass:NSStringFromClass([NSString class]) ForKey:Key_UserInfo_Sig];
+    if([appId integerValue] == SDKAPPID && identifier.length != 0 && userSig.length != 0){
+        [[FDIMManager defaultManager] loginIdentifier:identifier userSig:userSig appidAt3rd:@"" token:self.deviceToken success:^{
+            //do nothing
+        } failed:^(NSString * _Nonnull msg, int code) {
+            [[FDKVManager defaultManager] setObject:@(0) forKey:Key_UserInfo_Appid];
+            [[FDKVManager defaultManager] setObject:@"" forKey:Key_UserInfo_User];
+            [[FDKVManager defaultManager] setObject:@"" forKey:Key_UserInfo_Pwd];
+            [[FDKVManager defaultManager] setObject:@"" forKey:Key_UserInfo_Sig];
+            [self.window.rootViewController presentViewController:self.loginVC animated:YES completion:nil];
+        }];
+    }else{
+        [self.window.rootViewController presentViewController:self.loginVC animated:YES completion:nil];
+    }
 }
 
 - (void)createTabBarController{
@@ -176,11 +145,7 @@
     if ([GlobalManager manager].globalModel.isForceUpdate) {
         [self update];
     }
-    [[TIMManager sharedInstance] doForeground:^() {
-        NSLog(@"doForegroud Succ");
-    } fail:^(int code, NSString * err) {
-        NSLog(@"Fail: %d->%@", code, err);
-    }];
+    [[FDIMManager defaultManager] doForeground];
 }
 
 - (void)registerApp{
@@ -272,106 +237,6 @@ void uncaughtExceptionHandler(NSException*exception){
     return @"";
 }
 
-- (UIViewController *)getLoginController{
-    UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    LoginController *login = [board instantiateViewControllerWithIdentifier:@"LoginController"];
-    return login;
-}
-
-- (UITabBarController *)getMainController{
-    TUITabBarController *tbc = [[TUITabBarController alloc] init];
-    NSMutableArray *items = [NSMutableArray array];
-    TUITabBarItem *msgItem = [[TUITabBarItem alloc] init];
-    msgItem.title = @"消息";
-    msgItem.selectedImage = [UIImage imageNamed:TUIKitResource(@"message_pressed")];
-    msgItem.normalImage = [UIImage imageNamed:TUIKitResource(@"message_normal")];
-    msgItem.controller = [[TNavigationController alloc] initWithRootViewController:[[ConversationController alloc] init]];
-    [items addObject:msgItem];
-    
-    TUITabBarItem *contactItem = [[TUITabBarItem alloc] init];
-    contactItem.title = @"通讯录";
-    contactItem.selectedImage = [UIImage imageNamed:TUIKitResource(@"contacts_pressed")];
-    contactItem.normalImage = [UIImage imageNamed:TUIKitResource(@"contacts_normal")];
-    contactItem.controller = [[TNavigationController alloc] initWithRootViewController:[[ContactsController alloc] init]];
-    [items addObject:contactItem];
-    
-    TUITabBarItem *setItem = [[TUITabBarItem alloc] init];
-    setItem.title = @"我";
-    setItem.selectedImage = [UIImage imageNamed:TUIKitResource(@"setting_pressed")];
-    setItem.normalImage = [UIImage imageNamed:TUIKitResource(@"setting_normal")];
-    setItem.controller = [[TNavigationController alloc] initWithRootViewController:[[SettingController alloc] init]];
-    [items addObject:setItem];
-    tbc.tabBarItems = items;
-    
-    return tbc;
-}
-
-- (void)onUserStatus:(NSNotification *)notification
-{
-    TUIUserStatus status = [notification.object integerValue];
-    switch (status) {
-        case TUser_Status_ForceOffline:
-        {
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"下线通知" message:@"您的帐号于另一台手机上登录。" preferredStyle:UIAlertControllerStyleAlert];
-            [alert addAction:[UIAlertAction actionWithTitle:@"重新登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                /****此处未提供reLogin接口，而是直接使用保存在本地的数据登录，仅适用于Demo体验版本****/
-                NSNumber *appId = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_Appid];
-                NSString *identifier = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_User];
-                NSString *userSig = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_Sig];
-                if([appId integerValue] == SDKAPPID && identifier.length != 0 && userSig.length != 0){
-                    __weak typeof(self) ws = self;
-                    TIMLoginParam *param = [[TIMLoginParam alloc] init];
-                    param.identifier = identifier;
-                    param.userSig = userSig;
-                    [[TIMManager sharedInstance] login:param succ:^{
-                        if (ws.deviceToken) {
-                            TIMTokenParam *param = [[TIMTokenParam alloc] init];
-                            /* 用户自己到苹果注册开发者证书，在开发者帐号中下载并生成证书(p12 文件)，将生成的 p12 文件传到腾讯证书管理控制台，控制台会自动生成一个证书 ID，将证书 ID 传入一下 busiId 参数中。*/
-                            //企业证书 ID
-                            param.busiId = sdkBusiId;
-                            [param setToken:ws.deviceToken];
-                            [[TIMManager sharedInstance] setToken:param succ:^{
-                                NSLog(@"-----> 上传 token 成功 ");
-                            } fail:^(int code, NSString *msg) {
-                                NSLog(@"-----> 上传 token 失败 ");
-                            }];
-                        }
-                        ws.window.rootViewController = [self getMainController];
-                    } fail:^(int code, NSString *msg) {
-                        [[NSUserDefaults standardUserDefaults] setObject:@(0) forKey:Key_UserInfo_Appid];
-                        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:Key_UserInfo_User];
-                        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:Key_UserInfo_Pwd];
-                        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:Key_UserInfo_Sig];
-                        ws.window.rootViewController = [self getLoginController];
-                    }];
-                }
-                else{
-                    self.window.rootViewController = [self getLoginController];
-                }
-            }]];
-            [alert addAction:[UIAlertAction actionWithTitle:@"退出" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-                LoginController *login = [board instantiateViewControllerWithIdentifier:@"LoginController"];
-                self.window.rootViewController = login;
-            }]];
-            [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
-        }
-            break;
-        case TUser_Status_ReConnFailed:
-        {
-            NSLog(@"连网失败");
-        }
-            break;
-        case TUser_Status_SigExpired:
-        {
-            NSLog(@"userSig过期");
-        }
-            break;
-        default:
-            break;
-    }
-}
-
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
@@ -381,26 +246,7 @@ void uncaughtExceptionHandler(NSException*exception){
         [application endBackgroundTask: bgTaskID];
         bgTaskID = UIBackgroundTaskInvalid;
     }];
-    
-    //获取未读计数
-    int unReadCount = 0;
-    NSArray *convs = [[TIMManager sharedInstance] getConversationList];
-    for (TIMConversation *conv in convs) {
-        if([conv getType] == TIM_SYSTEM){
-            continue;
-        }
-        unReadCount += [conv getUnReadMessageNum];
-    }
-    [UIApplication sharedApplication].applicationIconBadgeNumber = unReadCount;
-    
-    //doBackground
-    TIMBackgroundParam  *param = [[TIMBackgroundParam alloc] init];
-    [param setC2cUnread:unReadCount];
-    [[TIMManager sharedInstance] doBackground:param succ:^() {
-        NSLog(@"doBackgroud Succ");
-    } fail:^(int code, NSString * err) {
-        NSLog(@"Fail: %d->%@", code, err);
-    }];
+    [[FDIMManager defaultManager] doBackground];
 }
 
 -(void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken

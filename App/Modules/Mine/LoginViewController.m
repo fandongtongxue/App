@@ -89,7 +89,7 @@
             PhoneLoginViewController *phoneLoginVC = [[PhoneLoginViewController alloc]initWithCallBack:^{
                 @strongify(self);
                 [GlobalManager manager].globalModel.isLogin = YES;
-                [self dismissViewControllerAnimated:YES completion:nil];
+                [self loginIM];
             }];
             [self.navigationController pushViewController:phoneLoginVC animated:YES];
         }
@@ -101,7 +101,7 @@
                 DDLogDebug(@"%@",model.mj_keyValues);
                 if (!errorMsg.length) {
                     [GlobalManager manager].globalModel.isLogin = YES;
-                    [self dismissViewControllerAnimated:YES completion:nil];
+                    [self loginIM];
                 }
             }];
         }
@@ -113,7 +113,7 @@
                 DDLogDebug(@"%@",model.mj_keyValues);
                 if (!errorMsg.length) {
                     [GlobalManager manager].globalModel.isLogin = YES;
-                    [self dismissViewControllerAnimated:YES completion:nil];
+                    [self loginIM];
                 }
             }];
         }
@@ -125,7 +125,7 @@
                 DDLogDebug(@"%@",model.mj_keyValues);
                 if (!errorMsg.length) {
                     [GlobalManager manager].globalModel.isLogin = YES;
-                    [self dismissViewControllerAnimated:YES completion:nil];
+                    [self loginIM];
                 }
             }];
         }
@@ -133,6 +133,35 @@
         default:
             break;
     }
+}
+
+- (void)loginIM{
+    NSString *identifier = [NSString stringWithFormat:@"%@%d",@"fanxiaobing",arc4random() % 1000];
+    //genTestUserSig 方法仅用于本地测试，请不要将如下代码发布到您的线上正式版本的 App 中，原因如下：
+    /*
+     *  本文件中的代码虽然能够正确计算出 UserSig，但仅适合快速调通 SDK 的基本功能，不适合线上产品，
+     *  这是因为客户端代码中的 SECRETKEY 很容易被反编译逆向破解，尤其是 Web 端的代码被破解的难度几乎为零。
+     *  一旦您的密钥泄露，攻击者就可以计算出正确的 UserSig 来盗用您的腾讯云流量。
+     *
+     *  正确的做法是将 UserSig 的计算代码和加密密钥放在您的业务服务器上，然后由 App 按需向您的服务器获取实时算出的 UserSig。
+     *  由于破解服务器的成本要高于破解客户端 App，所以服务器计算的方案能够更好地保护您的加密密钥。
+     */
+    NSString *userSig = [GenerateTestUserSig genTestUserSig:identifier];
+    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    NSData *deviceToken = delegate.deviceToken;
+    [[FDIMManager defaultManager] loginIdentifier:identifier userSig:userSig appidAt3rd:@"" token:deviceToken success:^{
+        [[FDKVManager defaultManager] setObject:@(SDKAPPID) forKey:Key_UserInfo_Appid];
+        [[FDKVManager defaultManager] setObject:identifier forKey:Key_UserInfo_User];
+        [[FDKVManager defaultManager] setObject:@"" forKey:Key_UserInfo_Pwd];
+        [[FDKVManager defaultManager] setObject:userSig forKey:Key_UserInfo_Sig];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self dismissViewControllerAnimated:YES completion:nil];
+        });
+    } failed:^(NSString * _Nonnull msg, int code) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"code:%d msdg:%@ ,请检查 sdkappid,identifier,userSig 是否正确配置",code,msg] message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+    }];
 }
 
 - (void)closeBtnAction{

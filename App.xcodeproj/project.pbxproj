@@ -56,7 +56,6 @@
 		6D618A482316077000F7D0A1 /* 00.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6D618A252316077000F7D0A1 /* 00.caf */; };
 		6D618A492316077000F7D0A1 /* 01.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6D618A262316077000F7D0A1 /* 01.caf */; };
 		6D618A4A2316077000F7D0A1 /* TCLoginParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D618A282316077000F7D0A1 /* TCLoginParam.m */; };
-		6D618A4B2316077000F7D0A1 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D618A292316077000F7D0A1 /* LoginController.m */; };
 		6D618A4C2316077000F7D0A1 /* GenerateTestUserSig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D618A2D2316077000F7D0A1 /* GenerateTestUserSig.m */; };
 		6D618A4D2316077000F7D0A1 /* ConversationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D618A302316077000F7D0A1 /* ConversationController.m */; };
 		6D74C528227575D500332AAC /* AppDelegate+Launch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D74C527227575D500332AAC /* AppDelegate+Launch.m */; };
@@ -215,9 +214,7 @@
 		6D618A252316077000F7D0A1 /* 00.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 00.caf; sourceTree = "<group>"; };
 		6D618A262316077000F7D0A1 /* 01.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 01.caf; sourceTree = "<group>"; };
 		6D618A282316077000F7D0A1 /* TCLoginParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCLoginParam.m; sourceTree = "<group>"; };
-		6D618A292316077000F7D0A1 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
 		6D618A2A2316077000F7D0A1 /* TCLoginParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCLoginParam.h; sourceTree = "<group>"; };
-		6D618A2B2316077000F7D0A1 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
 		6D618A2D2316077000F7D0A1 /* GenerateTestUserSig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenerateTestUserSig.m; sourceTree = "<group>"; };
 		6D618A2E2316077000F7D0A1 /* GenerateTestUserSig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenerateTestUserSig.h; sourceTree = "<group>"; };
 		6D618A302316077000F7D0A1 /* ConversationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationController.m; sourceTree = "<group>"; };
@@ -687,9 +684,7 @@
 			isa = PBXGroup;
 			children = (
 				6D618A282316077000F7D0A1 /* TCLoginParam.m */,
-				6D618A292316077000F7D0A1 /* LoginController.m */,
 				6D618A2A2316077000F7D0A1 /* TCLoginParam.h */,
-				6D618A2B2316077000F7D0A1 /* LoginController.h */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1359,7 +1354,6 @@
 				6D618A372316077000F7D0A1 /* ContactsController.m in Sources */,
 				6D36CA8F228117E10046FA8C /* GlobalManager.m in Sources */,
 				CBB5492D22A010E1007B1A7C /* WXApiRequestHandler.m in Sources */,
-				6D618A4B2316077000F7D0A1 /* LoginController.m in Sources */,
 				6D4F0D14227695D6005A9B21 /* AppDelegate+HandleURL.m in Sources */,
 				CB6E67762279AA0C00D3788E /* FDTabBarController.m in Sources */,
 				CB19812B229EBC2600AA1002 /* APOrderInfo.m in Sources */,
