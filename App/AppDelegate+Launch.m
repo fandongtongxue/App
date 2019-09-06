@@ -10,13 +10,13 @@
 
 #import <Bugly/Bugly.h>
 
-#import <UMCommon/UMCommon.h>
-
 #import <XHLaunchAd/XHLaunchAd.h>
 
 #import "FDTabBarController.h"
 
 #import "LoginViewController.h"
+
+#import "AppDelegate+Push.h"
 
 @interface AppDelegate ()<XHLaunchAdDelegate,BuglyDelegate>
 
@@ -25,47 +25,35 @@
 @implementation AppDelegate (ThirdPart)
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
-    
     [self initLaunchAd];
     // 界面
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
     //加载初始化数据
     [[GlobalManager manager] loadData];
-    
     //注册第三方
     [self registerApp];
-    
+    [self initPushWithOptions:launchOptions];
     //必须登录
 //    if ([GlobalManager manager].globalModel.isMustLogin) {
 //        LoginViewController *loginVC = [[LoginViewController alloc]init];
 //        FDNavigationController *loginNav = [[FDNavigationController alloc]initWithRootViewController:loginVC];
 //        [self.window.rootViewController presentViewController:loginNav animated:YES completion:nil];
 //    }
-    
     //处理更新
     [self update];
-    
     [self initLog];
-    
     //监听崩溃
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
-    
     [self registNotification];
-    
     [self createTabBarController];
-    
     [self loginIM];
-    
     [self.window makeKeyAndVisible];
-    
     return YES;
 }
 
 - (void)initLaunchAd{
     //设置你工程的启动页使用的是:LaunchImage 还是 LaunchScreen.storyboard(不设置默认:LaunchImage)
     [XHLaunchAd setLaunchSourceType:SourceTypeLaunchImage];
-    
     //1.因为数据请求是异步的,请在数据请求前,调用下面方法配置数据等待时间.
     //2.设为3即表示:启动页将停留3s等待服务器返回广告数据,3s内等到广告数据,将正常显示广告,否则将不显示
     //3.数据获取成功,配置广告数据后,自动结束等待,显示广告

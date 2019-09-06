@@ -324,6 +324,8 @@ PODS:
   - UMCAnalytics (6.0.5):
     - UMCCommon
   - UMCCommon (2.1.1)
+  - UMCPush (3.2.4):
+    - UMCCommon
   - UMCSecurityPlugins (1.0.6)
   - UMCShare/Core (6.9.6):
     - UMCCommon
@@ -384,6 +386,7 @@ DEPENDENCIES:
   - TXIMSDK_TUIKit_iOS
   - UMCAnalytics
   - UMCCommon
+  - UMCPush
   - UMCSecurityPlugins
   - UMCShare/Social/QQ
   - UMCShare/Social/ReducedWeChat
@@ -427,6 +430,7 @@ SPEC REPOS:
     - TXIMSDK_TUIKit_iOS
     - UMCAnalytics
     - UMCCommon
+    - UMCPush
     - UMCSecurityPlugins
     - UMCShare
     - XHLaunchAd
@@ -474,12 +478,13 @@ SPEC CHECKSUMS:
   TXIMSDK_TUIKit_iOS: c6ba8a30b963e2a076fdaacc5ac42e5ad43f18c0
   UMCAnalytics: 045be2cd1ec05aa95ad62405a850757f932e2d59
   UMCCommon: 971f324a5a99c9d662ae040a815e7e3d7ef8b2a8
+  UMCPush: 1edd856027dcf905333effb4040ace5d236a7316
   UMCSecurityPlugins: 0831a08f3988f3cea9f1d3a7626cd9bee4fef150
   UMCShare: e0cef55c0fd6051254c8cda1d0630eb578b27bad
   XHLaunchAd: 45048592af01aa501c9d2d0c45e95ca74c4d0596
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
   ZFPlayer: b2ba40c924e1b9a7f0a670632c4235ffbe6ee055
 
-PODFILE CHECKSUM: b150184adccd1db33ae4c069a26069cd1417748f
+PODFILE CHECKSUM: 67a9b4f866a4817c2ee677805ca38d91b0d91327
 
 COCOAPODS: 1.8.0.beta.2
