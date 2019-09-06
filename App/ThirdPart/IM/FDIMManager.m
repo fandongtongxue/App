@@ -29,7 +29,7 @@
 
 - (void)registerApp{
     [[TUIKit sharedInstance] setupWithAppId:SDKAPPID];
-//    //初始化 SDK 基本配置
+    //初始化 SDK 基本配置
 //    TIMSdkConfig *sdkConfig = [[TIMSdkConfig alloc] init];
 //    sdkConfig.sdkAppId = kIMSDKAppID;
 //    sdkConfig.disableLogPrint = NO; // 是否允许 log 打印
@@ -97,9 +97,9 @@
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"下线通知" message:@"您的帐号于另一台手机上登录。" preferredStyle:UIAlertControllerStyleAlert];
             [alert addAction:[UIAlertAction actionWithTitle:@"重新登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 /****此处未提供reLogin接口，而是直接使用保存在本地的数据登录，仅适用于Demo体验版本****/
-                NSNumber *appId = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_Appid];
-                NSString *identifier = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_User];
-                NSString *userSig = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_Sig];
+                NSNumber *appId = [[FDKVManager defaultManager] getObjectOfClass:NSStringFromClass([NSNumber class]) ForKey:Key_UserInfo_Appid];
+                NSString *identifier = [[FDKVManager defaultManager] getObjectOfClass:NSStringFromClass([NSString class]) ForKey:Key_UserInfo_User];
+                NSString *userSig = [[FDKVManager defaultManager] getObjectOfClass:NSStringFromClass([NSString class]) ForKey:Key_UserInfo_Sig];
                 if([appId integerValue] == SDKAPPID && identifier.length != 0 && userSig.length != 0){
                     TIMLoginParam *param = [[TIMLoginParam alloc] init];
                     param.identifier = identifier;
@@ -112,16 +112,16 @@
                             param.busiId = sdkBusiId;
                             [param setToken:delegate.deviceToken];
                             [[TIMManager sharedInstance] setToken:param succ:^{
-                                NSLog(@"-----> 上传 token 成功 ");
+                                DDLogDebug(@"-----> 上传 token 成功 ");
                             } fail:^(int code, NSString *msg) {
-                                NSLog(@"-----> 上传 token 失败 ");
+                                DDLogDebug(@"-----> 上传 token 失败 ");
                             }];
                         }
                     } fail:^(int code, NSString *msg) {
-                        [[NSUserDefaults standardUserDefaults] setObject:@(0) forKey:Key_UserInfo_Appid];
-                        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:Key_UserInfo_User];
-                        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:Key_UserInfo_Pwd];
-                        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:Key_UserInfo_Sig];
+                        [[FDKVManager defaultManager] setObject:@(0) forKey:Key_UserInfo_Appid];
+                        [[FDKVManager defaultManager] setObject:@"" forKey:Key_UserInfo_User];
+                        [[FDKVManager defaultManager] setObject:@"" forKey:Key_UserInfo_Pwd];
+                        [[FDKVManager defaultManager] setObject:@"" forKey:Key_UserInfo_Sig];
                         [delegate.window.rootViewController presentViewController:delegate.loginVC animated:YES completion:nil];
                     }];
                 }
@@ -137,12 +137,12 @@
             break;
         case TUser_Status_ReConnFailed:
         {
-            NSLog(@"连网失败");
+            DDLogDebug(@"连网失败");
         }
             break;
         case TUser_Status_SigExpired:
         {
-            NSLog(@"userSig过期");
+            DDLogDebug(@"userSig过期");
         }
             break;
         default:
@@ -152,9 +152,9 @@
 
 - (void)doForeground{
     [[TIMManager sharedInstance] doForeground:^() {
-        NSLog(@"doForegroud Succ");
+        DDLogDebug(@"doForegroud Succ");
     } fail:^(int code, NSString * err) {
-        NSLog(@"Fail: %d->%@", code, err);
+        DDLogDebug(@"Fail: %d->%@", code, err);
     }];
 }
 
@@ -174,9 +174,9 @@
     TIMBackgroundParam  *param = [[TIMBackgroundParam alloc] init];
     [param setC2cUnread:unReadCount];
     [[TIMManager sharedInstance] doBackground:param succ:^() {
-        NSLog(@"doBackgroud Succ");
+        DDLogDebug(@"doBackgroud Succ");
     } fail:^(int code, NSString * err) {
-        NSLog(@"Fail: %d->%@", code, err);
+        DDLogDebug(@"Fail: %d->%@", code, err);
     }];
 }
 

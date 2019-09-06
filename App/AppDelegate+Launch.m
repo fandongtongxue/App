@@ -186,8 +186,7 @@ void uncaughtExceptionHandler(NSException*exception){
     [[FDIMManager defaultManager] doBackground];
 }
 
--(void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
-{
+-(void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
     self.deviceToken = deviceToken;
 }
 
