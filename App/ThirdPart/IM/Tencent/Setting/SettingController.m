@@ -13,7 +13,6 @@
  *  本类依赖于腾讯云 TUIKit和IMSDK 实现
  */
 #import "SettingController.h"
-#import "LoginController.h"
 #import "AppDelegate.h"
 #import "TUIProfileCardCell.h"
 #import "TUIButtonCell.h"
@@ -329,9 +328,10 @@
 - (void)didLogoutInSettingController:(SettingController *)controller
 {
     [[TUILocalStorage sharedInstance] logout];
-    UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    LoginController *login = [board instantiateViewControllerWithIdentifier:@"LoginController"];
-    self.view.window.rootViewController = login;
+    //范东TODO
+//    UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+//    LoginController *login = [board instantiateViewControllerWithIdentifier:@"LoginController"];
+//    self.view.window.rootViewController = login;
 }
 
 - (void)didSelectAbout

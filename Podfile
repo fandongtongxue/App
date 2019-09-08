@@ -26,6 +26,8 @@ target 'App' do
   pod 'UMCShare/Social/Sina'
   # 友盟统计
   pod 'UMCAnalytics'
+  # 友盟推送
+  pod 'UMCPush'
   # HUD
   pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
   # layout

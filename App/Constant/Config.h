@@ -9,8 +9,6 @@
 #ifndef Config_h
 #define Config_h
 
-
-
 //Social
 #define kUMengAppKey @"56e6b3e667e58e1b7700012b"
 
@@ -52,6 +50,5 @@
 #define userSig4    @""
 
 #define sdkBusiId         12742
-#define BUGLY_APP_ID      @"e965e5d928"
 
 #endif /* Config_h */

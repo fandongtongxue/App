@@ -22,9 +22,13 @@ typedef void(^FDIMlogoutFailedCallBack)(NSString *msg, int code);
 
 - (void)registerApp;
 
-- (void)loginIdentifier:(NSString *)identifier userSig:(NSString *)userSig appidAt3rd:(NSString *)appidAt3rd success:(FDIMloginSuccessCallBack)success failed:(FDIMloginFailedCallBack)failed;
+- (void)loginIdentifier:(NSString *)identifier userSig:(NSString *)userSig appidAt3rd:(NSString *)appidAt3rd token:(NSData *)token success:(FDIMloginSuccessCallBack)success failed:(FDIMloginFailedCallBack)failed;
 
 - (void)logoutSuccess:(FDIMlogoutSuccessCallBack)success failed:(FDIMlogoutFailedCallBack)failed;
+
+- (void)doForeground;
+
+- (void)doBackground;
 
 @end
 
