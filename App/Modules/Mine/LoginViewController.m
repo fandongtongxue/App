@@ -88,7 +88,7 @@
         {
             PhoneLoginViewController *phoneLoginVC = [[PhoneLoginViewController alloc]initWithCallBack:^{
                 @strongify(self);
-                [GlobalManager manager].globalModel.isLogin = YES;
+                [[FDKVManager defaultManager] setObject:@"1" forKey:isLogin];
                 [self loginIM];
             }];
             [self.navigationController pushViewController:phoneLoginVC animated:YES];
@@ -100,7 +100,7 @@
                 @strongify(self);
                 DDLogDebug(@"%@",model.mj_keyValues);
                 if (!errorMsg.length) {
-                    [GlobalManager manager].globalModel.isLogin = YES;
+                    [[FDKVManager defaultManager] setObject:@"1" forKey:isLogin];
                     [self loginIM];
                 }
             }];
@@ -112,7 +112,7 @@
                 @strongify(self);
                 DDLogDebug(@"%@",model.mj_keyValues);
                 if (!errorMsg.length) {
-                    [GlobalManager manager].globalModel.isLogin = YES;
+                    [[FDKVManager defaultManager] setObject:@"1" forKey:isLogin];
                     [self loginIM];
                 }
             }];
@@ -124,7 +124,7 @@
                 @strongify(self);
                 DDLogDebug(@"%@",model.mj_keyValues);
                 if (!errorMsg.length) {
-                    [GlobalManager manager].globalModel.isLogin = YES;
+                    [[FDKVManager defaultManager] setObject:@"1" forKey:isLogin];
                     [self loginIM];
                 }
             }];

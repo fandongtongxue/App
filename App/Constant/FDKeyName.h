@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface FDKeyName : NSObject
 
 UIKIT_EXTERN NSString *const TestKey;
+UIKIT_EXTERN NSString *const isLogin;
 
 @end
 

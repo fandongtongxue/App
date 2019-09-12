@@ -118,6 +118,7 @@
 
 - (void)registerApp{
     [[FDSocialManager defaultManager] registerApp];
+    [[FDIMManager defaultManager] registerApp];
     
     BuglyConfig * config = [[BuglyConfig alloc] init];
 #if DEBUG

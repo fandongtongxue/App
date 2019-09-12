@@ -10,10 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^FDIMloginSuccessCallBack)();
+typedef void(^FDIMloginSuccessCallBack)(void);
 typedef void(^FDIMloginFailedCallBack)(NSString *msg, int code);
 
-typedef void(^FDIMlogoutSuccessCallBack)();
+typedef void(^FDIMlogoutSuccessCallBack)(void);
 typedef void(^FDIMlogoutFailedCallBack)(NSString *msg, int code);
 
 @interface FDIMManager : NSObject

@@ -13,6 +13,7 @@
 #import "HomeViewController.h"
 #import "MineViewController.h"
 #import "ZFDouyinViewController.h"
+#import "ConversationController.h"
 
 @interface FDTabBarController ()<UITabBarControllerDelegate>
 
@@ -38,21 +39,29 @@
     [homeNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateSelected];
     AddAccessibilityHint(homeNav.tabBarItem, Localized(@"Home.Title"));
     
+    ConversationController *conv = [[ConversationController alloc]init];
+    conv.hidesBottomBarWhenPushed = NO;
+    FDNavigationController *convNav = [[FDNavigationController alloc]initWithRootViewController:conv];
+    convNav.tabBarItem = [QDUIHelper tabBarItemWithTitle:Localized(@"Message.Title") image:[UIImageMake(@"tab_chat_normal") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"tab_chat_selected") tag:1];
+    [convNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateNormal];
+    [convNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateSelected];
+    AddAccessibilityHint(convNav.tabBarItem, Localized(@"Message.Title"));
+    
     MineViewController *mineVC = [[MineViewController alloc]init];
     mineVC.hidesBottomBarWhenPushed = YES;
     FDNavigationController *mineNav = [[FDNavigationController alloc]initWithRootViewController:mineVC];
-    mineNav.tabBarItem = [QDUIHelper tabBarItemWithTitle:Localized(@"Mine.Title") image:[UIImageMake(@"tab_mine_normal") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"tab_mine_selected") tag:0];
+    mineNav.tabBarItem = [QDUIHelper tabBarItemWithTitle:Localized(@"Mine.Title") image:[UIImageMake(@"tab_mine_normal") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"tab_mine_selected") tag:2];
     [mineNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateNormal];
     [mineNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateSelected];
     AddAccessibilityHint(mineNav.tabBarItem, Localized(@"Mine.Title"));
     
-    self.viewControllers = @[homeNav,mineNav];
+    self.viewControllers = @[homeNav,convNav,mineNav];
 }
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
     NSInteger index = [self.viewControllers indexOfObject:viewController];
     if (index != 0) {
-        if (![GlobalManager manager].globalModel.isLogin) {
+        if (!kisLogin) {
             LoginViewController *loginVC = [[LoginViewController alloc]init];
             FDNavigationController *loginNav = [[FDNavigationController alloc]initWithRootViewController:loginVC];
             [self presentViewController:loginNav animated:YES completion:nil];

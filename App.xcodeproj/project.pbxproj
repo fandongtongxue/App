@@ -173,7 +173,6 @@
 		6D59879A229E662500113597 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		6D5F988A22EE7D1F009C3E10 /* FDKeyName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDKeyName.h; sourceTree = "<group>"; };
 		6D5F988B22EE7D1F009C3E10 /* FDKeyName.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDKeyName.m; sourceTree = "<group>"; };
-		6D5F989022EE8FAE009C3E10 /* data.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = data.sqlite; sourceTree = "<group>"; };
 		6D6189F52316077000F7D0A1 /* SearchFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchFriendViewController.h; sourceTree = "<group>"; };
 		6D6189F62316077000F7D0A1 /* TFriendProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFriendProfileController.m; sourceTree = "<group>"; };
 		6D6189F72316077000F7D0A1 /* FriendRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendRequestViewController.h; sourceTree = "<group>"; };
@@ -450,6 +449,13 @@
 				6DF535CE22D8665C006FCD3F /* FDAddressModel.m */,
 			);
 			path = Address;
+			sourceTree = "<group>";
+		};
+		6D30B6D523223E2C00F3199F /* Message */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Message;
 			sourceTree = "<group>";
 		};
 		6D369E43229E6BF6006C9DDF /* Constant */ = {
@@ -782,7 +788,6 @@
 			children = (
 				6D141851231A55620063067F /* TUIKitFace.bundle */,
 				6D141852231A55620063067F /* TUIKitResource.bundle */,
-				6D5F989022EE8FAE009C3E10 /* data.sqlite */,
 				CB6E67C82279EECC00D3788E /* Localizable.strings */,
 				CB8C26FB226CBCAA0058DAEE /* main.m */,
 				CB6E67BC2279D62A00D3788E /* Main.storyboard */,
@@ -1052,6 +1057,7 @@
 		CB6E67712279A9BD00D3788E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				6D30B6D523223E2C00F3199F /* Message */,
 				6D36CA88228117E10046FA8C /* Global */,
 				CB8EA0DE227B1A02004177D4 /* Mine */,
 				CB6E67BE2279D86F00D3788E /* Home */,
