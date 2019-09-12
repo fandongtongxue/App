@@ -11,5 +11,6 @@
 @implementation FDKeyName
 
 NSString *const TestKey = @"TestKey";
+NSString *const isLogin = @"isLogin";
 
 @end

@@ -11,7 +11,7 @@
 @class FDSocialModel;
 @class FDSocialShareModel;
 
-typedef void (^FDSocialManagerCompletionHandler)(FDSocialModel * _Nullable model, NSString *errorMsg);
+typedef void (^FDSocialManagerCompletionHandler)(FDSocialModel * _Nullable model, NSString * _Nullable errorMsg);
 
 typedef NS_ENUM(NSInteger, FDSocialManagerLoginType) {
     FDSocialManagerLoginTypeWeibo      = 0,

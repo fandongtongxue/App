@@ -13,4 +13,6 @@
 
 #define Font(_pointSize) [UIFont fontWithName:@"AlibabaPuHuiTiL" size:_pointSize]
 
+#define kisLogin [[[FDKVManager defaultManager] getObjectOfClass:NSStringFromClass([NSString class]) ForKey:isLogin] boolValue]
+
 #endif /* Define_h */

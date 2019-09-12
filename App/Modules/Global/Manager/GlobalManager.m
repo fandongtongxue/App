@@ -23,7 +23,6 @@
 }
 
 - (void)loadData{
-    [[FDPayManager defaultManager] pay:FDPayTypeAli];
     //初始化配置数据
     [[[FDGlobalApi alloc]init] startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         DDLogDebug(@"");
