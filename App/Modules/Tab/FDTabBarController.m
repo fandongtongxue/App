@@ -48,7 +48,7 @@
     AddAccessibilityHint(convNav.tabBarItem, Localized(@"Message.Title"));
     
     MineViewController *mineVC = [[MineViewController alloc]init];
-    mineVC.hidesBottomBarWhenPushed = YES;
+    mineVC.hidesBottomBarWhenPushed = NO;
     FDNavigationController *mineNav = [[FDNavigationController alloc]initWithRootViewController:mineVC];
     mineNav.tabBarItem = [QDUIHelper tabBarItemWithTitle:Localized(@"Mine.Title") image:[UIImageMake(@"tab_mine_normal") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"tab_mine_selected") tag:2];
     [mineNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateNormal];

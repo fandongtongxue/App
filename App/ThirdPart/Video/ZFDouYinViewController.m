@@ -75,6 +75,16 @@ static NSString *kIdentifier = @"kIdentifier";
     };
 }
 
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [self.player setViewControllerDisappear:YES];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self.player setViewControllerDisappear:NO];
+}
+
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     self.backBtn.frame = CGRectMake(15, CGRectGetMaxY([UIApplication sharedApplication].statusBarFrame), 36, 36);

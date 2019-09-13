@@ -25,15 +25,15 @@ PODS:
   - HappyDNS (0.3.15)
   - ISVImageScrollView (0.1.2)
   - Masonry (1.1.0)
-  - MJExtension (3.1.0)
+  - MJExtension (3.1.2)
   - MJRefresh (3.2.0)
   - MLeaksFinder (1.0.0):
     - FBRetainCycleDetector
-  - MMKV (1.0.22)
+  - MMKV (1.0.23)
   - MMLayout (0.2.0)
   - mob_smssdk (3.2.3):
     - MOBFoundation
-  - MOBFoundation (3.2.4)
+  - MOBFoundation (3.2.5)
   - Qiniu (7.2.5):
     - HappyDNS (~> 0.3)
   - QMUIKit (3.2.1):
@@ -308,13 +308,13 @@ PODS:
   - ReactiveObjC (3.1.1)
   - SDCycleScrollView (1.80):
     - SDWebImage (>= 5.0.0)
-  - SDWebImage (5.1.0):
-    - SDWebImage/Core (= 5.1.0)
-  - SDWebImage/Core (5.1.0)
+  - SDWebImage (5.1.1):
+    - SDWebImage/Core (= 5.1.1)
+  - SDWebImage/Core (5.1.1)
   - SVProgressHUD (2.2.6)
   - Toast (4.0.0)
-  - TXIMSDK_iOS (4.4.900)
-  - TXIMSDK_TUIKit_iOS (4.4.900):
+  - TXIMSDK_iOS (4.5.15)
+  - TXIMSDK_TUIKit_iOS (4.5.15):
     - ISVImageScrollView
     - MMLayout
     - ReactiveObjC
@@ -457,13 +457,13 @@ SPEC CHECKSUMS:
   HappyDNS: 00c15e651a347206e58a20503a32a5564589b56a
   ISVImageScrollView: ba511d12a1661b40feb8921309c0854bf93ec749
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MJExtension: 6b69b3bef2864fd550ce1a184eda219e321209d2
+  MJExtension: 81e8e411ced318561dd09334b0c83d8227cef79c
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
-  MMKV: 99b05c376c0eb412b468ba1d3e6813502edeaa24
+  MMKV: 031ae51aedc0af1b250922f7ed8a6b6ee2f94c4c
   MMLayout: 3fb59d58eeb8656c64e61d550fb0088e10666c11
   mob_smssdk: cdb6a31d4fd4667ed928e2eca03f21ad89ebc05c
-  MOBFoundation: dd8f319dde9331590d515a1676d27baccc0070e5
+  MOBFoundation: 07f32af86af66ca46bef3ffcb1810835af53108e
   Qiniu: 909b408ee489ea54827e9717be90b94bc9dfbc48
   QMUIKit: a3af645843b9558eb7aaf407b320eaeb45ab6144
   QuickMobileTextField: 61e4b90df95c3b63637a7398c37572cd5945d641
@@ -471,11 +471,11 @@ SPEC CHECKSUMS:
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
-  SDWebImage: fb387001955223213dde14bc08c8b73f371f8d8f
+  SDWebImage: 96d7f03415ccb28d299d765f93557ff8a617abd8
   SVProgressHUD: 6ed134667e9ebb2f33679e8273cd48fd3fa349e5
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
-  TXIMSDK_iOS: 54c04c0807ccf0c406366ef86cff663ea277e235
-  TXIMSDK_TUIKit_iOS: c6ba8a30b963e2a076fdaacc5ac42e5ad43f18c0
+  TXIMSDK_iOS: 7cf467dc7c90f294b894e8a7b7004bce7acfd332
+  TXIMSDK_TUIKit_iOS: 95bc7ce8b6c73c8e5ebbe60c77e44c15ac4ec30c
   UMCAnalytics: 045be2cd1ec05aa95ad62405a850757f932e2d59
   UMCCommon: 971f324a5a99c9d662ae040a815e7e3d7ef8b2a8
   UMCPush: 1edd856027dcf905333effb4040ace5d236a7316

@@ -132,16 +132,16 @@
 
 - (void)setData:(ZFTableData *)data {
     _data = data;
-    if (data.thumbnail_width >= data.thumbnail_height) {
-        self.coverImageView.contentMode = UIViewContentModeScaleAspectFit;
-        self.coverImageView.clipsToBounds = NO;
-    } else {
-        self.coverImageView.contentMode = UIViewContentModeScaleAspectFill;
-        self.coverImageView.clipsToBounds = YES;
-    }
-    [self.coverImageView setImageWithURLString:data.thumbnail_url placeholder:[UIImage imageNamed:@"loading_bgView"]];
-    [self.bgImgView setImageWithURLString:data.thumbnail_url placeholder:[UIImage imageNamed:@"loading_bgView"]];
-    self.titleLabel.text = data.title;
+//    if (data.thumbnail_width >= data.thumbnail_height) {
+//        self.coverImageView.contentMode = UIViewContentModeScaleAspectFit;
+//        self.coverImageView.clipsToBounds = NO;
+//    } else {
+//        self.coverImageView.contentMode = UIViewContentModeScaleAspectFill;
+//        self.coverImageView.clipsToBounds = YES;
+//    }
+//    [self.coverImageView setImageWithURLString:data.thumbnail_url placeholder:[UIImage imageNamed:@"loading_bgView"]];
+//    [self.bgImgView setImageWithURLString:data.thumbnail_url placeholder:[UIImage imageNamed:@"loading_bgView"]];
+//    self.titleLabel.text = data.title;
 }
 
 - (UIImageView *)coverImageView {
