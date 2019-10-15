@@ -84,17 +84,18 @@
 }
 
 - (void)loginIM{
-    NSString *appId = [[FDKVManager defaultManager] getObjectOfClass:NSStringFromClass([NSString class]) ForKey:Key_UserInfo_Appid];
-    NSString *identifier = [[FDKVManager defaultManager] getObjectOfClass:NSStringFromClass([NSString class]) ForKey:Key_UserInfo_User];
-    NSString *userSig = [[FDKVManager defaultManager] getObjectOfClass:NSStringFromClass([NSString class]) ForKey:Key_UserInfo_Sig];
+    NSString *appId = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_Appid];
+    NSString *identifier = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_User];
+    NSString *userSig = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_Sig];
     if([appId integerValue] == SDKAPPID && identifier.length != 0 && userSig.length != 0){
         [[FDIMManager defaultManager] loginIdentifier:identifier userSig:userSig appidAt3rd:@"" token:self.deviceToken success:^{
             //do nothing
         } failed:^(NSString * _Nonnull msg, int code) {
-            [[FDKVManager defaultManager] setObject:@(0) forKey:Key_UserInfo_Appid];
-            [[FDKVManager defaultManager] setObject:@"" forKey:Key_UserInfo_User];
-            [[FDKVManager defaultManager] setObject:@"" forKey:Key_UserInfo_Pwd];
-            [[FDKVManager defaultManager] setObject:@"" forKey:Key_UserInfo_Sig];
+            [[NSUserDefaults standardUserDefaults] setObject:@(0) forKey:Key_UserInfo_Appid];
+            [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:Key_UserInfo_User];
+            [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:Key_UserInfo_Pwd];
+            [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:Key_UserInfo_Sig];
+            [[NSUserDefaults standardUserDefaults] synchronize];
             [self.window.rootViewController presentViewController:self.loginVC animated:YES completion:nil];
         }];
     }else{

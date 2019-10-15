@@ -88,7 +88,8 @@
         {
             PhoneLoginViewController *phoneLoginVC = [[PhoneLoginViewController alloc]initWithCallBack:^{
                 @strongify(self);
-                [[FDKVManager defaultManager] setObject:@"1" forKey:isLogin];
+                [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:isLogin];
+                [[NSUserDefaults standardUserDefaults] synchronize];
                 [self loginIM];
             }];
             [self.navigationController pushViewController:phoneLoginVC animated:YES];
@@ -100,7 +101,8 @@
                 @strongify(self);
                 DDLogDebug(@"%@",model.mj_keyValues);
                 if (!errorMsg.length) {
-                    [[FDKVManager defaultManager] setObject:@"1" forKey:isLogin];
+                    [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:isLogin];
+                    [[NSUserDefaults standardUserDefaults] synchronize];
                     [self loginIM];
                 }
             }];
@@ -112,7 +114,8 @@
                 @strongify(self);
                 DDLogDebug(@"%@",model.mj_keyValues);
                 if (!errorMsg.length) {
-                    [[FDKVManager defaultManager] setObject:@"1" forKey:isLogin];
+                    [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:isLogin];
+                    [[NSUserDefaults standardUserDefaults] synchronize];
                     [self loginIM];
                 }
             }];
@@ -124,7 +127,8 @@
                 @strongify(self);
                 DDLogDebug(@"%@",model.mj_keyValues);
                 if (!errorMsg.length) {
-                    [[FDKVManager defaultManager] setObject:@"1" forKey:isLogin];
+                    [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:isLogin];
+                    [[NSUserDefaults standardUserDefaults] synchronize];
                     [self loginIM];
                 }
             }];
@@ -136,7 +140,10 @@
 }
 
 - (void)loginIM{
-    NSString *identifier = [NSString stringWithFormat:@"%@%d",@"fanxiaobing",arc4random() % 1000];
+    NSString *identifier = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_User];
+    if (!identifier) {
+        identifier = [NSString stringWithFormat:@"%@%d",@"fanxiaobing",arc4random() % 1000];
+    }
     //genTestUserSig 方法仅用于本地测试，请不要将如下代码发布到您的线上正式版本的 App 中，原因如下：
     /*
      *  本文件中的代码虽然能够正确计算出 UserSig，但仅适合快速调通 SDK 的基本功能，不适合线上产品，
@@ -150,10 +157,11 @@
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     NSData *deviceToken = delegate.deviceToken;
     [[FDIMManager defaultManager] loginIdentifier:identifier userSig:userSig appidAt3rd:@"" token:deviceToken success:^{
-        [[FDKVManager defaultManager] setObject:@(SDKAPPID) forKey:Key_UserInfo_Appid];
-        [[FDKVManager defaultManager] setObject:identifier forKey:Key_UserInfo_User];
-        [[FDKVManager defaultManager] setObject:@"" forKey:Key_UserInfo_Pwd];
-        [[FDKVManager defaultManager] setObject:userSig forKey:Key_UserInfo_Sig];
+        [[NSUserDefaults standardUserDefaults] setObject:@(SDKAPPID) forKey:Key_UserInfo_Appid];
+        [[NSUserDefaults standardUserDefaults] setObject:identifier forKey:Key_UserInfo_User];
+        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:Key_UserInfo_Pwd];
+        [[NSUserDefaults standardUserDefaults] setObject:userSig forKey:Key_UserInfo_Sig];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self dismissViewControllerAnimated:YES completion:nil];
         });

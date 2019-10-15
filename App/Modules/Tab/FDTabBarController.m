@@ -14,6 +14,8 @@
 #import "MineViewController.h"
 #import "ZFDouyinViewController.h"
 #import "ConversationController.h"
+#import "ContactsController.h"
+#import <TNavigationController.h>
 
 @interface FDTabBarController ()<UITabBarControllerDelegate>
 
@@ -39,9 +41,18 @@
     [homeNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateSelected];
     AddAccessibilityHint(homeNav.tabBarItem, Localized(@"Home.Title"));
     
+    //临时添加好友
+    ContactsController *contact = [[ContactsController alloc]init];
+    contact.hidesBottomBarWhenPushed = NO;
+    TNavigationController *contactNav = [[TNavigationController alloc]initWithRootViewController:contact];
+    contactNav.tabBarItem = [QDUIHelper tabBarItemWithTitle:Localized(@"Contact.Title") image:[UIImageMake(@"tab_chat_normal") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"tab_chat_selected") tag:1];
+    [contactNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateNormal];
+    [contactNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateSelected];
+    AddAccessibilityHint(contactNav.tabBarItem, Localized(@"Contact.Title"));
+    
     ConversationController *conv = [[ConversationController alloc]init];
     conv.hidesBottomBarWhenPushed = NO;
-    FDNavigationController *convNav = [[FDNavigationController alloc]initWithRootViewController:conv];
+    TNavigationController *convNav = [[TNavigationController alloc]initWithRootViewController:conv];
     convNav.tabBarItem = [QDUIHelper tabBarItemWithTitle:Localized(@"Message.Title") image:[UIImageMake(@"tab_chat_normal") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"tab_chat_selected") tag:1];
     [convNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateNormal];
     [convNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateSelected];
@@ -55,7 +66,7 @@
     [mineNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateSelected];
     AddAccessibilityHint(mineNav.tabBarItem, Localized(@"Mine.Title"));
     
-    self.viewControllers = @[homeNav,convNav,mineNav];
+    self.viewControllers = @[homeNav,contactNav,convNav,mineNav];
 }
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{

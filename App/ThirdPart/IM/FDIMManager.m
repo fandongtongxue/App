@@ -97,9 +97,9 @@
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"下线通知" message:@"您的帐号于另一台手机上登录。" preferredStyle:UIAlertControllerStyleAlert];
             [alert addAction:[UIAlertAction actionWithTitle:@"重新登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 /****此处未提供reLogin接口，而是直接使用保存在本地的数据登录，仅适用于Demo体验版本****/
-                NSNumber *appId = [[FDKVManager defaultManager] getObjectOfClass:NSStringFromClass([NSNumber class]) ForKey:Key_UserInfo_Appid];
-                NSString *identifier = [[FDKVManager defaultManager] getObjectOfClass:NSStringFromClass([NSString class]) ForKey:Key_UserInfo_User];
-                NSString *userSig = [[FDKVManager defaultManager] getObjectOfClass:NSStringFromClass([NSString class]) ForKey:Key_UserInfo_Sig];
+                NSNumber *appId = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_Appid];
+                NSString *identifier = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_User];
+                NSString *userSig = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_Sig];
                 if([appId integerValue] == SDKAPPID && identifier.length != 0 && userSig.length != 0){
                     TIMLoginParam *param = [[TIMLoginParam alloc] init];
                     param.identifier = identifier;
@@ -118,10 +118,11 @@
                             }];
                         }
                     } fail:^(int code, NSString *msg) {
-                        [[FDKVManager defaultManager] setObject:@(0) forKey:Key_UserInfo_Appid];
-                        [[FDKVManager defaultManager] setObject:@"" forKey:Key_UserInfo_User];
-                        [[FDKVManager defaultManager] setObject:@"" forKey:Key_UserInfo_Pwd];
-                        [[FDKVManager defaultManager] setObject:@"" forKey:Key_UserInfo_Sig];
+                        [[NSUserDefaults standardUserDefaults] setObject:@(0) forKey:Key_UserInfo_Appid];
+                        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:Key_UserInfo_User];
+                        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:Key_UserInfo_Pwd];
+                        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:Key_UserInfo_Sig];
+                        [[NSUserDefaults standardUserDefaults] synchronize];
                         [delegate.window.rootViewController presentViewController:delegate.loginVC animated:YES completion:nil];
                     }];
                 }

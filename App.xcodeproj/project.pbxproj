@@ -65,7 +65,6 @@
 		6D9DF5B52277EC1D00FB9CFC /* FDSocialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DF5B42277EC1D00FB9CFC /* FDSocialModel.m */; };
 		6DA3F89A22C45F1600E1CA2A /* FDIMManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA3F89922C45F1500E1CA2A /* FDIMManager.m */; };
 		6DC591C722767CB600813DAB /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DC591C622767CB500813DAB /* CoreMotion.framework */; };
-		6DCE88CF22EA934A00CAFA15 /* FDKVManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCE88CE22EA934A00CAFA15 /* FDKVManager.m */; };
 		6DD3119122B879C60043B5EE /* FDPCASVApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD3119022B879C60043B5EE /* FDPCASVApi.m */; };
 		6DEC850B2276DB50000BCB3C /* 版权申明.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC84F62276DB50000BCB3C /* 版权申明.rtf */; };
 		6DEC850C2276DB50000BCB3C /* Alibaba-PuHuiTi-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC84F82276DB50000BCB3C /* Alibaba-PuHuiTi-Bold.otf */; };
@@ -234,8 +233,6 @@
 		6DA3F89822C45F1500E1CA2A /* FDIMManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDIMManager.h; sourceTree = "<group>"; };
 		6DA3F89922C45F1500E1CA2A /* FDIMManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDIMManager.m; sourceTree = "<group>"; };
 		6DC591C622767CB500813DAB /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
-		6DCE88CD22EA934A00CAFA15 /* FDKVManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDKVManager.h; sourceTree = "<group>"; };
-		6DCE88CE22EA934A00CAFA15 /* FDKVManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDKVManager.m; sourceTree = "<group>"; };
 		6DD3118F22B879C60043B5EE /* FDPCASVApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDPCASVApi.h; sourceTree = "<group>"; };
 		6DD3119022B879C60043B5EE /* FDPCASVApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDPCASVApi.m; sourceTree = "<group>"; };
 		6DEC84F62276DB50000BCB3C /* 版权申明.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "版权申明.rtf"; sourceTree = "<group>"; };
@@ -719,7 +716,6 @@
 		6D74C51C22755D9D00332AAC /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
-				6DCE88CC22EA933C00CAFA15 /* KV */,
 				6D1D784C22D6EB810085D1F3 /* Address */,
 				6DF3B6EC22D4708200BAF1C0 /* Storage */,
 				6D3790CF22D0977C00A6B9AE /* Qiniu */,
@@ -772,15 +768,6 @@
 				6DA3F89922C45F1500E1CA2A /* FDIMManager.m */,
 			);
 			path = IM;
-			sourceTree = "<group>";
-		};
-		6DCE88CC22EA933C00CAFA15 /* KV */ = {
-			isa = PBXGroup;
-			children = (
-				6DCE88CD22EA934A00CAFA15 /* FDKVManager.h */,
-				6DCE88CE22EA934A00CAFA15 /* FDKVManager.m */,
-			);
-			path = KV;
 			sourceTree = "<group>";
 		};
 		6DEC84F42276DB50000BCB3C /* Resources */ = {
@@ -1419,7 +1406,6 @@
 				6DEF409622B3745F00A88CE2 /* QDCommonListViewController.m in Sources */,
 				6DEF408F22B3745F00A88CE2 /* QDUIHelper.m in Sources */,
 				6D618A3C2316077000F7D0A1 /* MyCustomCellData.m in Sources */,
-				6DCE88CF22EA934A00CAFA15 /* FDKVManager.m in Sources */,
 				6D5F988C22EE7D1F009C3E10 /* FDKeyName.m in Sources */,
 				6D405CF422D069C6008D5316 /* ZFDouYinViewController.m in Sources */,
 				6D022097229F6C56001FF792 /* FDNotificationName.m in Sources */,

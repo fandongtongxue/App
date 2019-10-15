@@ -29,7 +29,6 @@ PODS:
   - MJRefresh (3.2.0)
   - MLeaksFinder (1.0.0):
     - FBRetainCycleDetector
-  - MMKV (1.0.23)
   - MMLayout (0.2.0)
   - mob_smssdk (3.2.3):
     - MOBFoundation
@@ -321,6 +320,7 @@ PODS:
     - SDWebImage
     - Toast
     - TXIMSDK_iOS
+  - TXLiteAVSDK_Smart (6.7.7734)
   - UMCAnalytics (6.0.5):
     - UMCCommon
   - UMCCommon (2.1.1)
@@ -370,7 +370,6 @@ DEPENDENCIES:
   - MJExtension
   - MJRefresh
   - MLeaksFinder
-  - MMKV
   - mob_smssdk
   - Qiniu
   - QMUIKit
@@ -381,6 +380,7 @@ DEPENDENCIES:
   - SDWebImage
   - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
   - TXIMSDK_TUIKit_iOS
+  - TXLiteAVSDK_Smart
   - UMCAnalytics
   - UMCCommon
   - UMCPush
@@ -410,7 +410,6 @@ SPEC REPOS:
     - MJExtension
     - MJRefresh
     - MLeaksFinder
-    - MMKV
     - MMLayout
     - mob_smssdk
     - MOBFoundation
@@ -425,6 +424,7 @@ SPEC REPOS:
     - Toast
     - TXIMSDK_iOS
     - TXIMSDK_TUIKit_iOS
+    - TXLiteAVSDK_Smart
     - UMCAnalytics
     - UMCCommon
     - UMCPush
@@ -457,7 +457,6 @@ SPEC CHECKSUMS:
   MJExtension: 81e8e411ced318561dd09334b0c83d8227cef79c
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
-  MMKV: 031ae51aedc0af1b250922f7ed8a6b6ee2f94c4c
   MMLayout: 3fb59d58eeb8656c64e61d550fb0088e10666c11
   mob_smssdk: cdb6a31d4fd4667ed928e2eca03f21ad89ebc05c
   MOBFoundation: 07f32af86af66ca46bef3ffcb1810835af53108e
@@ -473,6 +472,7 @@ SPEC CHECKSUMS:
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   TXIMSDK_iOS: 6511048d6471f5f48cf07ebc05d0b18a0292eb41
   TXIMSDK_TUIKit_iOS: 95bc7ce8b6c73c8e5ebbe60c77e44c15ac4ec30c
+  TXLiteAVSDK_Smart: baf4681475b9391e77e5ca3afc9e5468031c98db
   UMCAnalytics: 045be2cd1ec05aa95ad62405a850757f932e2d59
   UMCCommon: 971f324a5a99c9d662ae040a815e7e3d7ef8b2a8
   UMCPush: 1edd856027dcf905333effb4040ace5d236a7316
@@ -482,6 +482,6 @@ SPEC CHECKSUMS:
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
   ZFPlayer: b2ba40c924e1b9a7f0a670632c4235ffbe6ee055
 
-PODFILE CHECKSUM: 6000a0fa2e3fe510759830f8225be7b9134447d9
+PODFILE CHECKSUM: 6870442089f0f2909f8c505d90cd908c8d074d5d
 
 COCOAPODS: 1.8.3

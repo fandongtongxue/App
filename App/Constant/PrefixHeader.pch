@@ -21,7 +21,6 @@
 #import "FDPayManager.h"
 #import "FDSocialManager.h"
 #import "FDKeyName.h"
-#import "FDKVManager.h"
 #import "FDIMManager.h"
 
 #import "LoginViewController.h"

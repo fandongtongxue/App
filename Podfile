@@ -59,11 +59,9 @@ target 'App' do
   #启动广告图
   pod 'XHLaunchAd'
   # 腾讯云直播
-  # pod 'TXLiteAVSDK_Smart'
+  pod 'TXLiteAVSDK_Smart'
   # 腾讯云通信
   pod 'TXIMSDK_TUIKit_iOS'
-  # 腾讯Github
-  pod 'MMKV'
   # 声网
   pod 'AgoraRtcEngine_iOS'
   # 七牛云存储
