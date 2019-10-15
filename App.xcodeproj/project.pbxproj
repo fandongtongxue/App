@@ -1574,7 +1574,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F9N98X7P4L;
+				DEVELOPMENT_TEAM = 37R27U9WSN;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/App/ThirdPart/Pay/Alipay",
@@ -1615,7 +1615,7 @@
 					"$(PROJECT_DIR)/App/ThirdPart/Pay/AliPayUtil",
 				);
 				OTHER_CFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = me.fandong.App;
+				PRODUCT_BUNDLE_IDENTIFIER = me.fandong.App1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1668,7 +1668,7 @@
 					"$(PROJECT_DIR)/App/ThirdPart/Pay/AliPayUtil",
 				);
 				OTHER_CFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = me.fandong.App;
+				PRODUCT_BUNDLE_IDENTIFIER = me.fandong.App1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

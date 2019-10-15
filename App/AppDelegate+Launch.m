@@ -64,7 +64,7 @@
     //广告图片URLString/或本地图片名(.jpg/.gif请带上后缀)
     imageAdconfiguration.imageNameOrURLString = @"";
     //广告点击打开页面参数(openModel可为NSString,模型,字典等任意类型)
-    imageAdconfiguration.openModel = @"http://blog.fandong.me";
+    imageAdconfiguration.openModel = @"http://videoline.qiniu.bugukj.com/'admin/20190830/fcb4acd66c23429063eef43ce6f1b4e1.png'";
     imageAdconfiguration.duration = 5;
     //显示开屏广告
     [XHLaunchAd imageAdWithImageAdConfiguration:imageAdconfiguration delegate:self];

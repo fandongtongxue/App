@@ -313,7 +313,7 @@ PODS:
   - SDWebImage/Core (5.1.1)
   - SVProgressHUD (2.2.6)
   - Toast (4.0.0)
-  - TXIMSDK_iOS (4.5.15)
+  - TXIMSDK_iOS (4.5.45)
   - TXIMSDK_TUIKit_iOS (4.5.15):
     - ISVImageScrollView
     - MMLayout
@@ -371,18 +371,15 @@ DEPENDENCIES:
   - MJRefresh
   - MLeaksFinder
   - MMKV
-  - MMLayout
   - mob_smssdk
-  - Qiniu (~> 7.1)
+  - Qiniu
   - QMUIKit
   - QuickMobileTextField
   - QuickSecurityCode
   - Reachability
-  - ReactiveObjC
   - SDCycleScrollView
   - SDWebImage
   - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
-  - TXIMSDK_iOS
   - TXIMSDK_TUIKit_iOS
   - UMCAnalytics
   - UMCCommon
@@ -474,7 +471,7 @@ SPEC CHECKSUMS:
   SDWebImage: 96d7f03415ccb28d299d765f93557ff8a617abd8
   SVProgressHUD: 6ed134667e9ebb2f33679e8273cd48fd3fa349e5
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
-  TXIMSDK_iOS: 7cf467dc7c90f294b894e8a7b7004bce7acfd332
+  TXIMSDK_iOS: 6511048d6471f5f48cf07ebc05d0b18a0292eb41
   TXIMSDK_TUIKit_iOS: 95bc7ce8b6c73c8e5ebbe60c77e44c15ac4ec30c
   UMCAnalytics: 045be2cd1ec05aa95ad62405a850757f932e2d59
   UMCCommon: 971f324a5a99c9d662ae040a815e7e3d7ef8b2a8
@@ -485,6 +482,6 @@ SPEC CHECKSUMS:
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
   ZFPlayer: b2ba40c924e1b9a7f0a670632c4235ffbe6ee055
 
-PODFILE CHECKSUM: 67a9b4f866a4817c2ee677805ca38d91b0d91327
+PODFILE CHECKSUM: 6000a0fa2e3fe510759830f8225be7b9134447d9
 
-COCOAPODS: 1.8.0.beta.2
+COCOAPODS: 1.8.3

@@ -4,7 +4,6 @@ platform :ios, '9.0'
 target 'App' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
   # Pods for App
   # Network
   pod 'YTKNetwork'
@@ -62,14 +61,11 @@ target 'App' do
   # 腾讯云直播
   # pod 'TXLiteAVSDK_Smart'
   # 腾讯云通信
-  pod 'MMLayout'
-  pod 'ReactiveObjC'
   pod 'TXIMSDK_TUIKit_iOS'
-  pod 'TXIMSDK_iOS'
   # 腾讯Github
   pod 'MMKV'
   # 声网
   pod 'AgoraRtcEngine_iOS'
   # 七牛云存储
-  pod "Qiniu", "~> 7.1"
+  pod "Qiniu"
 end
