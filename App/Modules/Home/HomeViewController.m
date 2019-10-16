@@ -7,7 +7,6 @@
 //
 
 #import "HomeViewController.h"
-#import "SearchViewController.h"
 
 @interface HomeViewController ()
 
@@ -28,8 +27,7 @@
 }
 
 - (void)searchItemAction:(UIBarButtonItem *)item{
-    SearchViewController *searchVC = [[SearchViewController alloc]init];
-    [self.navigationController pushViewController:searchVC animated:YES];
+    
 }
 
 @end

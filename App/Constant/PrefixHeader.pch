@@ -33,9 +33,6 @@
 #import "UIViewController+FD.h"
 
 #import <QMUIKit/QMUIKit.h>
-#import "QDCommonUI.h"
-#import "QDUIHelper.h"
-#import "QDThemeManager.h"
 
 #import <Masonry/Masonry.h>
 

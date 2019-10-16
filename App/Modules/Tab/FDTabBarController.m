@@ -36,7 +36,7 @@
     ZFDouYinViewController *douyinVC = [[ZFDouYinViewController alloc]init];
     douyinVC.hidesBottomBarWhenPushed = NO;
     FDNavigationController *homeNav = [[FDNavigationController alloc]initWithRootViewController:douyinVC];
-    homeNav.tabBarItem = [QDUIHelper tabBarItemWithTitle:Localized(@"Home.Title") image:[UIImageMake(@"tab_home_normal") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"tab_home_selected") tag:0];
+    homeNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:Localized(@"Home.Title") image:[UIImage imageNamed:@"tab_home_normal"] selectedImage:[UIImage imageNamed:@"tab_home_selected"]];
     [homeNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateNormal];
     [homeNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateSelected];
     AddAccessibilityHint(homeNav.tabBarItem, Localized(@"Home.Title"));
@@ -45,7 +45,7 @@
     ContactsController *contact = [[ContactsController alloc]init];
     contact.hidesBottomBarWhenPushed = NO;
     TNavigationController *contactNav = [[TNavigationController alloc]initWithRootViewController:contact];
-    contactNav.tabBarItem = [QDUIHelper tabBarItemWithTitle:Localized(@"Contact.Title") image:[UIImageMake(@"tab_chat_normal") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"tab_chat_selected") tag:1];
+    contactNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:Localized(@"Contact.Title") image:[UIImage imageNamed:@"tab_chat_normal"] selectedImage:[UIImage imageNamed:@"tab_chat_selected"]];
     [contactNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateNormal];
     [contactNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateSelected];
     AddAccessibilityHint(contactNav.tabBarItem, Localized(@"Contact.Title"));
@@ -53,7 +53,7 @@
     ConversationController *conv = [[ConversationController alloc]init];
     conv.hidesBottomBarWhenPushed = NO;
     TNavigationController *convNav = [[TNavigationController alloc]initWithRootViewController:conv];
-    convNav.tabBarItem = [QDUIHelper tabBarItemWithTitle:Localized(@"Message.Title") image:[UIImageMake(@"tab_chat_normal") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"tab_chat_selected") tag:1];
+    convNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:Localized(@"Message.Title") image:[UIImage imageNamed:@"tab_chat_normal"] selectedImage:[UIImage imageNamed:@"tab_chat_selected"]];
     [convNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateNormal];
     [convNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateSelected];
     AddAccessibilityHint(convNav.tabBarItem, Localized(@"Message.Title"));
@@ -61,7 +61,7 @@
     MineViewController *mineVC = [[MineViewController alloc]init];
     mineVC.hidesBottomBarWhenPushed = NO;
     FDNavigationController *mineNav = [[FDNavigationController alloc]initWithRootViewController:mineVC];
-    mineNav.tabBarItem = [QDUIHelper tabBarItemWithTitle:Localized(@"Mine.Title") image:[UIImageMake(@"tab_mine_normal") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"tab_mine_selected") tag:2];
+    mineNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:Localized(@"Mine.Title") image:[UIImage imageNamed:@"tab_mine_normal"] selectedImage:[UIImage imageNamed:@"tab_mine_selected"]];
     [mineNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateNormal];
     [mineNav.tabBarItem setTitleTextAttributes:attrDict forState:UIControlStateSelected];
     AddAccessibilityHint(mineNav.tabBarItem, Localized(@"Mine.Title"));
