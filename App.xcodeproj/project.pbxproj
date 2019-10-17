@@ -304,7 +304,6 @@
 		CB8EA0E0227B1A2B004177D4 /* MineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		CB8EA0E2227B2460004177D4 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		CB8EA0E3227B2460004177D4 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		CB9B56C9235757E4008E8538 /* App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = App.entitlements; sourceTree = "<group>"; };
 		CB9B56CC23575971008E8538 /* TCUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCUtil.h; sourceTree = "<group>"; };
 		CB9B56CD23575971008E8538 /* PAirSandbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAirSandbox.m; sourceTree = "<group>"; };
 		CB9B56CE23575971008E8538 /* TCConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCConstants.h; sourceTree = "<group>"; };
@@ -903,7 +902,6 @@
 		CB8C26EB226CBCA90058DAEE /* App */ = {
 			isa = PBXGroup;
 			children = (
-				CB9B56C9235757E4008E8538 /* App.entitlements */,
 				CB8C26EC226CBCA90058DAEE /* AppDelegate.h */,
 				CB8C26ED226CBCA90058DAEE /* AppDelegate.m */,
 				6D74C526227575D500332AAC /* AppDelegate+Launch.h */,
@@ -1488,7 +1486,7 @@
 					"$(PROJECT_DIR)/App/ThirdPart/Pay/AliPayUtil",
 				);
 				OTHER_CFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = me.fandong.App;
+				PRODUCT_BUNDLE_IDENTIFIER = me.fandong.App1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = 1;
