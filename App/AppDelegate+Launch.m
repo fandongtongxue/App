@@ -168,7 +168,8 @@ void uncaughtExceptionHandler(NSException*exception){
 }
 
 - (void)xhLaunchAd:(XHLaunchAd *)launchAd clickAndOpenModel:(id)openModel clickPoint:(CGPoint)clickPoint{
-    
+    FDWebViewController *webVC = [[FDWebViewController alloc]initWithURL:[NSURL URLWithString:@"http://blog.fandong.me"]];
+    [self.window.rootViewController presentViewController:webVC animated:YES completion:nil];
 }
 
 #pragma mark - BuglyDelegate

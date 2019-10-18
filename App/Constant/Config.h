@@ -24,8 +24,6 @@
 #define kQQAppSecret @""
 #define kQQRedirectURL @""
 
-#define kIMSDKAppID 1400217242
-
 //Bugly
 #define kBuglyAppId @"9f73163e66"
 
@@ -33,10 +31,5 @@
 #define Key_UserInfo_User  @"Key_UserInfo_User"
 #define Key_UserInfo_Pwd   @"Key_UserInfo_Pwd"
 #define Key_UserInfo_Sig   @"Key_UserInfo_Sig"
-
-//快速跑通 demo 请参考官网文档：https://cloud.tencent.com/document/product/269/32674
-#define sdkAppid    1400035057  //替换成您在控制台生成的 sdkAppid
-
-#define sdkBusiId         12742
 
 #endif /* Config_h */

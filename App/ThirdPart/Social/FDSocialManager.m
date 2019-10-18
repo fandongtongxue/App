@@ -30,7 +30,7 @@
     [UMConfigure initWithAppkey:kUMengAppKey channel:@"App Store"];
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:kWeChatAppKey appSecret:kWeChatAppSecret redirectURL:nil];
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:kQQAppKey/*设置QQ平台的appID*/  appSecret:nil redirectURL:nil];
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:kWeiboAppKey  appSecret:kWeiboAppSecret redirectURL:kWeiboRedirectURL];
+//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:kWeiboAppKey  appSecret:kWeiboAppSecret redirectURL:kWeiboRedirectURL];
 }
 
 - (void)login:(FDSocialManagerLoginType)type currentViewController:(UIViewController *)viewController completion:(FDSocialManagerCompletionHandler)completion{

@@ -57,7 +57,7 @@
             TIMTokenParam *param = [[TIMTokenParam alloc] init];
             /* 用户自己到苹果注册开发者证书，在开发者帐号中下载并生成证书(p12 文件)，将生成的 p12 文件传到腾讯证书管理控制台，控制台会自动生成一个证书 ID，将证书 ID 传入一下 busiId 参数中。*/
             //企业证书 ID
-            param.busiId = sdkBusiId;
+            param.busiId = 10001;
             [param setToken:token];
             [[TIMManager sharedInstance] setToken:param succ:^{
                 DDLogDebug(@"-----> 上传 token 成功 ");
@@ -109,7 +109,7 @@
                             TIMTokenParam *param = [[TIMTokenParam alloc] init];
                             /* 用户自己到苹果注册开发者证书，在开发者帐号中下载并生成证书(p12 文件)，将生成的 p12 文件传到腾讯证书管理控制台，控制台会自动生成一个证书 ID，将证书 ID 传入一下 busiId 参数中。*/
                             //企业证书 ID
-                            param.busiId = sdkBusiId;
+                            param.busiId = 10001;
                             [param setToken:delegate.deviceToken];
                             [[TIMManager sharedInstance] setToken:param succ:^{
                                 DDLogDebug(@"-----> 上传 token 成功 ");

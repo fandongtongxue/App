@@ -40,6 +40,7 @@
 		6DA3F89A22C45F1600E1CA2A /* FDIMManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA3F89922C45F1500E1CA2A /* FDIMManager.m */; };
 		6DC591C722767CB600813DAB /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DC591C622767CB500813DAB /* CoreMotion.framework */; };
 		6DD3119122B879C60043B5EE /* FDPCASVApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD3119022B879C60043B5EE /* FDPCASVApi.m */; };
+		6DD6D67C23584E3D0043F9D5 /* FDWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD6D67A23584E3D0043F9D5 /* FDWebViewController.m */; };
 		6DEC850B2276DB50000BCB3C /* 版权申明.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC84F62276DB50000BCB3C /* 版权申明.rtf */; };
 		6DEC850C2276DB50000BCB3C /* Alibaba-PuHuiTi-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC84F82276DB50000BCB3C /* Alibaba-PuHuiTi-Bold.otf */; };
 		6DEC850D2276DB50000BCB3C /* Alibaba-PuHuiTi-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DEC84F92276DB50000BCB3C /* Alibaba-PuHuiTi-Light.otf */; };
@@ -173,6 +174,8 @@
 		6DC591C622767CB500813DAB /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		6DD3118F22B879C60043B5EE /* FDPCASVApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDPCASVApi.h; sourceTree = "<group>"; };
 		6DD3119022B879C60043B5EE /* FDPCASVApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDPCASVApi.m; sourceTree = "<group>"; };
+		6DD6D67A23584E3D0043F9D5 /* FDWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDWebViewController.m; sourceTree = "<group>"; };
+		6DD6D67B23584E3D0043F9D5 /* FDWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDWebViewController.h; sourceTree = "<group>"; };
 		6DEC84F62276DB50000BCB3C /* 版权申明.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "版权申明.rtf"; sourceTree = "<group>"; };
 		6DEC84F82276DB50000BCB3C /* Alibaba-PuHuiTi-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alibaba-PuHuiTi-Bold.otf"; sourceTree = "<group>"; };
 		6DEC84F92276DB50000BCB3C /* Alibaba-PuHuiTi-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alibaba-PuHuiTi-Light.otf"; sourceTree = "<group>"; };
@@ -859,6 +862,8 @@
 		CB6E677C2279CAF900D3788E /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				6DD6D67B23584E3D0043F9D5 /* FDWebViewController.h */,
+				6DD6D67A23584E3D0043F9D5 /* FDWebViewController.m */,
 				CB6E67802279CC6D00D3788E /* FDViewController.h */,
 				CB6E67812279CC6D00D3788E /* FDViewController.m */,
 			);
@@ -1285,6 +1290,7 @@
 				CB19812C229EBC2600AA1002 /* openssl_wrapper.m in Sources */,
 				CB9B571B23575972008E8538 /* GroupRequestViewController.m in Sources */,
 				6DF535CF22D8665C006FCD3F /* FDAddressModel.m in Sources */,
+				6DD6D67C23584E3D0043F9D5 /* FDWebViewController.m in Sources */,
 				6D36CA90228117E10046FA8C /* GlobalModel.m in Sources */,
 				CBD8F54822830AE90069510C /* PhoneLoginViewController.m in Sources */,
 				6D405CF622D069C6008D5316 /* ZFDouYinControlView.m in Sources */,
