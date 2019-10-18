@@ -111,6 +111,15 @@
 		CBC6FB1D22844CED00EAF915 /* register_guide_video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CBC6FB1C22844C9900EAF915 /* register_guide_video.mp4 */; };
 		CBCFB1E12281C5CB00ADE61E /* UIAlertController+supportedInterfaceOrientations.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCFB1E02281C5CB00ADE61E /* UIAlertController+supportedInterfaceOrientations.m */; };
 		CBD8F54822830AE90069510C /* PhoneLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD8F54722830AE90069510C /* PhoneLoginViewController.m */; };
+		CBED73972359EA3C00E46384 /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBED73952359EA3C00E46384 /* PlayViewController.m */; };
+		CBED739D2359ED2F00E46384 /* AddressBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBED739A2359ED2F00E46384 /* AddressBarController.m */; };
+		CBED739E2359ED2F00E46384 /* AddressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CBED739C2359ED2F00E46384 /* AddressBar.m */; };
+		CBED73A12359ED7E00E46384 /* SmallButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CBED739F2359ED7E00E46384 /* SmallButton.m */; };
+		CBED73A62359EDFF00E46384 /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = CBED73A42359EDFF00E46384 /* UIImage+Additions.m */; };
+		CBED73A72359EDFF00E46384 /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = CBED73A52359EDFF00E46384 /* UIView+Additions.m */; };
+		CBED73AB2359EE9700E46384 /* ScanQRController.mm in Sources */ = {isa = PBXBuildFile; fileRef = CBED73AA2359EE9700E46384 /* ScanQRController.mm */; };
+		CBED73AF2359EED800E46384 /* QRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = CBED73AD2359EED800E46384 /* QRCode.m */; };
+		CBED73B12359EFEE00E46384 /* Live.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBED73B02359EFEE00E46384 /* Live.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -367,6 +376,23 @@
 		CBCFB1E02281C5CB00ADE61E /* UIAlertController+supportedInterfaceOrientations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+supportedInterfaceOrientations.m"; sourceTree = "<group>"; };
 		CBD8F54622830AE90069510C /* PhoneLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhoneLoginViewController.h; sourceTree = "<group>"; };
 		CBD8F54722830AE90069510C /* PhoneLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhoneLoginViewController.m; sourceTree = "<group>"; };
+		CBED73952359EA3C00E46384 /* PlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
+		CBED73962359EA3C00E46384 /* PlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayViewController.h; sourceTree = "<group>"; };
+		CBED73992359ED2F00E46384 /* AddressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBar.h; sourceTree = "<group>"; };
+		CBED739A2359ED2F00E46384 /* AddressBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBarController.m; sourceTree = "<group>"; };
+		CBED739B2359ED2F00E46384 /* AddressBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBarController.h; sourceTree = "<group>"; };
+		CBED739C2359ED2F00E46384 /* AddressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBar.m; sourceTree = "<group>"; };
+		CBED739F2359ED7E00E46384 /* SmallButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmallButton.m; sourceTree = "<group>"; };
+		CBED73A02359ED7E00E46384 /* SmallButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmallButton.h; sourceTree = "<group>"; };
+		CBED73A22359EDFF00E46384 /* UIView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Additions.h"; sourceTree = "<group>"; };
+		CBED73A32359EDFF00E46384 /* UIImage+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Additions.h"; sourceTree = "<group>"; };
+		CBED73A42359EDFF00E46384 /* UIImage+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Additions.m"; sourceTree = "<group>"; };
+		CBED73A52359EDFF00E46384 /* UIView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Additions.m"; sourceTree = "<group>"; };
+		CBED73A92359EE9700E46384 /* ScanQRController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanQRController.h; sourceTree = "<group>"; };
+		CBED73AA2359EE9700E46384 /* ScanQRController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ScanQRController.mm; sourceTree = "<group>"; };
+		CBED73AD2359EED800E46384 /* QRCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCode.m; sourceTree = "<group>"; };
+		CBED73AE2359EED800E46384 /* QRCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCode.h; sourceTree = "<group>"; };
+		CBED73B02359EFEE00E46384 /* Live.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Live.xcassets; sourceTree = "<group>"; };
 		D8F4FE7B423BC276DC0C84C5 /* Pods-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.release.xcconfig"; path = "Target Support Files/Pods-App/Pods-App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -558,6 +584,7 @@
 		6D74C51C22755D9D00332AAC /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				CBED73942359EA3C00E46384 /* Live */,
 				6D1D784C22D6EB810085D1F3 /* Address */,
 				6DF3B6EC22D4708200BAF1C0 /* Storage */,
 				6D3790CF22D0977C00A6B9AE /* Qiniu */,
@@ -1080,6 +1107,54 @@
 			path = Control;
 			sourceTree = "<group>";
 		};
+		CBED73942359EA3C00E46384 /* Live */ = {
+			isa = PBXGroup;
+			children = (
+				CBED73AC2359EED800E46384 /* QRGenerate */,
+				CBED73A82359EE9700E46384 /* QRScan */,
+				CBED73A32359EDFF00E46384 /* UIImage+Additions.h */,
+				CBED73A42359EDFF00E46384 /* UIImage+Additions.m */,
+				CBED73A22359EDFF00E46384 /* UIView+Additions.h */,
+				CBED73A52359EDFF00E46384 /* UIView+Additions.m */,
+				CBED73A02359ED7E00E46384 /* SmallButton.h */,
+				CBED739F2359ED7E00E46384 /* SmallButton.m */,
+				CBED73982359ED2F00E46384 /* AddressBar */,
+				CBED73952359EA3C00E46384 /* PlayViewController.m */,
+				CBED73962359EA3C00E46384 /* PlayViewController.h */,
+				CBED73B02359EFEE00E46384 /* Live.xcassets */,
+			);
+			path = Live;
+			sourceTree = "<group>";
+		};
+		CBED73982359ED2F00E46384 /* AddressBar */ = {
+			isa = PBXGroup;
+			children = (
+				CBED73992359ED2F00E46384 /* AddressBar.h */,
+				CBED739A2359ED2F00E46384 /* AddressBarController.m */,
+				CBED739B2359ED2F00E46384 /* AddressBarController.h */,
+				CBED739C2359ED2F00E46384 /* AddressBar.m */,
+			);
+			path = AddressBar;
+			sourceTree = "<group>";
+		};
+		CBED73A82359EE9700E46384 /* QRScan */ = {
+			isa = PBXGroup;
+			children = (
+				CBED73A92359EE9700E46384 /* ScanQRController.h */,
+				CBED73AA2359EE9700E46384 /* ScanQRController.mm */,
+			);
+			path = QRScan;
+			sourceTree = "<group>";
+		};
+		CBED73AC2359EED800E46384 /* QRGenerate */ = {
+			isa = PBXGroup;
+			children = (
+				CBED73AD2359EED800E46384 /* QRCode.m */,
+				CBED73AE2359EED800E46384 /* QRCode.h */,
+			);
+			path = QRGenerate;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1178,6 +1253,7 @@
 				6DEC85102276DB50000BCB3C /* Alibaba-PuHuiTi-Regular.otf in Resources */,
 				6DEC85142276DB50000BCB3C /* AlibabaSans-Heavy.otf in Resources */,
 				CB9B571F23575972008E8538 /* 00.caf in Resources */,
+				CBED73B12359EFEE00E46384 /* Live.xcassets in Resources */,
 				CB9B572023575972008E8538 /* 01.caf in Resources */,
 				6D405CF522D069C6008D5316 /* data.json in Resources */,
 			);
@@ -1250,13 +1326,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DD3119122B879C60043B5EE /* FDPCASVApi.m in Sources */,
+				CBED73A12359ED7E00E46384 /* SmallButton.m in Sources */,
 				6D36CA8F228117E10046FA8C /* GlobalManager.m in Sources */,
 				CB9B571523575972008E8538 /* TCLoginParam.m in Sources */,
 				6D30B6C82321E7BD00F3199F /* AppDelegate+Push.m in Sources */,
+				CBED73972359EA3C00E46384 /* PlayViewController.m in Sources */,
 				CBB5492D22A010E1007B1A7C /* WXApiRequestHandler.m in Sources */,
 				6D4F0D14227695D6005A9B21 /* AppDelegate+HandleURL.m in Sources */,
 				CB6E67762279AA0C00D3788E /* FDTabBarController.m in Sources */,
+				CBED739D2359ED2F00E46384 /* AddressBarController.m in Sources */,
 				CB19812B229EBC2600AA1002 /* APOrderInfo.m in Sources */,
+				CBED73AB2359EE9700E46384 /* ScanQRController.mm in Sources */,
 				6D9DF5AD2277CE9400FB9CFC /* FDSocialManager.m in Sources */,
 				6D405CF222D069C6008D5316 /* ZFDouYinCell.m in Sources */,
 				CBB5492C22A010E1007B1A7C /* WXApiResponseHandler.m in Sources */,
@@ -1283,6 +1363,7 @@
 				CB9B571C23575972008E8538 /* ContactsController.m in Sources */,
 				6D9DF5B12277D79B00FB9CFC /* UIViewController+FD.m in Sources */,
 				6D405CE322D026D3008D5316 /* FDVideoCallViewController.m in Sources */,
+				CBED73A62359EDFF00E46384 /* UIImage+Additions.m in Sources */,
 				CB9B570E23575972008E8538 /* GroupMemberController.m in Sources */,
 				CBB5492E22A010E1007B1A7C /* WXApiManager.m in Sources */,
 				CB9B570D23575972008E8538 /* ProfileController.m in Sources */,
@@ -1293,10 +1374,13 @@
 				6DD6D67C23584E3D0043F9D5 /* FDWebViewController.m in Sources */,
 				6D36CA90228117E10046FA8C /* GlobalModel.m in Sources */,
 				CBD8F54822830AE90069510C /* PhoneLoginViewController.m in Sources */,
+				CBED739E2359ED2F00E46384 /* AddressBar.m in Sources */,
 				6D405CF622D069C6008D5316 /* ZFDouYinControlView.m in Sources */,
 				6DF3B6EF22D4709200BAF1C0 /* FDSQLiteManager.m in Sources */,
+				CBED73A72359EDFF00E46384 /* UIView+Additions.m in Sources */,
 				6D4125DB229257BB0045E3B5 /* FDAnalyzeManager.m in Sources */,
 				CB6E67C12279D8D900D3788E /* HomeViewController.m in Sources */,
+				CBED73AF2359EED800E46384 /* QRCode.m in Sources */,
 				CB9B571323575972008E8538 /* MyCustomCell.m in Sources */,
 				6D74C528227575D500332AAC /* AppDelegate+Launch.m in Sources */,
 				6D3790D222D0978B00A6B9AE /* FDQiniuManager.m in Sources */,
