@@ -7,7 +7,6 @@
 //
 
 #import "MineViewController.h"
-#import "PlayViewController.h"
 
 @interface MineViewController ()
 
@@ -19,13 +18,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = Localized(@"Mine.Title");
-}
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [super touchesBegan:touches withEvent:event];
-    PlayViewController *playVC = [[PlayViewController alloc]init];
-    playVC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:playVC animated:YES];
 }
 
 @end

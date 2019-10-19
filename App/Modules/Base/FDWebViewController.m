@@ -21,4 +21,16 @@
     return self;
 }
 
+- (void)safariViewControllerDidFinish:(SFSafariViewController *)controller{
+    DDLogDebug(@"%s",__func__);
+}
+
+- (void)safariViewController:(SFSafariViewController *)controller didCompleteInitialLoad:(BOOL)didLoadSuccessfully{
+    DDLogDebug(@"%s",__func__);
+}
+
+- (void)safariViewController:(SFSafariViewController *)controller initialLoadDidRedirectToURL:(NSURL *)URL{
+    DDLogDebug(@"%s",__func__);
+}
+
 @end
