@@ -70,7 +70,7 @@ static NSString *kIdentifier = @"kIdentifier";
         if (size.width >= size.height) {
             self.player.currentPlayerManager.scalingMode = ZFPlayerScalingModeAspectFit;
         } else {
-            self.player.currentPlayerManager.scalingMode = ZFPlayerScalingModeAspectFill;
+            self.player.currentPlayerManager.scalingMode = ZFPlayerScalingModeAspectFit;
         }
     };
 }
