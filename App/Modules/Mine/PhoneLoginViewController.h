@@ -8,7 +8,7 @@
 
 #import "FDViewController.h"
 
-typedef void(^finishPhoneLoginCallBack)(void);
+typedef void(^finishPhoneLoginCallBack)(NSString *mobile);
 
 @interface PhoneLoginViewController : FDViewController
 

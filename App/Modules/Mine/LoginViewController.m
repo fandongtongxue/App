@@ -16,6 +16,7 @@
 #import "FDSocialModel.h"
 
 #import "PhoneLoginViewController.h"
+#import "FDLoginApi.h"
 
 @interface LoginViewController ()<ZFPlayerMediaPlayback>
 
@@ -86,11 +87,11 @@
     switch (sender.tag - 10) {
         case 0:
         {
-            PhoneLoginViewController *phoneLoginVC = [[PhoneLoginViewController alloc]initWithCallBack:^{
+            PhoneLoginViewController *phoneLoginVC = [[PhoneLoginViewController alloc]initWithCallBack:^(NSString *mobile) {
                 @strongify(self);
                 [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:isLogin];
                 [[NSUserDefaults standardUserDefaults] synchronize];
-                [self loginIM];
+                [self login:mobile];
             }];
             [self.navigationController pushViewController:phoneLoginVC animated:YES];
         }
@@ -103,7 +104,7 @@
                 if (!errorMsg.length) {
                     [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:isLogin];
                     [[NSUserDefaults standardUserDefaults] synchronize];
-                    [self loginIM];
+                    [self login:@"17661297963"];
                 }
             }];
         }
@@ -116,7 +117,7 @@
                 if (!errorMsg.length) {
                     [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:isLogin];
                     [[NSUserDefaults standardUserDefaults] synchronize];
-                    [self loginIM];
+                    [self login:@"17661297963"];
                 }
             }];
         }
@@ -129,7 +130,7 @@
                 if (!errorMsg.length) {
                     [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:isLogin];
                     [[NSUserDefaults standardUserDefaults] synchronize];
-                    [self loginIM];
+                    [self login:@"17661297963"];
                 }
             }];
         }
@@ -139,10 +140,22 @@
     }
 }
 
-- (void)loginIM{
+- (void)login:(NSString *)mobile{
+    __weak __typeof(self)weakSelf = self;
+    FDLoginApi *api = [[FDLoginApi alloc] init];
+    api.mobile = mobile;
+    [api startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
+        [strongSelf loginIM:request.responseJSONObject[@"data"][@"id"]];
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+    }];
+}
+
+- (void)loginIM:(NSString *)id{
     NSString *identifier = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_User];
     if (!identifier) {
-        identifier = [NSString stringWithFormat:@"%@%d",@"fanxiaobing",arc4random() % 1000];
+        identifier = [NSString stringWithFormat:@"%@%@",@"fandong_",id];
     }
     //genTestUserSig 方法仅用于本地测试，请不要将如下代码发布到您的线上正式版本的 App 中，原因如下：
     /*

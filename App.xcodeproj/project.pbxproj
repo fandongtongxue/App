@@ -34,6 +34,7 @@
 		6D59879E229E662500113597 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D59879A229E662500113597 /* libWeChatSDK.a */; };
 		6D5F988C22EE7D1F009C3E10 /* FDKeyName.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5F988B22EE7D1F009C3E10 /* FDKeyName.m */; };
 		6D74C528227575D500332AAC /* AppDelegate+Launch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D74C527227575D500332AAC /* AppDelegate+Launch.m */; };
+		6D906046236026B5007EF07A /* FDLoginApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D906045236026B5007EF07A /* FDLoginApi.m */; };
 		6D9DF5AD2277CE9400FB9CFC /* FDSocialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DF5AC2277CE9400FB9CFC /* FDSocialManager.m */; };
 		6D9DF5B12277D79B00FB9CFC /* UIViewController+FD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DF5B02277D79B00FB9CFC /* UIViewController+FD.m */; };
 		6D9DF5B52277EC1D00FB9CFC /* FDSocialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9DF5B42277EC1D00FB9CFC /* FDSocialModel.m */; };
@@ -171,6 +172,8 @@
 		6D74C526227575D500332AAC /* AppDelegate+Launch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Launch.h"; sourceTree = "<group>"; };
 		6D74C527227575D500332AAC /* AppDelegate+Launch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Launch.m"; sourceTree = "<group>"; };
 		6D800E102293D4A800BC8BB8 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		6D906044236026B5007EF07A /* FDLoginApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDLoginApi.h; sourceTree = "<group>"; };
+		6D906045236026B5007EF07A /* FDLoginApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDLoginApi.m; sourceTree = "<group>"; };
 		6D9DF5AB2277CE9400FB9CFC /* FDSocialManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDSocialManager.h; sourceTree = "<group>"; };
 		6D9DF5AC2277CE9400FB9CFC /* FDSocialManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDSocialManager.m; sourceTree = "<group>"; };
 		6D9DF5AF2277D79B00FB9CFC /* UIViewController+FD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FD.h"; sourceTree = "<group>"; };
@@ -598,6 +601,15 @@
 			path = ThirdPart;
 			sourceTree = "<group>";
 		};
+		6D906043236026A3007EF07A /* User */ = {
+			isa = PBXGroup;
+			children = (
+				6D906044236026B5007EF07A /* FDLoginApi.h */,
+				6D906045236026B5007EF07A /* FDLoginApi.m */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		6D9837D12292575C001BEF7F /* Analyze */ = {
 			isa = PBXGroup;
 			children = (
@@ -836,6 +848,7 @@
 		CB3508E822709B3E00EDC557 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				6D906043236026A3007EF07A /* User */,
 				6D3C39D822B1E6DF00B861E7 /* Global */,
 				CB3508E922709B4100EDC557 /* Base */,
 			);
@@ -1377,6 +1390,7 @@
 				CBED739E2359ED2F00E46384 /* AddressBar.m in Sources */,
 				6D405CF622D069C6008D5316 /* ZFDouYinControlView.m in Sources */,
 				6DF3B6EF22D4709200BAF1C0 /* FDSQLiteManager.m in Sources */,
+				6D906046236026B5007EF07A /* FDLoginApi.m in Sources */,
 				CBED73A72359EDFF00E46384 /* UIView+Additions.m in Sources */,
 				6D4125DB229257BB0045E3B5 /* FDAnalyzeManager.m in Sources */,
 				CB6E67C12279D8D900D3788E /* HomeViewController.m in Sources */,

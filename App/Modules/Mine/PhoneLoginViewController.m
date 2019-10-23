@@ -83,7 +83,9 @@
                         [SVProgressHUD showSuccessWithStatus:Localized(@"Login.PhoneLogin.VerifyCodeSuccess")];
                     }];
                     if (strongSelf->_finishPhoneLoginCallBack) {
-                        strongSelf->_finishPhoneLoginCallBack();
+                        NSMutableString *string = [NSMutableString stringWithString:strongSelf.phoneTextField.text];
+                        [string setString:[string stringByReplacingOccurrencesOfString:@" " withString:@""]];
+                        strongSelf->_finishPhoneLoginCallBack(string);
                     }
                     [FDAnalyzeManager event:kFDEventIDPhoneLogin];
                 }
